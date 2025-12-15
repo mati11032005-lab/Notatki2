@@ -281,7 +281,7 @@
   <a href="#3-adresowanie-elementow-a_ij" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Adresowanie elementów (\( a_{ij} \))
+        3. Adresowanie elementów (\(a_{ij}\))
       
     </span>
   </a>
@@ -429,7 +429,7 @@
   <a href="#3-adresowanie-elementow-a_ij" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Adresowanie elementów (\( a_{ij} \))
+        3. Adresowanie elementów (\(a_{ij}\))
       
     </span>
   </a>
@@ -459,182 +459,107 @@
 <p>Inna analogia to <strong>plansza do gry w statki</strong>. Aby trafić w statek, podajesz współrzędne (np. A4). W macierzach robimy dokładnie to samo – każda liczba ma swój unikalny "adres".</p>
 <h3 id="2-definicja-i-budowa">2. Definicja i budowa<a class="headerlink" href="#2-definicja-i-budowa" title="Permanent link">&para;</a></h3>
 <p><strong>Macierz</strong> to prostokątna tablica liczb (lub innych elementów), uporządkowanych w wiersze i kolumny.</p>
-<p>Oto przykładowa macierz <span class="arithmatex">\( A \)</span>:</p>
-<div class="arithmatex">\[
-A = \begin{bmatrix}
-4 &amp; 7 &amp; -2 &amp; 1 \\
-0 &amp; 5 &amp; 8 &amp; 3 \\
-1 &amp; -9 &amp; 6 &amp; 10
-\end{bmatrix}
-\]</div>
-<p>Rozłóżmy ją na czynniki pierwsze:</p>
-<ul>
-<li><strong>Element macierzy:</strong> Pojedyncza liczba wewnątrz macierzy.</li>
-<li><strong>Wiersze:</strong> Poziome linie liczb. Macierz <span class="arithmatex">\( A \)</span> ma <strong>3 wiersze</strong>.</li>
-<li><strong>Kolumny:</strong> Pionowe linie liczb. Macierz <span class="arithmatex">\( A \)</span> ma <strong>4 kolumny</strong>.</li>
-<li><strong>Wymiar macierzy:</strong> Zapisujemy go jako <span class="arithmatex">\( m \times n \)</span> (wiersze <span class="arithmatex">\( \times \)</span> kolumny).<ul>
-<li>Wymiar powyższej macierzy to <span class="arithmatex">\( 3 \times 4 \)</span> (czytamy: trzy na cztery).</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-adresowanie-elementow-a_ij">3. Adresowanie elementów (<span class="arithmatex">\( a_{ij} \)</span>)<a class="headerlink" href="#3-adresowanie-elementow-a_ij" title="Permanent link">&para;</a></h3>
-<p>Aby wskazać konkretną liczbę, używamy zapisu <span class="arithmatex">\( a_{ij} \)</span>, gdzie:
-* <span class="arithmatex">\( i \)</span> – numer wiersza,
-* <span class="arithmatex">\( j \)</span> – numer kolumny.</p>
-<p><strong>Przykłady na bazie macierzy <span class="arithmatex">\( A \)</span> powyżej:</strong></p>
-<ul>
-<li>Szukamy elementu <span class="arithmatex">\( a_{23} \)</span> (2. wiersz, 3. kolumna).<ul>
-<li>Patrzymy na drugi wiersz: <span class="arithmatex">\( [0, 5, \mathbf{8}, 3] \)</span>. Trzecią liczbą jest <strong>8</strong>. Zatem <span class="arithmatex">\( a_{23} = 8 \)</span>.</li>
-</ul>
-</li>
-<li>Szukamy elementu <span class="arithmatex">\( a_{14} \)</span> (1. wiersz, 4. kolumna).<ul>
-<li>Patrzymy na pierwszy wiersz: <span class="arithmatex">\( [4, 7, -2, \mathbf{1}] \)</span>. Czwartą liczbą jest <strong>1</strong>. Zatem <span class="arithmatex">\( a_{14} = 1 \)</span>.</li>
-</ul>
-</li>
-</ul>
+<p>Oto przykładowa macierz <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[A = \begin{bmatrix} 4 &amp; 7 &amp; -2 &amp; 1 \\ 0 &amp; 5 &amp; 8 &amp; 3 \\ 1 &amp; -9 &amp; 6 &amp; 10 \end{bmatrix}\]</div>
+<p>Rozłóżmy ją na czynniki pierwsze:
+* <strong>Element macierzy:</strong> Pojedyncza liczba wewnątrz macierzy.
+* <strong>Wiersze:</strong> Poziome linie liczb. Macierz <span class="arithmatex">\(A\)</span> ma <strong>3 wiersze</strong>.
+* <strong>Kolumny:</strong> Pionowe linie liczb. Macierz <span class="arithmatex">\(A\)</span> ma <strong>4 kolumny</strong>.
+* <strong>Wymiar macierzy:</strong> Zapisujemy go jako <strong><span class="arithmatex">\(m \times n\)</span></strong> (wiersze <span class="arithmatex">\(\times\)</span> kolumny).
+    * Wymiar powyższej macierzy to <strong><span class="arithmatex">\(3 \times 4\)</span></strong> (czytamy: trzy na cztery).</p>
+<h3 id="3-adresowanie-elementow-a_ij">3. Adresowanie elementów (<span class="arithmatex">\(a_{ij}\)</span>)<a class="headerlink" href="#3-adresowanie-elementow-a_ij" title="Permanent link">&para;</a></h3>
+<p>Aby wskazać konkretną liczbę, używamy zapisu <span class="arithmatex">\(a_{ij}\)</span>, gdzie:
+* <span class="arithmatex">\(i\)</span> – numer wiersza,
+* <span class="arithmatex">\(j\)</span> – numer kolumny.</p>
+<p><strong>Przykłady na bazie macierzy <span class="arithmatex">\(A\)</span> powyżej:</strong>
+* Szukamy elementu <span class="arithmatex">\(a_{23}\)</span> (2. wiersz, 3. kolumna).
+    * Patrzymy na drugi wiersz: <span class="arithmatex">\([0, 5, \mathbf{8}, 3]\)</span>. Trzecią liczbą jest <strong>8</strong>. Zatem <span class="arithmatex">\(a_{23} = 8\)</span>.
+* Szukamy elementu <span class="arithmatex">\(a_{14}\)</span> (1. wiersz, 4. kolumna).
+    * Patrzymy na pierwszy wiersz: <span class="arithmatex">\([4, 7, -2, \mathbf{1}]\)</span>. Czwartą liczbą jest <strong>1</strong>. Zatem <span class="arithmatex">\(a_{14} = 1\)</span>.</p>
 <hr />
 <h1 id="temat-2-macierze-specjalne">Temat 2: Macierze specjalne<a class="headerlink" href="#temat-2-macierze-specjalne" title="Permanent link">&para;</a></h1>
 <p>Niektóre macierze mają tak specyficzny układ, że otrzymały własne nazwy. Oto najważniejsze z nich:</p>
 <h3 id="1-macierz-kwadratowa">1. Macierz kwadratowa<a class="headerlink" href="#1-macierz-kwadratowa" title="Permanent link">&para;</a></h3>
-<p>To macierz, która ma tyle samo wierszy, co kolumn (<span class="arithmatex">\( m = n \)</span>). Tworzy idealny kwadrat.</p>
-<ul>
-<li><em>Przykład (<span class="arithmatex">\( 2 \times 2 \)</span>):</em>
-$$
-\begin{bmatrix}
-2 &amp; 5 \
-1 &amp; 4
-\end{bmatrix}
-$$</li>
-</ul>
+<p>To macierz, która ma tyle samo wierszy, co kolumn (<span class="arithmatex">\(m = n\)</span>). Tworzy idealny kwadrat.
+* <em>Przykład (<span class="arithmatex">\(2 \times 2\)</span>):</em>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 4 \end{bmatrix}\)</span>\)</span></p>
 <h3 id="2-macierz-zerowa">2. Macierz zerowa<a class="headerlink" href="#2-macierz-zerowa" title="Permanent link">&para;</a></h3>
-<p>Wszystkie jej elementy są równe zero. Oznacza się ją symbolem <span class="arithmatex">\( O \)</span>. Działa jak liczba 0 w zwykłym dodawaniu.</p>
-<ul>
-<li><em>Przykład:</em>
-$$
-\begin{bmatrix}
-0 &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; 0
-\end{bmatrix}
-$$</li>
-</ul>
+<p>Wszystkie jej elementy są równe zero. Oznacza się ją symbolem <span class="arithmatex">\(O\)</span>. Działa jak liczba 0 w zwykłym dodawaniu.
+* <em>Przykład:</em>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\)</span>\)</span></p>
 <h3 id="3-macierz-diagonalna">3. Macierz diagonalna<a class="headerlink" href="#3-macierz-diagonalna" title="Permanent link">&para;</a></h3>
-<p>To macierz kwadratowa, która ma niezerowe elementy <strong>tylko na głównej przekątnej</strong> (od lewego górnego rogu do prawego dolnego). Wszędzie indziej są zera.</p>
-<ul>
-<li><em>Przykład:</em>
-$$
-\begin{bmatrix}
-\mathbf{5} &amp; 0 &amp; 0 \
-0 &amp; \mathbf{2} &amp; 0 \
-0 &amp; 0 &amp; \mathbf{-1}
-\end{bmatrix}
-$$</li>
-</ul>
+<p>To macierz kwadratowa, która ma niezerowe elementy <strong>tylko na głównej przekątnej</strong> (od lewego górnego rogu do prawego dolnego). Wszędzie indziej są zera.
+* <em>Przykład:</em>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} \mathbf{5} &amp; 0 &amp; 0 \\ 0 &amp; \mathbf{2} &amp; 0 \\ 0 &amp; 0 &amp; \mathbf{-1} \end{bmatrix}\)</span>\)</span></p>
 <h3 id="4-macierz-jednostkowa-identycznosci">4. Macierz jednostkowa (Identyczności)<a class="headerlink" href="#4-macierz-jednostkowa-identycznosci" title="Permanent link">&para;</a></h3>
-<p>To specjalny rodzaj macierzy diagonalnej. Na głównej przekątnej ma same <strong>jedynki</strong>, a poza nią same zera. Oznaczamy ją jako <span class="arithmatex">\( I \)</span>. Działa jak liczba 1 w mnożeniu.</p>
+<p>To specjalny rodzaj macierzy diagonalnej. Na głównej przekątnej ma same <strong>jedynki</strong>, a poza nią same zera. Oznaczamy ją jako <span class="arithmatex">\(I\)</span>. Działa jak liczba 1 w mnożeniu (pomnożenie przez nią nic nie zmienia).
+* <em>Przykład (<span class="arithmatex">\(I_3\)</span>):</em>
+    <span class="arithmatex">\(<span class="arithmatex">\(I = \begin{bmatrix} \mathbf{1} &amp; 0 &amp; 0 \\ 0 &amp; \mathbf{1} &amp; 0 \\ 0 &amp; 0 &amp; \mathbf{1} \end{bmatrix}\)</span>\)</span></p>
+<h3 id="5-transpozycja-macierzy-at">5. Transpozycja macierzy (<span class="arithmatex">\(A^T\)</span>)<a class="headerlink" href="#5-transpozycja-macierzy-at" title="Permanent link">&para;</a></h3>
+<p>Transpozycja to operacja polegająca na zamianie wierszy z kolumnami. Pierwszy wiersz staje się pierwszą kolumną, drugi wiersz drugą kolumną itd.</p>
 <ul>
-<li><em>Przykład (<span class="arithmatex">\( I_3 \)</span>):</em>
-$$
-I = \begin{bmatrix}
-\mathbf{1} &amp; 0 &amp; 0 \
-0 &amp; \mathbf{1} &amp; 0 \
-0 &amp; 0 &amp; \mathbf{1}
-\end{bmatrix}
-$$</li>
+<li><em>Przykład:</em> Weźmy macierz <span class="arithmatex">\(3 \times 2\)</span> i zróbmy jej transpozycję.
+    <span class="arithmatex">(<span class="arithmatex">\(A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{bmatrix} \xrightarrow{\text{Transpozycja}} A^T = \begin{bmatrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}\)</span>\)</span><ul>
+<li>Zwróć uwagę: Wymiar zmienił się z <span class="arithmatex">\(3 \times 2\)</span> na <span class="arithmatex">\(2 \times 3\)</span>.</li>
 </ul>
-<h3 id="5-transpozycja-macierzy-at">5. Transpozycja macierzy (<span class="arithmatex">\( A^T \)</span>)<a class="headerlink" href="#5-transpozycja-macierzy-at" title="Permanent link">&para;</a></h3>
-<p>Transpozycja to operacja polegająca na zamianie wierszy z kolumnami.</p>
-<ul>
-<li><em>Przykład:</em> Weźmy macierz <span class="arithmatex">\( 3 \times 2 \)</span> i zróbmy jej transpozycję.</li>
-</ul>
-<div class="arithmatex">\[
-A = \begin{bmatrix}
-1 &amp; 2 \\
-3 &amp; 4 \\
-5 &amp; 6
-\end{bmatrix}
-\xrightarrow{\text{Transpozycja}}
-A^T = \begin{bmatrix}
-1 &amp; 3 &amp; 5 \\
-2 &amp; 4 &amp; 6
-\end{bmatrix}
-\]</div>
-<ul>
-<li>Zwróć uwagę: Wymiar zmienił się z <span class="arithmatex">\( 3 \times 2 \)</span> na <span class="arithmatex">\( 2 \times 3 \)</span>.</li>
+</li>
 </ul>
 <hr />
 <h1 id="temat-3-dodawanie-odejmowanie-i-mnozenie-przez-skalar">Temat 3: Dodawanie, odejmowanie i mnożenie przez skalar<a class="headerlink" href="#temat-3-dodawanie-odejmowanie-i-mnozenie-przez-skalar" title="Permanent link">&para;</a></h1>
 <h3 id="1-dodawanie-i-odejmowanie">1. Dodawanie i odejmowanie<a class="headerlink" href="#1-dodawanie-i-odejmowanie" title="Permanent link">&para;</a></h3>
-<p><strong>Złota zasada:</strong> Możesz dodawać lub odejmować tylko macierze o <strong>tych samych wymiarach</strong>. Działanie wykonujemy "element po elemencie".</p>
+<p><strong>Złota zasada:</strong> Możesz dodawać lub odejmować tylko macierze o <strong>tych samych wymiarach</strong>.
+Działanie wykonujemy "element po elemencie" (pierwszy z pierwszym, drugi z drugim itd.).</p>
 <ul>
 <li><em>Przykład (Dodawanie):</em>
-$$
-\begin{bmatrix}
-1 &amp; 2 \
-3 &amp; 4
-\end{bmatrix}
-+
-\begin{bmatrix}
-10 &amp; 20 \
-30 &amp; 40
-\end{bmatrix}
-=
-\begin{bmatrix}
-11 &amp; 22 \
-33 &amp; 44
-\end{bmatrix}
-$$</li>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} + \begin{bmatrix} 10 &amp; 20 \\ 30 &amp; 40 \end{bmatrix} = \begin{bmatrix} 1+10 &amp; 2+20 \\ 3+30 &amp; 4+40 \end{bmatrix} = \begin{bmatrix} 11 &amp; 22 \\ 33 &amp; 44 \end{bmatrix}\)</span>\)</span></li>
 </ul>
 <h3 id="2-mnozenie-przez-skalar-liczbe">2. Mnożenie przez skalar (liczbę)<a class="headerlink" href="#2-mnozenie-przez-skalar-liczbe" title="Permanent link">&para;</a></h3>
-<p>Aby pomnożyć macierz przez skalar, mnożysz <strong>każdy element</strong> macierzy przez tę liczbę.</p>
+<p>"Skalar" w algebrze liniowej to po prostu zwykła liczba. Aby pomnożyć macierz przez skalar, mnożysz <strong>każdy element</strong> macierzy przez tę liczbę.</p>
 <ul>
 <li><em>Przykład:</em> Mnożymy macierz przez 5.
-$$
-5 \cdot \begin{bmatrix}
-1 &amp; -2 \
-0 &amp; 4
-\end{bmatrix}
-=
-\begin{bmatrix}
-5 &amp; -10 \
-0 &amp; 20
-\end{bmatrix}
-$$</li>
+    <span class="arithmatex">\(<span class="arithmatex">\(5 \cdot \begin{bmatrix} 1 &amp; -2 \\ 0 &amp; 4 \end{bmatrix} = \begin{bmatrix} 5\cdot1 &amp; 5\cdot(-2) \\ 5\cdot0 &amp; 5\cdot4 \end{bmatrix} = \begin{bmatrix} 5 &amp; -10 \\ 0 &amp; 20 \end{bmatrix}\)</span>\)</span></li>
 </ul>
+<h3 id="3-intuicja-geometryczna-skalowanie">3. Intuicja geometryczna (Skalowanie)<a class="headerlink" href="#3-intuicja-geometryczna-skalowanie" title="Permanent link">&para;</a></h3>
+<p>Wyobraź sobie kwadrat na płaszczyźnie. Jego wierzchołki to punkty (wektory). Jeśli zapiszemy je w macierzy i pomnożymy przez skalar, np. <strong>2</strong>, to każdy punkt oddali się od środka układu dwukrotnie. Kwadrat stanie się 2 razy większy. Jeśli pomnożymy przez <strong>0.5</strong>, kwadrat skurczy się o połowę.</p>
 <hr />
 <h1 id="temat-4-mnozenie-macierzy">Temat 4: Mnożenie macierzy<a class="headerlink" href="#temat-4-mnozenie-macierzy" title="Permanent link">&para;</a></h1>
+<p>To najtrudniejsza część podstaw, więc skup się uważnie. Mnożenie macierzy <strong>nie</strong> polega na mnożeniu "element przez element".</p>
 <h3 id="1-warunek-wymiarow">1. Warunek wymiarów<a class="headerlink" href="#1-warunek-wymiarow" title="Permanent link">&para;</a></h3>
-<p>Aby pomnożyć macierz <span class="arithmatex">\( A \)</span> przez macierz <span class="arithmatex">\( B \)</span>, liczba <strong>kolumn</strong> w <span class="arithmatex">\( A \)</span> musi być równa liczbie <strong>wierszy</strong> w <span class="arithmatex">\( B \)</span>.</p>
-<div class="arithmatex">\[
-(m \times \mathbf{n}) \cdot (\mathbf{n} \times p) = (m \times p)
-\]</div>
+<p>Aby pomnożyć macierz <span class="arithmatex">\(A\)</span> przez macierz <span class="arithmatex">\(B\)</span>, liczba <strong>kolumn</strong> w <span class="arithmatex">\(A\)</span> musi być równa liczbie <strong>wierszy</strong> w <span class="arithmatex">\(B\)</span>.</p>
+<div class="arithmatex">\[(m \times \mathbf{n}) \cdot (\mathbf{n} \times p) = (m \times p)\]</div>
+<ul>
+<li>Wewnętrzne liczby (<span class="arithmatex">\(\mathbf{n}\)</span>) muszą być takie same – to "złącze".</li>
+<li>Zewnętrzne liczby (<span class="arithmatex">\(m\)</span> i <span class="arithmatex">\(p\)</span>) określają wymiar wyniku.</li>
+</ul>
 <h3 id="2-algorytm-wiersz-razy-kolumna">2. Algorytm: "Wiersz razy Kolumna"<a class="headerlink" href="#2-algorytm-wiersz-razy-kolumna" title="Permanent link">&para;</a></h3>
 <p>Aby obliczyć jeden element wyniku, bierzemy cały <strong>wiersz</strong> z pierwszej macierzy i całą <strong>kolumnę</strong> z drugiej macierzy. Mnożymy pary liczb i sumujemy wyniki.</p>
 <ul>
-<li><em>Przykład:</em> Obliczmy <span class="arithmatex">\( A \cdot B \)</span>.</li>
-</ul>
-<div class="arithmatex">\[
-A = \begin{bmatrix}
-1 &amp; 2 \\
-3 &amp; 4
-\end{bmatrix},
-\quad
-B = \begin{bmatrix}
-2 &amp; 0 \\
-1 &amp; 2
-\end{bmatrix}
-\]</div>
+<li>
+<p><em>Przykład:</em> Obliczmy <span class="arithmatex">\(A \cdot B\)</span>.
+    <span class="arithmatex">\(<span class="arithmatex">\(A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}, \quad B = \begin{bmatrix} 2 &amp; 0 \\ 1 &amp; 2 \end{bmatrix}\)</span>\)</span></p>
+<p><strong>Krok 1 (Element <span class="arithmatex">\(c_{11}\)</span>):</strong> 1. wiersz A <span class="arithmatex">\(\times\)</span> 1. kolumna B
+<span class="arithmatex">\((1 \cdot 2) + (2 \cdot 1) = 2 + 2 = \mathbf{4}\)</span></p>
+<p><strong>Krok 2 (Element <span class="arithmatex">\(c_{12}\)</span>):</strong> 1. wiersz A <span class="arithmatex">\(\times\)</span> 2. kolumna B
+<span class="arithmatex">\((1 \cdot 0) + (2 \cdot 2) = 0 + 4 = \mathbf{4}\)</span></p>
+<p><strong>Krok 3 (Element <span class="arithmatex">\(c_{21}\)</span>):</strong> 2. wiersz A <span class="arithmatex">\(\times\)</span> 1. kolumna B
+<span class="arithmatex">\((3 \cdot 2) + (4 \cdot 1) = 6 + 4 = \mathbf{10}\)</span></p>
+<p><strong>Krok 4 (Element <span class="arithmatex">\(c_{22}\)</span>):</strong> 2. wiersz A <span class="arithmatex">\(\times\)</span> 2. kolumna B
+<span class="arithmatex">\((3 \cdot 0) + (4 \cdot 2) = 0 + 8 = \mathbf{8}\)</span></p>
 <p><strong>Wynik:</strong>
-$$
-A \cdot B = \begin{bmatrix}
-4 &amp; 4 \
-10 &amp; 8
-\end{bmatrix}
-$$</p>
+<span class="arithmatex">\(<span class="arithmatex">\(A \cdot B = \begin{bmatrix} 4 &amp; 4 \\ 10 &amp; 8 \end{bmatrix}\)</span>\)</span></p>
+</li>
+</ul>
 <h3 id="3-wazne-ostrzezenie-brak-przemiennosci">3. Ważne ostrzeżenie: Brak przemienności!<a class="headerlink" href="#3-wazne-ostrzezenie-brak-przemiennosci" title="Permanent link">&para;</a></h3>
-<p>W macierzach <span class="arithmatex">\( A \cdot B \)</span> to zazwyczaj <strong>NIE</strong> to samo co <span class="arithmatex">\( B \cdot A \)</span>.</p>
-<div class="arithmatex">\[
-A \cdot B \neq B \cdot A
-\]</div>
+<p>W zwykłych liczbach <span class="arithmatex">\(2 \cdot 3\)</span> to to samo co <span class="arithmatex">\(3 \cdot 2\)</span>. W macierzach to <strong>NIE</strong> działa!
+<span class="arithmatex">\(<span class="arithmatex">\(A \cdot B \neq B \cdot A\)</span>\)</span>
+Często <span class="arithmatex">\(B \cdot A\)</span> może być nawet niewykonalne (przez niezgodność wymiarów), mimo że <span class="arithmatex">\(A \cdot B\)</span> da się policzyć.</p>
+<h3 id="4-najczestsze-puapki-podsumowanie">4. Najczęstsze pułapki (Podsumowanie)<a class="headerlink" href="#4-najczestsze-puapki-podsumowanie" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Mylenie wymiarów:</strong> Próba mnożenia np. macierzy <span class="arithmatex">\(2\times3\)</span> przez <span class="arithmatex">\(2\times3\)</span>. To niemożliwe (3 nie równa się 2).</li>
+<li><strong>Mnożenie po elementach:</strong> Błąd polegający na mnożeniu <span class="arithmatex">\(a_{11}\)</span> przez <span class="arithmatex">\(b_{11}\)</span> itd. To błąd! Zawsze stosuj zasadę "wiersz razy kolumna".</li>
+<li><strong>Zakładanie przemienności:</strong> Pamiętaj, że kolejność zapisu macierzy w mnożeniu ma kluczowe znaczenie.</li>
+</ol>
+<hr />
 
 
 
