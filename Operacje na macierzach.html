@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operacje na Macierzach</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f3f4f6;
+            --panel-bg: #ffffff;
+            --border-color: #d1d5db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            background-color: #e5e7eb;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #4b5563;
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #d1d5db;
+        }
+
+        .tab-button.active {
+            background-color: var(--panel-bg);
+            color: var(--primary-color);
+            border-top: 3px solid var(--primary-color);
+        }
+
+        /* Content Sections */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.3s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Controls Area */
+        .controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9fafb;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        label {
+            font-weight: 500;
+            margin-right: 5px;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            width: 60px;
+        }
+
+        button.action-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button.action-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Matrix Display Logic */
+        .matrices-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .matrix-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .matrix-label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #6b7280;
+        }
+
+        .matrix-brackets {
+            position: relative;
+            padding: 10px;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            border-radius: 8px;
+        }
+        
+        /* Little hooks for brackets */
+        .matrix-brackets::before, .matrix-brackets::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            background-color: #000;
+        }
+        .matrix-brackets::before { top: 0; left: 0; }
+        .matrix-brackets::after { bottom: 0; left: 0; }
+        
+        .matrix-brackets .hook-right-top, .matrix-brackets .hook-right-bottom {
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            background-color: #000;
+            right: 0;
+        }
+        .matrix-brackets .hook-right-top { top: 0; }
+        .matrix-brackets .hook-right-bottom { bottom: 0; }
+
+        .matrix-grid {
+            display: grid;
+            gap: 5px;
+        }
+
+        .matrix-cell {
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .operator {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4b5563;
+        }
+
+        /* Results Section */
+        .result-section {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .steps-container {
+            font-family: 'Courier New', monospace;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #bfdbfe;
+        }
+        
+        .step-row {
+            margin-bottom: 8px;
+        }
+
+        .final-result h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('add')">Dodawanie</button>
+        <button class="tab-button" onclick="openTab('sub')">Odejmowanie</button>
+        <button class="tab-button" onclick="openTab('scalar')">Mnożenie przez skalar</button>
+        <button class="tab-button" onclick="openTab('mul')">Mnożenie macierzy</button>
+    </div>
+
+    <div id="add" class="tab-content active">
+        <h2>Dodawanie Macierzy (A + B)</h2>
+        <div class="hint">Macierze muszą mieć ten sam rozmiar.</div>
+        
+        <div class="controls">
+            <label>Wiersze:</label> <input type="number" id="add-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('add')">
+            <label>Kolumny:</label> <input type="number" id="add-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('add')">
+            <button class="action-btn" onclick="calculate('add')">Oblicz wynik</button>
+        </div>
+
+        <div class="matrices-container" id="add-inputs">
+            </div>
+
+        <div class="result-section" id="add-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="add-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="add-final"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sub" class="tab-content">
+        <h2>Odejmowanie Macierzy (A - B)</h2>
+        <div class="hint">Macierze muszą mieć ten sam rozmiar.</div>
+
+        <div class="controls">
+            <label>Wiersze:</label> <input type="number" id="sub-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('sub')">
+            <label>Kolumny:</label> <input type="number" id="sub-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('sub')">
+            <button class="action-btn" onclick="calculate('sub')">Oblicz wynik</button>
+        </div>
+
+        <div class="matrices-container" id="sub-inputs"></div>
+
+        <div class="result-section" id="sub-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="sub-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="sub-final"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scalar" class="tab-content">
+        <h2>Mnożenie przez Skalar (k · A)</h2>
+        <div class="hint">Każdy element macierzy mnożymy przez liczbę k.</div>
+
+        <div class="controls">
+            <label>Wiersze:</label> <input type="number" id="scal-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('scalar')">
+            <label>Kolumny:</label> <input type="number" id="scal-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('scalar')">
+            <div style="border-left: 1px solid #ccc; padding-left: 10px; margin-left: 10px;">
+                <label>Skalar (k):</label> <input type="number" id="scal-val" value="3" style="width: 50px;">
+            </div>
+            <button class="action-btn" onclick="calculate('scalar')">Oblicz wynik</button>
+        </div>
+
+        <div class="matrices-container" id="scalar-inputs"></div>
+
+        <div class="result-section" id="scalar-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="scalar-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="scalar-final"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mul" class="tab-content">
+        <h2>Mnożenie Macierzy (A × B)</h2>
+        <div class="hint">Liczba kolumn macierzy A musi być równa liczbie wierszy macierzy B.</div>
+
+        <div class="controls">
+            <div style="margin-right: 15px;">
+                <strong>Macierz A:</strong>
+                <label>Wiersze:</label> <input type="number" id="mul-rows-a" value="2" min="1" max="5" onchange="renderMatrixInputs('mul')">
+                <label>Kolumny:</label> <input type="number" id="mul-cols-a" value="3" min="1" max="5" onchange="renderMatrixInputs('mul')">
+            </div>
+            <div style="border-left: 1px solid #ccc; padding-left: 15px;">
+                <strong>Macierz B:</strong>
+                <label>Wiersze:</label> <input type="number" id="mul-rows-b" value="3" disabled title="Musi być równe kolumnom A">
+                <label>Kolumny:</label> <input type="number" id="mul-cols-b" value="2" min="1" max="5" onchange="renderMatrixInputs('mul')">
+            </div>
+            <button class="action-btn" style="margin-left:auto;" onclick="calculate('mul')">Oblicz wynik</button>
+        </div>
+
+        <div class="matrices-container" id="mul-inputs"></div>
+
+        <div class="result-section" id="mul-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="mul-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="mul-final"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // State management
+    const defaultData = {
+        add: { A: [[1, 2], [3, 4]], B: [[5, 6], [7, 8]] },
+        sub: { A: [[10, 20], [30, 40]], B: [[1, 2], [3, 4]] },
+        scalar: { A: [[1, -2], [4, 5]], k: 3 },
+        mul: { A: [[1, 2, 3], [4, 5, 6]], B: [[7, 8], [9, 1], [2, 3]] } // 2x3 * 3x2
+    };
+
+    // Initialize
+    window.onload = function() {
+        // Setup initial renders with examples
+        renderMatrixInputs('add', defaultData.add);
+        calculate('add');
+        
+        renderMatrixInputs('sub', defaultData.sub);
+        renderMatrixInputs('scalar', defaultData.scalar);
+        renderMatrixInputs('mul', defaultData.mul);
+    };
+
+    function openTab(tabName) {
+        // Hide all tabs
+        const contents = document.getElementsByClassName('tab-content');
+        for (let content of contents) content.classList.remove('active');
+        
+        const buttons = document.getElementsByClassName('tab-button');
+        for (let btn of buttons) btn.classList.remove('active');
+
+        // Show current
+        document.getElementById(tabName).classList.add('active');
+        event.currentTarget.classList.add('active');
+
+        // Auto calculate specific example when entering tab if result is hidden
+        const resultSection = document.getElementById(`${tabName}-result`);
+        if(resultSection.style.display === 'none') {
+            calculate(tabName);
+        }
+    }
+
+    function createMatrixHTML(idPrefix, rows, cols, values = null, label = "") {
+        let gridHtml = `<div class="matrix-grid" style="grid-template-columns: repeat(${cols}, 1fr);">`;
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                const val = values && values[i] && values[i][j] !== undefined ? values[i][j] : 0;
+                gridHtml += `<input type="number" class="matrix-cell ${idPrefix}-cell" data-row="${i}" data-col="${j}" value="${val}">`;
+            }
+        }
+        gridHtml += `</div>`;
+
+        return `
+            <div class="matrix-wrapper">
+                <div class="matrix-label">${label}</div>
+                <div class="matrix-brackets">
+                    <div class="hook-right-top"></div>
+                    <div class="hook-right-bottom"></div>
+                    ${gridHtml}
+                </div>
+            </div>
+        `;
+    }
+
+    function renderMatrixInputs(type, initialData = null) {
+        const container = document.getElementById(`${type}-inputs`);
+        container.innerHTML = '';
+
+        if (type === 'add' || type === 'sub') {
+            const rows = parseInt(document.getElementById(`${type}-rows`).value);
+            const cols = parseInt(document.getElementById(`${type}-cols`).value);
+            
+            // Generate A
+            container.innerHTML += createMatrixHTML(`${type}-A`, rows, cols, initialData ? initialData.A : null, "Macierz A");
+            // Operator
+            container.innerHTML += `<div class="operator">${type === 'add' ? '+' : '-'}</div>`;
+            // Generate B
+            container.innerHTML += createMatrixHTML(`${type}-B`, rows, cols, initialData ? initialData.B : null, "Macierz B");
+
+        } else if (type === 'scalar') {
+            const rows = parseInt(document.getElementById('scal-rows').value);
+            const cols = parseInt(document.getElementById('scal-cols').value);
+            
+            // Show scalar k visually as a big number? Or just input.
+            // Let's show: k * [Matrix]
+            const kVal = initialData ? initialData.k : document.getElementById('scal-val').value;
+            if(initialData) document.getElementById('scal-val').value = kVal;
+
+            container.innerHTML += `<div class="operator" style="font-size:1.5em">k &times; </div>`;
+            container.innerHTML += createMatrixHTML('scalar-A', rows, cols, initialData ? initialData.A : null, "Macierz A");
+
+        } else if (type === 'mul') {
+            const rowsA = parseInt(document.getElementById('mul-rows-a').value);
+            const colsA = parseInt(document.getElementById('mul-cols-a').value);
+            
+            // Force B rows to match A cols
+            document.getElementById('mul-rows-b').value = colsA;
+            const rowsB = colsA; 
+            const colsB = parseInt(document.getElementById('mul-cols-b').value);
+
+            container.innerHTML += createMatrixHTML('mul-A', rowsA, colsA, initialData ? initialData.A : null, "Macierz A");
+            container.innerHTML += `<div class="operator">&times;</div>`;
+            container.innerHTML += createMatrixHTML('mul-B', rowsB, colsB, initialData ? initialData.B : null, "Macierz B");
+        }
+        
+        // Hide result when dimensions change
+        if(!initialData) {
+            document.getElementById(`${type}-result`).style.display = 'none';
+        }
+    }
+
+    function getMatrixValues(className, rows, cols) {
+        const inputs = document.querySelectorAll(`.${className}`);
+        let matrix = [];
+        let index = 0;
+        for (let i = 0; i < rows; i++) {
+            let row = [];
+            for (let j = 0; j < cols; j++) {
+                row.push(parseFloat(inputs[index].value) || 0);
+                index++;
+            }
+            matrix.push(row);
+        }
+        return matrix;
+    }
+
+    function displayMatrixResult(matrix, containerId) {
+        const rows = matrix.length;
+        const cols = matrix[0].length;
+        const html = createMatrixHTML('res', rows, cols, matrix, "");
+        // Disable inputs in result
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = html;
+        const inputs = wrapper.querySelectorAll('input');
+        inputs.forEach(inp => {
+            inp.setAttribute('readonly', true);
+            inp.style.backgroundColor = '#f0f9ff';
+            inp.style.color = '#000';
+            inp.style.fontWeight = 'bold';
+        });
+        document.getElementById(containerId).innerHTML = wrapper.innerHTML;
+    }
+
+    function calculate(type) {
+        const stepsContainer = document.getElementById(`${type}-steps`);
+        const resultContainer = document.getElementById(`${type}-final`);
+        const resultSection = document.getElementById(`${type}-result`);
+        
+        stepsContainer.innerHTML = '';
+        resultSection.style.display = 'block';
+
+        if (type === 'add' || type === 'sub') {
+            const rows = parseInt(document.getElementById(`${type}-rows`).value);
+            const cols = parseInt(document.getElementById(`${type}-cols`).value);
+            const A = getMatrixValues(`${type}-A-cell`, rows, cols);
+            const B = getMatrixValues(`${type}-B-cell`, rows, cols);
+            let R = [];
+            
+            // Build visual matrix for steps
+            let stepsMatrix = [];
+
+            for(let i=0; i<rows; i++) {
+                let rRow = [];
+                let sRow = [];
+                for(let j=0; j<cols; j++) {
+                    const val = type === 'add' ? A[i][j] + B[i][j] : A[i][j] - B[i][j];
+                    const sign = type === 'add' ? '+' : '-';
+                    // Handling negative numbers in display nicely
+                    const valB_str = B[i][j] < 0 ? `(${B[i][j]})` : `${B[i][j]}`;
+                    
+                    rRow.push(val);
+                    sRow.push(`${A[i][j]} ${sign} ${valB_str}`);
+                }
+                R.push(rRow);
+                stepsMatrix.push(sRow);
+            }
+
+            // Render Steps as a text grid
+            stepsContainer.innerHTML = createMatrixHTML('step', rows, cols, stepsMatrix, "Operacje na elementach");
+            // Need to change inputs to text type in steps to show formula
+            const stepInputs = stepsContainer.querySelectorAll('input');
+            stepInputs.forEach(inp => {
+                inp.type = "text"; 
+                inp.style.width = "80px";
+                inp.readOnly = true;
+            });
+
+            displayMatrixResult(R, `${type}-final`);
+
+        } else if (type === 'scalar') {
+            const rows = parseInt(document.getElementById(`scal-rows`).value);
+            const cols = parseInt(document.getElementById(`scal-cols`).value);
+            const k = parseFloat(document.getElementById('scal-val').value);
+            const A = getMatrixValues(`scalar-A-cell`, rows, cols);
+            let R = [];
+            let stepsMatrix = [];
+
+            for(let i=0; i<rows; i++) {
+                let rRow = [];
+                let sRow = [];
+                for(let j=0; j<cols; j++) {
+                    rRow.push(k * A[i][j]);
+                    sRow.push(`${k} · ${A[i][j]}`);
+                }
+                R.push(rRow);
+                stepsMatrix.push(sRow);
+            }
+
+            stepsContainer.innerHTML = createMatrixHTML('step-scal', rows, cols, stepsMatrix, "Mnożenie elementów");
+             const stepInputs = stepsContainer.querySelectorAll('input');
+            stepInputs.forEach(inp => {
+                inp.type = "text"; 
+                inp.style.width = "70px";
+                inp.readOnly = true;
+            });
+
+            displayMatrixResult(R, `scalar-final`);
+
+        } else if (type === 'mul') {
+            const rowsA = parseInt(document.getElementById('mul-rows-a').value);
+            const colsA = parseInt(document.getElementById('mul-cols-a').value);
+            const rowsB = colsA;
+            const colsB = parseInt(document.getElementById('mul-cols-b').value);
+            
+            const A = getMatrixValues('mul-A-cell', rowsA, colsA);
+            const B = getMatrixValues('mul-B-cell', rowsB, colsB);
+            
+            let R = [];
+            let stepsLog = ""; // Text based steps for multiplication are better as list usually, but let's try grid if small
+
+            // For multiplication, showing the full formula inside a matrix cell is hard if matrix is big.
+            // Let's show detailed steps calculation below.
+            
+            stepsContainer.innerHTML = "<ul style='list-style:none; padding-left:0;'>";
+
+            for (let i = 0; i < rowsA; i++) {
+                let rRow = [];
+                for (let j = 0; j < colsB; j++) {
+                    let sum = 0;
+                    let formula = "";
+                    for (let k = 0; k < colsA; k++) {
+                        sum += A[i][k] * B[k][j];
+                        formula += `${A[i][k]}·${B[k][j]}`;
+                        if (k < colsA - 1) formula += " + ";
+                    }
+                    rRow.push(sum);
+                    
+                    // Add to steps visualization
+                    // c_ij = row_i * col_j
+                    stepsContainer.innerHTML += `
+                        <li class="step-row">
+                            <strong>c<sub>${i+1},${j+1}</sub></strong> (Wiersz ${i+1} z A &times; Kolumna ${j+1} z B): <br>
+                            ${formula} = <strong>${sum}</strong>
+                        </li>
+                    `;
+                }
+                R.push(rRow);
+            }
+            stepsContainer.innerHTML += "</ul>";
+            
+            displayMatrixResult(R, `mul-final`);
+        }
+    }
+</script>
+
+</body>
+</html>
