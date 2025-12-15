@@ -3,653 +3,554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Macierzy z Obliczeniami</title>
+    <title>Operacje na Macierzach - Poprawione</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --bg-color: #f8fafc;
+            --primary-color: #2563eb;
+            --bg-color: #f3f4f6;
             --panel-bg: #ffffff;
-            --border: #e2e8f0;
-            --text: #1e293b;
+            --border-color: #d1d5db;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text);
             margin: 0;
             padding: 20px;
-            display: flex;
-            justify-content: center;
+            color: #1f2937;
         }
 
         .container {
-            width: 100%;
             max-width: 1000px;
-            background: var(--panel-bg);
-            border-radius: 12px;
+            margin: 0 auto;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
-        /* Tabs Styling */
+        /* Zakładki */
         .tabs {
             display: flex;
-            background: #f1f5f9;
-            border-bottom: 1px solid var(--border);
+            background-color: #e5e7eb;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .tab-btn {
+        .tab-button {
             flex: 1;
             padding: 15px;
             border: none;
             background: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 600;
-            color: #64748b;
-            transition: all 0.2s;
+            color: #4b5563;
+            transition: all 0.3s;
         }
 
-        .tab-btn:hover {
-            background: #e2e8f0;
-            color: var(--primary);
+        .tab-button:hover { background-color: #d1d5db; }
+
+        .tab-button.active {
+            background-color: var(--panel-bg);
+            color: var(--primary-color);
+            border-top: 3px solid var(--primary-color);
         }
 
-        .tab-btn.active {
-            background: var(--panel-bg);
-            color: var(--primary);
-            border-top: 3px solid var(--primary);
-        }
-
-        /* Content Area */
+        /* Treść zakładek */
         .tab-content {
             display: none;
-            padding: 25px;
+            padding: 20px;
+            animation: fadeIn 0.3s;
         }
 
-        .tab-content.active {
-            display: block;
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
+        /* Kontrolki */
         .controls {
             margin-bottom: 20px;
             padding: 15px;
-            background: #f8fafc;
-            border-radius: 8px;
-            border: 1px solid var(--border);
+            background-color: #f9fafb;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
             display: flex;
-            gap: 20px;
-            align-items: center;
             flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
         }
 
-        .control-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        label { font-weight: 500; margin-right: 5px; }
 
         input[type="number"] {
-            padding: 6px;
-            border: 1px solid #cbd5e1;
+            padding: 5px;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             width: 60px;
+            text-align: center;
         }
 
-        .matrix-container {
+        button.action-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button.action-btn:hover { background-color: #1d4ed8; }
+
+        /* Wygląd macierzy */
+        .matrices-container {
             display: flex;
-            align-items: flex-start; /* Align top */
+            align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
         }
 
-        .matrix-box {
+        .matrix-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .matrix-label {
-            font-weight: bold;
             margin-bottom: 5px;
-            color: var(--primary);
+            font-weight: bold;
+            color: #6b7280;
         }
 
-        .operator {
-            font-size: 2rem;
-            align-self: center;
-            color: #64748b;
-            margin-top: 20px; /* Offset for label */
-        }
-
-        /* Matrix Grid Styling to look like Math */
-        .matrix-wrapper {
+        .matrix-brackets {
             position: relative;
-            padding: 0 10px;
+            padding: 10px;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            border-radius: 8px;
         }
-
-        .matrix-wrapper::before, .matrix-wrapper::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 8px;
-            border: 2px solid #334155;
+        
+        /* Haczyki nawiasów */
+        .matrix-brackets::before, .matrix-brackets::after {
+            content: ''; position: absolute; width: 10px; height: 2px; background-color: #000;
         }
-
-        .matrix-wrapper::before {
-            left: 0;
-            border-right: none;
+        .matrix-brackets::before { top: 0; left: 0; }
+        .matrix-brackets::after { bottom: 0; left: 0; }
+        
+        .matrix-brackets .hook-right-top, .matrix-brackets .hook-right-bottom {
+            position: absolute; width: 10px; height: 2px; background-color: #000; right: 0;
         }
-
-        .matrix-wrapper::after {
-            right: 0;
-            border-left: none;
-        }
+        .matrix-brackets .hook-right-top { top: 0; }
+        .matrix-brackets .hook-right-bottom { bottom: 0; }
 
         .matrix-grid {
             display: grid;
             gap: 5px;
         }
 
-        .matrix-input {
+        .matrix-cell {
             width: 50px;
             height: 40px;
             text-align: center;
-            font-size: 1rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .scalar-input {
-            width: 80px;
-            height: 40px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        .calc-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-
-        .calc-btn:hover {
-            background: #1d4ed8;
-        }
-
-        /* Results Section */
-        .result-section {
-            margin-top: 20px;
-            border-top: 2px dashed var(--border);
-            padding-top: 20px;
-        }
-
-        .step-container {
-            margin-bottom: 20px;
-        }
-
-        .step-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .math-display {
-            font-family: 'Courier New', Courier, monospace;
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-        }
-
-        .result-matrix-cell {
-            padding: 8px;
-            background: #fff;
             border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 40px;
-            min-width: 50px;
-        }
-
-        .step-expression {
-            font-size: 0.85rem;
-            color: #64748b;
-            display: block;
-            margin-bottom: 4px;
+            border-radius: 4px;
+            font-size: 14px;
         }
         
-        .step-value {
-            font-weight: bold;
-            color: var(--text);
+        /* Styl dla komórek wyświetlających kroki (szersze i tekstowe) */
+        .step-cell {
+            width: 100px !important; /* Szersze pola dla formuł */
+            background-color: #fffbeb;
+            font-size: 13px;
         }
 
+        .operator {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4b5563;
+        }
+
+        /* Sekcja wyników */
+        .result-section {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .steps-container {
+            font-family: 'Courier New', monospace;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #bfdbfe;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .step-row { margin-bottom: 8px; }
+
+        .final-result h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('add')">Dodawanie Macierzy</button>
-        <button class="tab-btn" onclick="openTab('sub')">Odejmowanie Macierzy</button>
-        <button class="tab-btn" onclick="openTab('mul-scalar')">Mnożenie przez Skalar</button>
-        <button class="tab-btn" onclick="openTab('mul-matrix')">Mnożenie Macierzy</button>
+        <button class="tab-button active" onclick="openTab('add')">Dodawanie</button>
+        <button class="tab-button" onclick="openTab('sub')">Odejmowanie</button>
+        <button class="tab-button" onclick="openTab('scalar')">Mnożenie przez skalar</button>
+        <button class="tab-button" onclick="openTab('mul')">Mnożenie macierzy</button>
     </div>
 
     <div id="add" class="tab-content active">
+        <h2>Dodawanie Macierzy (A + B)</h2>
+        <div class="hint">Macierze muszą mieć ten sam rozmiar.</div>
+        
         <div class="controls">
-            <div class="control-group">
-                <label>Wiersze:</label>
-                <input type="number" id="add-rows" value="2" min="1" max="5" onchange="renderAdd()">
-            </div>
-            <div class="control-group">
-                <label>Kolumny:</label>
-                <input type="number" id="add-cols" value="2" min="1" max="5" onchange="renderAdd()">
-            </div>
-            <button class="calc-btn" onclick="calculateAdd()">Przelicz ponownie</button>
+            <label>Wiersze:</label> <input type="number" id="add-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('add')">
+            <label>Kolumny:</label> <input type="number" id="add-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('add')">
+            <button class="action-btn" onclick="calculate('add')">Oblicz wynik</button>
         </div>
 
-        <div class="matrix-container">
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz A</div>
-                <div class="matrix-wrapper">
-                    <div id="add-matrix-a" class="matrix-grid"></div>
-                </div>
-            </div>
-            <div class="operator">+</div>
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz B</div>
-                <div class="matrix-wrapper">
-                    <div id="add-matrix-b" class="matrix-grid"></div>
-                </div>
+        <div class="matrices-container" id="add-inputs"></div>
+
+        <div class="result-section" id="add-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="add-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="add-final" style="display:flex; justify-content:center;"></div>
             </div>
         </div>
-
-        <div id="add-result" class="result-section" style="display:none;"></div>
     </div>
 
     <div id="sub" class="tab-content">
+        <h2>Odejmowanie Macierzy (A - B)</h2>
+        <div class="hint">Macierze muszą mieć ten sam rozmiar.</div>
+
         <div class="controls">
-            <div class="control-group">
-                <label>Wiersze:</label>
-                <input type="number" id="sub-rows" value="2" min="1" max="5" onchange="renderSub()">
-            </div>
-            <div class="control-group">
-                <label>Kolumny:</label>
-                <input type="number" id="sub-cols" value="2" min="1" max="5" onchange="renderSub()">
-            </div>
-            <button class="calc-btn" onclick="calculateSub()">Przelicz ponownie</button>
+            <label>Wiersze:</label> <input type="number" id="sub-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('sub')">
+            <label>Kolumny:</label> <input type="number" id="sub-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('sub')">
+            <button class="action-btn" onclick="calculate('sub')">Oblicz wynik</button>
         </div>
 
-        <div class="matrix-container">
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz A</div>
-                <div class="matrix-wrapper">
-                    <div id="sub-matrix-a" class="matrix-grid"></div>
-                </div>
-            </div>
-            <div class="operator">-</div>
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz B</div>
-                <div class="matrix-wrapper">
-                    <div id="sub-matrix-b" class="matrix-grid"></div>
-                </div>
+        <div class="matrices-container" id="sub-inputs"></div>
+
+        <div class="result-section" id="sub-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="sub-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="sub-final" style="display:flex; justify-content:center;"></div>
             </div>
         </div>
-
-        <div id="sub-result" class="result-section" style="display:none;"></div>
     </div>
 
-    <div id="mul-scalar" class="tab-content">
+    <div id="scalar" class="tab-content">
+        <h2>Mnożenie przez Skalar (k · A)</h2>
+        <div class="hint">Każdy element macierzy mnożymy przez liczbę k.</div>
+
         <div class="controls">
-            <div class="control-group">
-                <label>Wiersze:</label>
-                <input type="number" id="scalar-rows" value="2" min="1" max="5" onchange="renderScalar()">
+            <label>Wiersze:</label> <input type="number" id="scal-rows" value="2" min="1" max="5" onchange="renderMatrixInputs('scalar')">
+            <label>Kolumny:</label> <input type="number" id="scal-cols" value="2" min="1" max="5" onchange="renderMatrixInputs('scalar')">
+            <div style="border-left: 1px solid #ccc; padding-left: 10px; margin-left: 10px;">
+                <label>Skalar (k):</label> <input type="number" id="scal-val" value="3" style="width: 50px;">
             </div>
-            <div class="control-group">
-                <label>Kolumny:</label>
-                <input type="number" id="scalar-cols" value="2" min="1" max="5" onchange="renderScalar()">
-            </div>
-            <button class="calc-btn" onclick="calculateScalar()">Przelicz ponownie</button>
+            <button class="action-btn" onclick="calculate('scalar')">Oblicz wynik</button>
         </div>
 
-        <div class="matrix-container">
-            <div class="matrix-box">
-                <div class="matrix-label">Skalar (k)</div>
-                <input type="number" id="scalar-k" class="scalar-input" value="3">
-            </div>
-            <div class="operator">×</div>
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz A</div>
-                <div class="matrix-wrapper">
-                    <div id="scalar-matrix-a" class="matrix-grid"></div>
-                </div>
+        <div class="matrices-container" id="scalar-inputs"></div>
+
+        <div class="result-section" id="scalar-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="scalar-steps"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="scalar-final" style="display:flex; justify-content:center;"></div>
             </div>
         </div>
-
-        <div id="scalar-result" class="result-section" style="display:none;"></div>
     </div>
 
-    <div id="mul-matrix" class="tab-content">
+    <div id="mul" class="tab-content">
+        <h2>Mnożenie Macierzy (A × B)</h2>
+        <div class="hint">Liczba kolumn macierzy A musi być równa liczbie wierszy macierzy B.</div>
+
         <div class="controls">
-            <div class="control-group">
-                <label>Wiersze A:</label>
-                <input type="number" id="mul-rows-a" value="2" min="1" max="5" onchange="renderMul()">
+            <div style="margin-right: 15px;">
+                <strong>Macierz A:</strong>
+                <label>Wiersze:</label> <input type="number" id="mul-rows-a" value="2" min="1" max="5" onchange="renderMatrixInputs('mul')">
+                <label>Kolumny:</label> <input type="number" id="mul-cols-a" value="3" min="1" max="5" onchange="renderMatrixInputs('mul')">
             </div>
-            <div class="control-group">
-                <label>Wspólne (Kol A / Wier B):</label>
-                <input type="number" id="mul-common" value="2" min="1" max="5" onchange="renderMul()">
+            <div style="border-left: 1px solid #ccc; padding-left: 15px;">
+                <strong>Macierz B:</strong>
+                <label>Wiersze:</label> <input type="number" id="mul-rows-b" value="3" disabled title="Musi być równe kolumnom A">
+                <label>Kolumny:</label> <input type="number" id="mul-cols-b" value="2" min="1" max="5" onchange="renderMatrixInputs('mul')">
             </div>
-            <div class="control-group">
-                <label>Kolumny B:</label>
-                <input type="number" id="mul-cols-b" value="2" min="1" max="5" onchange="renderMul()">
-            </div>
-            <button class="calc-btn" onclick="calculateMul()">Przelicz ponownie</button>
+            <button class="action-btn" style="margin-left:auto;" onclick="calculate('mul')">Oblicz wynik</button>
         </div>
 
-        <div class="matrix-container">
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz A</div>
-                <div class="matrix-wrapper">
-                    <div id="mul-matrix-a" class="matrix-grid"></div>
-                </div>
-            </div>
-            <div class="operator">×</div>
-            <div class="matrix-box">
-                <div class="matrix-label">Macierz B</div>
-                <div class="matrix-wrapper">
-                    <div id="mul-matrix-b" class="matrix-grid"></div>
-                </div>
+        <div class="matrices-container" id="mul-inputs"></div>
+
+        <div class="result-section" id="mul-result" style="display:none;">
+            <h4>Sposób obliczeń:</h4>
+            <div class="steps-container" id="mul-steps" style="display:block;"></div>
+            <div class="final-result">
+                <h3>Wynik:</h3>
+                <div id="mul-final" style="display:flex; justify-content:center;"></div>
             </div>
         </div>
-
-        <div id="mul-result" class="result-section" style="display:none;"></div>
     </div>
+
 </div>
 
 <script>
-    // --- UTILS ---
+    // Dane domyślne (przykłady)
+    const defaultData = {
+        add: { A: [[1, 2], [3, 4]], B: [[5, 6], [7, 8]] },
+        sub: { A: [[10, 20], [30, 40]], B: [[1, 2], [3, 4]] },
+        scalar: { A: [[1, -2], [4, 5]], k: 3 },
+        mul: { A: [[1, 2, 3], [4, 5, 6]], B: [[7, 8], [9, 1], [2, 3]] }
+    };
 
-    function createMatrixInputs(containerId, rows, cols, defaultVal = 0, isRandom = false) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = '';
-        container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    window.onload = function() {
+        renderMatrixInputs('add', defaultData.add);
+        calculate('add');
         
-        const inputs = [];
-        for (let i = 0; i < rows; i++) {
-            const rowInputs = [];
-            for (let j = 0; j < cols; j++) {
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.className = 'matrix-input';
-                // Generowanie przykładowych danych
-                if (isRandom) {
-                    input.value = Math.floor(Math.random() * 10);
-                } else {
-                    input.value = defaultVal;
-                }
-                container.appendChild(input);
-                rowInputs.push(input);
-            }
-            inputs.push(rowInputs);
+        renderMatrixInputs('sub', defaultData.sub);
+        renderMatrixInputs('scalar', defaultData.scalar);
+        renderMatrixInputs('mul', defaultData.mul);
+    };
+
+    function openTab(tabName) {
+        const contents = document.getElementsByClassName('tab-content');
+        for (let content of contents) content.classList.remove('active');
+        
+        const buttons = document.getElementsByClassName('tab-button');
+        for (let btn of buttons) btn.classList.remove('active');
+
+        document.getElementById(tabName).classList.add('active');
+        event.currentTarget.classList.add('active');
+
+        const resultSection = document.getElementById(`${tabName}-result`);
+        if(resultSection.style.display === 'none') {
+            calculate(tabName);
         }
-        return inputs; // Return references if needed later (though we usually queryDOM)
     }
 
-    function getMatrixValues(containerId, rows, cols) {
-        const container = document.getElementById(containerId);
-        const inputs = container.querySelectorAll('input');
+    /**
+     * Generuje HTML dla macierzy.
+     * isStep - jeśli true, generuje pola tekstowe zamiast numerycznych, aby pokazać formułę.
+     */
+    function createMatrixHTML(idPrefix, rows, cols, values = null, label = "", isStep = false) {
+        let gridHtml = `<div class="matrix-grid" style="grid-template-columns: repeat(${cols}, 1fr);">`;
+        
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                const val = values && values[i] && values[i][j] !== undefined ? values[i][j] : 0;
+                
+                // POPRAWKA: Jeśli to krok obliczeń (isStep), używamy type="text" i klasy .step-cell
+                // W przeciwnym razie type="number"
+                const typeAttr = isStep ? 'type="text" readonly' : 'type="number"';
+                const classAttr = isStep ? `matrix-cell step-cell ${idPrefix}-cell` : `matrix-cell ${idPrefix}-cell`;
+                
+                gridHtml += `<input ${typeAttr} class="${classAttr}" data-row="${i}" data-col="${j}" value="${val}">`;
+            }
+        }
+        gridHtml += `</div>`;
+
+        return `
+            <div class="matrix-wrapper">
+                <div class="matrix-label">${label}</div>
+                <div class="matrix-brackets">
+                    <div class="hook-right-top"></div>
+                    <div class="hook-right-bottom"></div>
+                    ${gridHtml}
+                </div>
+            </div>
+        `;
+    }
+
+    function renderMatrixInputs(type, initialData = null) {
+        const container = document.getElementById(`${type}-inputs`);
+        container.innerHTML = '';
+
+        if (type === 'add' || type === 'sub') {
+            const rows = parseInt(document.getElementById(`${type}-rows`).value);
+            const cols = parseInt(document.getElementById(`${type}-cols`).value);
+            
+            container.innerHTML += createMatrixHTML(`${type}-A`, rows, cols, initialData ? initialData.A : null, "Macierz A");
+            container.innerHTML += `<div class="operator">${type === 'add' ? '+' : '-'}</div>`;
+            container.innerHTML += createMatrixHTML(`${type}-B`, rows, cols, initialData ? initialData.B : null, "Macierz B");
+
+        } else if (type === 'scalar') {
+            const rows = parseInt(document.getElementById('scal-rows').value);
+            const cols = parseInt(document.getElementById('scal-cols').value);
+            const kVal = initialData ? initialData.k : document.getElementById('scal-val').value;
+            if(initialData) document.getElementById('scal-val').value = kVal;
+
+            container.innerHTML += `<div class="operator" style="font-size:1.5em">k &times; </div>`;
+            container.innerHTML += createMatrixHTML('scalar-A', rows, cols, initialData ? initialData.A : null, "Macierz A");
+
+        } else if (type === 'mul') {
+            const rowsA = parseInt(document.getElementById('mul-rows-a').value);
+            const colsA = parseInt(document.getElementById('mul-cols-a').value);
+            document.getElementById('mul-rows-b').value = colsA;
+            const rowsB = colsA; 
+            const colsB = parseInt(document.getElementById('mul-cols-b').value);
+
+            container.innerHTML += createMatrixHTML('mul-A', rowsA, colsA, initialData ? initialData.A : null, "Macierz A");
+            container.innerHTML += `<div class="operator">&times;</div>`;
+            container.innerHTML += createMatrixHTML('mul-B', rowsB, colsB, initialData ? initialData.B : null, "Macierz B");
+        }
+        
+        if(!initialData) {
+            document.getElementById(`${type}-result`).style.display = 'none';
+        }
+    }
+
+    function getMatrixValues(className, rows, cols) {
+        const inputs = document.querySelectorAll(`.${className}`);
         let matrix = [];
-        let k = 0;
+        let index = 0;
         for (let i = 0; i < rows; i++) {
             let row = [];
             for (let j = 0; j < cols; j++) {
-                row.push(parseFloat(inputs[k].value) || 0);
-                k++;
+                // Dla inputów numerycznych pobieramy wartość
+                row.push(parseFloat(inputs[index].value) || 0);
+                index++;
             }
             matrix.push(row);
         }
         return matrix;
     }
 
-    function renderResultGrid(matrix, stepsMatrix = null) {
-        const rows = matrix.length;
-        const cols = matrix[0].length;
-        let html = `<div class="matrix-box"><div class="matrix-wrapper"><div class="matrix-grid" style="grid-template-columns: repeat(${cols}, auto); gap: 10px;">`;
+    function calculate(type) {
+        const stepsContainer = document.getElementById(`${type}-steps`);
+        const resultContainer = document.getElementById(`${type}-final`);
+        const resultSection = document.getElementById(`${type}-result`);
         
-        for(let i=0; i<rows; i++){
-            for(let j=0; j<cols; j++){
-                let content = '';
-                if(stepsMatrix) {
-                    content += `<span class="step-expression">${stepsMatrix[i][j]}</span>`;
+        stepsContainer.innerHTML = '';
+        resultSection.style.display = 'block';
+
+        if (type === 'add' || type === 'sub') {
+            const rows = parseInt(document.getElementById(`${type}-rows`).value);
+            const cols = parseInt(document.getElementById(`${type}-cols`).value);
+            const A = getMatrixValues(`${type}-A-cell`, rows, cols);
+            const B = getMatrixValues(`${type}-B-cell`, rows, cols);
+            let R = [];
+            let stepsMatrix = [];
+
+            for(let i=0; i<rows; i++) {
+                let rRow = [];
+                let sRow = [];
+                for(let j=0; j<cols; j++) {
+                    const val = type === 'add' ? A[i][j] + B[i][j] : A[i][j] - B[i][j];
+                    const sign = type === 'add' ? '+' : '-';
+                    const valB_str = B[i][j] < 0 ? `(${B[i][j]})` : `${B[i][j]}`;
+                    
+                    rRow.push(val);
+                    sRow.push(`${A[i][j]} ${sign} ${valB_str}`);
                 }
-                content += `<span class="step-value">= ${matrix[i][j]}</span>`;
-                html += `<div class="result-matrix-cell" style="flex-direction:column;">${content}</div>`;
+                R.push(rRow);
+                stepsMatrix.push(sRow);
             }
-        }
-        html += `</div></div></div>`;
-        return html;
-    }
 
-    // --- TABS ---
-    function openTab(tabName) {
-        const contents = document.querySelectorAll('.tab-content');
-        contents.forEach(c => c.classList.remove('active'));
-        document.getElementById(tabName).classList.add('active');
+            // TUTAJ: isStep = true
+            stepsContainer.innerHTML = createMatrixHTML('step', rows, cols, stepsMatrix, "Operacje", true);
+            resultContainer.innerHTML = createMatrixHTML('res', rows, cols, R, "", false);
+            // Zablokuj wynik
+            lockResultInputs(resultContainer);
 
-        const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(b => b.classList.remove('active'));
-        event.currentTarget.classList.add('active');
-        
-        // Trigger render/calc for the tab so example is fresh
-        if(tabName === 'add') initAdd();
-        if(tabName === 'sub') initSub();
-        if(tabName === 'mul-scalar') initScalar();
-        if(tabName === 'mul-matrix') initMul();
-    }
+        } else if (type === 'scalar') {
+            const rows = parseInt(document.getElementById(`scal-rows`).value);
+            const cols = parseInt(document.getElementById(`scal-cols`).value);
+            const k = parseFloat(document.getElementById('scal-val').value);
+            const A = getMatrixValues(`scalar-A-cell`, rows, cols);
+            let R = [];
+            let stepsMatrix = [];
 
-    // --- ADDITION ---
-    function renderAdd() {
-        const rows = document.getElementById('add-rows').value;
-        const cols = document.getElementById('add-cols').value;
-        createMatrixInputs('add-matrix-a', rows, cols, 0, true);
-        createMatrixInputs('add-matrix-b', rows, cols, 0, true);
-        document.getElementById('add-result').style.display = 'none';
-    }
-
-    function calculateAdd() {
-        const rows = document.getElementById('add-rows').value;
-        const cols = document.getElementById('add-cols').value;
-        const A = getMatrixValues('add-matrix-a', rows, cols);
-        const B = getMatrixValues('add-matrix-b', rows, cols);
-        
-        let result = [];
-        let steps = [];
-
-        for(let i=0; i<rows; i++){
-            let rowRes = [];
-            let rowStep = [];
-            for(let j=0; j<cols; j++){
-                rowRes.push(A[i][j] + B[i][j]);
-                rowStep.push(`${A[i][j]} + ${B[i][j]}`);
-            }
-            result.push(rowRes);
-            steps.push(rowStep);
-        }
-
-        const out = document.getElementById('add-result');
-        out.style.display = 'block';
-        out.innerHTML = `
-            <div class="step-container">
-                <span class="step-title">Sposób obliczeń (A + B):</span>
-                ${renderResultGrid(result, steps)}
-            </div>
-        `;
-    }
-    
-    function initAdd() {
-        // Force specific example
-        renderAdd();
-        calculateAdd();
-    }
-
-    // --- SUBTRACTION ---
-    function renderSub() {
-        const rows = document.getElementById('sub-rows').value;
-        const cols = document.getElementById('sub-cols').value;
-        createMatrixInputs('sub-matrix-a', rows, cols, 0, true);
-        createMatrixInputs('sub-matrix-b', rows, cols, 0, true);
-        document.getElementById('sub-result').style.display = 'none';
-    }
-
-    function calculateSub() {
-        const rows = document.getElementById('sub-rows').value;
-        const cols = document.getElementById('sub-cols').value;
-        const A = getMatrixValues('sub-matrix-a', rows, cols);
-        const B = getMatrixValues('sub-matrix-b', rows, cols);
-        
-        let result = [];
-        let steps = [];
-
-        for(let i=0; i<rows; i++){
-            let rowRes = [];
-            let rowStep = [];
-            for(let j=0; j<cols; j++){
-                rowRes.push(A[i][j] - B[i][j]);
-                rowStep.push(`${A[i][j]} - ${B[i][j]}`);
-            }
-            result.push(rowRes);
-            steps.push(rowStep);
-        }
-
-        const out = document.getElementById('sub-result');
-        out.style.display = 'block';
-        out.innerHTML = `
-            <div class="step-container">
-                <span class="step-title">Sposób obliczeń (A - B):</span>
-                ${renderResultGrid(result, steps)}
-            </div>
-        `;
-    }
-
-    function initSub() {
-        renderSub();
-        calculateSub();
-    }
-
-    // --- SCALAR ---
-    function renderScalar() {
-        const rows = document.getElementById('scalar-rows').value;
-        const cols = document.getElementById('scalar-cols').value;
-        createMatrixInputs('scalar-matrix-a', rows, cols, 0, true);
-        document.getElementById('scalar-result').style.display = 'none';
-    }
-
-    function calculateScalar() {
-        const rows = document.getElementById('scalar-rows').value;
-        const cols = document.getElementById('scalar-cols').value;
-        const k = parseFloat(document.getElementById('scalar-k').value) || 0;
-        const A = getMatrixValues('scalar-matrix-a', rows, cols);
-        
-        let result = [];
-        let steps = [];
-
-        for(let i=0; i<rows; i++){
-            let rowRes = [];
-            let rowStep = [];
-            for(let j=0; j<cols; j++){
-                rowRes.push(k * A[i][j]);
-                rowStep.push(`${k} × ${A[i][j]}`);
-            }
-            result.push(rowRes);
-            steps.push(rowStep);
-        }
-
-        const out = document.getElementById('scalar-result');
-        out.style.display = 'block';
-        out.innerHTML = `
-            <div class="step-container">
-                <span class="step-title">Sposób obliczeń (k × A):</span>
-                ${renderResultGrid(result, steps)}
-            </div>
-        `;
-    }
-
-    function initScalar() {
-        renderScalar();
-        calculateScalar();
-    }
-
-    // --- MATRIX MULTIPLICATION ---
-    function renderMul() {
-        const rowsA = document.getElementById('mul-rows-a').value;
-        const common = document.getElementById('mul-common').value; // Cols A and Rows B
-        const colsB = document.getElementById('mul-cols-b').value;
-        
-        createMatrixInputs('mul-matrix-a', rowsA, common, 0, true);
-        createMatrixInputs('mul-matrix-b', common, colsB, 0, true);
-        document.getElementById('mul-result').style.display = 'none';
-    }
-
-    function calculateMul() {
-        const rowsA = document.getElementById('mul-rows-a').value;
-        const common = document.getElementById('mul-common').value;
-        const colsB = document.getElementById('mul-cols-b').value;
-
-        const A = getMatrixValues('mul-matrix-a', rowsA, common);
-        const B = getMatrixValues('mul-matrix-b', common, colsB);
-
-        let result = [];
-        let steps = [];
-
-        // Matrix Multiplication Algorithm
-        for (let i = 0; i < rowsA; i++) {
-            let rowRes = [];
-            let rowStep = [];
-            for (let j = 0; j < colsB; j++) {
-                let sum = 0;
-                let stepStr = [];
-                for (let k = 0; k < common; k++) {
-                    sum += A[i][k] * B[k][j];
-                    stepStr.push(`(${A[i][k]}×${B[k][j]})`);
+            for(let i=0; i<rows; i++) {
+                let rRow = [];
+                let sRow = [];
+                for(let j=0; j<cols; j++) {
+                    rRow.push(k * A[i][j]);
+                    sRow.push(`${k} · ${A[i][j]}`);
                 }
-                rowRes.push(sum);
-                rowStep.push(stepStr.join(' + '));
+                R.push(rRow);
+                stepsMatrix.push(sRow);
             }
-            result.push(rowRes);
-            steps.push(rowStep);
+
+            // TUTAJ: isStep = true
+            stepsContainer.innerHTML = createMatrixHTML('step-scal', rows, cols, stepsMatrix, "Mnożenie", true);
+            resultContainer.innerHTML = createMatrixHTML('res-scal', rows, cols, R, "", false);
+            lockResultInputs(resultContainer);
+
+        } else if (type === 'mul') {
+            const rowsA = parseInt(document.getElementById('mul-rows-a').value);
+            const colsA = parseInt(document.getElementById('mul-cols-a').value);
+            const rowsB = colsA;
+            const colsB = parseInt(document.getElementById('mul-cols-b').value);
+            
+            const A = getMatrixValues('mul-A-cell', rowsA, colsA);
+            const B = getMatrixValues('mul-B-cell', rowsB, colsB);
+            
+            let R = [];
+            let listHtml = "<ul style='list-style:none; padding-left:0;'>";
+
+            for (let i = 0; i < rowsA; i++) {
+                let rRow = [];
+                for (let j = 0; j < colsB; j++) {
+                    let sum = 0;
+                    let formula = "";
+                    for (let k = 0; k < colsA; k++) {
+                        sum += A[i][k] * B[k][j];
+                        formula += `${A[i][k]}·${B[k][j]}`;
+                        if (k < colsA - 1) formula += " + ";
+                    }
+                    rRow.push(sum);
+                    
+                    listHtml += `
+                        <li class="step-row">
+                            <strong>c<sub>${i+1},${j+1}</sub></strong> (Wiersz ${i+1}A &times; Kol ${j+1}B): <br>
+                            ${formula} = <strong>${sum}</strong>
+                        </li>
+                    `;
+                }
+                R.push(rRow);
+            }
+            listHtml += "</ul>";
+            stepsContainer.innerHTML = listHtml;
+            
+            resultContainer.innerHTML = createMatrixHTML('res-mul', rowsA, colsB, R, "", false);
+            lockResultInputs(resultContainer);
         }
-
-        const out = document.getElementById('mul-result');
-        out.style.display = 'block';
-        out.innerHTML = `
-            <div class="step-container">
-                <span class="step-title">Sposób obliczeń (Wiersz A × Kolumna B):</span>
-                ${renderResultGrid(result, steps)}
-            </div>
-        `;
     }
 
-    function initMul() {
-        renderMul();
-        calculateMul();
+    function lockResultInputs(container) {
+        const inputs = container.querySelectorAll('input');
+        inputs.forEach(inp => {
+            inp.setAttribute('readonly', true);
+            inp.style.backgroundColor = '#f0f9ff';
+            inp.style.color = '#000';
+            inp.style.fontWeight = 'bold';
+        });
     }
-
-    // Initialize the application
-    window.onload = function() {
-        initAdd(); // Start with Addition tab populated
-    };
-
 </script>
 
 </body>
