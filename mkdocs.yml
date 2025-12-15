@@ -8,6 +8,7 @@ nav:
   - Pochodne: pochodne.md
   - Symulacja: rzut_ukośny.html
   - Operacje na macierzach: "Operacje na macierzach.html"
+  - Wyznaczniki macierzy: "Wyznaczniki macierzy.html"
 
 markdown_extensions:
   - pymdownx.arithmatex
