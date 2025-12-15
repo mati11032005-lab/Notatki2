@@ -1,0 +1,8 @@
+/* Minimal styles for math rendering */
+.arithmatex {
+  font-size: 1em;
+}
+
+.math-display {
+  margin: 1em 0;
+}

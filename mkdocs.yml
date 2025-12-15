@@ -1,0 +1,23 @@
+site_name: Notatki z Matematyki
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Pochodne: pochodne.md
+  - Symulacja: rzut_ukośny.html
+  - Operacje na macierzach: "Operacje na macierzach.html"
+
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - css/math.css
