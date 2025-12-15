@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Macierzy Odwrotnej</title>
+    <title>Kalkulator Macierzy Odwrotnej PRO</title>
     <style>
         :root {
-            --primary: #0891b2; /* Cyan/Teal motyw */
+            --primary: #0891b2;
             --primary-dark: #0e7490;
             --bg: #f0fdfa;
             --panel: #ffffff;
             --border: #e5e7eb;
             --text: #1f2937;
+            --math-font: 'Times New Roman', Times, serif;
         }
 
         body {
@@ -23,7 +24,7 @@
         }
 
         .container {
-            max-width: 950px;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: var(--panel);
             border-radius: 12px;
@@ -31,170 +32,119 @@
             overflow: hidden;
         }
 
-        /* Nawigacja */
-        .tabs {
-            display: flex;
-            background-color: #e2e8f0;
-            border-bottom: 1px solid var(--border);
-        }
-
+        /* Tabs */
+        .tabs { display: flex; background-color: #e2e8f0; border-bottom: 1px solid var(--border); }
         .tab-btn {
-            flex: 1;
-            padding: 16px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            color: #64748b;
-            transition: all 0.2s;
+            flex: 1; padding: 16px; border: none; background: none; cursor: pointer;
+            font-size: 15px; font-weight: 600; color: #64748b; transition: all 0.2s;
         }
-
         .tab-btn:hover { background-color: #cbd5e1; }
-        .tab-btn.active {
-            background-color: var(--panel);
-            color: var(--primary);
-            border-top: 4px solid var(--primary);
-        }
+        .tab-btn.active { background-color: var(--panel); color: var(--primary); border-top: 4px solid var(--primary); }
 
-        .content {
-            display: none;
-            padding: 30px;
-            animation: fadeIn 0.4s ease;
-        }
+        .content { display: none; padding: 30px; }
         .content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Porady */
+        /* Tip Box */
         .tip-box {
-            background-color: #ecfeff;
-            border-left: 4px solid var(--primary);
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-size: 0.95em;
+            background-color: #ecfeff; border-left: 4px solid var(--primary);
+            padding: 15px; margin-bottom: 25px; border-radius: 4px; font-size: 0.95em;
         }
         .tip-title { font-weight: bold; color: var(--primary-dark); display: block; margin-bottom: 4px; }
+        .math-inline { font-family: var(--math-font); font-style: italic; background: #fff; padding: 2px 5px; border-radius: 3px; border: 1px solid #ddd; }
 
-        /* Kontrolki */
+        /* Controls */
         .controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+            padding: 15px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;
         }
-
         button.action-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-left: auto;
+            background-color: var(--primary); color: white; border: none; padding: 10px 20px;
+            border-radius: 6px; font-weight: bold; cursor: pointer; margin-left: auto;
         }
         button.action-btn:hover { background-color: var(--primary-dark); }
+        input[type="number"] { padding: 5px; width: 50px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px; }
 
-        input[type="number"] {
-            padding: 5px;
-            width: 50px;
-            text-align: center;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-        }
-
-        /* Macierze */
+        /* Matrix Display */
         .matrix-display-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 20px 0;
+            display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 20px 0;
         }
-
         .matrix-wrapper {
-            position: relative;
-            padding: 0 10px;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative; padding: 0 10px; display: inline-flex; flex-direction: column; align-items: center;
         }
         .matrix-wrapper::before, .matrix-wrapper::after {
-            content: ""; position: absolute; top: 0; bottom: 0; width: 8px;
-            border: 2px solid #000; border-right: none;
+            content: ""; position: absolute; top: 0; bottom: 0; width: 8px; border: 2px solid #000; border-right: none;
         }
         .matrix-wrapper::before { left: 0; }
         .matrix-wrapper::after { right: 0; transform: scaleX(-1); }
 
-        .matrix-grid {
-            display: grid;
-            gap: 5px;
-        }
-
+        .matrix-grid { display: grid; gap: 5px; }
         .cell {
-            width: 50px;
-            height: 40px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
+            width: 50px; height: 40px; text-align: center; border: 1px solid #ddd; border-radius: 4px;
+            font-size: 14px; display: flex; align-items: center; justify-content: center;
+        }
+        input.cell { display: block; }
+        div.cell { background-color: #f1f5f9; }
+
+        /* Steps */
+        .steps-container { margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .step-item { margin-bottom: 20px; padding: 15px; background: #fff; border: 1px solid #f1f5f9; border-radius: 6px; }
+        .step-title { font-weight: bold; margin-bottom: 10px; color: #475569; font-size: 1.1em; }
+        
+        /* --- NOWE STYLE DLA WZORÓW I WIELKIEJ MACIERZY --- */
+
+        /* Ładny wzór ułamkowy */
+        .formula-container {
+            font-family: var(--math-font); font-size: 1.4em; display: flex; align-items: center; gap: 10px; justify-content: center;
+        }
+        .fraction { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 5px; }
+        .frac-num { border-bottom: 2px solid #000; padding-bottom: 2px; width: 100%; text-align: center; }
+        .frac-denom { padding-top: 2px; width: 100%; text-align: center; }
+
+        /* Stylizacja dla Wielkiej Macierzy Dopełnień */
+        .big-matrix-cell {
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            padding: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
+            min-width: 120px;
         }
-        
-        input.cell { display: block; } /* Inputy zachowują się normalnie */
-        div.cell { background-color: #f1f5f9; } /* Wyniki są szare */
-
-        /* Sekcja kroków */
-        .steps-container {
-            margin-top: 20px;
-            border-top: 1px dashed #ccc;
-            padding-top: 20px;
-        }
-        .step-item {
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #f1f5f9;
-            border-radius: 6px;
-        }
-        .step-title {
+        .sign-indicator {
+            font-size: 1.8em;
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #475569;
-        }
-        
-        .error-msg {
-            color: #ef4444;
-            font-weight: bold;
+            color: var(--primary);
+            width: 25px;
             text-align: center;
-            padding: 20px;
-            background: #fef2f2;
-            border-radius: 8px;
+        }
+        /* Minor (wyznacznik) - pionowe kreski */
+        .minor-wrapper {
+            position: relative;
+            padding: 0 8px;
+            display: inline-block;
+        }
+        .minor-wrapper::before, .minor-wrapper::after {
+            content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: #000;
+        }
+        .minor-wrapper::before { left: 0; }
+        .minor-wrapper::after { right: 0; }
+        
+        .minor-grid {
+            display: grid; gap: 2px;
+        }
+        .minor-cell {
+            width: 25px; height: 25px; 
+            font-size: 0.85em; 
+            display: flex; align-items: center; justify-content: center;
+            color: #555;
         }
 
         /* Gauss specific */
-        .gauss-row-op {
-            font-family: monospace;
-            color: #d97706;
-            margin-bottom: 5px;
-        }
-        .augmented-matrix .cell {
-            width: 45px;
-            font-size: 12px;
-        }
-        .separator-line {
-            width: 2px;
-            background-color: #000;
-            margin: 0 5px;
-        }
+        .gauss-row-op { font-family: monospace; color: #d97706; margin-bottom: 5px; }
+        .separator-line { width: 2px; background-color: #000; margin: 0 5px; }
+        .augmented-matrix .cell { width: 45px; font-size: 12px; }
+
     </style>
 </head>
 <body>
@@ -209,7 +159,7 @@
     <div id="simple" class="content active">
         <div class="tip-box">
             <span class="tip-title">Kiedy używać?</span>
-            Tylko dla macierzy 2x2. Jest to najszybsza metoda polegająca na zamianie elementów na przekątnej głównej i zmianie znaków na przekątnej bocznej.
+            Tylko dla macierzy 2x2. Szybka metoda zamiany elementów na przekątnych.
         </div>
 
         <div class="controls">
@@ -227,7 +177,7 @@
     <div id="algebra" class="content">
         <div class="tip-box">
             <span class="tip-title">Kiedy używać?</span>
-            Standardowa metoda szkolna/akademicka dla macierzy 3x3. Pozwala zrozumieć strukturę macierzy odwrotnej poprzez wyznacznik, minory i transpozycję.
+            Metoda szkolna dla macierzy 3x3. Kluczowym momentem jest wyznaczenie macierzy dopełnień (minory ze znakiem).
         </div>
 
         <div class="controls">
@@ -246,7 +196,11 @@
     <div id="gauss" class="content">
         <div class="tip-box">
             <span class="tip-title">Kiedy używać?</span>
-            Uniwersalna metoda (algorytm) stosowana przez komputery. Polega na przekształceniu macierzy $[A|I]$ w $[I|A^{-1}]$ za pomocą operacji elementarnych na wierszach.
+            Uniwersalny algorytm. Dążymy do przekształcenia macierzy:
+            <br><br>
+            <div style="text-align:center; font-family: 'Courier New', monospace; background:#fff; padding:5px; border:1px dashed #ccc; display:inline-block;">
+                [ A | I ] &nbsp;&nbsp;&rarr;&nbsp;&nbsp; [ I | A<sup>-1</sup> ]
+            </div>
         </div>
 
         <div class="controls">
@@ -268,7 +222,7 @@
     // --- SETUP & UTILS ---
     window.onload = function() {
         renderInput('simple', 2, [[4, 7], [2, 6]]);
-        renderInput('algebra', 3, [[1, 2, 3], [0, 1, 4], [5, 6, 0]]);
+        renderInput('algebra', 3, [[2, 5, 7], [6, 3, 4], [5, -2, -3]]);
         renderInput('gauss', 3, [[2, 1, 1], [3, 2, 1], [2, 1, 2]]);
     };
 
@@ -290,7 +244,7 @@
         for(let i=0; i<rows; i++) {
             for(let j=0; j<cols; j++) {
                 let val = (values && values[i] && values[i][j] !== undefined) ? values[i][j] : '';
-                if(typeof val === 'number' && !Number.isInteger(val)) val = parseFloat(val.toFixed(3)); // Zaokrąglanie dla wyniku
+                if(typeof val === 'number' && !Number.isInteger(val)) val = parseFloat(val.toFixed(3));
 
                 if(readOnly) {
                     html += `<div class="cell">${val}</div>`;
@@ -316,8 +270,9 @@
         return m;
     }
 
-    // Prosta funkcja wyznacznika (rekurencyjna)
+    // Rekurencyjny wyznacznik
     function getDet(m) {
+        if(m.length === 1) return m[0][0];
         if(m.length === 2) return m[0][0]*m[1][1] - m[0][1]*m[1][0];
         let det = 0;
         for(let i=0; i<m.length; i++) {
@@ -342,45 +297,59 @@
         const det = a*d - b*c;
 
         if(Math.abs(det) < 1e-10) {
-            resDiv.innerHTML = `<div class="error-msg">Wyznacznik wynosi 0. Macierz odwrotna nie istnieje.</div>`;
+            resDiv.innerHTML = `<div class="error-msg">Wyznacznik = 0. Macierz nieodwracalna.</div>`;
             return;
         }
 
-        // Krok 1: Wzór
+        // Krok 1: Wzór sformatowany ładnie
         let html = `<div class="step-item">
-            <div class="step-title">1. Oblicz wyznacznik i zastosuj wzór</div>
-            <div class="matrix-display-row">
-                <div>Det(A) = (${a}·${d}) - (${b}·${c}) = <strong>${det}</strong></div>
+            <div class="step-title">1. Wzór i Wyznacznik</div>
+            
+            <div class="formula-container" style="margin-bottom:20px;">
+                A<sup>-1</sup> = 
+                <div class="fraction">
+                    <span class="frac-num">1</span>
+                    <span class="frac-denom">Det</span>
+                </div>
+                &middot;
+                <div class="matrix-wrapper">
+                    <div class="matrix-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="cell" style="border:1px dashed #000">d</div><div class="cell" style="border:1px dashed #000">-b</div>
+                        <div class="cell" style="border:1px dashed #000">-c</div><div class="cell" style="border:1px dashed #000">a</div>
+                    </div>
+                </div>
             </div>
-            <div style="text-align:center; margin: 10px 0;">
-                Wzór: 
-                <span style="font-family:serif; font-style:italic;">
-                    A<sup>-1</sup> = 1/Det · [[d, -b], [-c, a]]
-                </span>
+
+            <div style="text-align:center;">
+                Det(A) = (${a}·${d}) - (${b}·${c}) = <strong>${det}</strong>
             </div>
         </div>`;
 
-        // Krok 2: Podstawienie
+        // Krok 2: Wynik
         const resM = [
             [d/det, -b/det],
             [-c/det, a/det]
         ];
 
         html += `<div class="step-item">
-            <div class="step-title">2. Podstawienie wartości</div>
+            <div class="step-title">2. Wynik</div>
             <div class="matrix-display-row">
                 <div>A<sup>-1</sup> = </div>
-                <div style="font-size:1.2em">1/${det}</div>
+                <div class="fraction">
+                    <span class="frac-num">1</span>
+                    <span class="frac-denom">${det}</span>
+                </div>
                 <div class="matrix-wrapper">
                     <div class="matrix-grid" style="grid-template-columns: repeat(2, 1fr);">
-                        <div class="cell" style="background:#e0f2fe">${d}</div><div class="cell" style="background:#fee2e2">${-b}</div>
-                        <div class="cell" style="background:#fee2e2">${-c}</div><div class="cell" style="background:#e0f2fe">${a}</div>
+                        <div class="cell" style="background:#e0f2fe; color:#0369a1; font-weight:bold">${d}</div>
+                        <div class="cell" style="background:#fee2e2; color:#b91c1c; font-weight:bold">${-b}</div>
+                        <div class="cell" style="background:#fee2e2; color:#b91c1c; font-weight:bold">${-c}</div>
+                        <div class="cell" style="background:#e0f2fe; color:#0369a1; font-weight:bold">${a}</div>
                     </div>
                 </div>
-                <div style="font-size:1.5em">=</div>
+                <div style="font-size:1.5em; margin:0 10px;">=</div>
                 ${createMatrixHTML('s-res', 2, 2, resM, true)}
             </div>
-            <div style="font-size:0.9em; color:#666; text-align:center;">(Niebieskie: zamiana miejsc, Czerwone: zmiana znaku)</div>
         </div>`;
 
         resDiv.innerHTML = html;
@@ -396,38 +365,73 @@
 
         const det = getDet(M);
         if(Math.abs(det) < 1e-10) {
-            resDiv.innerHTML = `<div class="error-msg">Wyznacznik wynosi 0. Macierz nieodwracalna.</div>`;
+            resDiv.innerHTML = `<div class="error-msg">Wyznacznik = 0. Macierz nieodwracalna.</div>`;
             return;
         }
 
         // Krok 1: Wyznacznik
-        let html = `<div class="step-item"><div class="step-title">Krok 1: Wyznacznik</div>Det(A) = <strong>${det}</strong></div>`;
+        let html = `<div class="step-item"><div class="step-title">Krok 1: Wyznacznik macierzy A</div>Det(A) = <strong>${det}</strong></div>`;
 
-        // Krok 2: Macierz Dopełnień
+        // Krok 2: WIELKA MACIERZ DOPEŁNIEŃ (Wizualizacja)
+        let visualCofactorHTML = `<div class="matrix-wrapper"><div class="matrix-grid" style="grid-template-columns: repeat(${size}, 1fr);">`;
+
+        for(let i=0; i<size; i++) {
+            for(let j=0; j<size; j++) {
+                const sign = (i+j)%2 === 0 ? "+" : "−"; // Używamy ładnego minusa
+                const signClass = (i+j)%2 === 0 ? "#16a34a" : "#dc2626"; // Zielony / Czerwony
+                const minorM = getMinor(M, i, j);
+                
+                // Generowanie HTML dla małej macierzy (minora)
+                let minorGrid = `<div class="minor-grid" style="grid-template-columns: repeat(${size-1}, 1fr);">`;
+                minorM.forEach(row => {
+                    row.forEach(val => {
+                        minorGrid += `<div class="minor-cell">${val}</div>`;
+                    });
+                });
+                minorGrid += `</div>`;
+
+                visualCofactorHTML += `
+                    <div class="big-matrix-cell">
+                        <div class="sign-indicator" style="color:${signClass}">${sign}</div>
+                        <div class="minor-wrapper">
+                            ${minorGrid}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        visualCofactorHTML += `</div></div>`;
+
+        html += `<div class="step-item">
+            <div class="step-title">Krok 2: Macierz Dopełnień (Wizualizacja)</div>
+            <div style="margin-bottom:10px; color:#555;">Dla każdego elementu tworzymy <strong>Macierz Dopełnień</strong>. Składa się ona ze znaku (szachownica) oraz minora (wyznacznika po skreśleniu wiersza i kolumny).</div>
+            <div style="display:flex; justify-content:center; overflow-x:auto;">
+                ${visualCofactorHTML}
+            </div>
+        </div>`;
+
+        // Obliczenia numeryczne
         let cofactors = [];
         let transposed = [];
-        // Inicjalizacja tablic
         for(let i=0; i<size; i++) { cofactors[i] = []; transposed[i] = []; }
 
         for(let i=0; i<size; i++) {
             for(let j=0; j<size; j++) {
-                const minorMat = getMinor(M, i, j);
-                const minorDet = getDet(minorMat);
+                const minorDet = getDet(getMinor(M, i, j));
                 const sign = Math.pow(-1, i+j);
-                const val = sign * minorDet;
-                cofactors[i][j] = val;
+                cofactors[i][j] = sign * minorDet;
             }
         }
 
+        // Krok 3: Wyniki liczbowe dopełnień
         html += `<div class="step-item">
-            <div class="step-title">Krok 2: Macierz Dopełnień Algebraicznych (A<sup>D</sup>)</div>
-            <div style="font-size:0.9em; margin-bottom:10px;">Obliczamy wyznacznik minora dla każdego pola i mnożymy przez "Szachownicę znaków" (+ - + ...).</div>
+            <div class="step-title">Krok 3: Obliczona Macierz Dopełnień (A<sup>D</sup>)</div>
             <div class="matrix-display-row">
                 ${createMatrixHTML('cof', size, size, cofactors, true)}
             </div>
         </div>`;
 
-        // Krok 3: Transpozycja
+        // Krok 4: Transpozycja
         for(let i=0; i<size; i++) {
             for(let j=0; j<size; j++) {
                 transposed[j][i] = cofactors[i][j];
@@ -435,14 +439,14 @@
         }
 
         html += `<div class="step-item">
-            <div class="step-title">Krok 3: Macierz Dołączona (Transpozycja A<sup>D</sup>)</div>
-            <div style="font-size:0.9em; margin-bottom:10px;">Zamieniamy wiersze z kolumnami.</div>
+            <div class="step-title">Krok 4: Macierz Dołączona (A<sup>T</sup> z dopełnień)</div>
+            <div style="font-size:0.9em;">Zamieniamy wiersze z kolumnami.</div>
             <div class="matrix-display-row">
                 ${createMatrixHTML('trans', size, size, transposed, true)}
             </div>
         </div>`;
 
-        // Krok 4: Wynik
+        // Krok 5: Wynik
         let result = [];
         for(let i=0; i<size; i++) {
             result[i] = [];
@@ -452,9 +456,12 @@
         }
 
         html += `<div class="step-item">
-            <div class="step-title">Krok 4: Wynik końcowy (Dzielenie przez Det)</div>
+            <div class="step-title">Krok 5: Wynik (A<sup>-1</sup>)</div>
             <div class="matrix-display-row">
-                <div>A<sup>-1</sup> = </div>
+                <div class="formula-container">
+                    <div class="fraction"><span class="frac-num">1</span><span class="frac-denom">${det}</span></div>
+                </div>
+                &times; Macierz Dołączona = 
                 ${createMatrixHTML('final-alg', size, size, result, true)}
             </div>
         </div>`;
@@ -464,13 +471,12 @@
 
     // --- METODA 3: GAUSS-JORDAN ---
     function calcGauss() {
-        let A = getMatrix('gauss'); // To będzie nasza lewa strona
+        let A = getMatrix('gauss');
         const n = A.length;
         const resDiv = document.getElementById('res-gauss');
         resDiv.style.display = 'block';
         resDiv.innerHTML = '';
 
-        // Tworzymy macierz I po prawej stronie
         let I = [];
         for(let i=0; i<n; i++) {
             let row = new Array(n).fill(0);
@@ -478,38 +484,28 @@
             I.push(row);
         }
 
-        // Helper do wyświetlania rozszerzonej
         const renderAugmented = (mA, mI) => {
             let h = `<div class="matrix-wrapper augmented-matrix"><div class="matrix-grid" style="grid-template-columns: repeat(${2*n}, 1fr); display:flex; gap:0;">`;
-            // Lewa (A)
             h += `<div style="display:grid; grid-template-columns:repeat(${n}, 1fr); gap:2px;">`;
             for(let r=0; r<n; r++) for(let c=0; c<n; c++) 
                 h += `<div class="cell">${parseFloat(mA[r][c].toFixed(3))}</div>`;
             h += `</div>`;
-            
-            // Separator
             h += `<div class="separator-line"></div>`;
-
-            // Prawa (I)
             h += `<div style="display:grid; grid-template-columns:repeat(${n}, 1fr); gap:2px;">`;
             for(let r=0; r<n; r++) for(let c=0; c<n; c++) 
                 h += `<div class="cell" style="background:#f0fdfa;">${parseFloat(mI[r][c].toFixed(3))}</div>`;
-            h += `</div>`;
-            
-            h += `</div></div>`;
+            h += `</div></div></div>`;
             return h;
         };
 
-        let html = `<div class="step-item"><div class="step-title">Start: Macierz Rozszerzona [A | I]</div>
+        let html = `<div class="step-item"><div class="step-title">Start: Macierz Rozszerzona [ A | I ]</div>
             <div class="matrix-display-row">${renderAugmented(A, I)}</div>
         </div>`;
 
-        // Algorytm
         for(let i=0; i<n; i++) {
             let pivot = A[i][i];
             let stepLog = "";
 
-            // Pivotowanie (jeśli 0 na przekątnej)
             if(Math.abs(pivot) < 1e-10) {
                 let swapped = false;
                 for(let k=i+1; k<n; k++) {
@@ -523,43 +519,35 @@
                     }
                 }
                 if(!swapped) {
-                    resDiv.innerHTML = `<div class="error-msg">Macierz jest osobliwa (Det=0). Brak odwrotnej.</div>`;
+                    resDiv.innerHTML = `<div class="error-msg">Macierz osobliwa.</div>`;
                     return;
                 }
             }
 
-            // Normalizacja wiersza głównego (dzielenie przez pivot)
             if(Math.abs(pivot - 1) > 1e-10) {
                 stepLog += `<div class="gauss-row-op">W${i+1} = W${i+1} / ${parseFloat(pivot.toFixed(2))}</div>`;
-                for(let j=0; j<n; j++) {
-                    A[i][j] /= pivot;
-                    I[i][j] /= pivot;
-                }
+                for(let j=0; j<n; j++) { A[i][j] /= pivot; I[i][j] /= pivot; }
             }
 
-            // Zerowanie kolumny
             for(let k=0; k<n; k++) {
                 if(k !== i) {
                     let factor = A[k][i];
                     if(Math.abs(factor) > 1e-10) {
                         stepLog += `<div class="gauss-row-op">W${k+1} = W${k+1} - (${parseFloat(factor.toFixed(2))})·W${i+1}</div>`;
-                        for(let j=0; j<n; j++) {
-                            A[k][j] -= factor * A[i][j];
-                            I[k][j] -= factor * I[i][j];
-                        }
+                        for(let j=0; j<n; j++) { A[k][j] -= factor * A[i][j]; I[k][j] -= factor * I[i][j]; }
                     }
                 }
             }
 
             html += `<div class="step-item">
-                <div class="step-title">Kolumna ${i+1}: Uzyskanie jedynki i zerowanie reszty</div>
+                <div class="step-title">Kolumna ${i+1} (Tworzenie jedynki i zer)</div>
                 ${stepLog}
                 <div class="matrix-display-row">${renderAugmented(A, I)}</div>
             </div>`;
         }
 
         html += `<div class="step-item" style="border:2px solid var(--primary);">
-            <div class="step-title" style="color:var(--primary-dark);">Wynik: Prawa strona macierzy</div>
+            <div class="step-title" style="color:var(--primary-dark);">Wynik Końcowy (Prawa strona)</div>
             <div class="matrix-display-row">A<sup>-1</sup> = ${createMatrixHTML('final-gauss', n, n, I, true)}</div>
         </div>`;
 
