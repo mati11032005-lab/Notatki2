@@ -1,8 +1,35 @@
-/* Minimal styles for math rendering */
+/* Improved styles for math rendering to avoid overlaps and add spacing */
 .arithmatex {
   font-size: 1em;
 }
 
-.math-display {
-  margin: 1em 0;
+/* Target common MathJax display classes to ensure vertical spacing */
+.math-display,
+.MathJax_Display,
+.mjx-block,
+.arithmatex .MathJax_Display {
+  margin: 1.2em 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  display: block;
+  clear: both; /* prevents floats from causing overlap */
 }
+
+/* Better line-height for math elements */
+.MathJax .mjx-chtml,
+.mjx-chtml {
+  line-height: 1.2;
+}
+
+/* Inline math alignment */
+.arithmatex .MathJax,
+.arithmatex .mjx-chtml {
+  vertical-align: middle;
+}
+
+/* Make wide formulas scrollable instead of overflowing */
+.math-display > .MathJax,
+.MathJax_Display > .MathJax {
+  max-width: 100%;
+  overflow-x: auto;
+} 
