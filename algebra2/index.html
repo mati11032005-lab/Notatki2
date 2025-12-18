@@ -1,0 +1,911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Operacje_na_macierzach.html">
+      
+      
+        <link rel="next" href="../Wyznaczniki_macierzy.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Wyznaczniki - Notatki z Matematyki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/math.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-definicja-i-interpretacja-wyznacznika" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notatki z Matematyki" class="md-header__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notatki z Matematyki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wyznaczniki
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notatki z Matematyki" class="md-nav__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notatki z Matematyki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra liniowa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra liniowa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macierze podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Operacje_na_macierzach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liczenie macieży program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyznaczniki
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyznaczniki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-definicja-i-interpretacja-wyznacznika" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Definicja i Interpretacja Wyznacznika
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metody-obliczen-regua-sarrusa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Metody Obliczeń: Reguła Sarrusa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metody-obliczen-rozwiniecie-laplacea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Metody Obliczeń: Rozwinięcie Laplace’a
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-metody-obliczen-metoda-gaussa-operacje-elementarne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Metody Obliczeń: Metoda Gaussa (Operacje Elementarne)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-zastosowania-wyznacznikow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Zastosowania Wyznaczników
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wyznaczniki_macierzy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liczenie wyznaczników program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macierz odwrotna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Macierz_odwrotna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liczenie macierzy odwrotnej program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Układy równań liniowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometria analityczna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rachunek różniczkowy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-definicja-i-interpretacja-wyznacznika" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Definicja i Interpretacja Wyznacznika
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metody-obliczen-regua-sarrusa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Metody Obliczeń: Reguła Sarrusa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metody-obliczen-rozwiniecie-laplacea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Metody Obliczeń: Rozwinięcie Laplace’a
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-metody-obliczen-metoda-gaussa-operacje-elementarne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Metody Obliczeń: Metoda Gaussa (Operacje Elementarne)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-zastosowania-wyznacznikow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Zastosowania Wyznaczników
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Wyznaczniki</h1>
+
+<h4 id="1-definicja-i-interpretacja-wyznacznika">1. Definicja i Interpretacja Wyznacznika<a class="headerlink" href="#1-definicja-i-interpretacja-wyznacznika" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Wyznacznik (<span class="arithmatex">\(\det(A)\)</span> lub <span class="arithmatex">\(|A|\)</span>)</strong>: Jest to konkretna <strong>liczba</strong> (skalar) przypisana wyłącznie do <strong>macierzy kwadratowych</strong> (o wymiarach <span class="arithmatex">\(n \times n\)</span>, np. 2x2, 3x3).</li>
+<li><strong>Dlaczego tylko macierze kwadratowe?</strong> Wyznacznik opisuje, jak przekształcenie liniowe (reprezentowane przez macierz) zmienia "objętość" (lub pole w 2D). Aby można było mówić o "objętości" w tej samej przestrzeni, macierz musi przekształcać przestrzeń w nią samą (np. płaszczyznę w płaszczyznę), co robią macierze kwadratowe.</li>
+</ul>
+<p><strong>Interpretacja Geometryczna:</strong></p>
+<ul>
+<li><strong>Dla 2x2</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>pole równoległoboku</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</li>
+<li><strong>Dla 3x3</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>objętość równoległościanu</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</li>
+</ul>
+<p><strong>Znaczenie znaku wyznacznika:</strong></p>
+<ul>
+<li><strong><span class="arithmatex">\(\det(A) &gt; 0\)</span></strong>: Przekształcenie zachowuje orientację przestrzeni.</li>
+<li><strong><span class="arithmatex">\(\det(A) &lt; 0\)</span></strong>: Przekształcenie zmienia orientację przestrzeni (np. robi "odbicie lustrzane").</li>
+<li><strong><span class="arithmatex">\(\det(A) = 0\)</span></strong>: Przekształcenie "spłaszcza" przestrzeń. Wektory są <strong>liniowo zależne</strong> (np. w 2D leżą na jednej linii). Pole lub objętość jest zerowa.</li>
+</ul>
+<p><strong>Przykład 1 (Interpretacja i obliczenie 2x2):</strong>
+Dla macierzy <span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; 1 \\ 4 &amp; 2 \end{pmatrix}\)</span>, pole równoległoboku zbudowanego na wektorach <span class="arithmatex">\(\vec{v}_1 = [3, 4]\)</span> i <span class="arithmatex">\(\vec{v}_2 = [1, 2]\)</span> jest równe:
+<span class="arithmatex">\(\det(A) = 3 \cdot 2 - 1 \cdot 4 = 6 - 4 = 2\)</span>.
+Pole wynosi <span class="arithmatex">\(|\det(A)| = 2\)</span>. Ponieważ wyznacznik jest dodatni, orientacja wektorów jest zachowana.</p>
+<hr />
+<h4 id="2-metody-obliczen-regua-sarrusa">2. Metody Obliczeń: Reguła Sarrusa<a class="headerlink" href="#2-metody-obliczen-regua-sarrusa" title="Permanent link">&para;</a></h4>
+<p>Metoda ta działa <strong>tylko</strong> dla macierzy 2x2 i 3x3.</p>
+<ul>
+<li>
+<p><strong>Dla 2x2</strong>:
+    <span class="arithmatex">\(\det \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = ad - bc\)</span></p>
+</li>
+<li>
+<p><strong>Dla 3x3 (Schemat Sarrusa)</strong>:</p>
+<ol>
+<li>Obok macierzy dopisujemy jej dwie pierwsze kolumny.</li>
+<li>Sumujemy iloczyny wzdłuż trzech przekątnych "w prawo w dół".</li>
+<li>Odejmujemy sumę iloczynów wzdłuż trzech przekątnych "w prawo w górę".</li>
+</ol>
+</li>
+</ul>
+<p><strong>Przykłady obliczeń:</strong></p>
+<ul>
+<li>
+<p><strong>Przykład 2a (2x2):</strong>
+    <span class="arithmatex">\(A = \begin{pmatrix} 5 &amp; 2 \\ -1 &amp; 3 \end{pmatrix}\)</span>
+    <span class="arithmatex">\(\det(A) = (5 \cdot 3) - (2 \cdot -1) = 15 - (-2) = 15 + 2 = 17\)</span></p>
+</li>
+<li>
+<p><strong>Przykład 2b (3x3):</strong>
+    <span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix}\)</span>
+    Dopisujemy kolumny:
+    <span class="arithmatex">\(\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix} \begin{matrix} 1 &amp; 2 \\ 0 &amp; 4 \\ 1 &amp; 0 \end{matrix}\)</span></p>
+<p>Suma iloczynów "w dół" (+):
+<span class="arithmatex">\((1 \cdot 4 \cdot 6) + (2 \cdot 5 \cdot 1) + (3 \cdot 0 \cdot 0) = 24 + 10 + 0 = 34\)</span></p>
+<p>Suma iloczynów "w górę" (-):
+<span class="arithmatex">\((3 \cdot 4 \cdot 1) + (5 \cdot 0 \cdot 1) + (6 \cdot 0 \cdot 2) = 12 + 0 + 0 = 12\)</span></p>
+<p>Wynik:
+<span class="arithmatex">\(\det(B) = 34 - 12 = 22\)</span></p>
+</li>
+</ul>
+<hr />
+<h4 id="3-metody-obliczen-rozwiniecie-laplacea">3. Metody Obliczeń: Rozwinięcie Laplace’a<a class="headerlink" href="#3-metody-obliczen-rozwiniecie-laplacea" title="Permanent link">&para;</a></h4>
+<p>Metoda <strong>uniwersalna</strong>, działająca dla macierzy dowolnego stopnia (<span class="arithmatex">\(n \times n\)</span>).</p>
+<ul>
+<li>
+<p><strong>Pojęcia kluczowe</strong>:</p>
+<ul>
+<li><strong>Minor (<span class="arithmatex">\(M_{ij}\)</span>)</strong>: Wyznacznik podmacierzy po skreśleniu <span class="arithmatex">\(i\)</span>-tego wiersza i <span class="arithmatex">\(j\)</span>-tej kolumny.</li>
+<li><strong>Dopełnienie algebraiczne (<span class="arithmatex">\(A_{ij}\)</span>)</strong>: Minor ze znakiem: <span class="arithmatex">\(A_{ij} = (-1)^{i+j} \cdot M_{ij}\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Metoda</strong>:
+    Wybierz dowolny wiersz lub kolumnę (najlepiej z zerami). Wyznacznik jest sumą iloczynów każdego elementu z tego wiersza/kolumny przez jego dopełnienie algebraiczne.
+    <span class="arithmatex">\(\det(A) = a_{i1}A_{i1} + a_{i2}A_{i2} + \dots + a_{in}A_{in}\)</span> (dla <span class="arithmatex">\(i\)</span>-tego wiersza)</p>
+</li>
+</ul>
+<p><strong>Przykład obliczeń (ta sama macierz B):</strong>
+<span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix}\)</span></p>
+<p>Wybierzmy rozwinięcie względem <strong>pierwszej kolumny</strong> (bo ma jedno zero):
+<span class="arithmatex">\(\det(B) = a_{11}A_{11} + a_{21}A_{21} + a_{31}A_{31}\)</span></p>
+<ol>
+<li>
+<p><strong>Element <span class="arithmatex">\(a_{11} = 1\)</span></strong>:
+    <span class="arithmatex">\(A_{11} = (-1)^{1+1} \cdot \det \begin{pmatrix} 4 &amp; 5 \\ 0 &amp; 6 \end{pmatrix} = +1 \cdot (4 \cdot 6 - 5 \cdot 0) = 24\)</span>
+    Składnik: <span class="arithmatex">\(1 \cdot 24 = 24\)</span></p>
+</li>
+<li>
+<p><strong>Element <span class="arithmatex">\(a_{21} = 0\)</span></strong>:
+    <span class="arithmatex">\(A_{21} = (-1)^{2+1} \cdot \det \begin{pmatrix} 2 &amp; 3 \\ 0 &amp; 6 \end{pmatrix} = -1 \cdot (2 \cdot 6 - 3 \cdot 0) = -12\)</span>
+    Składnik: <span class="arithmatex">\(0 \cdot (-12) = 0\)</span> (dlatego lubimy zera!)</p>
+</li>
+<li>
+<p><strong>Element <span class="arithmatex">\(a_{31} = 1\)</span></strong>:
+    <span class="arithmatex">\(A_{31} = (-1)^{3+1} \cdot \det \begin{pmatrix} 2 &amp; 3 \\ 4 &amp; 5 \end{pmatrix} = +1 \cdot (2 \cdot 5 - 3 \cdot 4) = 1 \cdot (10 - 12) = -2\)</span>
+    Składnik: <span class="arithmatex">\(1 \cdot (-2) = -2\)</span></p>
+</li>
+</ol>
+<p>Wynik:
+<span class="arithmatex">\(\det(B) = 24 + 0 + (-2) = 22\)</span> (Wynik ten sam co u Sarrusa).</p>
+<hr />
+<h4 id="4-metody-obliczen-metoda-gaussa-operacje-elementarne">4. Metody Obliczeń: Metoda Gaussa (Operacje Elementarne)<a class="headerlink" href="#4-metody-obliczen-metoda-gaussa-operacje-elementarne" title="Permanent link">&para;</a></h4>
+<p>Sprowadzamy macierz do <strong>postaci trójkątnej</strong>. Wyznacznik macierzy trójkątnej to iloczyn elementów na głównej przekątnej.</p>
+<p><strong>Wpływ operacji na wyznacznik:</strong></p>
+<ol>
+<li><strong>Dodanie wielokrotności wiersza do innego</strong>: Wyznacznik <strong>się nie zmienia</strong>.</li>
+<li><strong>Zamiana dwóch wierszy</strong>: Wyznacznik <strong>zmienia znak</strong>.</li>
+<li><strong>Pomnożenie wiersza przez skalar <span class="arithmatex">\(k\)</span></strong>: Cały wyznacznik <strong>jest mnożony przez <span class="arithmatex">\(k\)</span></strong>.</li>
+</ol>
+<p><strong>Przykład obliczeń (ta sama macierz B):</strong>
+<span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix}\)</span></p>
+<ol>
+<li>
+<p>Chcemy wyzerować element <span class="arithmatex">\(a_{31}\)</span>. Używamy operacji typu 1 (wyznacznik się nie zmienia): <span class="arithmatex">\(W_3 - W_1 \to W_3\)</span>
+    <span class="arithmatex">\(\det(B) = \det \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1-1 &amp; 0-2 &amp; 6-3 \end{pmatrix} = \det \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; -2 &amp; 3 \end{pmatrix}\)</span></p>
+</li>
+<li>
+<p>Chcemy wyzerować element <span class="arithmatex">\(a_{32}\)</span>. Operacja: <span class="arithmatex">\(W_3 + \frac{1}{2} W_2 \to W_3\)</span>
+    <span class="arithmatex">\(\det(B) = \det \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; -2 + \frac{1}{2}(4) &amp; 3 + \frac{1}{2}(5) \end{pmatrix} = \det \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; 0 &amp; 3 + 2.5 \end{pmatrix} = \det \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; 0 &amp; 5.5 \end{pmatrix}\)</span></p>
+</li>
+<li>
+<p>Macierz jest trójkątna. Mnożymy przekątną:
+    <span class="arithmatex">\(\det(B) = 1 \cdot 4 \cdot 5.5 = 22\)</span> (Wynik znów ten sam).</p>
+</li>
+</ol>
+<hr />
+<h4 id="5-zastosowania-wyznacznikow">5. Zastosowania Wyznaczników<a class="headerlink" href="#5-zastosowania-wyznacznikow" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Rozwiązywanie układów równań (Wzory Cramera)</strong>.</li>
+<li><strong>Obliczanie macierzy odwrotnej</strong>.</li>
+<li><strong>Sprawdzanie liniowej niezależności wektorów</strong> (<span class="arithmatex">\(\det = 0 \implies\)</span> zależne).</li>
+<li><strong>Obliczenia w geometrii</strong> (pola, objętości).</li>
+<li><strong>Implementacje komputerowe</strong> (np. <code>np.linalg.det(A)</code> w Python/NumPy).</li>
+</ol>
+<p><strong>Przykład zastosowania: Wzory Cramera (Układ 2x2)</strong></p>
+<p>Rozwiążmy układ równań:
+<span class="arithmatex">\(\begin{cases} 2x + 3y = 7 \\ x - 4y = -2 \end{cases}\)</span></p>
+<ol>
+<li>
+<p><strong>Wyznacznik główny (<span class="arithmatex">\(W\)</span>)</strong>: Zbudowany ze współczynników przy <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>.
+    <span class="arithmatex">\(W = \det \begin{pmatrix} 2 &amp; 3 \\ 1 &amp; -4 \end{pmatrix} = (2 \cdot -4) - (3 \cdot 1) = -8 - 3 = -11\)</span>
+    (Ponieważ <span class="arithmatex">\(W \neq 0\)</span>, układ ma dokładnie jedno rozwiązanie).</p>
+</li>
+<li>
+<p><strong>Wyznacznik <span class="arithmatex">\(W_x\)</span></strong>: W macierzy <span class="arithmatex">\(W\)</span> zastępujemy kolumnę od <span class="arithmatex">\(x\)</span> (pierwszą) kolumną wyników <span class="arithmatex">\([7, -2]\)</span>.
+    <span class="arithmatex">\(W_x = \det \begin{pmatrix} 7 &amp; 3 \\ -2 &amp; -4 \end{pmatrix} = (7 \cdot -4) - (3 \cdot -2) = -28 - (-6) = -28 + 6 = -22\)</span></p>
+</li>
+<li>
+<p><strong>Wyznacznik <span class="arithmatex">\(W_y\)</span></strong>: W macierzy <span class="arithmatex">\(W\)</span> zastępujemy kolumnę od <span class="arithmatex">\(y\)</span> (drugą) kolumną wyników <span class="arithmatex">\([7, -2]\)</span>.
+    <span class="arithmatex">\(W_y = \det \begin{pmatrix} 2 &amp; 7 \\ 1 &amp; -2 \end{pmatrix} = (2 \cdot -2) - (7 \cdot 1) = -4 - 7 = -11\)</span></p>
+</li>
+<li>
+<p><strong>Obliczanie rozwiązań</strong>:
+    <span class="arithmatex">\(x = \frac{W_x}{W} = \frac{-22}{-11} = 2\)</span>
+    <span class="arithmatex">\(y = \frac{W_y}{W} = \frac{-11}{-11} = 1\)</span></p>
+</li>
+</ol>
+<p>Rozwiązanie: <span class="arithmatex">\(x=2, y=1\)</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
