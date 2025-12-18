@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#temat-1-ukady-rownan-w-jezyku-macierzy" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -277,7 +282,7 @@
   <span class="md-ellipsis">
     
   
-    Liczenie macieży program
+    Aplikacja operacje macierze
   
 
     
@@ -333,7 +338,7 @@
   <span class="md-ellipsis">
     
   
-    Liczenie wyznaczników program
+    Aplikacja wyznaczników
   
 
     
@@ -389,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Liczenie macierzy odwrotnej program
+    Aplikacja macierzy odwrotnej
   
 
     
@@ -416,6 +421,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Układy równań liniowych
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -433,6 +458,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sekcja-11-zapis-macierzowy-a-cdot-x-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.1: Zapis macierzowy \(A \cdot x = b\)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sekcja-12-uzytecznosc-zapisu-macierzowego" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.2: Użyteczność zapisu macierzowego
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -517,6 +583,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sekcja-11-zapis-macierzowy-a-cdot-x-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.1: Zapis macierzowy \(A \cdot x = b\)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sekcja-12-uzytecznosc-zapisu-macierzowego" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.2: Użyteczność zapisu macierzowego
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -533,9 +631,146 @@
 
 
 
-  <h1>Układy równań liniowych</h1>
-
-
+<h1 id="temat-1-ukady-rownan-w-jezyku-macierzy">Temat 1: Układy równań w języku macierzy<a class="headerlink" href="#temat-1-ukady-rownan-w-jezyku-macierzy" title="Permanent link">&para;</a></h1>
+<h2 id="sekcja-11-zapis-macierzowy-a-cdot-x-b">Sekcja 1.1: Zapis macierzowy <span class="arithmatex">\(A \cdot x = b\)</span><a class="headerlink" href="#sekcja-11-zapis-macierzowy-a-cdot-x-b" title="Permanent link">&para;</a></h2>
+<p>Zapis macierzowy jest zwięzłą formą reprezentacji układu równań liniowych. Dla układu <span class="arithmatex">\(n\)</span> równań z <span class="arithmatex">\(n\)</span> niewiadomymi (np. <span class="arithmatex">\(x_1, x_2, x_3\)</span>):</p>
+<div class="arithmatex">\[
+\begin{cases}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = b_2 \\
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = b_3
+\end{cases}
+\]</div>
+<p>Forma macierzowa to <span class="arithmatex">\(\mathbf{A}\,\mathbf{x} = \mathbf{b}\)</span>.</p>
+<ul>
+<li>Macierz współczynników <span class="arithmatex">\(A\)</span>: zawiera współczynniki <span class="arithmatex">\(a_{ij}\)</span>.</li>
+</ul>
+<div class="arithmatex">\[
+A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{pmatrix}
+\]</div>
+<p>Wektor niewiadomych <span class="arithmatex">\(x\)</span>:</p>
+<div class="arithmatex">\[
+x = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+\]</div>
+<p>Wektor wyrazów wolnych <span class="arithmatex">\(b\)</span>:</p>
+<div class="arithmatex">\[
+b = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}
+\]</div>
+<h2 id="sekcja-12-uzytecznosc-zapisu-macierzowego">Sekcja 1.2: Użyteczność zapisu macierzowego<a class="headerlink" href="#sekcja-12-uzytecznosc-zapisu-macierzowego" title="Permanent link">&para;</a></h2>
+<p>Patrzenie na układ równań jako na jedno równanie macierzowe jest potężne z dwóch powodów:</p>
+<p>Abstrakcja: Pozwala traktować cały układ jako pojedynczy obiekt matematyczny (<span class="arithmatex">\(A\)</span>), do którego stosuje się ogólne zasady i twierdzenia algebry liniowej (np. pojęcie macierzy odwrotnej).</p>
+<p>Uniwersalność i Automatyzacja: Jest to język, którym posługują się komputery. Dzięki zapisowi <span class="arithmatex">\(A \cdot x = b\)</span> wystarczy zaimplementować jeden algorytm (np. Eliminację Gaussa), aby rozwiązać dowolny układ równań liniowych, niezależnie od jego rozmiaru.</p>
+<h1 id="temat-2-metoda-macierzy-odwrotnej-i-wzory-cramera">Temat 2: Metoda Macierzy Odwrotnej i Wzory Cramera<a class="headerlink" href="#temat-2-metoda-macierzy-odwrotnej-i-wzory-cramera" title="Permanent link">&para;</a></h1>
+<h2 id="sekcja-21-metoda-macierzy-odwrotnej">Sekcja 2.1: Metoda Macierzy Odwrotnej<a class="headerlink" href="#sekcja-21-metoda-macierzy-odwrotnej" title="Permanent link">&para;</a></h2>
+<p>Rozwiązanie równania macierzowego <span class="arithmatex">\(\mathbf{A \cdot x = b}\)</span> przy użyciu macierzy odwrotnej <span class="arithmatex">\(\mathbf{A^{-1}}\)</span> jest analogiczne do rozwiązywania równania skalarnego <span class="arithmatex">\(ax = b\)</span> przez mnożenie przez odwrotność <span class="arithmatex">\(\frac{1}{a}\)</span>.</p>
+<p>Krok po kroku:</p>
+<p>Start: <span class="arithmatex">\(A \cdot x = b\)</span></p>
+<p>Mnożenie przez <span class="arithmatex">\(A^{-1}\)</span> z lewej strony: <span class="arithmatex">\(A^{-1} \cdot (A \cdot x) = A^{-1} \cdot b\)</span></p>
+<p>Właściwość Macierzy Odwrotnej: <span class="arithmatex">\((A^{-1} \cdot A) \cdot x = A^{-1} \cdot b\)</span></p>
+<p>Macierz Jednostkowa (<span class="arithmatex">\(I\)</span>): <span class="arithmatex">\(I \cdot x = A^{-1} \cdot b\)</span></p>
+<p>Rozwiązanie: <span class="arithmatex">\(\mathbf{x = A^{-1} \cdot b}\)</span></p>
+<p>Warunek: Macierz odwrotna <span class="arithmatex">\(A^{-1}\)</span> musi istnieć. Warunek ten jest spełniony, gdy macierz <span class="arithmatex">\(A\)</span> jest kwadratowa i jej wyznacznik jest różny od zera (<span class="arithmatex">\(\mathbf{\det(A) \ne 0}\)</span>).</p>
+<p>Przykład Rozwiązania Metodą Macierzy Odwrotnej</p>
+<p>Układ: <span class="arithmatex">\(\begin{cases} 5x + 2y = 4 \\ 7x + 3y = 5 \end{cases}\)</span></p>
+<p>Macierz <span class="arithmatex">\(A\)</span> i <span class="arithmatex">\(b\)</span>: <span class="arithmatex">\(A = \begin{pmatrix} 5 &amp; 2 \\ 7 &amp; 3 \end{pmatrix}\)</span>, <span class="arithmatex">\(b = \begin{pmatrix} 4 \\ 5 \end{pmatrix}\)</span>. (<span class="arithmatex">\(\det(A) = 1\)</span>)</p>
+<p>Macierz Odwrotna <span class="arithmatex">\(A^{-1}\)</span>: <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -2 \\ -7 &amp; 5 \end{pmatrix}\)</span>.</p>
+<p>Rozwiązanie <span class="arithmatex">\(x = A^{-1} \cdot b\)</span>:</p>
+<div class="arithmatex">\[
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 &amp; -2 \\ -7 &amp; 5 \end{pmatrix} \begin{pmatrix} 4 \\ 5 \end{pmatrix} = \begin{pmatrix} (3 \cdot 4) + (-2 \cdot 5) \\ (-7 \cdot 4) + (5 \cdot 5) \end{pmatrix} = \begin{pmatrix} 2 \\ -3 \end{pmatrix}
+\]</div>
+<p>Rozwiązanie: <span class="arithmatex">\(\mathbf{x=2, y=-3}\)</span>.</p>
+<h2 id="sekcja-22-wzory-cramera">Sekcja 2.2: Wzory Cramera<a class="headerlink" href="#sekcja-22-wzory-cramera" title="Permanent link">&para;</a></h2>
+<p>Metoda wzorów Cramera jest alternatywnym sposobem rozwiązania układów opartym na wyznacznikach, stosowanym tylko wtedy, gdy <span class="arithmatex">\(\mathbf{W \ne 0}\)</span> (gdzie <span class="arithmatex">\(W = \det(A)\)</span>).</p>
+<p>Wyznacznik Główny (<span class="arithmatex">\(\mathbf{W}\)</span>): Obliczamy wyznacznik macierzy współczynników <span class="arithmatex">\(A\)</span>.</p>
+<p>Wyznaczniki Niewiadomych (<span class="arithmatex">\(\mathbf{W_i}\)</span>): Obliczamy wyznacznik <span class="arithmatex">\(W_i\)</span> dla każdej niewiadomej, zastępując <span class="arithmatex">\(i\)</span>-tą kolumnę macierzy <span class="arithmatex">\(A\)</span> wektorem wyrazów wolnych <span class="arithmatex">\(b\)</span>.</p>
+<p>Obliczenie Rozwiązania: Rozwiązanie dla każdej niewiadomej jest ilorazem jej wyznacznika przez wyznacznik główny:</p>
+<div class="arithmatex">\[
+x_1 = \frac{W_1}{W}, \quad x_2 = \frac{W_2}{W}, \quad x_3 = \frac{W_3}{W}, \quad \text{itd.}
+\]</div>
+<p>Przykład Rozwiązania Wzorami Cramera</p>
+<p>Układ: <span class="arithmatex">\(\begin{cases} 5x + 2y = 4 \\ 7x + 3y = 5 \end{cases}\)</span></p>
+<p>Wyznacznik Główny (<span class="arithmatex">\(\mathbf{W}\)</span>): <span class="arithmatex">\(W = \det\begin{pmatrix} 5 &amp; 2 \\ 7 &amp; 3 \end{pmatrix} = (5 \cdot 3) - (2 \cdot 7) = \mathbf{1}\)</span>.</p>
+<p>Wyznacznik <span class="arithmatex">\(W_x\)</span>: <span class="arithmatex">\(W_x = \det\begin{pmatrix} \mathbf{4} &amp; 2 \\ \mathbf{5} &amp; 3 \end{pmatrix} = (4 \cdot 3) - (2 \cdot 5) = \mathbf{2}\)</span>.</p>
+<p>Wyznacznik <span class="arithmatex">\(W_y\)</span>: <span class="arithmatex">\(W_y = \det\begin{pmatrix} 5 &amp; \mathbf{4} \\ 7 &amp; \mathbf{5} \end{pmatrix} = (5 \cdot 5) - (4 \cdot 7) = \mathbf{-3}\)</span>.</p>
+<p>Rozwiązanie:</p>
+<div class="arithmatex">\[x = \frac{W_x}{W} = \frac{2}{1} = \mathbf{2}, \quad y = \frac{W_y}{W} = \frac{-3}{1} = \mathbf{-3}\]</div>
+<p>Rozwiązanie: <span class="arithmatex">\(\mathbf{x=2, y=-3}\)</span>.</p>
+<h1 id="temat-3-metoda-eliminacji-gaussa">Temat 3: Metoda Eliminacji Gaussa<a class="headerlink" href="#temat-3-metoda-eliminacji-gaussa" title="Permanent link">&para;</a></h1>
+<h2 id="sekcja-31-idea-metody-eliminacji-gaussa">Sekcja 3.1: Idea metody eliminacji Gaussa<a class="headerlink" href="#sekcja-31-idea-metody-eliminacji-gaussa" title="Permanent link">&para;</a></h2>
+<p>Metoda Gaussa jest najbardziej uniwersalnym sposobem rozwiązywania układów równań.</p>
+<p>Macierz Rozszerzona <span class="arithmatex">\([\mathbf{A | b}]\)</span>: Układ jest zapisywany jako pojedyncza macierz, w której <span class="arithmatex">\(A\)</span> to współczynniki, a <span class="arithmatex">\(b\)</span> to wyrazy wolne, oddzielone pionową kreską.</p>
+<p>Operacje Elementarne: Wykorzystujemy operacje na wierszach (zamiana wierszy, mnożenie wiersza przez stałą, dodawanie/odejmowanie wierszy) w celu sprowadzenia macierzy do postaci schodkowej (zera pod główną przekątną).</p>
+<p>Odczytanie Rozwiązania: Z postaci schodkowej wracamy do układu równań i rozwiązujemy go przez podstawianie wsteczne (zaczynając od ostatniego równania, które ma najmniej niewiadomych).</p>
+<p>Przykład Rozwiązania Metodą Eliminacji Gaussa</p>
+<p>Układ: <span class="arithmatex">\(\begin{cases} x + y + 2z = 9 \\ 2x + 4y - 3z = 1 \\ 3x + 6y - 5z = 0 \end{cases}\)</span></p>
+<p>Macierz Rozszerzona:</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 2 &amp; | &amp; 9 \\
+2 &amp; 4 &amp; -3 &amp; | &amp; 1 \\
+3 &amp; 6 &amp; -5 &amp; | &amp; 0
+\end{pmatrix}
+\]</div>
+<p>Postać Schodkowa (po operacjach na wierszach):</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 2 &amp; | &amp; 9 \\
+0 &amp; 2 &amp; -7 &amp; | &amp; -17 \\
+0 &amp; 0 &amp; -1 &amp; | &amp; -3
+\end{pmatrix}
+\]</div>
+<p>Podstawianie Wsteczne:</p>
+<p><span class="arithmatex">\(\mathbf{W_3:}\)</span> <span class="arithmatex">\(-z = -3 \implies \mathbf{z = 3}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{W_2:}\)</span> <span class="arithmatex">\(2y - 7(3) = -17 \implies 2y = 4 \implies \mathbf{y = 2}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{W_1:}\)</span> <span class="arithmatex">\(x + 2 + 2(3) = 9 \implies x + 8 = 9 \implies \mathbf{x = 1}\)</span>
+Rozwiązanie: <span class="arithmatex">\(\mathbf{x=1, y=2, z=3}\)</span>.</p>
+<h2 id="sekcja-32-rozpoznawanie-typow-rozwiazan">Sekcja 3.2: Rozpoznawanie typów rozwiązań<a class="headerlink" href="#sekcja-32-rozpoznawanie-typow-rozwiazan" title="Permanent link">&para;</a></h2>
+<p>Metoda Gaussa od razu ujawnia, czy układ ma jedno rozwiązanie, nieskończenie wiele, czy żadnego (jest to intuicja Twierdzenia Kroneckera-Capellego):</p>
+<p>Układ Sprzeczny (brak rozwiązań): Rozpoznajemy go, gdy otrzymujemy wiersz, który w formie równania jest sprzecznością, np.:</p>
+<div class="arithmatex">\[
+\mathbf{\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; | &amp; 5 \end{pmatrix}} \implies 0 \cdot x + 0 \cdot y + 0 \cdot z = 5 \implies \mathbf{0 = 5}
+\]</div>
+<p>Układ Nieoznaczony (nieskończenie wiele rozwiązań): Rozpoznajemy go, gdy otrzymujemy wiersz zerowy:</p>
+<div class="arithmatex">\[
+\mathbf{\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; | &amp; 0 \end{pmatrix}} \implies 0 \cdot x + 0 \cdot y + 0 \cdot z = 0 \implies \mathbf{0 = 0}
+\]</div>
+<p>Oznacza to, że co najmniej jedna zmienna musi być wyrażona jako parametr (jest "wolna").</p>
+<h1 id="temat-4-porownanie-metod">Temat 4: Porównanie Metod<a class="headerlink" href="#temat-4-porownanie-metod" title="Permanent link">&para;</a></h1>
+<h2 id="sekcja-41-porownanie-metod">Sekcja 4.1: Porównanie Metod<a class="headerlink" href="#sekcja-41-porownanie-metod" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Kryterium</th>
+<th style="text-align: center;">Wzory Cramera</th>
+<th style="text-align: center;">Macierz Odwrotna</th>
+<th style="text-align: center;">Eliminacja Gaussa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Najszybsza dla 2x2/3x3 (ręcznie)</td>
+<td style="text-align: center;">Tak</td>
+<td style="text-align: center;">Nie (wymaga więcej kroków)</td>
+<td style="text-align: center;">Nie (wymaga więcej operacji)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Najbardziej uniwersalna</td>
+<td style="text-align: center;">Nie (wymaga macierzy kwadratowej)</td>
+<td style="text-align: center;">Nie (wymaga macierzy kwadratowej)</td>
+<td style="text-align: center;">Tak (działa zawsze, ujawnia typ układu)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Najefektywniejsza dla dużych układów</td>
+<td style="text-align: center;">Nie (zbyt wolna)</td>
+<td style="text-align: center;">Nie (zbyt wolna)</td>
+<td style="text-align: center;">Tak (najlepsza złożoność obliczeniowa <span class="arithmatex">\(O(N^3)\)</span>)</td>
+</tr>
+</tbody>
+</table>
 
 
 
