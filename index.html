@@ -878,15 +878,15 @@ To macierz, która ma tyle samo wierszy, co kolumn (<span class="arithmatex">\(m
 <div class="arithmatex">\[\begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 4 \end{bmatrix}\]</div>
 <p><em>2. Macierz zerowa</em>
 Wszystkie jej elementy są równe zero. Oznacza się ją symbolem <span class="arithmatex">\(O\)</span>. Działa jak liczba 0 w zwykłym dodawaniu.
-* <em>Przykład:</em>
+ <em>Przykład:</em>
     <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\)</span>\)</span></p>
 <p><em>3. Macierz diagonalna</em>
 To macierz kwadratowa, która ma niezerowe elementy <strong>tylko na głównej przekątnej</strong> (od lewego górnego rogu do prawego dolnego). Wszędzie indziej są zera.
-* <em>Przykład:</em>
+ <em>Przykład:</em>
     <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} \mathbf{5} &amp; 0 &amp; 0 \\ 0 &amp; \mathbf{2} &amp; 0 \\ 0 &amp; 0 &amp; \mathbf{-1} \end{bmatrix}\)</span>\)</span></p>
 <p><em>4. Macierz jednostkowa (Identyczności)</em>
 To specjalny rodzaj macierzy diagonalnej. Na głównej przekątnej ma same <strong>jedynki</strong>, a poza nią same zera. Oznaczamy ją jako <span class="arithmatex">\(I\)</span>. Działa jak liczba 1 w mnożeniu (pomnożenie przez nią nic nie zmienia).
-* <em>Przykład (<span class="arithmatex">\(I_3\)</span>):</em>
+ <em>Przykład (<span class="arithmatex">\(I_3\)</span>):</em>
     <span class="arithmatex">\(<span class="arithmatex">\(I = \begin{bmatrix} \mathbf{1} &amp; 0 &amp; 0 \\ 0 &amp; \mathbf{1} &amp; 0 \\ 0 &amp; 0 &amp; \mathbf{1} \end{bmatrix}\)</span>\)</span></p>
 <p><em>5. Transpozycja macierzy (<span class="arithmatex">\(A^T\)</span>)</em>
 Transpozycja to operacja polegająca na zamianie wierszy z kolumnami. Pierwszy wiersz staje się pierwszą kolumną, drugi wiersz drugą kolumną itd.</p>
@@ -898,10 +898,8 @@ Transpozycja to operacja polegająca na zamianie wierszy z kolumnami. Pierwszy w
 <p><em>1. Dodawanie i odejmowanie</em>
 <strong>Złota zasada:</strong> Możesz dodawać lub odejmować tylko macierze o <strong>tych samych wymiarach</strong>.
 Działanie wykonujemy "element po elemencie" (pierwszy z pierwszym, drugi z drugim itd.).</p>
-<ul>
-<li><em>Przykład (Dodawanie):</em>
-    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} + \begin{bmatrix} 10 &amp; 20 \\ 30 &amp; 40 \end{bmatrix} = \begin{bmatrix} 1+10 &amp; 2+20 \\ 3+30 &amp; 4+40 \end{bmatrix} = \begin{bmatrix} 11 &amp; 22 \\ 33 &amp; 44 \end{bmatrix}\)</span>\)</span></li>
-</ul>
+<p><em>Przykład (Dodawanie):</em>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} + \begin{bmatrix} 10 &amp; 20 \\ 30 &amp; 40 \end{bmatrix} = \begin{bmatrix} 1+10 &amp; 2+20 \\ 3+30 &amp; 4+40 \end{bmatrix} = \begin{bmatrix} 11 &amp; 22 \\ 33 &amp; 44 \end{bmatrix}\)</span>\)</span></p>
 <p><em>2. Mnożenie przez skalar (liczbę)</em>
 "Skalar" w algebrze liniowej to po prostu zwykła liczba. Aby pomnożyć macierz przez skalar, mnożysz <strong>każdy element</strong> macierzy przez tę liczbę.</p>
 <p><em>Przykład:</em> Mnożymy macierz przez 5.
@@ -946,21 +944,15 @@ Często <span class="arithmatex">\(B \cdot A\)</span> może być nawet niewykona
 <h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 <h2 id="temat-2-wyznaczniki">Temat 2: Wyznaczniki<a class="headerlink" href="#temat-2-wyznaczniki" title="Permanent link">&para;</a></h2>
 <h3 id="1gowne-informacje">1.Główne informacje<a class="headerlink" href="#1gowne-informacje" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Wyznacznik (<span class="arithmatex">\(\det(A)\)</span> lub <span class="arithmatex">\(|A|\)</span>)</strong>: Jest to konkretna <strong>liczba</strong> (skalar) przypisana wyłącznie do <strong>macierzy kwadratowych</strong> (o wymiarach <span class="arithmatex">\(n \times n\)</span>, np. 2x2, 3x3).</li>
-<li><strong>Dlaczego tylko macierze kwadratowe?</strong> Wyznacznik opisuje, jak przekształcenie liniowe (reprezentowane przez macierz) zmienia "objętość" (lub pole w 2D). Aby można było mówić o "objętości" w tej samej przestrzeni, macierz musi przekształcać przestrzeń w nią samą (np. płaszczyznę w płaszczyznę), co robią macierze kwadratowe.</li>
-</ul>
+<p><strong>Wyznacznik (<span class="arithmatex">\(\det(A)\)</span> lub <span class="arithmatex">\(|A|\)</span>)</strong>: Jest to konkretna <strong>liczba</strong> (skalar) przypisana wyłącznie do <strong>macierzy kwadratowych</strong> (o wymiarach <span class="arithmatex">\(n \times n\)</span>, np. 2x2, 3x3).</p>
+<p><strong>Dlaczego tylko macierze kwadratowe?</strong> Wyznacznik opisuje, jak przekształcenie liniowe (reprezentowane przez macierz) zmienia "objętość" (lub pole w 2D). Aby można było mówić o "objętości" w tej samej przestrzeni, macierz musi przekształcać przestrzeń w nią samą (np. płaszczyznę w płaszczyznę), co robią macierze kwadratowe.</p>
 <p><strong>Interpretacja Geometryczna:</strong></p>
-<ul>
-<li><strong>Dla 2x2</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>pole równoległoboku</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</li>
-<li><strong>Dla 3x3</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>objętość równoległościanu</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</li>
-</ul>
+<p><strong>Dla 2x2</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>pole równoległoboku</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</p>
+<p><strong>Dla 3x3</strong>: Wartość bezwzględna wyznacznika (<span class="arithmatex">\(|\det(A)|\)</span>) to <strong>objętość równoległościanu</strong> rozpiętego na wektorach kolumnowych (lub wierszowych) tej macierzy.</p>
 <p><strong>Znaczenie znaku wyznacznika:</strong></p>
-<ul>
-<li><strong><span class="arithmatex">\(\det(A) &gt; 0\)</span></strong>: Przekształcenie zachowuje orientację przestrzeni.</li>
-<li><strong><span class="arithmatex">\(\det(A) &lt; 0\)</span></strong>: Przekształcenie zmienia orientację przestrzeni (np. robi "odbicie lustrzane").</li>
-<li><strong><span class="arithmatex">\(\det(A) = 0\)</span></strong>: Przekształcenie "spłaszcza" przestrzeń. Wektory są <strong>liniowo zależne</strong> (np. w 2D leżą na jednej linii). Pole lub objętość jest zerowa.</li>
-</ul>
+<p><strong><span class="arithmatex">\(\det(A) &gt; 0\)</span></strong>: Przekształcenie zachowuje orientację przestrzeni.</p>
+<p><strong><span class="arithmatex">\(\det(A) &lt; 0\)</span></strong>: Przekształcenie zmienia orientację przestrzeni (np. robi "odbicie lustrzane").</p>
+<p><strong><span class="arithmatex">\(\det(A) = 0\)</span></strong>: Przekształcenie "spłaszcza" przestrzeń. Wektory są <strong>liniowo zależne</strong> (np. w 2D leżą na jednej linii). Pole lub objętość jest zerowa.</p>
 <p><strong>Przykład 1 (Interpretacja i obliczenie 2x2):</strong>
 Dla macierzy <span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; 1 \\ 4 &amp; 2 \end{pmatrix}\)</span>, pole równoległoboku zbudowanego na wektorach <span class="arithmatex">\(\vec{v}_1 = [3, 4]\)</span> i <span class="arithmatex">\(\vec{v}_2 = [1, 2]\)</span> jest równe:
 <span class="arithmatex">\(\det(A) = 3 \cdot 2 - 1 \cdot 4 = 6 - 4 = 2\)</span>.
@@ -968,40 +960,29 @@ Pole wynosi <span class="arithmatex">\(|\det(A)| = 2\)</span>. Ponieważ wyznacz
 <hr />
 <h3 id="2-metody-obliczen-regua-sarrusa">2. Metody Obliczeń: Reguła Sarrusa<a class="headerlink" href="#2-metody-obliczen-regua-sarrusa" title="Permanent link">&para;</a></h3>
 <p>Metoda ta działa <strong>tylko</strong> dla macierzy 2x2 i 3x3.</p>
-<ul>
-<li>
-<p><strong>Dla 2x2</strong>:
-    <span class="arithmatex">\(\det \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = ad - bc\)</span></p>
-</li>
-<li>
-<p><strong>Dla 3x3 (Schemat Sarrusa)</strong>:</p>
-<ol>
-<li>Obok macierzy dopisujemy jej dwie pierwsze kolumny.</li>
-<li>Sumujemy iloczyny wzdłuż trzech przekątnych "w prawo w dół".</li>
-<li>Odejmujemy sumę iloczynów wzdłuż trzech przekątnych "w prawo w górę".</li>
-</ol>
-</li>
-</ul>
+<p><strong>Dla 2x2</strong>:</p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = ad - bc\)</span></p>
+<p><strong>Dla 3x3 (Schemat Sarrusa)</strong>:
+    1.  Obok macierzy dopisujemy jej dwie pierwsze kolumny.
+    2.  Sumujemy iloczyny wzdłuż trzech przekątnych "w prawo w dół".
+    3.  Odejmujemy sumę iloczynów wzdłuż trzech przekątnych "w prawo w górę".</p>
 <p><strong>Przykłady obliczeń:</strong></p>
-<ul>
-<li>
 <p><strong>Przykład 2a (2x2):</strong>
     <span class="arithmatex">\(A = \begin{pmatrix} 5 &amp; 2 \\ -1 &amp; 3 \end{pmatrix}\)</span>
     <span class="arithmatex">\(\det(A) = (5 \cdot 3) - (2 \cdot -1) = 15 - (-2) = 15 + 2 = 17\)</span></p>
-</li>
-<li>
 <p><strong>Przykład 2b (3x3):</strong>
     <span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix}\)</span>
     Dopisujemy kolumny:
     <span class="arithmatex">\(\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 1 &amp; 0 &amp; 6 \end{pmatrix} \begin{matrix} 1 &amp; 2 \\ 0 &amp; 4 \\ 1 &amp; 0 \end{matrix}\)</span></p>
-<p>Suma iloczynów "w dół" (+):
-<span class="arithmatex">\((1 \cdot 4 \cdot 6) + (2 \cdot 5 \cdot 1) + (3 \cdot 0 \cdot 0) = 24 + 10 + 0 = 34\)</span></p>
-<p>Suma iloczynów "w górę" (-):
-<span class="arithmatex">\((3 \cdot 4 \cdot 1) + (5 \cdot 0 \cdot 1) + (6 \cdot 0 \cdot 2) = 12 + 0 + 0 = 12\)</span></p>
-<p>Wynik:
-<span class="arithmatex">\(\det(B) = 34 - 12 = 22\)</span></p>
-</li>
-</ul>
+<pre><code>Suma iloczynów "w dół" (+):
+$(1 \cdot 4 \cdot 6) + (2 \cdot 5 \cdot 1) + (3 \cdot 0 \cdot 0) = 24 + 10 + 0 = 34$
+
+Suma iloczynów "w górę" (-):
+$(3 \cdot 4 \cdot 1) + (5 \cdot 0 \cdot 1) + (6 \cdot 0 \cdot 2) = 12 + 0 + 0 = 12$
+
+Wynik:
+$\det(B) = 34 - 12 = 22$
+</code></pre>
 <hr />
 <h4 id="3-metody-obliczen-rozwiniecie-laplacea">3. Metody Obliczeń: Rozwinięcie Laplace’a<a class="headerlink" href="#3-metody-obliczen-rozwiniecie-laplacea" title="Permanent link">&para;</a></h4>
 <p>Metoda <strong>uniwersalna</strong>, działająca dla macierzy dowolnego stopnia (<span class="arithmatex">\(n \times n\)</span>).</p>
