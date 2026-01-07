@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#temat-1-podstawy-o-macierzach" class="md-skip">
+        <a href="#temat-2-wyznaczniki-macierzy" class="md-skip">
           Skip to content
         </a>
       
@@ -359,15 +359,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temat-1-podstawy-o-macierzach" class="md-nav__link">
+  <a href="#temat-2-wyznaczniki-macierzy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temat 1: Podstawy o macierzach
+        Temat 2: Wyznaczniki macierzy
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Temat 1: Podstawy o macierzach">
+    <nav class="md-nav" aria-label="Temat 2: Wyznaczniki macierzy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -390,7 +390,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="2. Metody Obliczeń: Reguła Sarrusa">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#3-metody-obliczen-rozwiniecie-laplacea" class="md-nav__link">
@@ -422,6 +423,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -637,15 +643,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temat-1-podstawy-o-macierzach" class="md-nav__link">
+  <a href="#temat-2-wyznaczniki-macierzy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temat 1: Podstawy o macierzach
+        Temat 2: Wyznaczniki macierzy
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Temat 1: Podstawy o macierzach">
+    <nav class="md-nav" aria-label="Temat 2: Wyznaczniki macierzy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -668,7 +674,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="2. Metody Obliczeń: Reguła Sarrusa">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#3-metody-obliczen-rozwiniecie-laplacea" class="md-nav__link">
@@ -707,6 +714,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -727,8 +739,8 @@
 
   <h1>Wyznaczniki</h1>
 
-<h2 id="temat-1-podstawy-o-macierzach">Temat 1: Podstawy o macierzach<a class="headerlink" href="#temat-1-podstawy-o-macierzach" title="Permanent link">&para;</a></h2>
-<h4 id="1-definicja-i-interpretacja-wyznacznika">1. Definicja i Interpretacja Wyznacznika<a class="headerlink" href="#1-definicja-i-interpretacja-wyznacznika" title="Permanent link">&para;</a></h4>
+<h2 id="temat-2-wyznaczniki-macierzy">Temat 2: Wyznaczniki macierzy<a class="headerlink" href="#temat-2-wyznaczniki-macierzy" title="Permanent link">&para;</a></h2>
+<h3 id="1-definicja-i-interpretacja-wyznacznika">1. Definicja i Interpretacja Wyznacznika<a class="headerlink" href="#1-definicja-i-interpretacja-wyznacznika" title="Permanent link">&para;</a></h3>
 <p><strong>Wyznacznik (<span class="arithmatex">\(\det(A)\)</span> lub <span class="arithmatex">\(|A|\)</span>)</strong>: Jest to konkretna <strong>liczba</strong> (skalar) przypisana wyłącznie do <strong>macierzy kwadratowych</strong> (o wymiarach <span class="arithmatex">\(n \times n\)</span>, np. 2x2, 3x3).</p>
 <p><strong>Dlaczego tylko macierze kwadratowe?</strong> Wyznacznik opisuje, jak przekształcenie liniowe (reprezentowane przez macierz) zmienia "objętość" (lub pole w 2D). Aby można było mówić o "objętości" w tej samej przestrzeni, macierz musi przekształcać przestrzeń w nią samą (np. płaszczyznę w płaszczyznę), co robią macierze kwadratowe.</p>
 <p><strong>Interpretacja Geometryczna:</strong></p>
@@ -743,11 +755,12 @@
 <li><strong><span class="arithmatex">\(\det(A) = 0\)</span></strong>: Przekształcenie "spłaszcza" przestrzeń. Wektory są <strong>liniowo zależne</strong> (np. w 2D leżą na jednej linii). Pole lub objętość jest zerowa.</li>
 </ul>
 <p><strong>Przykład 1 (Interpretacja i obliczenie 2x2):</strong>
-Dla macierzy <span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; 1 \\ 4 &amp; 2 \end{pmatrix}\)</span>, pole równoległoboku zbudowanego na wektorach <span class="arithmatex">\(\vec{v}_1 = [3, 4]\)</span> i <span class="arithmatex">\(\vec{v}_2 = [1, 2]\)</span> jest równe:
+<span class="arithmatex">\(<span class="arithmatex">\(A = \begin{pmatrix} 3 &amp; 1 \\ 4 &amp; 2 \end{pmatrix}\)</span>\)</span> </p>
+<p>pole równoległoboku zbudowanego na wektorach <span class="arithmatex">\(\vec{v}_1 = [3, 4]\)</span> i <span class="arithmatex">\(\vec{v}_2 = [1, 2]\)</span> jest równe:
 <span class="arithmatex">\(\det(A) = 3 \cdot 2 - 1 \cdot 4 = 6 - 4 = 2\)</span>.
 Pole wynosi <span class="arithmatex">\(|\det(A)| = 2\)</span>. Ponieważ wyznacznik jest dodatni, orientacja wektorów jest zachowana.</p>
 <hr />
-<h4 id="2-metody-obliczen-regua-sarrusa">2. Metody Obliczeń: Reguła Sarrusa<a class="headerlink" href="#2-metody-obliczen-regua-sarrusa" title="Permanent link">&para;</a></h4>
+<h3 id="2-metody-obliczen-regua-sarrusa">2. Metody Obliczeń: Reguła Sarrusa<a class="headerlink" href="#2-metody-obliczen-regua-sarrusa" title="Permanent link">&para;</a></h3>
 <p>Metoda ta działa <strong>tylko</strong> dla macierzy 2x2 i 3x3.</p>
 <ul>
 <li>
