@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#temat-2-wyznaczniki-macierzy" class="md-skip">
+        <a href="#temat-2-iloczyn-skalarny-wektorowy-i-mieszany" class="md-skip">
           Skip to content
         </a>
       
@@ -581,15 +581,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temat-2-wyznaczniki-macierzy" class="md-nav__link">
+  <a href="#temat-2-iloczyn-skalarny-wektorowy-i-mieszany" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temat 2: Wyznaczniki macierzy
+        Temat 2: Iloczyn skalarny, wektorowy i mieszany
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Temat 2: Wyznaczniki macierzy">
+    <nav class="md-nav" aria-label="Temat 2: Iloczyn skalarny, wektorowy i mieszany">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -703,6 +703,17 @@
     <span class="md-ellipsis">
       
         C. Interpretacja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-obliczanie-sinusa-kata-miedzy-wektorami-iloczyn-wektorowy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Obliczanie sinusa kąta miedzy wektorami (Iloczyn wektorowy)
       
     </span>
   </a>
@@ -976,15 +987,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temat-2-wyznaczniki-macierzy" class="md-nav__link">
+  <a href="#temat-2-iloczyn-skalarny-wektorowy-i-mieszany" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temat 2: Wyznaczniki macierzy
+        Temat 2: Iloczyn skalarny, wektorowy i mieszany
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Temat 2: Wyznaczniki macierzy">
+    <nav class="md-nav" aria-label="Temat 2: Iloczyn skalarny, wektorowy i mieszany">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1104,6 +1115,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#d-obliczanie-sinusa-kata-miedzy-wektorami-iloczyn-wektorowy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Obliczanie sinusa kąta miedzy wektorami (Iloczyn wektorowy)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1183,35 +1205,45 @@
 
   <h1>2.Iloczyn wektorów</h1>
 
-<h2 id="temat-2-wyznaczniki-macierzy">Temat 2: Wyznaczniki macierzy<a class="headerlink" href="#temat-2-wyznaczniki-macierzy" title="Permanent link">&para;</a></h2>
+<h2 id="temat-2-iloczyn-skalarny-wektorowy-i-mieszany">Temat 2: Iloczyn skalarny, wektorowy i mieszany<a class="headerlink" href="#temat-2-iloczyn-skalarny-wektorowy-i-mieszany" title="Permanent link">&para;</a></h2>
 <h3 id="1-iloczyn-skalarny-miara-katow-i-rzutow">1. Iloczyn Skalarny - Miara Kątów i Rzutów<a class="headerlink" href="#1-iloczyn-skalarny-miara-katow-i-rzutow" title="Permanent link">&para;</a></h3>
 <p>Iloczyn skalarny, często nazywany <em>iloczynem punktowym</em>, jest fundamentalną operacją na dwóch wektorach, której wynikiem jest <strong>skalar</strong>, czyli pojedyncza liczba. Jest to narzędzie do mierzenia, jak bardzo wektory są skierowane w tym samym kierunku.</p>
 <h4 id="a-definicja-algebraiczna">A. Definicja Algebraiczna<a class="headerlink" href="#a-definicja-algebraiczna" title="Permanent link">&para;</a></h4>
-<p>Iloczyn skalarny jest obliczany poprzez pomnożenie odpowiadających sobie współrzędnych wektorów i zsumowanie tych iloczynów. Dla wektorów w przestrzeni <span class="arithmatex">\(n\)</span>-wymiarowej:
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n\)</span>\)</span></p>
+<p>Iloczyn skalarny jest obliczany poprzez pomnożenie odpowiadających sobie współrzędnych wektorów i zsumowanie tych iloczynów. Dla wektorów w przestrzeni <span class="arithmatex">\(n\)</span>-wymiarowej:</p>
+<div class="arithmatex">\[\mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n\]</div>
 <h4 id="b-definicja-geometryczna">B. Definicja Geometryczna<a class="headerlink" href="#b-definicja-geometryczna" title="Permanent link">&para;</a></h4>
-<p>Geometrycznie, iloczyn skalarny jest iloczynem długości (modułów) wektorów oraz cosinusa kąta <span class="arithmatex">\(\theta\)</span> między nimi:
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| \cdot |\mathbf{v}| \cdot \cos(\theta)\)</span>\)</span></p>
+<p>Geometrycznie, iloczyn skalarny jest iloczynem długości (modułów) wektorów oraz cosinusa kąta <span class="arithmatex">\(\theta\)</span> między nimi:</p>
+<div class="arithmatex">\[\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| \cdot |\mathbf{v}| \cdot \cos(\theta)\]</div>
 <h4 id="c-interpretacja-wyniku">C. Interpretacja Wyniku<a class="headerlink" href="#c-interpretacja-wyniku" title="Permanent link">&para;</a></h4>
-<p>Znak iloczynu skalarnego mówi nam bezpośrednio o kącie <span class="arithmatex">\(\theta\)</span>:
-* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &gt; 0\)</span>, kąt jest <strong>ostry</strong> (wektory są skierowane podobnie).
-* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = 0\)</span>, kąt jest <strong>prosty</strong> (<span class="arithmatex">\(\theta = 90^\circ\)</span>). Wektory są <strong>prostopadłe</strong> (ortogonalne).
-* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &lt; 0\)</span>, kąt jest <strong>rozwarty</strong> (wektory są skierowane przeciwnie).</p>
+<p>Znak iloczynu skalarnego mówi nam bezpośrednio o kącie <span class="arithmatex">\(\theta\)</span>:</p>
+<ul>
+<li>
+<p>Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &gt; 0\)</span>, kąt jest <strong>ostry</strong> (wektory są skierowane podobnie).</p>
+</li>
+<li>
+<p>Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = 0\)</span>, kąt jest <strong>prosty</strong> (<span class="arithmatex">\(\theta = 90^\circ\)</span>). Wektory są <strong>prostopadłe</strong> (ortogonalne).</p>
+</li>
+<li>
+<p>Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &lt; 0\)</span>, kąt jest <strong>rozwarty</strong> (wektory są skierowane przeciwnie).</p>
+</li>
+</ul>
 <h4 id="d-przykad-obliczenia-kata">D. Przykład Obliczenia Kąta<a class="headerlink" href="#d-przykad-obliczenia-kata" title="Permanent link">&para;</a></h4>
 <p>Weźmy wektory <span class="arithmatex">\(\mathbf{u} = [2, 2]\)</span> i <span class="arithmatex">\(\mathbf{v} = [-3, 0]\)</span>.</p>
 <ol>
-<li>Najpierw obliczamy <strong>iloczyn skalarny</strong>:</li>
-</ol>
+<li>
+<p>Najpierw obliczamy <strong>iloczyn skalarny</strong>:</p>
 <div class="arithmatex">\[\mathbf{u} \cdot \mathbf{v} = (2) \cdot (-3) + (2) \cdot (0) = -6\]</div>
-<ol>
-<li>Następnie obliczamy <strong>długości</strong> wektorów:</li>
-</ol>
+</li>
+<li>
+<p>Następnie obliczamy <strong>długości</strong> wektorów:</p>
 <div class="arithmatex">\[|\mathbf{u}| = \sqrt{2^2 + 2^2} = \sqrt{8}\]</div>
 <div class="arithmatex">\[|\mathbf{v}| = \sqrt{(-3)^2 + 0^2} = 3\]</div>
-<ol>
-<li>Używamy wzoru na <strong>cosinus kąta</strong>:</li>
-</ol>
+</li>
+<li>
+<p>Używamy wzoru na <strong>cosinus kąta</strong>:</p>
 <div class="arithmatex">\[\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| \cdot |\mathbf{v}|} = \frac{-6}{3\sqrt{8}} = -\frac{2}{\sqrt{8}} = -\frac{\sqrt{2}}{2}\]</div>
+</li>
+</ol>
 <p>Otrzymana wartość wskazuje, że kąt <span class="arithmatex">\(\theta\)</span> wynosi <span class="arithmatex">\(\mathbf{135^\circ}\)</span>.</p>
 <hr />
 <h3 id="2-iloczyn-wektorowy-znajdowanie-prostopadosci-w-3d">2. Iloczyn Wektorowy - Znajdowanie Prostopadłości w 3D<a class="headerlink" href="#2-iloczyn-wektorowy-znajdowanie-prostopadosci-w-3d" title="Permanent link">&para;</a></h3>
@@ -1233,7 +1265,7 @@
 <div class="arithmatex">\[\vec{w} = \vec{a} \times \vec{b} = \begin{vmatrix} \vec{i} &amp; \vec{j} &amp; \vec{k} \\ 2 &amp; -1 &amp; 3 \\ 1 &amp; 0 &amp; 4 \end{vmatrix}\]</div>
 <p><strong>Krok 2: Rozpisanie metodą Sarrusa (dopisujemy kolumny)</strong></p>
 <p>Dopisujemy dwie pierwsze kolumny obok wyznacznika, aby móc łatwo mnożyć po skosie:</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(\begin{vmatrix} 
+<div class="arithmatex">\[\begin{vmatrix} 
 \vec{i} &amp; \vec{j} &amp; \vec{k} \\ 
 2 &amp; -1 &amp; 3 \\ 
 1 &amp; 0 &amp; 4 
@@ -1242,21 +1274,45 @@
 \vec{i} &amp; \vec{j} \\ 
 2 &amp; -1 \\ 
 1 &amp; 0 
-\end{matrix}\)</span>\)</span>
-<strong>Krok 3: Mnożenie "z góry na dół" (skosy dodatnie)</strong></p>
+\end{matrix}\]</div>
+<p><strong>Krok 3: Mnożenie "z góry na dół" (skosy dodatnie)</strong></p>
+<ul>
+<li>
 <p><span class="arithmatex">\(\vec{i} \cdot (-1) \cdot 4 = \mathbf{-4\vec{i}}\)</span></p>
+</li>
+<li>
 <p><span class="arithmatex">\(\vec{j} \cdot 3 \cdot 1 = \mathbf{3\vec{j}}\)</span></p>
+</li>
+<li>
 <p><span class="arithmatex">\(\vec{k} \cdot 2 \cdot 0 = \mathbf{0\vec{k}}\)</span></p>
+</li>
+</ul>
 <p>Suma dodatnia: <span class="arithmatex">\(-4\vec{i} + 3\vec{j} + 0\vec{k}\)</span></p>
 <p><strong>Krok 4: Mnożenie "z dołu na górę" (skosy ujemne)</strong></p>
+<ul>
+<li>
 <p><span class="arithmatex">\(1 \cdot (-1) \cdot \vec{k} = -\vec{k} \implies\)</span> ze zmianą znaku: <span class="arithmatex">\(\mathbf{+\vec{k}}\)</span></p>
+</li>
+<li>
 <p><span class="arithmatex">\(0 \cdot 3 \cdot \vec{i} = 0\vec{i} \implies\)</span> ze zmianą znaku: <span class="arithmatex">\(\mathbf{0\vec{i}}\)</span></p>
+</li>
+<li>
 <p><span class="arithmatex">\(4 \cdot 2 \cdot \vec{j} = 8\vec{j} \implies\)</span> ze zmianą znaku: <span class="arithmatex">\(\mathbf{-8\vec{j}}\)</span></p>
+</li>
+</ul>
 <p><strong>Krok 5: Wynik końcowy (sumowanie wszystkiego)</strong></p>
 <p>Grupujemy składniki przy tych samych literach:</p>
+<ul>
+<li>
 <p>Przy <span class="arithmatex">\(\vec{i}\)</span>: <span class="arithmatex">\(-4\vec{i} + 0\vec{i} = \mathbf{-4\vec{i}}\)</span></p>
+</li>
+<li>
 <p>Przy <span class="arithmatex">\(\vec{j}\)</span>: <span class="arithmatex">\(3\vec{j} - 8\vec{j} = \mathbf{-5\vec{j}}\)</span></p>
+</li>
+<li>
 <p>Przy <span class="arithmatex">\(\vec{k}\)</span>: <span class="arithmatex">\(0\vec{k} + 1\vec{k} = \mathbf{1\vec{k}}\)</span></p>
+</li>
+</ul>
 <p>Ostateczny wektor prostopadły:</p>
 <div class="arithmatex">\[\vec{w} = [-4, -5, 1]\]</div>
 <p><strong>Szybkie sprawdzenie (iloczyn skalarny):</strong></p>
@@ -1266,6 +1322,15 @@
 <li><strong>Kierunek i Zwrot:</strong> Kierunek wektora wynikowego <span class="arithmatex">\(\mathbf{w}\)</span> jest prostopadły do <span class="arithmatex">\(\mathbf{u}\)</span> i <span class="arithmatex">\(\mathbf{v}\)</span>. Jego zwrot określa <strong>reguła prawej dłoni</strong>.</li>
 <li><strong>Długość (Moduł):</strong> Długość wektora <span class="arithmatex">\(|\mathbf{u} \times \mathbf{v}|\)</span> jest równa <strong>polu powierzchni równoległoboku</strong> rozpiętego na wektorach <span class="arithmatex">\(\mathbf{u}\)</span> i <span class="arithmatex">\(\mathbf{v}\)</span>.</li>
 </ol>
+<h4 id="d-obliczanie-sinusa-kata-miedzy-wektorami-iloczyn-wektorowy">D. Obliczanie sinusa kąta miedzy wektorami (Iloczyn wektorowy)<a class="headerlink" href="#d-obliczanie-sinusa-kata-miedzy-wektorami-iloczyn-wektorowy" title="Permanent link">&para;</a></h4>
+<p>Tutaj musimy najpierw obliczyć wektor prostopadły (iloczyn wektorowy), a potem jego długość. 
+<strong>Wzór to:</strong></p>
+<div class="arithmatex">\[\sin \phi = \frac{\|\vec{a} \times \vec{b}\|}{\|\vec{a}\| \cdot \|\vec{b}\|}\]</div>
+<p>Iloczyn wektorowy (<span class="arithmatex">\(\vec{a} \times \vec{b}\)</span>):Używając metody Sarrusa dla </p>
+<div class="arithmatex">\[\begin{vmatrix} \vec{i} &amp; \vec{j} &amp; \vec{k} \\ 3 &amp; 0 &amp; 0 \\ 0 &amp; 4 &amp; 0 \end{vmatrix}\]</div>
+<p>otrzymamy wektor <span class="arithmatex">\([0, 0, 12]\)</span></p>
+<p>Długość iloczynu wektorowego: <span class="arithmatex">\(\sqrt{0^2 + 0^2 + 12^2} = \mathbf{12}\)</span></p>
+<p>Wynik: <span class="arithmatex">\(\sin \phi = \frac{12}{3 \cdot 4} = \frac{12}{12} = \mathbf{1}\)</span>(Skoro <span class="arithmatex">\(\sin = 1\)</span>, to kąt wynosi <span class="arithmatex">\(90^\circ\)</span>).</p>
 <hr />
 <h3 id="3-iloczyn-mieszany-objetosc-i-wspopaszczyznowosc">3. Iloczyn Mieszany - Objętość i Współpłaszczyznowość<a class="headerlink" href="#3-iloczyn-mieszany-objetosc-i-wspopaszczyznowosc" title="Permanent link">&para;</a></h3>
 <p>Iloczyn mieszany, zwany <em>potrójnym iloczynem skalarnym</em>, to operacja na <strong>trzech wektorach w 3D</strong>. Łączy iloczyn wektorowy i skalarny, a jego wynikiem jest <strong>skalar</strong>.</p>
