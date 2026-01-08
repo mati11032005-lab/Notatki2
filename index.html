@@ -562,9 +562,20 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="geometria/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -578,7 +589,107 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometria analityczna
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Wektory podstawy
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="geometria2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Iloczyn wektorów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="geometria3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Proste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -729,6 +840,7 @@
 <h3 id="1-intuicja-jak-rozumiec-macierz">1. Intuicja: Jak rozumieć macierz?<a class="headerlink" href="#1-intuicja-jak-rozumiec-macierz" title="Permanent link">&para;</a></h3>
 <p>Zanim wejdziemy w matematykę, wyobraź sobie <strong>arkusz kalkulacyjny w Excelu</strong>. Masz w nim komórki ułożone w poziomie i w pionie. Macierz to w zasadzie właśnie taka tabela z liczbami, ujęta w nawiasy.</p>
 <p>Inna analogia to <strong>plansza do gry w statki</strong>. Aby trafić w statek, podajesz współrzędne (np. A4). W macierzach robimy dokładnie to samo – każda liczba ma swój unikalny "adres".</p>
+<hr />
 <h3 id="2-definicja-i-budowa">2. Definicja i budowa<a class="headerlink" href="#2-definicja-i-budowa" title="Permanent link">&para;</a></h3>
 <p><strong>Macierz</strong> to prostokątna tablica liczb (lub innych elementów), uporządkowanych w wiersze i kolumny.</p>
 <p>Oto przykładowa macierz <span class="arithmatex">\(A\)</span>:</p>
@@ -742,7 +854,7 @@
 <li><strong>Wymiar:</strong> zapisujemy go jako <strong><span class="arithmatex">\(m \times n\)</span></strong> (wiersze × kolumny); tu <strong><span class="arithmatex">\(3 \times 4\)</span></strong>.</li>
 </ul>
 </blockquote>
-<p>Rozłóżmy ją na czynniki pierwsze:</p>
+<hr />
 <h3 id="3-adresowanie-elementow-a_ij">3. Adresowanie elementów (<span class="arithmatex">\(a_{ij}\)</span>)<a class="headerlink" href="#3-adresowanie-elementow-a_ij" title="Permanent link">&para;</a></h3>
 <p>Aby wskazać konkretną liczbę, używamy zapisu <span class="arithmatex">\(a_{ij}\)</span>, gdzie:
  <span class="arithmatex">\(i\)</span> – numer wiersza,
@@ -754,6 +866,7 @@
 <li>Szukamy elementu <span class="arithmatex">\(a_{14}\)</span> (1. wiersz, 4. kolumna).</li>
 <li>Patrzymy na pierwszy wiersz: <span class="arithmatex">\([4, 7, -2, \mathbf{1}]\)</span>. Czwartą liczbą jest <strong>1</strong>. Zatem <span class="arithmatex">\(a_{14} = 1\)</span>.</li>
 </ol>
+<hr />
 <h3 id="4macierze-specjalne">4.Macierze specjalne<a class="headerlink" href="#4macierze-specjalne" title="Permanent link">&para;</a></h3>
 <p>Niektóre macierze mają tak specyficzny układ, że otrzymały własne nazwy. Oto najważniejsze z nich:</p>
 <p><strong>1. Macierz kwadratowa</strong></p>

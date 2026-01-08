@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../algebra4/">
+        <link rel="prev" href="../geometria/">
       
       
-        <link rel="next" href="../geometria2/">
+        <link rel="next" href="../geometria3/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>1.Wektory podstawy - Notatki z Matematyki</title>
+        <title>2.Iloczyn wektorów - Notatki z Matematyki</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#i-przestrzen-kartezjanska-i-podstawy-wektorow" class="md-skip">
+        <a href="#1-iloczyn-skalarny-mathbfu-cdot-mathbfv-miara-katow-i-rzutow" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.Wektory podstawy
+              2.Iloczyn wektorów
             
           </span>
         </div>
@@ -494,6 +494,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Wektory podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -511,7 +539,7 @@
   <span class="md-ellipsis">
     
   
-    1.Wektory podstawy
+    2.Iloczyn wektorów
   
 
     
@@ -529,7 +557,7 @@
   <span class="md-ellipsis">
     
   
-    1.Wektory podstawy
+    2.Iloczyn wektorów
   
 
     
@@ -553,22 +581,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-przestrzen-kartezjanska-i-podstawy-wektorow" class="md-nav__link">
+  <a href="#1-iloczyn-skalarny-mathbfu-cdot-mathbfv-miara-katow-i-rzutow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I. Przestrzeń Kartezjańska i Podstawy Wektorów
+        1. Iloczyn Skalarny (\(\mathbf{u} \cdot \mathbf{v}\)) - Miara Kątów i Rzutów
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="I. Przestrzeń Kartezjańska i Podstawy Wektorów">
+    <nav class="md-nav" aria-label="1. Iloczyn Skalarny (\(\mathbf{u} \cdot \mathbf{v}\)) - Miara Kątów i Rzutów">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-punkt-vs-wektor-poozenie-vs-ruch" class="md-nav__link">
+  <a href="#a-definicja-algebraiczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Punkt vs. Wektor (Położenie vs. Ruch)
+        A. Definicja Algebraiczna
       
     </span>
   </a>
@@ -576,10 +604,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-obliczanie-wsporzednych-wektora" class="md-nav__link">
+  <a href="#b-definicja-geometryczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Obliczanie Współrzędnych Wektora
+        B. Definicja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-interpretacja-wyniku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Interpretacja Wyniku
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-przykad-obliczenia-kata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Przykład Obliczenia Kąta
       
     </span>
   </a>
@@ -592,22 +642,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-dziaania-na-wektorach-algebra-i-geometria" class="md-nav__link">
+  <a href="#2-iloczyn-wektorowy-mathbfu-times-mathbfv-znajdowanie-prostopadosci-w-3d" class="md-nav__link">
     <span class="md-ellipsis">
       
-        II. Działania na Wektorach (Algebra i Geometria)
+        2. Iloczyn Wektorowy (\(\mathbf{u} \times \mathbf{v}\)) - Znajdowanie Prostopadłości w 3D
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="II. Działania na Wektorach (Algebra i Geometria)">
+    <nav class="md-nav" aria-label="2. Iloczyn Wektorowy (\(\mathbf{u} \times \mathbf{v}\)) - Znajdowanie Prostopadłości w 3D">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dodawanie-i-odejmowanie-wektorow" class="md-nav__link">
+  <a href="#a-obliczenie-za-pomoca-wyznacznika" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dodawanie i Odejmowanie Wektorów
+        A. Obliczenie za Pomocą Wyznacznika
       
     </span>
   </a>
@@ -615,10 +665,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mnozenie-wektora-przez-skalar-k" class="md-nav__link">
+  <a href="#b-interpretacja-geometryczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Mnożenie Wektora przez Skalar (\(k\))
+        B. Interpretacja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-przykad-obliczenia-wektora-prostopadego" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Przykład Obliczenia Wektora Prostopadłego
       
     </span>
   </a>
@@ -631,22 +692,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-dugosc-wektora-i-wersor" class="md-nav__link">
+  <a href="#3-iloczyn-mieszany-mathbfu-cdot-mathbfv-times-mathbfw-objetosc-i-wspopaszczyznowosc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        III. Długość Wektora i Wersor
+        3. Iloczyn Mieszany (\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})\)) - Objętość i Współpłaszczyznowość
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="III. Długość Wektora i Wersor">
+    <nav class="md-nav" aria-label="3. Iloczyn Mieszany (\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})\)) - Objętość i Współpłaszczyznowość">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dugosc-norma-modu-wektora" class="md-nav__link">
+  <a href="#a-obliczenie-za-pomoca-wyznacznika_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Długość (Norma, Moduł) Wektora
+        A. Obliczenie za Pomocą Wyznacznika
       
     </span>
   </a>
@@ -654,10 +715,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-wersor-wektor-jednostkowy-i-normalizacja" class="md-nav__link">
+  <a href="#b-interpretacja-geometryczna_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Wersor (Wektor Jednostkowy) i Normalizacja
+        B. Interpretacja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-przykad-sprawdzenia-wspopaszczyznowosci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Przykład Sprawdzenia Współpłaszczyznowości
       
     </span>
   </a>
@@ -673,34 +745,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../geometria2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2.Iloczyn wektorów
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -793,22 +837,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-przestrzen-kartezjanska-i-podstawy-wektorow" class="md-nav__link">
+  <a href="#1-iloczyn-skalarny-mathbfu-cdot-mathbfv-miara-katow-i-rzutow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I. Przestrzeń Kartezjańska i Podstawy Wektorów
+        1. Iloczyn Skalarny (\(\mathbf{u} \cdot \mathbf{v}\)) - Miara Kątów i Rzutów
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="I. Przestrzeń Kartezjańska i Podstawy Wektorów">
+    <nav class="md-nav" aria-label="1. Iloczyn Skalarny (\(\mathbf{u} \cdot \mathbf{v}\)) - Miara Kątów i Rzutów">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-punkt-vs-wektor-poozenie-vs-ruch" class="md-nav__link">
+  <a href="#a-definicja-algebraiczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Punkt vs. Wektor (Położenie vs. Ruch)
+        A. Definicja Algebraiczna
       
     </span>
   </a>
@@ -816,10 +860,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-obliczanie-wsporzednych-wektora" class="md-nav__link">
+  <a href="#b-definicja-geometryczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Obliczanie Współrzędnych Wektora
+        B. Definicja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-interpretacja-wyniku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Interpretacja Wyniku
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-przykad-obliczenia-kata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Przykład Obliczenia Kąta
       
     </span>
   </a>
@@ -832,22 +898,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-dziaania-na-wektorach-algebra-i-geometria" class="md-nav__link">
+  <a href="#2-iloczyn-wektorowy-mathbfu-times-mathbfv-znajdowanie-prostopadosci-w-3d" class="md-nav__link">
     <span class="md-ellipsis">
       
-        II. Działania na Wektorach (Algebra i Geometria)
+        2. Iloczyn Wektorowy (\(\mathbf{u} \times \mathbf{v}\)) - Znajdowanie Prostopadłości w 3D
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="II. Działania na Wektorach (Algebra i Geometria)">
+    <nav class="md-nav" aria-label="2. Iloczyn Wektorowy (\(\mathbf{u} \times \mathbf{v}\)) - Znajdowanie Prostopadłości w 3D">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dodawanie-i-odejmowanie-wektorow" class="md-nav__link">
+  <a href="#a-obliczenie-za-pomoca-wyznacznika" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dodawanie i Odejmowanie Wektorów
+        A. Obliczenie za Pomocą Wyznacznika
       
     </span>
   </a>
@@ -855,10 +921,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mnozenie-wektora-przez-skalar-k" class="md-nav__link">
+  <a href="#b-interpretacja-geometryczna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Mnożenie Wektora przez Skalar (\(k\))
+        B. Interpretacja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-przykad-obliczenia-wektora-prostopadego" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Przykład Obliczenia Wektora Prostopadłego
       
     </span>
   </a>
@@ -871,22 +948,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-dugosc-wektora-i-wersor" class="md-nav__link">
+  <a href="#3-iloczyn-mieszany-mathbfu-cdot-mathbfv-times-mathbfw-objetosc-i-wspopaszczyznowosc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        III. Długość Wektora i Wersor
+        3. Iloczyn Mieszany (\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})\)) - Objętość i Współpłaszczyznowość
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="III. Długość Wektora i Wersor">
+    <nav class="md-nav" aria-label="3. Iloczyn Mieszany (\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})\)) - Objętość i Współpłaszczyznowość">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dugosc-norma-modu-wektora" class="md-nav__link">
+  <a href="#a-obliczenie-za-pomoca-wyznacznika_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Długość (Norma, Moduł) Wektora
+        A. Obliczenie za Pomocą Wyznacznika
       
     </span>
   </a>
@@ -894,10 +971,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-wersor-wektor-jednostkowy-i-normalizacja" class="md-nav__link">
+  <a href="#b-interpretacja-geometryczna_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Wersor (Wektor Jednostkowy) i Normalizacja
+        B. Interpretacja Geometryczna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-przykad-sprawdzenia-wspopaszczyznowosci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Przykład Sprawdzenia Współpłaszczyznowości
       
     </span>
   </a>
@@ -926,65 +1014,77 @@
 
 
 
-  <h1>1.Wektory podstawy</h1>
+  <h1>2.Iloczyn wektorów</h1>
 
-<h3 id="i-przestrzen-kartezjanska-i-podstawy-wektorow">I. Przestrzeń Kartezjańska i Podstawy Wektorów<a class="headerlink" href="#i-przestrzen-kartezjanska-i-podstawy-wektorow" title="Permanent link">&para;</a></h3>
-<h4 id="1-punkt-vs-wektor-poozenie-vs-ruch">1. Punkt vs. Wektor (Położenie vs. Ruch)<a class="headerlink" href="#1-punkt-vs-wektor-poozenie-vs-ruch" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Punkt</strong> <span class="arithmatex">\(A=(x, y)\)</span> to <strong>położenie</strong> w przestrzeni. Ma tylko lokalizację.</li>
-<li><strong>Wektor</strong> <span class="arithmatex">\(\vec{v}=[v_x, v_y]\)</span> to <strong>przemieszczenie</strong> (ruch). Ma <strong>kierunek</strong>, <strong>zwrot</strong> i <strong>długość</strong> (moduł).</li>
-<li><strong>Wektor swobodny</strong> (definiowany tylko przez współrzędne) można przesuwać w przestrzeni, a wciąż jest tym samym wektorem.</li>
-</ul>
-<h4 id="2-obliczanie-wsporzednych-wektora">2. Obliczanie Współrzędnych Wektora<a class="headerlink" href="#2-obliczanie-wsporzednych-wektora" title="Permanent link">&para;</a></h4>
-<p>Współrzędne wektora <span class="arithmatex">\(\vec{AB}\)</span> otrzymujemy, odejmując współrzędne punktu początkowego <span class="arithmatex">\(A\)</span> od współrzędnych punktu końcowego <span class="arithmatex">\(B\)</span>.</p>
-<ul>
-<li>Jeżeli <span class="arithmatex">\(A=(x_A, y_A)\)</span> i <span class="arithmatex">\(B=(x_B, y_B)\)</span>, to:
-    <span class="arithmatex">\(<span class="arithmatex">\(\vec{AB} = [x_B - x_A, y_B - y_A]\)</span>\)</span></li>
-</ul>
-<p><strong>Zadanie i Rozwiązanie :</strong>
-* <strong>Zadanie:</strong> Oblicz współrzędne wektora <span class="arithmatex">\(\vec{AB}\)</span> dla <span class="arithmatex">\(A=(1, 2)\)</span> i <span class="arithmatex">\(B=(5, 5)\)</span>.
-* <strong>Rozwiązanie:</strong> <span class="arithmatex">\(\vec{AB} = [5 - 1, 5 - 2] = \mathbf{[4, 3]}\)</span></p>
+<h2 id="1-iloczyn-skalarny-mathbfu-cdot-mathbfv-miara-katow-i-rzutow">1. Iloczyn Skalarny (<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v}\)</span>) - Miara Kątów i Rzutów<a class="headerlink" href="#1-iloczyn-skalarny-mathbfu-cdot-mathbfv-miara-katow-i-rzutow" title="Permanent link">&para;</a></h2>
+<p>Iloczyn skalarny, często nazywany <em>iloczynem punktowym</em>, jest fundamentalną operacją na dwóch wektorach, której wynikiem jest <strong>skalar</strong>, czyli pojedyncza liczba. Jest to narzędzie do mierzenia, jak bardzo wektory są skierowane w tym samym kierunku.</p>
+<h3 id="a-definicja-algebraiczna">A. Definicja Algebraiczna<a class="headerlink" href="#a-definicja-algebraiczna" title="Permanent link">&para;</a></h3>
+<p>Iloczyn skalarny jest obliczany poprzez pomnożenie odpowiadających sobie współrzędnych wektorów i zsumowanie tych iloczynów. Dla wektorów w przestrzeni <span class="arithmatex">\(n\)</span>-wymiarowej:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n\)</span>\)</span></p>
+<h3 id="b-definicja-geometryczna">B. Definicja Geometryczna<a class="headerlink" href="#b-definicja-geometryczna" title="Permanent link">&para;</a></h3>
+<p>Geometrycznie, iloczyn skalarny jest iloczynem długości (modułów) wektorów oraz cosinusa kąta <span class="arithmatex">\(\theta\)</span> między nimi:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| \cdot |\mathbf{v}| \cdot \cos(\theta)\)</span>\)</span></p>
+<h3 id="c-interpretacja-wyniku">C. Interpretacja Wyniku<a class="headerlink" href="#c-interpretacja-wyniku" title="Permanent link">&para;</a></h3>
+<p>Znak iloczynu skalarnego mówi nam bezpośrednio o kącie <span class="arithmatex">\(\theta\)</span>:
+* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &gt; 0\)</span>, kąt jest <strong>ostry</strong> (wektory są skierowane podobnie).
+* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = 0\)</span>, kąt jest <strong>prosty</strong> (<span class="arithmatex">\(\theta = 90^\circ\)</span>). Wektory są <strong>prostopadłe</strong> (ortogonalne).
+* Jeśli <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} &lt; 0\)</span>, kąt jest <strong>rozwarty</strong> (wektory są skierowane przeciwnie).</p>
+<h3 id="d-przykad-obliczenia-kata">D. Przykład Obliczenia Kąta<a class="headerlink" href="#d-przykad-obliczenia-kata" title="Permanent link">&para;</a></h3>
+<p>Weźmy wektory <span class="arithmatex">\(\mathbf{u} = [2, 2]\)</span> i <span class="arithmatex">\(\mathbf{v} = [-3, 0]\)</span>.</p>
+<ol>
+<li>Najpierw obliczamy <strong>iloczyn skalarny</strong>:
+    <span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = (2) \cdot (-3) + (2) \cdot (0) = -6\)</span>\)</span></li>
+<li>Następnie obliczamy <strong>długości</strong> wektorów:
+    <span class="arithmatex">\(<span class="arithmatex">\(|\mathbf{u}| = \sqrt{2^2 + 2^2} = \sqrt{8}\)</span>\)</span>
+    <span class="arithmatex">\(<span class="arithmatex">\(|\mathbf{v}| = \sqrt{(-3)^2 + 0^2} = 3\)</span>\)</span></li>
+<li>Używamy wzoru na <strong>cosinus kąta</strong>:
+    <span class="arithmatex">\(<span class="arithmatex">\(\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| \cdot |\mathbf{v}|} = \frac{-6}{3\sqrt{8}} = -\frac{2}{\sqrt{8}} = -\frac{\sqrt{2}}{2}\)</span>\)</span>
+    Otrzymana wartość wskazuje, że kąt <span class="arithmatex">\(\theta\)</span> wynosi <span class="arithmatex">\(\mathbf{135^\circ}\)</span>.</li>
+</ol>
 <hr />
-<h3 id="ii-dziaania-na-wektorach-algebra-i-geometria">II. Działania na Wektorach (Algebra i Geometria)<a class="headerlink" href="#ii-dziaania-na-wektorach-algebra-i-geometria" title="Permanent link">&para;</a></h3>
-<p>Podstawowe działania wykonujemy <strong>współrzędna po współrzędnej</strong>.</p>
-<h4 id="1-dodawanie-i-odejmowanie-wektorow">1. Dodawanie i Odejmowanie Wektorów<a class="headerlink" href="#1-dodawanie-i-odejmowanie-wektorow" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Algebraicznie:</strong> <span class="arithmatex">\(\vec{u} \pm \vec{v} = [u_x \pm v_x, u_y \pm v_y]\)</span>.</li>
-<li><strong>Geometrycznie (Dodawanie):</strong> Stosujemy <strong>metodę trójkąta</strong> (łączymy koniec pierwszego wektora z początkiem drugiego) lub <strong>metodę równoległoboku</strong> (wektor sumy jest przekątną).</li>
-<li><strong>Odejmowanie:</strong> <span class="arithmatex">\(\vec{u} - \vec{v}\)</span> jest równoznaczne z dodaniem wektora przeciwnego: <span class="arithmatex">\(\vec{u} + (-\vec{v})\)</span>.</li>
-</ul>
-<p><strong>Zadanie i Rozwiązanie :</strong>
-* <strong>Zadanie:</strong> Oblicz wektor <span class="arithmatex">\(\vec{w} = 2\vec{u} - \vec{v}\)</span> dla <span class="arithmatex">\(\vec{u}=[1, 2, 3]\)</span> i <span class="arithmatex">\(\vec{v}=[4, 5, 6]\)</span>.
-* <strong>Rozwiązanie:</strong>
-    1.  <span class="arithmatex">\(2\vec{u} = [2\cdot 1, 2\cdot 2, 2\cdot 3] = [2, 4, 6]\)</span>.
-    2.  <span class="arithmatex">\(2\vec{u} - \vec{v} = [2 - 4, 4 - 5, 6 - 6] = \mathbf{[-2, -1, 0]}\)</span>.</p>
-<h4 id="2-mnozenie-wektora-przez-skalar-k">2. Mnożenie Wektora przez Skalar (<span class="arithmatex">\(k\)</span>)<a class="headerlink" href="#2-mnozenie-wektora-przez-skalar-k" title="Permanent link">&para;</a></h4>
-<p>Polega na pomnożeniu <strong>każdej</strong> współrzędnej wektora przez liczbę <span class="arithmatex">\(k\)</span>.</p>
-<ul>
-<li><strong>Wpływ:</strong> Mnożenie przez skalar <strong>skaluje</strong> (zmienia długość) wektora. Jeśli <span class="arithmatex">\(k\)</span> jest ujemne, odwraca zwrot.</li>
-<li><strong>Wzór:</strong> <span class="arithmatex">\(k \cdot \vec{u} = [k \cdot u_x, k \cdot u_y, k \cdot u_z]\)</span>.</li>
-</ul>
+<h2 id="2-iloczyn-wektorowy-mathbfu-times-mathbfv-znajdowanie-prostopadosci-w-3d">2. Iloczyn Wektorowy (<span class="arithmatex">\(\mathbf{u} \times \mathbf{v}\)</span>) - Znajdowanie Prostopadłości w 3D<a class="headerlink" href="#2-iloczyn-wektorowy-mathbfu-times-mathbfv-znajdowanie-prostopadosci-w-3d" title="Permanent link">&para;</a></h2>
+<p>Iloczyn wektorowy, zwany <em>iloczynem krzyżowym</em>, jest operacją działającą <strong>wyłącznie na wektorach w przestrzeni trójwymiarowej (3D)</strong>. Wynikiem jest <strong>nowy wektor</strong> <span class="arithmatex">\(\mathbf{w}\)</span>, który posiada dwie kluczowe własności: jest <strong>prostopadły</strong> do płaszczyzny wyznaczonej przez <span class="arithmatex">\(\mathbf{u}\)</span> i <span class="arithmatex">\(\mathbf{v}\)</span>, a jego długość mierzy pole powierzchni.</p>
+<h3 id="a-obliczenie-za-pomoca-wyznacznika">A. Obliczenie za Pomocą Wyznacznika<a class="headerlink" href="#a-obliczenie-za-pomoca-wyznacznika" title="Permanent link">&para;</a></h3>
+<p>Iloczyn wektorowy jest najczęściej obliczany poprzez rozwinięcie wyznacznika macierzy 3x3, gdzie pierwszy wiersz to wektory jednostkowe <span class="arithmatex">\(\mathbf{i}\)</span>, <span class="arithmatex">\(\mathbf{j}\)</span>, <span class="arithmatex">\(\mathbf{k}\)</span>:</p>
+<div class="arithmatex">\[\mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ u_x &amp; u_y &amp; u_z \\ v_x &amp; v_y &amp; v_z \end{vmatrix}\]</div>
+<h3 id="b-interpretacja-geometryczna">B. Interpretacja Geometryczna<a class="headerlink" href="#b-interpretacja-geometryczna" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Kierunek i Zwrot:</strong> Kierunek wektora wynikowego <span class="arithmatex">\(\mathbf{w}\)</span> jest prostopadły do <span class="arithmatex">\(\mathbf{u}\)</span> i <span class="arithmatex">\(\mathbf{v}\)</span>. Jego zwrot określa <strong>reguła prawej dłoni</strong>.</li>
+<li><strong>Długość (Moduł):</strong> Długość wektora <span class="arithmatex">\(|\mathbf{u} \times \mathbf{v}|\)</span> jest równa <strong>polu powierzchni równoległoboku</strong> rozpiętego na wektorach <span class="arithmatex">\(\mathbf{u}\)</span> i <span class="arithmatex">\(\mathbf{v}\)</span>.</li>
+</ol>
+<h3 id="c-przykad-obliczenia-wektora-prostopadego">C. Przykład Obliczenia Wektora Prostopadłego<a class="headerlink" href="#c-przykad-obliczenia-wektora-prostopadego" title="Permanent link">&para;</a></h3>
+<p>Znajdźmy wektor <span class="arithmatex">\(\mathbf{w}\)</span> prostopadły do <span class="arithmatex">\(\mathbf{a} = [1, 0, 2]\)</span> i <span class="arithmatex">\(\mathbf{b} = [0, -1, 3]\)</span>.</p>
+<ol>
+<li><strong>Obliczamy składową <span class="arithmatex">\(x\)</span>:</strong>
+    $$ (0)(3) - (2)(-1) = 2$$</li>
+<li><strong>Obliczamy składową <span class="arithmatex">\(y\)</span>:</strong>
+    $$ (2)(0) - (1)(3) = -3$$</li>
+<li><strong>Obliczamy składową <span class="arithmatex">\(z\)</span>:</strong>
+    $$ (1)(-1) - (0)(0) = -1$$</li>
+</ol>
+<p><strong>Wektor prostopadły:</strong> <span class="arithmatex">\(\mathbf{w} = \mathbf{a} \times \mathbf{b} = \mathbf{[2, -3, -1]}\)</span></p>
 <hr />
-<h3 id="iii-dugosc-wektora-i-wersor">III. Długość Wektora i Wersor<a class="headerlink" href="#iii-dugosc-wektora-i-wersor" title="Permanent link">&para;</a></h3>
-<h4 id="1-dugosc-norma-modu-wektora">1. Długość (Norma, Moduł) Wektora<a class="headerlink" href="#1-dugosc-norma-modu-wektora" title="Permanent link">&para;</a></h4>
-<p>Długość wektora <span class="arithmatex">\(||\vec{v}||\)</span> jest obliczana z <strong>Twierdzenia Pitagorasa</strong> (lub jego rozszerzenia na 3D).</p>
-<ul>
-<li><strong>Wzór 3D:</strong>
-    <span class="arithmatex">\(<span class="arithmatex">\(||\vec{v}|| = \sqrt{v_x^2 + v_y^2 + v_z^2}\)</span>\)</span></li>
-</ul>
-<h4 id="2-wersor-wektor-jednostkowy-i-normalizacja">2. Wersor (Wektor Jednostkowy) i Normalizacja<a class="headerlink" href="#2-wersor-wektor-jednostkowy-i-normalizacja" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Wersor</strong> <span class="arithmatex">\(\vec{e}\)</span> to wektor, którego długość jest równa <span class="arithmatex">\(\mathbf{1}\)</span>. Służy do opisu samego <strong>kierunku</strong> i <strong>zwrotu</strong>, bez względu na wielkość.</li>
-<li><strong>Normalizacja</strong> to proces przekształcania wektora <span class="arithmatex">\(\vec{v}\)</span> w jego wersor <span class="arithmatex">\(\vec{e}\)</span> poprzez podzielenie go przez własną długość.
-    <span class="arithmatex">\(<span class="arithmatex">\(\vec{e} = \frac{\vec{v}}{||\vec{v}||}\)</span>\)</span></li>
-</ul>
-<p><strong>Zadanie i Rozwiązanie :</strong>
-* <strong>Zadanie:</strong> Oblicz długość i wersor wektora <span class="arithmatex">\(\vec{v} = [-2, 1, -2]\)</span>.
-* <strong>Rozwiązanie (Długość):</strong>
-    <span class="arithmatex">\(<span class="arithmatex">\(||\vec{v}|| = \sqrt{(-2)^2 + 1^2 + (-2)^2} = \sqrt{4 + 1 + 4} = \sqrt{9} = \mathbf{3}\)</span>\)</span>
-* <strong>Rozwiązanie (Wersor):</strong>
-    <span class="arithmatex">\(<span class="arithmatex">\(\vec{e} = \frac{1}{3} \cdot [-2, 1, -2] = \mathbf{\left[-\frac{2}{3}, \frac{1}{3}, -\frac{2}{3}\right]}\)</span>\)</span></p>
-<hr />
+<h2 id="3-iloczyn-mieszany-mathbfu-cdot-mathbfv-times-mathbfw-objetosc-i-wspopaszczyznowosc">3. Iloczyn Mieszany (<span class="arithmatex">\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})\)</span>) - Objętość i Współpłaszczyznowość<a class="headerlink" href="#3-iloczyn-mieszany-mathbfu-cdot-mathbfv-times-mathbfw-objetosc-i-wspopaszczyznowosc" title="Permanent link">&para;</a></h2>
+<p>Iloczyn mieszany, zwany <em>potrójnym iloczynem skalarnym</em>, to operacja na <strong>trzech wektorach w 3D</strong>. Łączy iloczyn wektorowy i skalarny, a jego wynikiem jest <strong>skalar</strong>.</p>
+<h3 id="a-obliczenie-za-pomoca-wyznacznika_1">A. Obliczenie za Pomocą Wyznacznika<a class="headerlink" href="#a-obliczenie-za-pomoca-wyznacznika_1" title="Permanent link">&para;</a></h3>
+<p>Iloczyn mieszany jest najprościej obliczany jako wyznacznik macierzy 3x3, której wiersze są współrzędnymi trzech wektorów:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w}) = \begin{vmatrix} u_x &amp; u_y &amp; u_z \\ v_x &amp; v_y &amp; v_z \\ w_x &amp; w_y &amp; w_z \end{vmatrix}\)</span>\)</span></p>
+<h3 id="b-interpretacja-geometryczna_1">B. Interpretacja Geometryczna<a class="headerlink" href="#b-interpretacja-geometryczna_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Objętość:</strong> <strong>Wartość bezwzględna</strong> iloczynu mieszanego jest równa <strong>objętości równoległościanu</strong> rozpiętego na wektorach <span class="arithmatex">\(\mathbf{u}\)</span>, <span class="arithmatex">\(\mathbf{v}\)</span> i <span class="arithmatex">\(\mathbf{w}\)</span>.</li>
+<li><strong>Współpłaszczyznowość (Koplanarność):</strong> Najważniejsza własność: jeśli wynik iloczynu mieszanego jest <strong>równy zeru</strong> (<span class="arithmatex">\(\mathbf{0}\)</span>), oznacza to, że objętość równoległościanu wynosi zero, a zatem wektory leżą w <strong>jednej płaszczyźnie</strong> (są liniowo zależne).</li>
+</ol>
+<h3 id="c-przykad-sprawdzenia-wspopaszczyznowosci">C. Przykład Sprawdzenia Współpłaszczyznowości<a class="headerlink" href="#c-przykad-sprawdzenia-wspopaszczyznowosci" title="Permanent link">&para;</a></h3>
+<p>Sprawdźmy, czy wektory <span class="arithmatex">\(\mathbf{x} = [1, 1, 1]\)</span>, <span class="arithmatex">\(\mathbf{y} = [1, 2, 3]\)</span> i <span class="arithmatex">\(\mathbf{z} = [2, 3, 4]\)</span> są współpłaszczyznowe.</p>
+<ol>
+<li><strong>Ustawiamy i obliczamy wyznacznik:</strong>
+    <span class="arithmatex">\(<span class="arithmatex">\(\begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 4 \end{vmatrix} = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 4 \end{vmatrix}\)</span>\)</span></li>
+<li><strong>Obliczenia (Metoda Sarrusa):</strong>
+    <span class="arithmatex">\(<span class="arithmatex">\(V = [(1 \cdot 2 \cdot 4) + (1 \cdot 3 \cdot 2) + (1 \cdot 1 \cdot 3)] - [(1 \cdot 2 \cdot 2) + (1 \cdot 3 \cdot 3) + (1 \cdot 1 \cdot 4)]\)</span>\)</span>
+    <span class="arithmatex">\(<span class="arithmatex">\(V = [8 + 6 + 3] - [4 + 9 + 4]\)</span>\)</span>
+    <span class="arithmatex">\(<span class="arithmatex">\(V = 17 - 17 = \mathbf{0}\)</span>\)</span></li>
+</ol>
+<p><strong>Wniosek:</strong> Ponieważ wynik jest równy <span class="arithmatex">\(\mathbf{0}\)</span>, wektory <span class="arithmatex">\(\mathbf{x}\)</span>, <span class="arithmatex">\(\mathbf{y}\)</span> i <span class="arithmatex">\(\mathbf{z}\)</span> są <strong>współpłaszczyznowe</strong>.</p>
 
 
 
