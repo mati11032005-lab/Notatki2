@@ -448,23 +448,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-1-frac1-1-cdot-beginpmatrix-2-3-3-4-endpmatrix-beginpmatrix-2-3-3-4-endpmatrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        \(\(A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\)\)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="\(\(A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\)\)">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#3metoda-dopenien-algebraicznych" class="md-nav__link">
     <span class="md-ellipsis">
@@ -687,23 +670,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-1-frac1-1-cdot-beginpmatrix-2-3-3-4-endpmatrix-beginpmatrix-2-3-3-4-endpmatrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        \(\(A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\)\)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="\(\(A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\)\)">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#3metoda-dopenien-algebraicznych" class="md-nav__link">
     <span class="md-ellipsis">
@@ -814,8 +780,8 @@ Macierz odwrotna <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> jest <stron
 <p>Ponieważ <span class="arithmatex">\(\mathbf{A} \cdot \mathbf{B} = \mathbf{I}\)</span>, to <span class="arithmatex">\(\mathbf{B}\)</span> jest rzeczywiście macierzą odwrotną do <span class="arithmatex">\(\mathbf{A}\)</span> (tj. <span class="arithmatex">\(\mathbf{B} = \mathbf{A}^{-1}\)</span>).</p>
 <h3 id="2metoda-dla-macierzy-2x2">2.Metoda dla macierzy 2x2<a class="headerlink" href="#2metoda-dla-macierzy-2x2" title="Permanent link">&para;</a></h3>
 <p><strong>Wzór ogólny</strong></p>
-<p>Dla macierzy <span class="arithmatex">\(A\)</span>:
-<span class="arithmatex">\(<span class="arithmatex">\(A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\)</span>\)</span></p>
+<p>Dla macierzy <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\]</div>
 <p>Wzór na macierz odwrotną <span class="arithmatex">\(A^{-1}\)</span> wygląda następująco:</p>
 <div class="arithmatex">\[A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\]</div>
 <p>Gdzie wyznacznik to: <span class="arithmatex">\(\det(A) = a \cdot d - b \cdot c\)</span></p>
@@ -826,8 +792,7 @@ Załóżmy, że mamy macierz <span class="arithmatex">\(A\)</span>:</p>
 <li>Obliczamy wyznacznik</li>
 </ol>
 <div class="arithmatex">\[\det(A) = (4 \cdot 2) - (3 \cdot 3) = 8 - 9 = -1\]</div>
-<pre><code>Wyznacznik wynosi $-1$, więc macierz odwrotna istnieje.
-</code></pre>
+<p>Wyznacznik wynosi <span class="arithmatex">\(-1\)</span>, więc macierz odwrotna istnieje.</p>
 <ol>
 <li>Stosujemy schemat zamianyZgodnie ze wzorem:
     Zamieniamy <span class="arithmatex">\(4\)</span> i <span class="arithmatex">\(2\)</span> miejscami.Zmieniamy znaki przy trójkach na przeciwne.Otrzymujemy:</li>
@@ -836,7 +801,8 @@ Załóżmy, że mamy macierz <span class="arithmatex">\(A\)</span>:</p>
 <ol>
 <li>Mnożymy przez <span class="arithmatex">\(1/\det(A)\)</span> Ponieważ nasz wyznacznik to <span class="arithmatex">\(-1\)</span>, musimy pomnożyć każdy element przez <span class="arithmatex">\(\frac{1}{-1}\)</span>, czyli po prostu przez <span class="arithmatex">\(-1\)</span>:</li>
 </ol>
-<h2 id="a-1-frac1-1-cdot-beginpmatrix-2-3-3-4-endpmatrix-beginpmatrix-2-3-3-4-endpmatrix"><span class="arithmatex">\(<span class="arithmatex">\(A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\)</span>\)</span><a class="headerlink" href="#a-1-frac1-1-cdot-beginpmatrix-2-3-3-4-endpmatrix-beginpmatrix-2-3-3-4-endpmatrix" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[A^{-1} = \frac{1}{-1} \cdot \begin{pmatrix} 2 &amp; -3 \\ -3 &amp; 4 \end{pmatrix} = \begin{pmatrix} -2 &amp; 3 \\ 3 &amp; -4 \end{pmatrix}\]</div>
+<hr />
 <h3 id="3metoda-dopenien-algebraicznych">3.Metoda Dopełnień Algebraicznych<a class="headerlink" href="#3metoda-dopenien-algebraicznych" title="Permanent link">&para;</a></h3>
 <p>Metoda dopełnień algebraicznych (często nazywana <strong>metodą wyznacznikową</strong>) wykorzystuje wyznacznik macierzy oraz dopełnienia algebraiczne do znalezienia macierzy odwrotnej. Jest szczególnie popularna dla macierzy <strong>2x2</strong> i <strong>3x3</strong>.</p>
 <p><strong>Warunek Istnienia Macierzy Odwrotnej</strong></p>
