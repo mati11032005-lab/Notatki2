@@ -475,34 +475,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#rozwiazywanie-ukadu-rownan-a-cdot-x-b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rozwiązywanie Układu Równań \(A \cdot x = b\)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rozwiązywanie Układu Równań \(A \cdot x = b\)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#elegancja-teoretyczna-vs-praktyczna-niewygoda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Elegancja Teoretyczna vs. Praktyczna Niewygoda
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -714,34 +686,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#rozwiazywanie-ukadu-rownan-a-cdot-x-b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rozwiązywanie Układu Równań \(A \cdot x = b\)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rozwiązywanie Układu Równań \(A \cdot x = b\)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#elegancja-teoretyczna-vs-praktyczna-niewygoda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Elegancja Teoretyczna vs. Praktyczna Niewygoda
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -849,8 +793,8 @@ Warunek <span class="arithmatex">\(\det(\mathbf{A}) \neq 0\)</span> jest krytycz
 <p>Transponujemy macierz dopełnień: zamieniamy wiersze na kolumny.</p>
 <div class="arithmatex">\[\mathbf{Adj}(\mathbf{A}) = \begin{bmatrix} -1 &amp; -2 &amp; 2 \\ -3 &amp; 1 &amp; -1 \\ 6 &amp; -2 &amp; -5 \end{bmatrix}\]</div>
 <p><strong>Krok 5: Macierz Odwrotna (<span class="arithmatex">\(\mathbf{A}^{-1}\)</span>)</strong>
-Dzielimy macierz dołączoną przez <span class="arithmatex">\(\det(\mathbf{A}) = -7\)</span>.
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{A}^{-1} = \frac{1}{-7} \cdot \begin{bmatrix} -1 &amp; -2 &amp; 2 \\ -3 &amp; 1 &amp; -1 \\ 6 &amp; -2 &amp; -5 \end{bmatrix} = \begin{bmatrix} 1/7 &amp; 2/7 &amp; -2/7 \\ 3/7 &amp; -1/7 &amp; 1/7 \\ -6/7 &amp; 2/7 &amp; 5/7 \end{bmatrix}\)</span>\)</span></p>
+Dzielimy macierz dołączoną przez <span class="arithmatex">\(\det(\mathbf{A}) = -7\)</span>.</p>
+<div class="arithmatex">\[\mathbf{A}^{-1} = \frac{1}{-7} \cdot \begin{bmatrix} -1 &amp; -2 &amp; 2 \\ -3 &amp; 1 &amp; -1 \\ 6 &amp; -2 &amp; -5 \end{bmatrix} = \begin{bmatrix} 1/7 &amp; 2/7 &amp; -2/7 \\ 3/7 &amp; -1/7 &amp; 1/7 \\ -6/7 &amp; 2/7 &amp; 5/7 \end{bmatrix}\]</div>
 <hr />
 <h3 id="3metoda-bezwyznacznikowa-eliminacja-gaussa-jordana">3.Metoda Bezwyznacznikowa (Eliminacja Gaussa-Jordana)<a class="headerlink" href="#3metoda-bezwyznacznikowa-eliminacja-gaussa-jordana" title="Permanent link">&para;</a></h3>
 <p>Metoda eliminacji Gaussa-Jordana jest <strong>algorytmicznym</strong> sposobem znajdowania macierzy odwrotnej, który polega na przekształceniu macierzy rozszerzonej za pomocą operacji elementarnych na wierszach.</p>
@@ -948,25 +892,37 @@ Macierz odwrotna <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> to macierz 
 <hr />
 <h3 id="4zastosowania-macierzy-odwrotnej-ukady-rownan-liniowych">4.Zastosowania Macierzy Odwrotnej: Układy Równań Liniowych<a class="headerlink" href="#4zastosowania-macierzy-odwrotnej-ukady-rownan-liniowych" title="Permanent link">&para;</a></h3>
 <p>Jednym z najważniejszych zastosowań macierzy odwrotnej jest rozwiązywanie układów równań liniowych.</p>
-<h2 id="rozwiazywanie-ukadu-rownan-a-cdot-x-b">Rozwiązywanie Układu Równań <span class="arithmatex">\(A \cdot x = b\)</span><a class="headerlink" href="#rozwiazywanie-ukadu-rownan-a-cdot-x-b" title="Permanent link">&para;</a></h2>
+<p><strong>Rozwiązywanie Układu Równań <span class="arithmatex">\(A \cdot x = b\)</span></strong></p>
 <p>Układ <span class="arithmatex">\(n\)</span> równań liniowych z <span class="arithmatex">\(n\)</span> niewiadomymi można zapisać w postaci macierzowej:
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{A} \cdot \mathbf{x} = \mathbf{b}\)</span>\)</span>
-Gdzie:
-* <span class="arithmatex">\(\mathbf{A}\)</span> jest macierzą współczynników (kwadratową).
-* <span class="arithmatex">\(\mathbf{x}\)</span> jest wektorem niewiadomych (rozwiązaniem, które szukamy).
-* <span class="arithmatex">\(\mathbf{b}\)</span> jest wektorem wyrazów wolnych.</p>
+<span class="arithmatex">\(\mathbf{A} \cdot \mathbf{x} = \mathbf{b}\)</span></p>
+<p>Gdzie:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\mathbf{A}\)</span> jest macierzą współczynników (kwadratową).</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathbf{x}\)</span> jest wektorem niewiadomych (rozwiązaniem, które szukamy).</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathbf{b}\)</span> jest wektorem wyrazów wolnych.</p>
+</li>
+</ul>
 <p>Aby znaleźć wektor <span class="arithmatex">\(\mathbf{x}\)</span>, możemy pomnożyć obie strony równania z lewej strony przez macierz odwrotną <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> (zakładając, że <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> istnieje, tj. <span class="arithmatex">\(\det(\mathbf{A}) \neq 0\)</span>):</p>
 <ol>
-<li>Pomnóż obie strony przez <span class="arithmatex">\(\mathbf{A}^{-1}\)</span>:
-    <span class="arithmatex">\(<span class="arithmatex">\(\mathbf{A}^{-1} \cdot (\mathbf{A} \cdot \mathbf{x}) = \mathbf{A}^{-1} \cdot \mathbf{b}\)</span>\)</span></li>
-<li>Wykorzystajmy właściwość, że <span class="arithmatex">\(\mathbf{A}^{-1} \cdot \mathbf{A} = \mathbf{I}\)</span> (macierz jednostkowa):
-    <span class="arithmatex">\(<span class="arithmatex">\((\mathbf{A}^{-1} \cdot \mathbf{A}) \cdot \mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\)</span>\)</span>
-    <span class="arithmatex">\(<span class="arithmatex">\(\mathbf{I} \cdot \mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\)</span>\)</span></li>
-<li>Ponieważ <span class="arithmatex">\(\mathbf{I} \cdot \mathbf{x} = \mathbf{x}\)</span>:
-    <span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\)</span>\)</span></li>
+<li>Pomnóż obie strony przez <span class="arithmatex">\(\mathbf{A}^{-1}\)</span>:</li>
 </ol>
+<div class="arithmatex">\[\mathbf{A}^{-1} \cdot (\mathbf{A} \cdot \mathbf{x}) = \mathbf{A}^{-1} \cdot \mathbf{b}\]</div>
+<ol>
+<li>Wykorzystajmy właściwość, że <span class="arithmatex">\(\mathbf{A}^{-1} \cdot \mathbf{A} = \mathbf{I}\)</span> (macierz jednostkowa):</li>
+</ol>
+<div class="arithmatex">\[(\mathbf{A}^{-1} \cdot \mathbf{A}) \cdot \mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\]</div>
+<div class="arithmatex">\[\mathbf{I} \cdot \mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\]</div>
+<ol>
+<li>Ponieważ <span class="arithmatex">\(\mathbf{I} \cdot \mathbf{x} = \mathbf{x}\)</span>:</li>
+</ol>
+<div class="arithmatex">\[\mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\]</div>
 <p>Rozwiązanie <span class="arithmatex">\(\mathbf{x}\)</span> jest zatem iloczynem macierzy odwrotnej <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> i wektora <span class="arithmatex">\(\mathbf{b}\)</span>.</p>
-<h3 id="elegancja-teoretyczna-vs-praktyczna-niewygoda">Elegancja Teoretyczna vs. Praktyczna Niewygoda<a class="headerlink" href="#elegancja-teoretyczna-vs-praktyczna-niewygoda" title="Permanent link">&para;</a></h3>
+<p><strong>Elegancja Teoretyczna vs. Praktyczna Niewygoda</strong></p>
 <ul>
 <li><strong>Elegancja Teoretyczna</strong>: Równanie <span class="arithmatex">\(\mathbf{x} = \mathbf{A}^{-1} \cdot \mathbf{b}\)</span> jest niezwykle <strong>eleganckie i zwarte</strong>, natychmiastowo dając wzór na rozwiązanie. Jest to bardzo cenne w dowodach teoretycznych i analizie.</li>
 <li><strong>Praktyczna Niewygoda</strong>: Dla dużych układów równań (np. <span class="arithmatex">\(\mathbf{A}\)</span> o wymiarach 100x100 lub większych) metoda ta jest <strong>niepraktyczna</strong> z następujących powodów:<ol>
