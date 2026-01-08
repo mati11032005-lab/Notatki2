@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Wyznaczników Macierzy</title>
+    <title>Kalkulator Wyznaczników Macierzy PRO</title>
     <style>
         :root {
-            --primary: #7c3aed; /* Fioletowy motyw dla odmiany */
+            --primary: #7c3aed;
             --primary-hover: #6d28d9;
             --bg: #f8fafc;
             --panel: #ffffff;
             --border: #e2e8f0;
             --text-main: #1e293b;
-            --highlight-pos: #16a34a; /* Zielony dla dodatnich */
-            --highlight-neg: #dc2626; /* Czerwony dla ujemnych */
+            --highlight-pos: #16a34a;
+            --highlight-neg: #dc2626;
+            --math-font: 'Times New Roman', Times, serif;
         }
 
         body {
@@ -25,7 +26,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background-color: var(--panel);
             border-radius: 12px;
@@ -34,177 +35,94 @@
         }
 
         /* Tabs */
-        .tabs {
-            display: flex;
-            background-color: #f1f5f9;
-            border-bottom: 1px solid var(--border);
-        }
-
+        .tabs { display: flex; background-color: #f1f5f9; border-bottom: 1px solid var(--border); }
         .tab-btn {
-            flex: 1;
-            padding: 18px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            color: #64748b;
-            transition: 0.2s;
+            flex: 1; padding: 18px; border: none; background: none; cursor: pointer;
+            font-size: 16px; font-weight: 600; color: #64748b; transition: 0.2s;
         }
-
         .tab-btn:hover { background-color: #e2e8f0; }
-        .tab-btn.active {
-            background-color: var(--panel);
-            color: var(--primary);
-            border-top: 4px solid var(--primary);
-        }
+        .tab-btn.active { background-color: var(--panel); color: var(--primary); border-top: 4px solid var(--primary); }
 
-        .content {
-            display: none;
-            padding: 30px;
-            animation: fadeEffect 0.4s;
-        }
+        .content { display: none; padding: 30px; animation: fadeEffect 0.4s; }
         .content.active { display: block; }
         @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 
         /* Controls */
         .controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
+            display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+            background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border);
         }
-
         .btn-calc {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-left: auto;
-            transition: 0.2s;
+            background-color: var(--primary); color: white; border: none; padding: 10px 24px;
+            border-radius: 6px; font-weight: bold; cursor: pointer; margin-left: auto; transition: 0.2s;
         }
         .btn-calc:hover { background-color: var(--primary-hover); }
+        input[type="number"] { padding: 6px; width: 50px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px; }
 
-        input[type="number"] {
-            padding: 6px;
-            width: 50px;
-            text-align: center;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-        }
+        /* Matrix Input */
+        .matrix-grid { display: grid; gap: 8px; justify-content: center; margin-bottom: 20px; }
+        .matrix-cell { width: 50px; height: 40px; text-align: center; font-size: 16px; border: 1px solid #cbd5e1; border-radius: 4px; }
 
-        /* Matrix Input Grid */
-        .matrix-grid {
-            display: grid;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .matrix-cell {
-            width: 50px;
-            height: 40px;
-            text-align: center;
-            font-size: 16px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-        }
-
-        /* Decoration for matrix brackets */
-        .matrix-wrapper {
-            display: inline-block;
-            position: relative;
-            padding: 0 10px;
-        }
+        /* Matrix Styling (Brackets) */
+        .matrix-wrapper { display: inline-block; position: relative; padding: 0 10px; vertical-align: middle; }
         .matrix-wrapper::before, .matrix-wrapper::after {
-            content: "";
-            position: absolute;
-            top: 0; bottom: 0;
-            width: 8px;
-            border: 2px solid #334155;
-            border-right: none;
+            content: ""; position: absolute; top: 0; bottom: 0; width: 8px; border: 2px solid #334155; border-right: none;
         }
         .matrix-wrapper::before { left: 0; }
         .matrix-wrapper::after { right: 0; transform: scaleX(-1); }
 
         /* Tip Box */
         .tip-box {
-            background-color: #fff7ed;
-            border-left: 4px solid #f97316;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 4px;
+            background-color: #fff7ed; border-left: 4px solid #f97316; padding: 15px;
+            margin-bottom: 25px; border-radius: 4px;
         }
-        .tip-title {
-            font-weight: bold;
-            color: #9a3412;
-            margin-bottom: 5px;
-            display: block;
-        }
+        .tip-title { font-weight: bold; color: #9a3412; margin-bottom: 5px; display: block; }
 
-        /* Result Area */
-        .result-area {
-            border-top: 2px dashed var(--border);
-            padding-top: 20px;
-            margin-top: 20px;
-        }
-
+        /* Results */
+        .result-area { border-top: 2px dashed var(--border); padding-top: 20px; margin-top: 20px; }
         .final-answer {
-            font-size: 1.5em;
-            color: var(--primary);
-            font-weight: bold;
-            text-align: center;
-            margin: 20px 0;
-            padding: 15px;
-            background: #f3e8ff;
-            border-radius: 8px;
+            font-size: 1.5em; color: var(--primary); font-weight: bold; text-align: center;
+            margin: 20px 0; padding: 15px; background: #f3e8ff; border-radius: 8px;
         }
+        .step { margin-bottom: 15px; font-family: 'Courier New', monospace; padding: 10px; background: white; border: 1px solid #f1f5f9; border-radius: 6px; }
 
-        /* Visualization Styling */
-        .step {
-            margin-bottom: 15px;
-            font-family: 'Courier New', monospace;
-            padding: 10px;
-            background: white;
-            border: 1px solid #f1f5f9;
-            border-radius: 6px;
-        }
-        .math-row {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .sarrus-visual {
-            display: grid;
-            gap: 5px;
-            justify-content: center;
-            font-weight: bold;
-            margin: 15px 0;
-            color: #64748b;
-        }
-        .diag-pos { color: var(--highlight-pos); } /* Przekątna główna */
-        .diag-neg { color: var(--highlight-neg); } /* Przekątna boczna */
+        /* Sarrus Visuals */
+        .diag-pos { color: var(--highlight-pos); font-weight: bold; }
+        .diag-neg { color: var(--highlight-neg); font-weight: bold; }
 
-        /* Laplace specific */
-        .minor-matrix {
-            display: inline-grid;
-            gap: 2px;
-            vertical-align: middle;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            padding: 0 4px;
-            margin: 0 5px;
-            font-size: 0.8em;
+        /* --- STYLES FOR LAPLACE VISUALIZATION (Poprawki) --- */
+        .laplace-equation {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+            font-family: var(--math-font); font-size: 1.1em;
         }
+        .laplace-term {
+            display: flex; align-items: center; gap: 5px; background: #fff;
+            padding: 8px; border: 1px solid #e2e8f0; border-radius: 8px;
+        }
+        .term-sign { font-weight: bold; font-size: 1.2em; color: #64748b; }
+        .term-value { font-weight: bold; color: var(--primary); font-size: 1.2em; }
         
+        /* Minor Matrix Styling */
+        .minor-wrapper { position: relative; padding: 0 6px; display: inline-block; }
+        /* Pionowe kreski dla wyznacznika minora */
+        .minor-wrapper::before, .minor-wrapper::after {
+            content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: #000;
+        }
+        .minor-wrapper::before { left: 0; }
+        .minor-wrapper::after { right: 0; }
+        
+        .minor-grid { display: grid; gap: 3px; }
+        .minor-cell {
+            width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;
+            font-size: 0.9em; color: #334155;
+        }
+
+        /* Gauss formatting */
+        table.gauss-table { margin: 10px auto; border-spacing: 0; border-collapse: collapse; }
+        table.gauss-table td { padding: 5px 10px; text-align: right; width: 45px; }
+        .gauss-bracket-left { border-left: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; width: 8px; }
+        .gauss-bracket-right { border-right: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; width: 8px; }
+
     </style>
 </head>
 <body>
@@ -219,54 +137,45 @@
     <div id="sarrus" class="content active">
         <div class="tip-box">
             <span class="tip-title">💡 Kiedy stosować?</span>
-            Metoda działa <strong>TYLKO dla macierzy 3x3</strong>. Jest najszybsza do liczenia ręcznego "na kartce" dla tego rozmiaru. Polega na dopisaniu dwóch pierwszych kolumn i mnożeniu po przekątnych.
+            Tylko dla macierzy <strong>3x3</strong>. Dopisujemy dwie pierwsze kolumny i mnożymy po przekątnych (schemat Sarrusa ).
         </div>
-
         <div class="controls">
             <span>Macierz jest stała (3x3)</span>
             <button class="btn-calc" onclick="calcSarrus()">Oblicz Det(A)</button>
         </div>
-
         <div id="input-sarrus" class="matrix-wrapper"></div>
-
         <div id="res-sarrus" class="result-area" style="display:none;"></div>
     </div>
 
     <div id="laplace" class="content">
         <div class="tip-box">
             <span class="tip-title">💡 Kiedy stosować?</span>
-            Dobra dla macierzy 3x3 lub 4x4, szczególnie gdy w macierzy występuje <strong>dużo zer</strong>. Rozwijamy względem wiersza lub kolumny z największą liczbą zer, co upraszcza obliczenia.
+            Dla macierzy 3x3, 4x4 i większych. Rozwijamy względem wiersza/kolumny z największą liczbą zer .
         </div>
-
         <div class="controls">
             <label>Rozmiar N:</label> 
             <input type="number" id="lap-size" value="3" min="2" max="4" onchange="renderMatrix('laplace', this.value)">
             <button class="btn-calc" onclick="calcLaplace()">Oblicz Det(A)</button>
         </div>
-
         <div style="text-align: center;">
             <div id="input-laplace" class="matrix-wrapper"></div>
         </div>
-
         <div id="res-laplace" class="result-area" style="display:none;"></div>
     </div>
 
     <div id="gauss" class="content">
         <div class="tip-box">
             <span class="tip-title">💡 Kiedy stosować?</span>
-            Najlepsza metoda dla <strong>dużych macierzy</strong> (4x4, 5x5 i większych). Komputery używają właśnie tej metody (rozkład LU). Polega na sprowadzeniu macierzy do postaci trójkątnej, gdzie wyznacznik to iloczyn elementów na przekątnej.
+            Dla dużych macierzy. Sprowadzamy macierz do postaci trójkątnej górnej, a wyznacznik to iloczyn elementów na przekątnej.
         </div>
-
         <div class="controls">
             <label>Rozmiar N:</label> 
             <input type="number" id="gauss-size" value="4" min="2" max="5" onchange="renderMatrix('gauss', this.value)">
             <button class="btn-calc" onclick="calcGauss()">Oblicz Det(A)</button>
         </div>
-
         <div style="text-align: center;">
             <div id="input-gauss" class="matrix-wrapper"></div>
         </div>
-
         <div id="res-gauss" class="result-area" style="display:none;"></div>
     </div>
 </div>
@@ -286,12 +195,11 @@
         event.currentTarget.classList.add('active');
     }
 
-    // --- GENERYCZNE FUNKCJE DO MACIERZY ---
+    // --- GENERYCZNE FUNKCJE ---
 
     function renderMatrix(type, size, defaultVals = null) {
         const container = document.getElementById(`input-${type}`);
         container.innerHTML = '';
-        
         const grid = document.createElement('div');
         grid.className = 'matrix-grid';
         grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -301,19 +209,13 @@
                 const input = document.createElement('input');
                 input.type = 'number';
                 input.className = `matrix-cell ${type}-cell`;
-                input.dataset.row = i;
-                input.dataset.col = j;
-                // Domyślna wartość
-                if(defaultVals && defaultVals[i] && defaultVals[i][j] !== undefined) {
-                    input.value = defaultVals[i][j];
-                } else {
-                    input.value = Math.floor(Math.random() * 10); // losowe dla testu jak puste
-                }
+                input.dataset.row = i; input.dataset.col = j;
+                if(defaultVals && defaultVals[i]) input.value = defaultVals[i][j];
+                else input.value = Math.floor(Math.random() * 10);
                 grid.appendChild(input);
             }
         }
         container.appendChild(grid);
-        // Ukryj stary wynik
         document.getElementById(`res-${type}`).style.display = 'none';
     }
 
@@ -323,215 +225,167 @@
         let matrix = [];
         for(let i=0; i<size; i++) {
             let row = [];
-            for(let j=0; j<size; j++) {
-                row.push(parseFloat(inputs[i*size + j].value) || 0);
-            }
+            for(let j=0; j<size; j++) row.push(parseFloat(inputs[i*size + j].value) || 0);
             matrix.push(row);
         }
         return matrix;
     }
 
     // --- SARRUS (3x3) ---
-
     function calcSarrus() {
         const M = getMatrixValues('sarrus');
         const resDiv = document.getElementById('res-sarrus');
         resDiv.style.display = 'block';
         resDiv.innerHTML = '<h3>Wizualizacja metody Sarrusa</h3>';
 
-        // Obliczenia
-        const p1 = M[0][0]*M[1][1]*M[2][2];
-        const p2 = M[0][1]*M[1][2]*M[2][0];
-        const p3 = M[0][2]*M[1][0]*M[2][1];
-        
-        const n1 = M[0][2]*M[1][1]*M[2][0];
-        const n2 = M[0][0]*M[1][2]*M[2][1];
-        const n3 = M[0][1]*M[1][0]*M[2][2];
-
+        const p1 = M[0][0]*M[1][1]*M[2][2], p2 = M[0][1]*M[1][2]*M[2][0], p3 = M[0][2]*M[1][0]*M[2][1];
+        const n1 = M[0][2]*M[1][1]*M[2][0], n2 = M[0][0]*M[1][2]*M[2][1], n3 = M[0][1]*M[1][0]*M[2][2];
         const det = (p1 + p2 + p3) - (n1 + n2 + n3);
 
-        // Wizualizacja "Dopisania kolumn"
-        let html = `<div style="text-align:center; font-family:monospace; font-size:1.1em; letter-spacing:2px;">`;
+        let html = `<div style="text-align:center; font-family:monospace; font-size:1.1em; letter-spacing:2px; margin-bottom:15px;">`;
         html += `<div>| ${M[0].join(' ')} | ${M[0][0]} ${M[0][1]}</div>`;
         html += `<div>| ${M[1].join(' ')} | ${M[1][0]} ${M[1][1]}</div>`;
-        html += `<div>| ${M[2].join(' ')} | ${M[2][0]} ${M[2][1]}</div>`;
-        html += `</div>`;
+        html += `<div>| ${M[2].join(' ')} | ${M[2][0]} ${M[2][1]}</div></div>`;
         
-        html += `<div style="margin-top:20px;">`;
-        html += `<div class="step"><span class="diag-pos">Przekątne Główne (+):</span> <br> (${M[0][0]}·${M[1][1]}·${M[2][2]}) + (${M[0][1]}·${M[1][2]}·${M[2][0]}) + (${M[0][2]}·${M[1][0]}·${M[2][1]}) <br>= <strong>${p1} + ${p2} + ${p3}</strong> = ${p1+p2+p3}</div>`;
-        html += `<div class="step"><span class="diag-neg">Przekątne Boczne (-):</span> <br> (${M[0][2]}·${M[1][1]}·${M[2][0]}) + (${M[0][0]}·${M[1][2]}·${M[2][1]}) + (${M[0][1]}·${M[1][0]}·${M[2][2]}) <br>= <strong>${n1} + ${n2} + ${n3}</strong> = ${n1+n2+n3}</div>`;
-        html += `</div>`;
-
-        html += `<div class="final-answer">Wyznacznik = ${p1+p2+p3} - (${n1+n2+n3}) = ${det}</div>`;
-        
+        html += `<div class="step"><span class="diag-pos">Główne (+):</span> (${p1}) + (${p2}) + (${p3}) = <strong>${p1+p2+p3}</strong></div>`;
+        html += `<div class="step"><span class="diag-neg">Boczne (-):</span> (${n1}) + (${n2}) + (${n3}) = <strong>${n1+n2+n3}</strong></div>`;
+        html += `<div class="final-answer">Det = ${det}</div>`;
         resDiv.innerHTML += html;
     }
 
-    // --- LAPLACE ---
-
+    // --- LAPLACE (Poprawiona Wizualizacja) ---
     function calcLaplace() {
         const M = getMatrixValues('laplace');
         const n = M.length;
         const resDiv = document.getElementById('res-laplace');
         resDiv.style.display = 'block';
-        resDiv.innerHTML = '<h3>Wizualizacja (rozwinięcie względem 1. wiersza)</h3>';
+        resDiv.innerHTML = '<h3>Wizualizacja (Rozwinięcie wzg. 1. wiersza)</h3>';
 
-        let html = `<div style="margin-bottom:15px;">Wzór: &Sigma; (-1)<sup>1+j</sup> · a<sub>1j</sub> · det(M<sub>1j</sub>)</div>`;
+        let stepsHtml = `<div style="text-align:center; margin-bottom:15px;">Det(A) = &Sigma; (-1)<sup>1+j</sup> · a<sub>1j</sub> · det(M<sub>1j</sub>)</div>`;
+        stepsHtml += `<div class="laplace-equation">`;
+
         let totalDet = 0;
-        let stepsHtml = '<div class="math-row" style="justify-content:center; font-size:1.1em;">Det(A) = ';
 
         for(let j=0; j<n; j++) {
-            const a_1j = M[0][j];
-            const sign = ((1 + (j+1)) % 2 === 0) ? 1 : -1; // (-1)^(i+j)
-            const signSymbol = sign === 1 ? '+' : '-';
+            const val = M[0][j];
+            const sign = ((1 + (j+1)) % 2 === 0) ? 1 : -1;
+            const signChar = j === 0 ? (sign === 1 ? '' : '-') : (sign === 1 ? '+' : '-');
             
-            // Stwórz minor (wykreśl wiersz 0 i kolumnę j)
+            // Tworzenie minora
             let minor = [];
             for(let row=1; row<n; row++) {
                 let mRow = [];
-                for(let col=0; col<n; col++) {
-                    if(col !== j) mRow.push(M[row][col]);
-                }
+                for(let col=0; col<n; col++) if(col !== j) mRow.push(M[row][col]);
                 minor.push(mRow);
             }
-
-            // Oblicz wyznacznik minora (rekurencyjnie, ale tu uproszczamy dla demo - używamy pomocniczej)
             const minorDet = calculateSimpleDeterminant(minor);
-            const term = sign * a_1j * minorDet;
-            totalDet += term;
+            totalDet += sign * val * minorDet;
 
-            // Budowanie HTML minora
-            let minorGrid = `<div class="minor-matrix" style="grid-template-columns: repeat(${n-1}, 1fr);">`;
-            minor.flat().forEach(v => minorGrid += `<span>${v}</span>`);
+            // HTML dla minora (siatka)
+            let minorGrid = `<div class="minor-grid" style="grid-template-columns: repeat(${n-1}, 1fr);">`;
+            minor.flat().forEach(v => minorGrid += `<div class="minor-cell">${v}</div>`);
             minorGrid += `</div>`;
 
-            // Jeśli element to 0, można zaznaczyć, że pomijamy, ale pokażmy całość dla nauki
             stepsHtml += `
-                <div>
-                    ${j > 0 ? (sign === 1 ? ' + ' : ' - ') : (sign === -1 ? '-' : '')} 
-                    <strong>${a_1j}</strong> · ${minorGrid}
+                <div class="laplace-term">
+                    <span class="term-sign">${signChar}</span>
+                    <span class="term-value">${val}</span>
+                    <span>&times;</span>
+                    <div class="minor-wrapper">${minorGrid}</div>
                 </div>
             `;
         }
-        stepsHtml += '</div>';
+        stepsHtml += `</div>`; // End equation
 
-        // Pokaż obliczenia liczbowe
+        // Wynik tekstowy
         stepsHtml += `<div class="step" style="margin-top:20px; text-align:center;">`;
+        let calcStr = "";
         for(let j=0; j<n; j++) {
-            const a_1j = M[0][j];
+            const val = M[0][j];
             const sign = ((1 + (j+1)) % 2 === 0) ? 1 : -1;
-            
-            // Minor hacky recalculation for display
+            // Recalculate minor det for display text
             let minor = [];
-            for(let row=1; row<n; row++) {
-                let rowArr = [];
-                for(let col=0; col<n; col++) if(col !== j) rowArr.push(M[row][col]);
-                minor.push(rowArr);
-            }
+            for(let r=1; r<n; r++) { let rr=[]; for(let c=0; c<n; c++) if(c!==j) rr.push(M[r][c]); minor.push(rr); }
             const mDet = calculateSimpleDeterminant(minor);
-
-            stepsHtml += `a<sub>1,${j+1}</sub>(${a_1j}) · wyznacznik(${mDet}) · znak(${sign > 0 ? '+1' : '-1'}) = <strong>${a_1j * mDet * sign}</strong><br>`;
+            
+            calcStr += `${sign===1 ? '+' : '-'}(${val} · ${mDet}) `;
         }
-        stepsHtml += `</div>`;
-
-        stepsHtml += `<div class="final-answer">Wyznacznik = ${totalDet}</div>`;
-        resDiv.innerHTML += html + stepsHtml;
+        stepsHtml += `Suma: ${calcStr} = <strong>${totalDet}</strong></div>`;
+        stepsHtml += `<div class="final-answer">Det(A) = ${totalDet}</div>`;
+        
+        resDiv.innerHTML += stepsHtml;
     }
 
-    // Pomocnicza do obliczenia wyznacznika minora (dla 2x2 i 3x3) bez wizualizacji
     function calculateSimpleDeterminant(m) {
         if(m.length === 2) return (m[0][0]*m[1][1] - m[0][1]*m[1][0]);
-        if(m.length === 3) { // Sarrus logic in memory
+        if(m.length === 3) {
              return (m[0][0]*m[1][1]*m[2][2] + m[0][1]*m[1][2]*m[2][0] + m[0][2]*m[1][0]*m[2][1]) -
                     (m[0][2]*m[1][1]*m[2][0] + m[0][0]*m[1][2]*m[2][1] + m[0][1]*m[1][0]*m[2][2]);
         }
-        return m[0][0]; // fallback for 1x1
+        return m[0][0];
     }
 
-    // --- GAUSS (TRIANGULACJA) ---
-
+    // --- GAUSS (Poprawiona tabela) ---
     function calcGauss() {
-        // Deep copy
         let M = JSON.parse(JSON.stringify(getMatrixValues('gauss')));
         const n = M.length;
         const resDiv = document.getElementById('res-gauss');
         resDiv.style.display = 'block';
-        resDiv.innerHTML = '<h3>Wizualizacja Eliminacji Gaussa</h3>';
+        resDiv.innerHTML = '<h3>Eliminacja Gaussa</h3>';
 
-        let html = '<div style="font-size:0.9em; color:#555; margin-bottom:10px;">Celem jest uzyskanie zer poniżej głównej przekątnej.</div>';
+        let html = '';
         let swapCount = 0;
         
         for (let i = 0; i < n; i++) {
-            // Szukanie pivota
             let pivot = M[i][i];
             
-            // Jeśli pivot 0, trzeba zamienić wiersze
             if (Math.abs(pivot) < 1e-10) {
                 let swapped = false;
                 for (let k = i + 1; k < n; k++) {
                     if (Math.abs(M[k][i]) > 1e-10) {
-                        // Swap
-                        let temp = M[i];
-                        M[i] = M[k];
-                        M[k] = temp;
+                        [M[i], M[k]] = [M[k], M[i]];
                         swapCount++;
-                        html += `<div class="step" style="border-left:4px solid orange;">🔄 Zamiana wiersza W${i+1} z W${k+1} (pivot był 0). Zmiana znaku wyznacznika!</div>`;
-                        pivot = M[i][i];
-                        swapped = true;
-                        break;
+                        html += `<div class="step" style="border-left:4px solid orange;">🔄 Zamiana W${i+1} <-> W${k+1}</div>`;
+                        pivot = M[i][i]; swapped = true; break;
                     }
                 }
                 if (!swapped && Math.abs(pivot) < 1e-10) {
-                    html += `<div class="final-answer">Wyznacznik = 0 (kolumna zerowa)</div>`;
-                    resDiv.innerHTML = html;
-                    return;
+                    resDiv.innerHTML = `<div class="final-answer">Det = 0 (Kolumna zerowa)</div>`; return;
                 }
             }
 
-            // Eliminacja wierszy poniżej
             for (let j = i + 1; j < n; j++) {
                 if (Math.abs(M[j][i]) > 1e-10) {
                     const factor = M[j][i] / M[i][i];
-                    html += `<div class="step">Eliminacja w W${j+1}: <strong>W${j+1} = W${j+1} - (${parseFloat(factor.toFixed(2))}) · W${i+1}</strong></div>`;
-                    
-                    for (let k = i; k < n; k++) {
-                        M[j][k] = M[j][k] - factor * M[i][k];
-                    }
+                    html += `<div class="step">W${j+1} = W${j+1} - (${parseFloat(factor.toFixed(2))}) · W${i+1}</div>`;
+                    for (let k = i; k < n; k++) M[j][k] -= factor * M[i][k];
                 }
             }
-            // Pokaż stan macierzy po przetworzeniu kolumny
-            html += renderMiniMatrix(M);
+            html += renderGaussMatrix(M);
         }
 
-        let det = 1;
-        let diagHtml = "";
+        let det = (swapCount % 2 !== 0 ? -1 : 1);
+        let diagStr = (swapCount % 2 !== 0 ? "(-1) · " : "");
         for(let i=0; i<n; i++) {
             det *= M[i][i];
-            diagHtml += parseFloat(M[i][i].toFixed(2)) + (i < n-1 ? " · " : "");
+            diagStr += parseFloat(M[i][i].toFixed(2)) + (i<n-1 ? " · " : "");
         }
         
-        // Korekta znaku za zamiany wierszy
-        if (swapCount % 2 !== 0) det *= -1;
-
-        html += `<div class="step">Mnożenie elementów na przekątnej: ${diagHtml} = ${parseFloat(det.toFixed(2))}</div>`;
-        if(swapCount % 2 !== 0) {
-            html += `<div class="step" style="color:red;">Uwzględniono zmianę znaku (nieparzysta liczba zamian wierszy).</div>`;
-        }
-
-        html += `<div class="final-answer">Wyznacznik ≈ ${parseFloat(det.toFixed(2))}</div>`;
+        html += `<div class="step">Iloczyn przekątnej: ${diagStr}</div>`;
+        html += `<div class="final-answer">Det(A) ≈ ${parseFloat(det.toFixed(2))}</div>`;
         resDiv.innerHTML += html;
     }
 
-    function renderMiniMatrix(M) {
-        let h = '<table style="margin: 10px auto; border-left:2px solid #000; border-right:2px solid #000; padding:0 5px;">';
+    function renderGaussMatrix(M) {
+        let h = '<table class="gauss-table"><tr><td class="gauss-bracket-left"></td>';
+        h += '<td><table style="border-collapse:collapse;">';
         M.forEach(row => {
             h += '<tr>';
-            row.forEach(val => {
-                h += `<td style="padding:5px; width:40px; text-align:center;">${parseFloat(val.toFixed(2))}</td>`;
-            });
+            row.forEach(val => h += `<td>${parseFloat(val.toFixed(2))}</td>`);
             h += '</tr>';
         });
-        h += '</table>';
+        h += '</table></td>';
+        h += '<td class="gauss-bracket-right"></td></tr></table>';
         return h;
     }
 
