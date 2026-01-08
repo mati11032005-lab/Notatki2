@@ -1128,16 +1128,33 @@
 <h4 id="2-wersor-wektor-jednostkowy-i-normalizacja">2. Wersor (Wektor Jednostkowy) i Normalizacja<a class="headerlink" href="#2-wersor-wektor-jednostkowy-i-normalizacja" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Wersor</strong> <span class="arithmatex">\(\vec{e}\)</span> to wektor, którego długość jest równa <span class="arithmatex">\(\mathbf{1}\)</span>. Służy do opisu samego <strong>kierunku</strong> i <strong>zwrotu</strong>, bez względu na wielkość.</li>
-<li><strong>Normalizacja</strong> to proces przekształcania wektora <span class="arithmatex">\(\vec{v}\)</span> w jego wersor <span class="arithmatex">\(\vec{e}\)</span> poprzez podzielenie go przez własną długość.
-<span class="arithmatex">\(\vec{e} = \frac{\vec{v}}{||\vec{v}||}\)</span></li>
+<li><strong>Normalizacja</strong> to proces przekształcania wektora <span class="arithmatex">\(\vec{v}\)</span> w jego wersor <span class="arithmatex">\(\vec{e}\)</span> poprzez podzielenie go przez własną długość.</li>
 </ul>
-<p><strong>Zadanie:</strong> </p>
-<p>Oblicz długość i wersor wektora <span class="arithmatex">\(\vec{v} = [-2, 1, -2]\)</span>.</p>
+<div class="arithmatex">\[\vec{e} = \frac{\vec{v}}{||\vec{v}||}\]</div>
+<p><strong>Zadanie długość:</strong> </p>
+<p>Oblicz długość wektora <span class="arithmatex">\(\vec{v} = [-2, 1, -2]\)</span>.</p>
 <p><strong>Rozwiązanie (Długość):</strong></p>
 <div class="arithmatex">\[||\vec{v}|| = \sqrt{(-2)^2 + 1^2 + (-2)^2} = \sqrt{4 + 1 + 4} = \sqrt{9} = \mathbf{3}\]</div>
-<p><strong>Rozwiązanie (Wersor):</strong></p>
-<div class="arithmatex">\[\vec{e} = \frac{1}{3} \cdot [-2, 1, -2] = \mathbf{\left[-\frac{2}{3}, \frac{1}{3}, -\frac{2}{3}\right]}\]</div>
-<hr />
+<p><strong>Zadanie wersor</strong></p>
+<p>Znajdź wersor wektora <span class="arithmatex">\(\vec{v} = [3, 4]\)</span>.</p>
+<p>Obliczamy długość wektora <span class="arithmatex">\(\|\vec{v}\|\)</span></p>
+<div class="arithmatex">\[\|\vec{v}\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\]</div>
+<p>Dzielimy współrzędne przez długość</p>
+<div class="arithmatex">\[\vec{u} = \left[ \frac{3}{5}, \frac{4}{5} \right] = [0.6, 0.8]\]</div>
+<p><strong>Sprawdzenie</strong> Możemy sprawdzić, czy długość nowego wektora <span class="arithmatex">\(\vec{u}\)</span> faktycznie wynosi 1:</p>
+<div class="arithmatex">\[\|\vec{u}\| = \sqrt{0.6^2 + 0.8^2} = \sqrt{0.36 + 0.64} = \sqrt{1} = 1\]</div>
+<p><strong>Normalizacja jest kluczowa w wielu dziedzinach:</strong></p>
+<ul>
+<li>
+<p>Grafika 3D: Aby obliczyć oświetlenie, musimy znać tylko kierunek powierzchni (wektor normalny), a jego długość musi wynosić 1, by nie przekłamywać jasności.</p>
+</li>
+<li>
+<p>Sztuczna inteligencja / Machine Learning: Normalizujemy dane (cechy), aby algorytm nie faworyzował parametrów o dużych wartościach liczbowych.</p>
+</li>
+<li>
+<p>Fizyka: Gdy interesuje nas tylko, w którą stronę działa siła, a nie jej wartość.</p>
+</li>
+</ul>
 
 
 
