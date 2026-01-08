@@ -1,0 +1,1435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../rachunek/">
+      
+      
+        <link rel="next" href="../rachunek3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2.Granice funkcji i ciągów - Notatki z Matematyki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/math.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-granice-ciagow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notatki z Matematyki" class="md-header__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notatki z Matematyki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.Granice funkcji i ciągów
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notatki z Matematyki" class="md-nav__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notatki z Matematyki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra liniowa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra liniowa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Macierze podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Operacje_na_macierzach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja operacje macierze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Wyznaczniki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wyznaczniki_macierzy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja wyznaczników
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Macierz odwrotna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Macierz_odwrotna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja macierzy odwrotnej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Układy równań liniowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometria analityczna
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometria analityczna
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Wektory podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Iloczyn wektorów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Proste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rachunek różniczkowy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rachunek różniczkowy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Funkcje podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Granice funkcji i ciągów
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Granice funkcji i ciągów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-granice-ciagow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Granice Ciągów
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Granice Ciągów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-11-ciag-zbiezny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.1: Ciąg Zbieżny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-12-ciag-rozbiezny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.2: Ciąg Rozbieżny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-13-obliczanie-granicy-fracn1n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.3: Obliczanie Granicy \(\frac{n+1}{n}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-14-mini-sprawdzian-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.4: Mini-sprawdzian (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-granice-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Granice Funkcji
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Granice Funkcji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-21-granica-vs-wartosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.1: Granica vs. Wartość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-22-granice-jednostronne-i-asymptoty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.2: Granice Jednostronne i Asymptoty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-23-funkcja-z-dziura-fracx2-1x-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.3: Funkcja z 'Dziurą' \(\frac{x^2 - 1}{x - 1}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-24-odczytywanie-granic-z-wykresu-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.4: Odczytywanie Granic z Wykresu (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-algebra-granic-i-symbole-nieoznaczone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Algebra Granic i Symbole Nieoznaczone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Algebra Granic i Symbole Nieoznaczone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-31-reguy-arytmetyczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.1: Reguły Arytmetyczne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-32-symbole-nieoznaczone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.2: Symbole Nieoznaczone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-33-usuwanie-frac00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.3: Usuwanie \([\frac{0}{0}]\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-34-mini-sprawdzian-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.4: Mini-sprawdzian (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-fina-i-zastosowania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. Finał i Zastosowania
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Finał i Zastosowania">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-41-test-zbiorczy-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 4.1: Test Zbiorczy (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-51-ciagosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 5.1: Ciągłość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-52-pochodna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 5.2: Pochodna
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Różniczkowanie funkcji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-granice-ciagow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Granice Ciągów
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Granice Ciągów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-11-ciag-zbiezny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.1: Ciąg Zbieżny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-12-ciag-rozbiezny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.2: Ciąg Rozbieżny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-13-obliczanie-granicy-fracn1n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.3: Obliczanie Granicy \(\frac{n+1}{n}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-14-mini-sprawdzian-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 1.4: Mini-sprawdzian (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-granice-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Granice Funkcji
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Granice Funkcji">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-21-granica-vs-wartosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.1: Granica vs. Wartość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-22-granice-jednostronne-i-asymptoty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.2: Granice Jednostronne i Asymptoty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-23-funkcja-z-dziura-fracx2-1x-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.3: Funkcja z 'Dziurą' \(\frac{x^2 - 1}{x - 1}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-24-odczytywanie-granic-z-wykresu-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 2.4: Odczytywanie Granic z Wykresu (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-algebra-granic-i-symbole-nieoznaczone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Algebra Granic i Symbole Nieoznaczone
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Algebra Granic i Symbole Nieoznaczone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-31-reguy-arytmetyczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.1: Reguły Arytmetyczne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-32-symbole-nieoznaczone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.2: Symbole Nieoznaczone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-33-usuwanie-frac00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.3: Usuwanie \([\frac{0}{0}]\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-34-mini-sprawdzian-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 3.4: Mini-sprawdzian (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-fina-i-zastosowania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. Finał i Zastosowania
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Finał i Zastosowania">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-41-test-zbiorczy-rozwiazania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 4.1: Test Zbiorczy (Rozwiązania)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-51-ciagosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 5.1: Ciągłość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekcja-52-pochodna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekcja 5.2: Pochodna
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>2.Granice funkcji i ciągów</h1>
+
+<h3 id="i-granice-ciagow">I. Granice Ciągów<a class="headerlink" href="#i-granice-ciagow" title="Permanent link">&para;</a></h3>
+<h4 id="sekcja-11-ciag-zbiezny">Sekcja 1.1: Ciąg Zbieżny<a class="headerlink" href="#sekcja-11-ciag-zbiezny" title="Permanent link">&para;</a></h4>
+<p>Ciąg jest <strong>zbieżny</strong> do granicy <span class="arithmatex">\(g\)</span>, jeśli jego wyrazy <strong>gromadzą się</strong> wokół tej jednej liczby w miarę, jak numer wyrazu <span class="arithmatex">\(n\)</span> dąży do nieskończoności.
+* <strong>Przykład:</strong> Ciąg <span class="arithmatex">\(a_n = \frac{1}{n}\)</span>.
+* <strong>Rozwiązanie:</strong> <span class="arithmatex">\(\lim_{n \to \infty} \frac{1}{n} = \mathbf{0}\)</span>. Wyrazy ciągle zbliżają się do zera.</p>
+<h4 id="sekcja-12-ciag-rozbiezny">Sekcja 1.2: Ciąg Rozbieżny<a class="headerlink" href="#sekcja-12-ciag-rozbiezny" title="Permanent link">&para;</a></h4>
+<p>Ciąg jest <strong>rozbieżny</strong> do nieskończoności (<span class="arithmatex">\(\infty\)</span>), jeśli jego wyrazy stają się dowolnie duże i nie zbliżają się do żadnej skończonej liczby.
+* <strong>Przykład:</strong> Ciąg <span class="arithmatex">\(a_n = 2n - 5\)</span>.
+* <strong>Rozwiązanie:</strong> <span class="arithmatex">\(\lim_{n \to \infty} (2n - 5) = \mathbf{\infty}\)</span>.</p>
+<h4 id="sekcja-13-obliczanie-granicy-fracn1n">Sekcja 1.3: Obliczanie Granicy <span class="arithmatex">\(\frac{n+1}{n}\)</span><a class="headerlink" href="#sekcja-13-obliczanie-granicy-fracn1n" title="Permanent link">&para;</a></h4>
+<p><strong>Twoja Odpowiedź (Korekta):</strong> Twoja początkowa intuicja wskazała na 2, ale obliczenia pierwszych wyrazów pokazały, że wyrazy dążą do 1 (np. <span class="arithmatex">\(a_{100} = 1.01\)</span>).
+* <strong>Rozwiązanie Formalne:</strong> Dzielimy licznik i mianownik przez <span class="arithmatex">\(n\)</span>:
+    <span class="arithmatex">\(<span class="arithmatex">\(\lim_{n \to \infty} \frac{n+1}{n} = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right) = 1 + 0 = \mathbf{1}\)</span>\)</span></p>
+<h4 id="sekcja-14-mini-sprawdzian-rozwiazania">Sekcja 1.4: Mini-sprawdzian (Rozwiązania)<a class="headerlink" href="#sekcja-14-mini-sprawdzian-rozwiazania" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Ciąg <span class="arithmatex">\(a_n = \frac{5n^2 - 3n + 1}{n^2 + 4n}\)</span></strong><ul>
+<li><strong>Rozwiązanie:</strong> Stopień licznika = Stopień mianownika (<span class="arithmatex">\(n^2\)</span>). Granica to iloraz współczynników.</li>
+<li><strong>Wynik (Twoja odpowiedź była prawidłowa):</strong> <span class="arithmatex">\(\frac{5}{1} = \mathbf{5}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Ciąg <span class="arithmatex">\(b_n = \frac{2n - 7}{n^3 + 5}\)</span></strong><ul>
+<li><strong>Rozwiązanie (Korekta Twojego błędu):</strong> Stopień licznika (<span class="arithmatex">\(n^1\)</span>) <strong>&lt;</strong> Stopień mianownika (<span class="arithmatex">\(n^3\)</span>). Gdy mianownik dominuje, granica wynosi <strong>0</strong>.</li>
+<li><strong>Wynik:</strong> <span class="arithmatex">\(\mathbf{0}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Ciąg <span class="arithmatex">\(c_n = n^2 - 10n\)</span></strong><ul>
+<li><strong>Rozwiązanie:</strong> Wyłączamy <span class="arithmatex">\(n^2\)</span>: <span class="arithmatex">\(\lim_{n \to \infty} n^2(1 - \frac{10}{n}) = \infty \cdot 1\)</span>.</li>
+<li><strong>Wynik (Twoja odpowiedź była prawidłowa):</strong> <span class="arithmatex">\(\mathbf{\infty}\)</span>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="ii-granice-funkcji">II. Granice Funkcji<a class="headerlink" href="#ii-granice-funkcji" title="Permanent link">&para;</a></h3>
+<h4 id="sekcja-21-granica-vs-wartosc">Sekcja 2.1: Granica vs. Wartość<a class="headerlink" href="#sekcja-21-granica-vs-wartosc" title="Permanent link">&para;</a></h4>
+<p><strong>Granica funkcji w punkcie</strong> <span class="arithmatex">\(x_0\)</span> to wartość, do której funkcja <em>zbliża się</em>, gdy <span class="arithmatex">\(x\)</span> dąży do <span class="arithmatex">\(x_0\)</span>. <strong>Wartość funkcji</strong> <span class="arithmatex">\(f(x_0)\)</span> to wartość <em>dokładnie</em> w tym punkcie. Granica może istnieć, nawet gdy wartość funkcji nie istnieje (np. w punkcie z „dziurą").</p>
+<h4 id="sekcja-22-granice-jednostronne-i-asymptoty">Sekcja 2.2: Granice Jednostronne i Asymptoty<a class="headerlink" href="#sekcja-22-granice-jednostronne-i-asymptoty" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Istnienie granicy:</strong> Granica <span class="arithmatex">\(\lim_{x \to x_0} f(x)\)</span> istnieje, tylko gdy granica lewostronna (<span class="arithmatex">\(\lim_{x \to x_0^-} f(x)\)</span>) jest <strong>równa</strong> granicy prawostronnej (<span class="arithmatex">\(\lim_{x \to x_0^+} f(x)\)</span>).</li>
+<li><strong>Asymptota Pozioma:</strong> Jeśli <span class="arithmatex">\(\lim_{x \to \pm \infty} f(x) = L\)</span> (liczba skończona), prosta <span class="arithmatex">\(\mathbf{y = L}\)</span> jest asymptotą.</li>
+<li><strong>Asymptota Pionowa:</strong> Jeśli <span class="arithmatex">\(\lim_{x \to x_0^\pm} f(x) = \pm \infty\)</span>, prosta <span class="arithmatex">\(\mathbf{x = x_0}\)</span> jest asymptotą. (W punkcie asymptoty pionowej granica <strong>nie istnieje</strong>).</li>
+</ul>
+<h4 id="sekcja-23-funkcja-z-dziura-fracx2-1x-1">Sekcja 2.3: Funkcja z 'Dziurą' <span class="arithmatex">\(\frac{x^2 - 1}{x - 1}\)</span><a class="headerlink" href="#sekcja-23-funkcja-z-dziura-fracx2-1x-1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Wartość (Twoja odpowiedź była prawidłowa):</strong> Podstawienie <span class="arithmatex">\(x=1\)</span> daje symbol nieoznaczony <span class="arithmatex">\([\frac{0}{0}]\)</span>, więc wartość <span class="arithmatex">\(f(1)\)</span> <strong>nie istnieje</strong>.</li>
+<li><strong>Rozwiązanie Granicy:</strong> Używamy rozkładu na czynniki, by usunąć nieoznaczoność:
+    <span class="arithmatex">\(<span class="arithmatex">\(\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1} \frac{(x - 1)(x + 1)}{x - 1} = \lim_{x \to 1} (x + 1) = \mathbf{2}\)</span>\)</span></li>
+</ul>
+<h4 id="sekcja-24-odczytywanie-granic-z-wykresu-rozwiazania">Sekcja 2.4: Odczytywanie Granic z Wykresu (Rozwiązania)<a class="headerlink" href="#sekcja-24-odczytywanie-granic-z-wykresu-rozwiazania" title="Permanent link">&para;</a></h4>
+<p>Na podstawie opisu wykresu (który nie wyświetlał się poprawnie):
+1.  <span class="arithmatex">\(\lim_{x \to 2^-} f(x) = \mathbf{\infty}\)</span>
+2.  <span class="arithmatex">\(\lim_{x \to 2^+} f(x) = \mathbf{-\infty}\)</span>
+3.  <span class="arithmatex">\(\lim_{x \to 0^-} f(x) = \mathbf{2}\)</span>
+4.  <span class="arithmatex">\(\lim_{x \to 0^+} f(x) = \mathbf{1}\)</span>
+5.  <span class="arithmatex">\(\lim_{x \to \infty} f(x) = \mathbf{3}\)</span></p>
+<hr />
+<h3 id="iii-algebra-granic-i-symbole-nieoznaczone">III. Algebra Granic i Symbole Nieoznaczone<a class="headerlink" href="#iii-algebra-granic-i-symbole-nieoznaczone" title="Permanent link">&para;</a></h3>
+<h4 id="sekcja-31-reguy-arytmetyczne">Sekcja 3.1: Reguły Arytmetyczne<a class="headerlink" href="#sekcja-31-reguy-arytmetyczne" title="Permanent link">&para;</a></h4>
+<p>Granica sumy, różnicy, iloczynu i ilorazu (dla niezerowego mianownika) jest równa operacji na granicach cząstkowych. Pozwala to liczyć proste granice składowe.</p>
+<h4 id="sekcja-32-symbole-nieoznaczone">Sekcja 3.2: Symbole Nieoznaczone<a class="headerlink" href="#sekcja-32-symbole-nieoznaczone" title="Permanent link">&para;</a></h4>
+<p>Są to wyrażenia takie jak <span class="arithmatex">\([\frac{0}{0}]\)</span>, <span class="arithmatex">\([\frac{\infty}{\infty}]\)</span>, <span class="arithmatex">\([\infty - \infty]\)</span>, które <strong>nie mają jednej określonej wartości</strong> (mogą dążyć do dowolnej liczby, <span class="arithmatex">\(\infty\)</span> lub nie istnieć). Wymagają one dalszych przekształceń.
+* <strong>Metody usuwania <span class="arithmatex">\([\frac{0}{0}]\)</span>:</strong> Rozkład na czynniki/skracanie, mnożenie przez sprzężenie (dla pierwiastków) lub Reguła de l'Hospitala (dla pochodnych).</p>
+<h4 id="sekcja-33-usuwanie-frac00">Sekcja 3.3: Usuwanie <span class="arithmatex">\([\frac{0}{0}]\)</span><a class="headerlink" href="#sekcja-33-usuwanie-frac00" title="Permanent link">&para;</a></h4>
+<p><strong>Zadanie:</strong> <span class="arithmatex">\(\lim_{x \to 1} \frac{2x^2 - 2}{x - 1}\)</span>.
+* <strong>Rozwiązanie:</strong> Wyłączamy 2 i używamy różnicy kwadratów <span class="arithmatex">\(x^2 - 1\)</span>:
+    <span class="arithmatex">\(<span class="arithmatex">\(\lim_{x \to 1} \frac{2(x - 1)(x + 1)}{x - 1} = \lim_{x \to 1} 2(x + 1) = \mathbf{4}\)</span>\)</span></p>
+<h4 id="sekcja-34-mini-sprawdzian-rozwiazania">Sekcja 3.4: Mini-sprawdzian (Rozwiązania)<a class="headerlink" href="#sekcja-34-mini-sprawdzian-rozwiazania" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Zadanie:</strong> <span class="arithmatex">\(\lim_{x \to 3} \frac{x^2 - 9}{x - 3}\)</span>.<ul>
+<li><strong>Rozwiązanie (Twoja odp. 6 - Prawidłowa):</strong> Stosujemy różnicę kwadratów i skracamy <span class="arithmatex">\((x-3)\)</span>:
+    <span class="arithmatex">\(<span class="arithmatex">\(\lim_{x \to 3} \frac{(x - 3)(x + 3)}{x - 3} = 3 + 3 = \mathbf{6}\)</span>\)</span></li>
+</ul>
+</li>
+<li><strong>Zadanie:</strong> <span class="arithmatex">\(\lim_{x \to \infty} \frac{4x^3 - 7x}{2x^3 + 5x^2}\)</span>.<ul>
+<li><strong>Rozwiązanie (Twoja odp. 2 - Prawidłowa):</strong> Stopień licznika = Stopień mianownika. Granica to iloraz współczynników.</li>
+<li><strong>Wynik:</strong> <span class="arithmatex">\(\frac{4}{2} = \mathbf{2}\)</span>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="iv-fina-i-zastosowania">IV. Finał i Zastosowania<a class="headerlink" href="#iv-fina-i-zastosowania" title="Permanent link">&para;</a></h3>
+<h4 id="sekcja-41-test-zbiorczy-rozwiazania">Sekcja 4.1: Test Zbiorczy (Rozwiązania)<a class="headerlink" href="#sekcja-41-test-zbiorczy-rozwiazania" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Granica Ciągu:</strong> <span class="arithmatex">\(\lim_{n \to \infty} \frac{6n + 1}{2n^2 - 3n}\)</span><ul>
+<li><strong>Rozwiązanie:</strong> Stopień licznika (<span class="arithmatex">\(n^1\)</span>) &lt; Stopień mianownika (<span class="arithmatex">\(n^2\)</span>). Wynik: <span class="arithmatex">\(\mathbf{0}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Granica Funkcji z <span class="arithmatex">\([\frac{0}{0}]\)</span>:</strong> <span class="arithmatex">\(\lim_{x \to -2} \frac{x^2 + 5x + 6}{x + 2}\)</span><ul>
+<li><strong>Rozwiązanie:</strong> Rozkład na czynniki: <span class="arithmatex">\(\frac{(x+2)(x+3)}{x+2}\)</span>. Wynik: <span class="arithmatex">\(\lim_{x \to -2} (x + 3) = -2 + 3 = \mathbf{1}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Odczytanie Granic Jednostronnych:</strong> <span class="arithmatex">\(\lim_{x \to 0} f(x)\)</span> (dane: lewostronna 2, prawostronna 1).<ul>
+<li><strong>Rozwiązanie:</strong> Granice jednostronne są <strong>różne</strong> (<span class="arithmatex">\(2 \neq 1\)</span>), więc granica <span class="arithmatex">\(\lim_{x \to 0} f(x)\)</span> <strong>nie istnieje</strong>.</li>
+</ul>
+</li>
+</ol>
+<h4 id="sekcja-51-ciagosc">Sekcja 5.1: Ciągłość<a class="headerlink" href="#sekcja-51-ciagosc" title="Permanent link">&para;</a></h4>
+<p>Pojęcie granicy definiuje <strong>ciągłość</strong> funkcji. Funkcja jest ciągła w punkcie <span class="arithmatex">\(x_0\)</span>, gdy wartość granicy jest równa wartości funkcji:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{x \to x_0} f(x) = f(x_0)\)</span>\)</span></p>
+<h4 id="sekcja-52-pochodna">Sekcja 5.2: Pochodna<a class="headerlink" href="#sekcja-52-pochodna" title="Permanent link">&para;</a></h4>
+<p>Granica jest kluczowa do zdefiniowania <strong>pochodnej</strong> (chwilowej prędkości zmian). Pochodna jest obliczana jako granica ilorazu różnicowego (nachylenia siecznej), gdy odległość między punktami <span class="arithmatex">\(\Delta x\)</span> dąży do zera:
+<span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}\)</span>\)</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
