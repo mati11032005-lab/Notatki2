@@ -3,304 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wizualizacja Laplace'a - Pełna Rekurencja</title>
+    <title>Kalkulator Wyznaczników Macierzy PRO</title>
     <style>
         :root {
-            --depth-1-color: #2c3e50; /* Główny poziom (np. 4x4) */
-            --depth-2-color: #e67e22; /* Podpoziom (np. 3x3) */
-            --depth-3-color: #27ae60; /* Najniższy (2x2) */
-            --bg-color: #f4f7f6;
+            --primary: #7c3aed;
+            --primary-hover: #6d28d9;
+            --bg: #f8fafc;
+            --panel: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --highlight-pos: #16a34a;
+            --highlight-neg: #dc2626;
+            --math-font: 'Times New Roman', Times, serif;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-color); padding: 20px; line-height: 1.5; color: #333; }
-        .container { max-width: 1100px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: var(--depth-1-color); margin-bottom: 5px; }
-        p.subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+        }
 
-        /* Panel sterowania */
-        .controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; background: #ecf0f1; padding: 15px; border-radius: 10px; }
-        input[type="number"] { width: 60px; padding: 8px; border: 1px solid #bdc3c7; border-radius: 5px; text-align: center; font-weight: bold; }
-        button { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; transition: 0.2s; color: white; }
-        .btn-gen { background-color: #34495e; }
-        .btn-calc { background-color: #2980b9; }
-        button:hover { opacity: 0.9; transform: translateY(-1px); }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: var(--panel);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-        /* Siatka macierzy do wpisywania */
-        .matrix-grid { display: grid; gap: 8px; justify-content: center; margin: 20px auto; }
-        .matrix-input { width: 50px; height: 50px; text-align: center; font-size: 1.1rem; border: 2px solid #dfe6e9; border-radius: 8px; transition: 0.2s; }
-        .matrix-input:focus { border-color: #3498db; outline: none; background: #ebf5ff; }
+        /* Tabs */
+        .tabs { display: flex; background-color: #f1f5f9; border-bottom: 1px solid var(--border); }
+        .tab-btn {
+            flex: 1; padding: 18px; border: none; background: none; cursor: pointer;
+            font-size: 16px; font-weight: 600; color: #64748b; transition: 0.2s;
+        }
+        .tab-btn:hover { background-color: #e2e8f0; }
+        .tab-btn.active { background-color: var(--panel); color: var(--primary); border-top: 4px solid var(--primary); }
 
-        /* WIZUALIZACJA KROKÓW */
-        #output { margin-top: 30px; }
+        .content { display: none; padding: 30px; animation: fadeEffect 0.4s; }
+        .content.active { display: block; }
+        @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+
+        /* Controls */
+        .controls {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+            background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border);
+        }
+        .btn-calc {
+            background-color: var(--primary); color: white; border: none; padding: 10px 24px;
+            border-radius: 6px; font-weight: bold; cursor: pointer; margin-left: auto; transition: 0.2s;
+        }
+        .btn-calc:hover { background-color: var(--primary-hover); }
+        input[type="number"] { padding: 6px; width: 50px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px; }
+
+        /* Matrix Input */
+        .matrix-grid { display: grid; gap: 8px; justify-content: center; margin-bottom: 20px; }
+        .matrix-cell { width: 50px; height: 40px; text-align: center; font-size: 16px; border: 1px solid #cbd5e1; border-radius: 4px; }
+
+        /* Matrix Styling (Brackets) */
+        .matrix-wrapper { display: inline-block; position: relative; padding: 0 10px; vertical-align: middle; }
+        .matrix-wrapper::before, .matrix-wrapper::after {
+            content: ""; position: absolute; top: 0; bottom: 0; width: 8px; border: 2px solid #334155; border-right: none;
+        }
+        .matrix-wrapper::before { left: 0; }
+        .matrix-wrapper::after { right: 0; transform: scaleX(-1); }
+
+        /* Tip Box */
+        .tip-box {
+            background-color: #fff7ed; border-left: 4px solid #f97316; padding: 15px;
+            margin-bottom: 25px; border-radius: 4px;
+        }
+        .tip-title { font-weight: bold; color: #9a3412; margin-bottom: 5px; display: block; }
+
+        /* Results */
+        .result-area { border-top: 2px dashed var(--border); padding-top: 20px; margin-top: 20px; }
+        .final-answer {
+            font-size: 1.5em; color: var(--primary); font-weight: bold; text-align: center;
+            margin: 20px 0; padding: 15px; background: #f3e8ff; border-radius: 8px;
+        }
+        .step { margin-bottom: 15px; font-family: 'Courier New', monospace; padding: 10px; background: white; border: 1px solid #f1f5f9; border-radius: 6px; }
+
+        /* Sarrus Visuals */
+        .diag-pos { color: var(--highlight-pos); font-weight: bold; }
+        .diag-neg { color: var(--highlight-neg); font-weight: bold; }
+
+        /* --- STYLES FOR LAPLACE VISUALIZATION (Poprawki) --- */
+        .laplace-equation {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+            font-family: var(--math-font); font-size: 1.1em;
+        }
+        .laplace-term {
+            display: flex; align-items: center; gap: 5px; background: #fff;
+            padding: 8px; border: 1px solid #e2e8f0; border-radius: 8px;
+        }
+        .term-sign { font-weight: bold; font-size: 1.2em; color: #64748b; }
+        .term-value { font-weight: bold; color: var(--primary); font-size: 1.2em; }
         
-        .step-box {
-            margin: 15px 0;
-            padding: 15px;
-            border-left: 5px solid #ccc;
-            background: #fff;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: relative;
+        /* Minor Matrix Styling */
+        .minor-wrapper { position: relative; padding: 0 6px; display: inline-block; }
+        /* Pionowe kreski dla wyznacznika minora */
+        .minor-wrapper::before, .minor-wrapper::after {
+            content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: #000;
         }
-
-        /* Kolorowanie poziomów zagnieżdżenia */
-        .depth-1 { border-left-color: var(--depth-1-color); background: #fff; border: 1px solid #e0e0e0; border-left-width: 6px; }
-        .depth-2 { border-left-color: var(--depth-2-color); background: #fffdf5; margin-left: 20px; border: 1px solid #ffeebb; border-left-width: 6px;}
-        .depth-3 { border-left-color: var(--depth-3-color); background: #f0fff4; margin-left: 40px; border: 1px solid #c3e6cb; border-left-width: 6px;}
-
-        /* Wyświetlanie macierzy w krokach */
-        .matrix-view { 
-            display: inline-block; 
-            vertical-align: top;
-            background: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin: 10px 0;
-            position: relative;
-        }
+        .minor-wrapper::before { left: 0; }
+        .minor-wrapper::after { right: 0; }
         
-        /* Ozdobniki nawiasów macierzy */
-        .matrix-view::before, .matrix-view::after {
-            content: ""; position: absolute; top: 0; bottom: 0; width: 6px; border: 2px solid #000;
+        .minor-grid { display: grid; gap: 3px; }
+        .minor-cell {
+            width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;
+            font-size: 0.9em; color: #334155;
         }
-        .matrix-view::before { left: -2px; border-right: none; }
-        .matrix-view::after { right: -2px; border-left: none; }
 
-        .row-display { padding: 2px 0; }
-        .cell-display { display: inline-block; width: 35px; text-align: center; }
-
-        /* Podświetlenia */
-        .highlight-bg { background-color: #fff3cd; font-weight: bold; color: #d35400; border-radius: 3px; } /* Wybrany wiersz/kolumna */
-        .highlight-cell { background-color: #2980b9; color: white; border-radius: 50%; width: 30px; height: 30px; line-height: 30px; display: inline-block;} /* Aktualnie liczony element */
-
-        .formula { font-weight: bold; color: #c0392b; }
-        .result-tag { display: inline-block; padding: 2px 8px; background: #2ecc71; color: white; border-radius: 4px; font-size: 0.9em; margin-left: 10px; }
-        .zero-skip { color: #95a5a6; font-style: italic; font-size: 0.9em; margin-left: 20px;}
-        
-        .header-info { font-weight: bold; margin-bottom: 5px; display: block; }
-        .depth-label { 
-            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; 
-            margin-bottom: 5px; display: block; border-bottom: 1px solid #eee; padding-bottom: 2px;
-        }
+        /* Gauss formatting */
+        table.gauss-table { margin: 10px auto; border-spacing: 0; border-collapse: collapse; }
+        table.gauss-table td { padding: 5px 10px; text-align: right; width: 45px; }
+        .gauss-bracket-left { border-left: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; width: 8px; }
+        .gauss-bracket-right { border-right: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; width: 8px; }
 
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Kalkulator Wyznaczników</h1>
-    <p class="subtitle">Wizualizacja Laplace'a: 4x4 &rarr; 3x3 &rarr; 2x2</p>
-
-    <div class="controls">
-        <label>Wymiar N:</label>
-        <input type="number" id="size" value="4" min="2" max="5">
-        <button class="btn-gen" onclick="generateGrid()">Generuj Macierz</button>
-        <button class="btn-calc" onclick="calculateDeterminant()">OBLICZ I ROZPISZ</button>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('sarrus')">Reguła Sarrusa</button>
+        <button class="tab-btn" onclick="switchTab('laplace')">Rozwinięcie Laplace'a</button>
+        <button class="tab-btn" onclick="switchTab('gauss')">Metoda Trójkątna (Gauss)</button>
     </div>
 
-    <div id="grid-container" class="matrix-grid"></div>
-    <div id="output"></div>
+    <div id="sarrus" class="content active">
+        <div class="tip-box">
+            <span class="tip-title">💡 Kiedy stosować?</span>
+            Tylko dla macierzy <strong>3x3</strong>. Dopisujemy dwie pierwsze kolumny i mnożymy po przekątnych (schemat Sarrusa ).
+        </div>
+        <div class="controls">
+            <span>Macierz jest stała (3x3)</span>
+            <button class="btn-calc" onclick="calcSarrus()">Oblicz Det(A)</button>
+        </div>
+        <div id="input-sarrus" class="matrix-wrapper"></div>
+        <div id="res-sarrus" class="result-area" style="display:none;"></div>
+    </div>
+
+    <div id="laplace" class="content">
+        <div class="tip-box">
+            <span class="tip-title">💡 Kiedy stosować?</span>
+            Dla macierzy 3x3, 4x4 i większych. Rozwijamy względem wiersza/kolumny z największą liczbą zer .
+        </div>
+        <div class="controls">
+            <label>Rozmiar N:</label> 
+            <input type="number" id="lap-size" value="3" min="2" max="4" onchange="renderMatrix('laplace', this.value)">
+            <button class="btn-calc" onclick="calcLaplace()">Oblicz Det(A)</button>
+        </div>
+        <div style="text-align: center;">
+            <div id="input-laplace" class="matrix-wrapper"></div>
+        </div>
+        <div id="res-laplace" class="result-area" style="display:none;"></div>
+    </div>
+
+    <div id="gauss" class="content">
+        <div class="tip-box">
+            <span class="tip-title">💡 Kiedy stosować?</span>
+            Dla dużych macierzy. Sprowadzamy macierz do postaci trójkątnej górnej, a wyznacznik to iloczyn elementów na przekątnej.
+        </div>
+        <div class="controls">
+            <label>Rozmiar N:</label> 
+            <input type="number" id="gauss-size" value="4" min="2" max="5" onchange="renderMatrix('gauss', this.value)">
+            <button class="btn-calc" onclick="calcGauss()">Oblicz Det(A)</button>
+        </div>
+        <div style="text-align: center;">
+            <div id="input-gauss" class="matrix-wrapper"></div>
+        </div>
+        <div id="res-gauss" class="result-area" style="display:none;"></div>
+    </div>
 </div>
 
 <script>
-    // --- 1. Generowanie i Pobieranie Danych ---
+    // Inicjalizacja
+    window.onload = function() {
+        renderMatrix('sarrus', 3, [[2, 5, 7], [6, 3, 4], [5, -2, -3]]);
+        renderMatrix('laplace', 3, [[1, 2, 3], [0, 4, 5], [1, 0, 6]]);
+        renderMatrix('gauss', 4, [[1, 2, 3, 4], [1, 3, 5, 7], [10, 2, 4, 6], [2, 1, 1, 1]]);
+    };
 
-    function generateGrid() {
-        const n = parseInt(document.getElementById('size').value);
-        const container = document.getElementById('grid-container');
-        container.innerHTML = '';
-        container.style.gridTemplateColumns = `repeat(${n}, 50px)`;
-
-        for (let i = 0; i < n * n; i++) {
-            const input = document.createElement('input');
-            input.type = 'number';
-            input.className = 'matrix-input';
-            input.value = Math.floor(Math.random() * 4); // Domyślnie losowe 0-3
-            input.dataset.r = Math.floor(i / n);
-            input.dataset.c = i % n;
-            container.appendChild(input);
-        }
-        document.getElementById('output').innerHTML = '';
+    function switchTab(id) {
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        event.currentTarget.classList.add('active');
     }
 
-    function getMatrixFromGrid() {
-        const n = parseInt(document.getElementById('size').value);
-        const inputs = document.querySelectorAll('.matrix-input');
-        let matrix = Array.from({ length: n }, () => Array(n).fill(0));
-        inputs.forEach(inp => {
-            const r = parseInt(inp.dataset.r);
-            const c = parseInt(inp.dataset.c);
-            matrix[r][c] = parseFloat(inp.value) || 0;
-        });
+    // --- GENERYCZNE FUNKCJE ---
+
+    function renderMatrix(type, size, defaultVals = null) {
+        const container = document.getElementById(`input-${type}`);
+        container.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = 'matrix-grid';
+        grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+
+        for(let i=0; i<size; i++) {
+            for(let j=0; j<size; j++) {
+                const input = document.createElement('input');
+                input.type = 'number';
+                input.className = `matrix-cell ${type}-cell`;
+                input.dataset.row = i; input.dataset.col = j;
+                if(defaultVals && defaultVals[i]) input.value = defaultVals[i][j];
+                else input.value = Math.floor(Math.random() * 10);
+                grid.appendChild(input);
+            }
+        }
+        container.appendChild(grid);
+        document.getElementById(`res-${type}`).style.display = 'none';
+    }
+
+    function getMatrixValues(type) {
+        const inputs = document.querySelectorAll(`.${type}-cell`);
+        const size = Math.sqrt(inputs.length);
+        let matrix = [];
+        for(let i=0; i<size; i++) {
+            let row = [];
+            for(let j=0; j<size; j++) row.push(parseFloat(inputs[i*size + j].value) || 0);
+            matrix.push(row);
+        }
         return matrix;
     }
 
-    // --- 2. Logika Matematyczna ---
+    // --- SARRUS (3x3) ---
+    function calcSarrus() {
+        const M = getMatrixValues('sarrus');
+        const resDiv = document.getElementById('res-sarrus');
+        resDiv.style.display = 'block';
+        resDiv.innerHTML = '<h3>Wizualizacja metody Sarrusa</h3>';
 
-    // Znajduje linię z NAJWIĘKSZĄ ilością zer
-    function findBestLine(matrix) {
-        let n = matrix.length;
-        let best = { type: 'row', index: 0, zeros: -1 };
+        const p1 = M[0][0]*M[1][1]*M[2][2], p2 = M[0][1]*M[1][2]*M[2][0], p3 = M[0][2]*M[1][0]*M[2][1];
+        const n1 = M[0][2]*M[1][1]*M[2][0], n2 = M[0][0]*M[1][2]*M[2][1], n3 = M[0][1]*M[1][0]*M[2][2];
+        const det = (p1 + p2 + p3) - (n1 + n2 + n3);
 
-        // Skanuj wiersze
-        for (let i = 0; i < n; i++) {
-            let zeros = matrix[i].filter(x => x === 0).length;
-            if (zeros > best.zeros) {
-                best = { type: 'row', index: i, zeros: zeros };
-            }
-        }
-
-        // Skanuj kolumny
-        for (let j = 0; j < n; j++) {
-            let zeros = 0;
-            for (let i = 0; i < n; i++) if (matrix[i][j] === 0) zeros++;
-            
-            // Jeśli kolumna ma więcej zer (lub tyle samo - można zmienić priorytet), bierzemy kolumnę
-            if (zeros > best.zeros) {
-                best = { type: 'col', index: j, zeros: zeros };
-            }
-        }
-        return best;
-    }
-
-    function getMinor(matrix, r, c) {
-        return matrix
-            .filter((_, idx) => idx !== r)
-            .map(row => row.filter((_, idx) => idx !== c));
-    }
-
-    // --- 3. Generowanie HTML dla Macierzy ---
-
-    function renderMatrixHTML(matrix, highlightType = null, highlightIndex = -1, currentCell = null) {
-        let html = '<div class="matrix-view">';
-        for (let i = 0; i < matrix.length; i++) {
-            html += '<div class="row-display">';
-            for (let j = 0; j < matrix[i].length; j++) {
-                let classes = 'cell-display';
-                
-                // Podświetlenie całego wiersza/kolumny
-                if (highlightType === 'row' && i === highlightIndex) classes += ' highlight-bg';
-                if (highlightType === 'col' && j === highlightIndex) classes += ' highlight-bg';
-
-                // Podświetlenie konkretnego elementu przetwarzanego
-                if (currentCell && currentCell.r === i && currentCell.c === j) {
-                    classes = 'cell-display highlight-cell'; 
-                }
-
-                html += `<span class="${classes}">${matrix[i][j]}</span>`;
-            }
-            html += '</div>';
-        }
-        html += '</div>';
-        return html;
-    }
-
-    // --- 4. Główna Funkcja Rekurencyjna ---
-
-    function solveLaplace(matrix, depth = 1) {
-        const n = matrix.length;
-
-        // BAZA REKURENCJI: Macierz 2x2
-        if (n === 2) {
-            const a = matrix[0][0], b = matrix[0][1];
-            const c = matrix[1][0], d = matrix[1][1];
-            const det = a * d - b * c;
-            
-            return {
-                val: det,
-                html: `<div class="step-box depth-${depth}">
-                        <span class="depth-label">Poziom 2x2</span>
-                        <div style="display:flex; align-items:center; gap:20px;">
-                            ${renderMatrixHTML(matrix)}
-                            <div>
-                                <b>Wzór:</b> (${a} &middot; ${d}) - (${b} &middot; ${c})<br>
-                                <b>Wynik:</b> ${det}
-                            </div>
-                        </div>
-                       </div>`
-            };
-        }
-
-        // KROK REKURENCYJNY: N > 2
-        const best = findBestLine(matrix);
+        let html = `<div style="text-align:center; font-family:monospace; font-size:1.1em; letter-spacing:2px; margin-bottom:15px;">`;
+        html += `<div>| ${M[0].join(' ')} | ${M[0][0]} ${M[0][1]}</div>`;
+        html += `<div>| ${M[1].join(' ')} | ${M[1][0]} ${M[1][1]}</div>`;
+        html += `<div>| ${M[2].join(' ')} | ${M[2][0]} ${M[2][1]}</div></div>`;
         
-        let htmlBuffer = `<div class="step-box depth-${depth}">`;
-        htmlBuffer += `<span class="depth-label">Macierz ${n}x${n}</span>`;
-        htmlBuffer += `<div class="header-info">Analiza zer: Wybieram <b>${best.type === 'row' ? 'wiersz' : 'kolumnę'} nr ${best.index + 1}</b> (ilość zer: ${best.zeros})</div>`;
-        htmlBuffer += renderMatrixHTML(matrix, best.type, best.index);
-        htmlBuffer += `<div style="margin-top:10px;">Rozwijamy względem zaznaczonej linii:</div>`;
+        html += `<div class="step"><span class="diag-pos">Główne (+):</span> (${p1}) + (${p2}) + (${p3}) = <strong>${p1+p2+p3}</strong></div>`;
+        html += `<div class="step"><span class="diag-neg">Boczne (-):</span> (${n1}) + (${n2}) + (${n3}) = <strong>${n1+n2+n3}</strong></div>`;
+        html += `<div class="final-answer">Det = ${det}</div>`;
+        resDiv.innerHTML += html;
+    }
+
+    // --- LAPLACE (Poprawiona Wizualizacja) ---
+    function calcLaplace() {
+        const M = getMatrixValues('laplace');
+        const n = M.length;
+        const resDiv = document.getElementById('res-laplace');
+        resDiv.style.display = 'block';
+        resDiv.innerHTML = '<h3>Wizualizacja (Rozwinięcie wzg. 1. wiersza)</h3>';
+
+        let stepsHtml = `<div style="text-align:center; margin-bottom:15px;">Det(A) = &Sigma; (-1)<sup>1+j</sup> · a<sub>1j</sub> · det(M<sub>1j</sub>)</div>`;
+        stepsHtml += `<div class="laplace-equation">`;
 
         let totalDet = 0;
 
-        // Iteracja po elementach wybranej linii
-        for (let k = 0; k < n; k++) {
-            let r = best.type === 'row' ? best.index : k;
-            let c = best.type === 'row' ? k : best.index;
-            let val = matrix[r][c];
-            let sign = Math.pow(-1, r + c); // 1 lub -1
-            let signChar = sign > 0 ? '+' : '-';
+        for(let j=0; j<n; j++) {
+            const val = M[0][j];
+            const sign = ((1 + (j+1)) % 2 === 0) ? 1 : -1;
+            const signChar = j === 0 ? (sign === 1 ? '' : '-') : (sign === 1 ? '+' : '-');
+            
+            // Tworzenie minora
+            let minor = [];
+            for(let row=1; row<n; row++) {
+                let mRow = [];
+                for(let col=0; col<n; col++) if(col !== j) mRow.push(M[row][col]);
+                minor.push(mRow);
+            }
+            const minorDet = calculateSimpleDeterminant(minor);
+            totalDet += sign * val * minorDet;
 
-            // Optymalizacja zer
-            if (val === 0) {
-                htmlBuffer += `<div style="margin: 5px 0 5px 20px;" class="zero-skip">&bull; Element a[${r+1},${c+1}] to 0. Pomijam.</div>`;
-                continue;
+            // HTML dla minora (siatka)
+            let minorGrid = `<div class="minor-grid" style="grid-template-columns: repeat(${n-1}, 1fr);">`;
+            minor.flat().forEach(v => minorGrid += `<div class="minor-cell">${v}</div>`);
+            minorGrid += `</div>`;
+
+            stepsHtml += `
+                <div class="laplace-term">
+                    <span class="term-sign">${signChar}</span>
+                    <span class="term-value">${val}</span>
+                    <span>&times;</span>
+                    <div class="minor-wrapper">${minorGrid}</div>
+                </div>
+            `;
+        }
+        stepsHtml += `</div>`; // End equation
+
+        // Wynik tekstowy
+        stepsHtml += `<div class="step" style="margin-top:20px; text-align:center;">`;
+        let calcStr = "";
+        for(let j=0; j<n; j++) {
+            const val = M[0][j];
+            const sign = ((1 + (j+1)) % 2 === 0) ? 1 : -1;
+            // Recalculate minor det for display text
+            let minor = [];
+            for(let r=1; r<n; r++) { let rr=[]; for(let c=0; c<n; c++) if(c!==j) rr.push(M[r][c]); minor.push(rr); }
+            const mDet = calculateSimpleDeterminant(minor);
+            
+            calcStr += `${sign===1 ? '+' : '-'}(${val} · ${mDet}) `;
+        }
+        stepsHtml += `Suma: ${calcStr} = <strong>${totalDet}</strong></div>`;
+        stepsHtml += `<div class="final-answer">Det(A) = ${totalDet}</div>`;
+        
+        resDiv.innerHTML += stepsHtml;
+    }
+
+    function calculateSimpleDeterminant(m) {
+        if(m.length === 2) return (m[0][0]*m[1][1] - m[0][1]*m[1][0]);
+        if(m.length === 3) {
+             return (m[0][0]*m[1][1]*m[2][2] + m[0][1]*m[1][2]*m[2][0] + m[0][2]*m[1][0]*m[2][1]) -
+                    (m[0][2]*m[1][1]*m[2][0] + m[0][0]*m[1][2]*m[2][1] + m[0][1]*m[1][0]*m[2][2]);
+        }
+        return m[0][0];
+    }
+
+    // --- GAUSS (Poprawiona tabela) ---
+    function calcGauss() {
+        let M = JSON.parse(JSON.stringify(getMatrixValues('gauss')));
+        const n = M.length;
+        const resDiv = document.getElementById('res-gauss');
+        resDiv.style.display = 'block';
+        resDiv.innerHTML = '<h3>Eliminacja Gaussa</h3>';
+
+        let html = '';
+        let swapCount = 0;
+        
+        for (let i = 0; i < n; i++) {
+            let pivot = M[i][i];
+            
+            if (Math.abs(pivot) < 1e-10) {
+                let swapped = false;
+                for (let k = i + 1; k < n; k++) {
+                    if (Math.abs(M[k][i]) > 1e-10) {
+                        [M[i], M[k]] = [M[k], M[i]];
+                        swapCount++;
+                        html += `<div class="step" style="border-left:4px solid orange;">🔄 Zamiana W${i+1} <-> W${k+1}</div>`;
+                        pivot = M[i][i]; swapped = true; break;
+                    }
+                }
+                if (!swapped && Math.abs(pivot) < 1e-10) {
+                    resDiv.innerHTML = `<div class="final-answer">Det = 0 (Kolumna zerowa)</div>`; return;
+                }
             }
 
-            // Obliczanie minora
-            let minorMatrix = getMinor(matrix, r, c);
-            
-            htmlBuffer += `<div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top:10px;">`;
-            htmlBuffer += `<b>KROK:</b> Element <b>${val}</b> (pozycja [${r+1},${c+1}], znak z szachownicy: <b>${signChar}</b>)`;
-            htmlBuffer += ` &rarr; Liczymy podwyznacznik macierzy ${n-1}x${n-1}:`;
-            
-            // >>> REKURENCJA <<<
-            // Tutaj następuje "wejście głębiej". Jeśli jesteśmy w 4x4, to wywoła solveLaplace dla 3x3.
-            let subResult = solveLaplace(minorMatrix, depth + 1);
-            
-            // Dodajemy HTML wygenerowany przez podwyznacznik do naszego HTML
-            htmlBuffer += subResult.html;
-
-            let stepContribution = sign * val * subResult.val;
-            totalDet += stepContribution;
-
-            htmlBuffer += `<div style="text-align:right; margin-top:5px;">
-                Wkład tego elementu: <span class="formula">${signChar}1 * ${val} * (${subResult.val})</span> = <b>${stepContribution}</b>
-            </div>`;
-            htmlBuffer += `</div>`; // Koniec bloku kroku
+            for (let j = i + 1; j < n; j++) {
+                if (Math.abs(M[j][i]) > 1e-10) {
+                    const factor = M[j][i] / M[i][i];
+                    html += `<div class="step">W${j+1} = W${j+1} - (${parseFloat(factor.toFixed(2))}) · W${i+1}</div>`;
+                    for (let k = i; k < n; k++) M[j][k] -= factor * M[i][k];
+                }
+            }
+            html += renderGaussMatrix(M);
         }
 
-        htmlBuffer += `<div style="margin-top:15px; padding-top:10px; border-top: 2px solid #333; font-size:1.1em;">
-            Suma wyznacznika ${n}x${n}: <b>${totalDet}</b>
-        </div>`;
-        htmlBuffer += `</div>`; // Koniec step-box
-
-        return { val: totalDet, html: htmlBuffer };
+        let det = (swapCount % 2 !== 0 ? -1 : 1);
+        let diagStr = (swapCount % 2 !== 0 ? "(-1) · " : "");
+        for(let i=0; i<n; i++) {
+            det *= M[i][i];
+            diagStr += parseFloat(M[i][i].toFixed(2)) + (i<n-1 ? " · " : "");
+        }
+        
+        html += `<div class="step">Iloczyn przekątnej: ${diagStr}</div>`;
+        html += `<div class="final-answer">Det(A) ≈ ${parseFloat(det.toFixed(2))}</div>`;
+        resDiv.innerHTML += html;
     }
 
-    // --- 5. Uruchomienie ---
-
-    function calculateDeterminant() {
-        const matrix = getMatrixFromGrid();
-        const outputDiv = document.getElementById('output');
-        
-        outputDiv.innerHTML = '<h3 style="text-align:center">Szczegółowe Rozwiązanie:</h3>';
-        
-        const result = solveLaplace(matrix, 1); // Startujemy z głębokości 1
-        
-        outputDiv.innerHTML += result.html;
-        
-        // Wynik końcowy na dole
-        const finalBox = document.createElement('div');
-        finalBox.style = "background: #2c3e50; color: white; padding: 20px; text-align: center; font-size: 1.5rem; margin-top: 30px; border-radius: 8px;";
-        finalBox.innerHTML = `OSTATECZNY WYNIK: <b>${result.val}</b>`;
-        outputDiv.appendChild(finalBox);
+    function renderGaussMatrix(M) {
+        let h = '<table class="gauss-table"><tr><td class="gauss-bracket-left"></td>';
+        h += '<td><table style="border-collapse:collapse;">';
+        M.forEach(row => {
+            h += '<tr>';
+            row.forEach(val => h += `<td>${parseFloat(val.toFixed(2))}</td>`);
+            h += '</tr>';
+        });
+        h += '</table></td>';
+        h += '<td class="gauss-bracket-right"></td></tr></table>';
+        return h;
     }
-
-    // Start
-    generateGrid();
 
 </script>
 
