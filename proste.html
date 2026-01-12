@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometria Analityczna 3D - Relacje</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg: #0f172a; --panel: #1e293b; --input: #334155;
+            --text: #f1f5f9; --accent: #38bdf8; --line1: #f87171; --line2: #fbbf24;
+        }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
+        
+        /* Sidebar */
+        .sidebar { width: 450px; background: var(--panel); padding: 20px; overflow-y: auto; box-shadow: 4px 0 15px rgba(0,0,0,0.5); display: flex; flex-direction: column; gap: 20px; }
+        .tabs { display: flex; gap: 5px; background: var(--bg); padding: 5px; border-radius: 10px; }
+        .tab-btn { flex: 1; padding: 10px 5px; border: none; background: transparent; color: #94a3b8; cursor: pointer; border-radius: 6px; font-weight: bold; font-size: 0.8rem; }
+        .tab-btn.active { background: var(--accent); color: white; }
+
+        .input-group { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid var(--accent); }
+        .input-group h3 { margin: 0 0 10px 0; font-size: 0.9rem; color: var(--accent); }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .input-wrap { display: flex; flex-direction: column; gap: 4px; }
+        label { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; }
+        input { background: var(--input); border: 1px solid #475569; color: white; padding: 6px; border-radius: 4px; text-align: center; }
+
+        /* Wyniki */
+        .analysis { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; border: 1px solid #334155; }
+        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; background: var(--accent); color: var(--bg); }
+        .explanation { font-size: 0.9rem; line-height: 1.5; color: #cbd5e1; }
+
+        /* Wykres */
+        .viewer { flex-grow: 1; position: relative; }
+        #plot { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Relacje 3D</h2>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('ll')">Prosta-Prosta</button>
+        <button class="tab-btn" onclick="switchTab('pp')">Płaszcz.-Płaszcz.</button>
+        <button class="tab-btn" onclick="switchTab('lp')">Prosta-Płaszcz.</button>
+    </div>
+
+    <div id="inputs-container">
+        </div>
+
+    <div class="analysis">
+        <div id="rel-status" class="status-badge">Analizowanie...</div>
+        <div id="rel-calc" class="explanation"></div>
+    </div>
+</div>
+
+<div class="viewer">
+    <div id="plot"></div>
+</div>
+
+<script>
+    let currentTab = 'll';
+    const params = {
+        l1: { px: 0, py: 0, pz: 0, vx: 1, vy: 1, vz: 1 },
+        l2: { px: 2, py: 0, pz: 0, vx: 1, vy: 1, vz: 1 },
+        pl1: { a: 0, b: 0, c: 1, d: 0 },
+        pl2: { a: 0, b: 1, c: 1, d: -2 }
+    };
+
+    function switchTab(tab) {
+        currentTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        renderInputs();
+        update();
+    }
+
+    function renderInputs() {
+        const container = document.getElementById('inputs-container');
+        let html = '';
+        if (currentTab === 'll' || currentTab === 'lp') {
+            html += createVectorInput('Prosta $L_1$', 'l1');
+        }
+        if (currentTab === 'll') {
+            html += createVectorInput('Prosta $L_2$', 'l2');
+        }
+        if (currentTab === 'pp' || currentTab === 'lp') {
+            html += createPlaneInput('Płaszczyzna $\\pi_1$', 'pl1');
+        }
+        if (currentTab === 'pp') {
+            html += createPlaneInput('Płaszczyzna $\\pi_2$', 'pl2');
+        }
+        container.innerHTML = html;
+    }
+
+    function createVectorInput(title, key) {
+        return `<div class="input-group"><h3>${title}</h3>
+            <label>Punkt P</label>
+            <div class="grid-3">
+                <input type="number" value="${params[key].px}" oninput="updateParam('${key}','px',this.value)">
+                <input type="number" value="${params[key].py}" oninput="updateParam('${key}','py',this.value)">
+                <input type="number" value="${params[key].pz}" oninput="updateParam('${key}','pz',this.value)">
+            </div>
+            <label style="margin-top:10px; display:block">Wektor V</label>
+            <div class="grid-3">
+                <input type="number" value="${params[key].vx}" oninput="updateParam('${key}','vx',this.value)">
+                <input type="number" value="${params[key].vy}" oninput="updateParam('${key}','vy',this.value)">
+                <input type="number" value="${params[key].vz}" oninput="updateParam('${key}','vz',this.value)">
+            </div></div>`;
+    }
+
+    function createPlaneInput(title, key) {
+        return `<div class="input-group"><h3>${title}</h3>
+            <label>Równanie: Ax + By + Cz + D = 0</label>
+            <div class="grid-3" style="grid-template-columns: repeat(4, 1fr)">
+                <input type="number" value="${params[key].a}" oninput="updateParam('${key}','a',this.value)">
+                <input type="number" value="${params[key].b}" oninput="updateParam('${key}','b',this.value)">
+                <input type="number" value="${params[key].c}" oninput="updateParam('${key}','c',this.value)">
+                <input type="number" value="${params[key].d}" oninput="updateParam('${key}','d',this.value)">
+            </div></div>`;
+    }
+
+    function updateParam(obj, p, val) {
+        params[obj][p] = parseFloat(val) || 0;
+        update();
+    }
+
+    function update() {
+        let status = "";
+        let calc = "";
+        const data = [];
+
+        if (currentTab === 'll') {
+            const { l1, l2 } = params;
+            // Sprawdzenie równoległości wektorów v1 i v2 (iloczyn wektorowy)
+            const cp = [l1.vy*l2.vz - l1.vz*l2.vy, l1.vz*l2.vx - l1.vx*l2.vz, l1.vx*l2.vy - l1.vy*l2.vx];
+            const isParallel = cp.every(v => Math.abs(v) < 0.001);
+            
+            // Wektor między punktami
+            const p1p2 = [l2.px-l1.px, l2.py-l1.py, l2.pz-l1.pz];
+            
+            if (isParallel) {
+                // Czy punkt P2 leży na L1?
+                const cp2 = [l1.vy*p1p2[2] - l1.vz*p1p2[1], l1.vz*p1p2[0] - l1.vx*p1p2[2], l1.vx*p1p2[1] - l1.vy*p1p2[0]];
+                const isOnLine = cp2.every(v => Math.abs(v) < 0.001);
+                if (isOnLine) {
+                    status = "Pokrywają się";
+                    calc = "Wektory kierunkowe są równoległe, a punkt drugiej prostej należy do pierwszej.";
+                } else {
+                    status = "Równoległe rozłączne";
+                    calc = "Wektory kierunkowe są proporcjonalne, ale proste nie mają punktów wspólnych.";
+                }
+            } else {
+                // Sprawdzenie współpłaszczyznowości (mieszany iloczyn)
+                const det = p1p2[0]*cp[0] + p1p2[1]*cp[1] + p1p2[2]*cp[2];
+                if (Math.abs(det) < 0.001) {
+                    status = "Przecinające się";
+                    calc = "Wektory nie są równoległe, ale leżą w jednej płaszczyźnie (wyznacznik = 0).";
+                } else {
+                    status = "Skośne";
+                    calc = "Wektory nie są równoległe i nie leżą w jednej płaszczyźnie (nie przecinają się).";
+                }
+            }
+            data.push(getLineTrace(l1, 'Prosta 1', '#f87171'), getLineTrace(l2, 'Prosta 2', '#fbbf24'));
+
+        } else if (currentTab === 'pp') {
+            const { pl1, pl2 } = params;
+            // Stosunki A1/A2, B1/B2...
+            const ratioA = pl1.a / pl2.a;
+            const isParallel = Math.abs(pl1.a*pl2.b - pl1.b*pl2.a) < 0.001 && 
+                               Math.abs(pl1.b*pl2.c - pl1.c*pl2.b) < 0.001 &&
+                               Math.abs(pl1.a*pl2.c - pl1.c*pl2.a) < 0.001;
+
+            if (isParallel) {
+                // Sprawdzenie D
+                const isCoincident = Math.abs(pl1.a*pl2.d - pl1.d*pl2.a) < 0.01;
+                if (isCoincident) {
+                    status = "Pokrywają się";
+                    calc = "Współczynniki równań są w pełni proporcjonalne.";
+                } else {
+                    status = "Równoległe rozłączne";
+                    calc = "Wektory normalne są równoległe, ale stałe D nie zachowują proporcji.";
+                }
+            } else {
+                status = "Przecinające się";
+                calc = "Wektory normalne nie są równoległe. Płaszczyzny przecinają się wzdłuż prostej.";
+            }
+            data.push(getPlaneTrace(pl1, 'Płaszcz. 1', 'Blues'), getPlaneTrace(pl2, 'Płaszcz. 2', 'Reds'));
+
+        } else if (currentTab === 'lp') {
+            const { l1, pl1 } = params;
+            // Iloczyn skalarny wektora kierunkowego i normalnego
+            const dot = l1.vx*pl1.a + l1.vy*pl1.b + l1.vz*pl1.c;
+            if (Math.abs(dot) < 0.001) {
+                // Sprawdzenie czy punkt prostej spełnia równanie płaszczyzny
+                const onPlane = Math.abs(pl1.a*l1.px + pl1.b*l1.py + pl1.c*l1.pz + pl1.d) < 0.001;
+                if (onPlane) {
+                    status = "Prosta leży na płaszczyźnie";
+                    calc = "Wektor prostej jest prostopadły do normalnej płaszczyzny, a punkt prostej należy do płaszczyzny.";
+                } else {
+                    status = "Równoległa do płaszczyzny";
+                    calc = "Wektor prostej jest prostopadły do normalnej, ale prosta znajduje się poza płaszczyzną.";
+                }
+            } else {
+                status = "Przecina płaszczyznę";
+                calc = "Wektor prostej nie jest prostopadły do normalnej płaszczyzny (punkt przebicia).";
+            }
+            data.push(getLineTrace(l1, 'Prosta', '#f87171'), getPlaneTrace(pl1, 'Płaszczyzna', 'Greens'));
+        }
+
+        document.getElementById('rel-status').innerText = status;
+        document.getElementById('rel-calc').innerText = calc;
+        Plotly.react('plot', data, getLayout());
+        MathJax.typeset();
+    }
+
+    function getLineTrace(l, name, color) {
+        const t = 10;
+        return {
+            type: 'scatter3d', mode: 'lines', name: name,
+            x: [l.px - l.vx*t, l.px + l.vx*t],
+            y: [l.py - l.vy*t, l.py + l.vy*t],
+            z: [l.pz - l.vz*t, l.pz + l.vz*t],
+            line: { width: 6, color: color }
+        };
+    }
+
+    function getPlaneTrace(p, name, colorscale) {
+        let x = [], y = [], z = [];
+        const size = 5, step = 1;
+        for(let i = -size; i <= size; i+=step) {
+            let rowX = [], rowY = [], rowZ = [];
+            for(let j = -size; j <= size; j+=step) {
+                rowX.push(i); rowY.push(j);
+                if (Math.abs(p.c) > 0.001) rowZ.push(-(p.a*i + p.b*j + p.d)/p.c);
+                else if (Math.abs(p.b) > 0.001) { rowY[rowY.length-1] = -(p.a*i + p.c*j + p.d)/p.b; rowZ.push(j); }
+                else { rowX[rowX.length-1] = -(p.b*i + p.c*j + p.d)/p.a; rowY[rowY.length-1] = i; rowZ.push(j); }
+            }
+            x.push(rowX); y.push(rowY); z.push(rowZ);
+        }
+        return { type: 'surface', x:x, y:y, z:z, name:name, colorscale:colorscale, opacity:0.6, showscale:false };
+    }
+
+    function getLayout() {
+        return {
+            paper_bgcolor: '#0f172a', scene: {
+                xaxis: { gridcolor: '#334155', zerolinecolor: '#fff', color: '#fff' },
+                yaxis: { gridcolor: '#334155', zerolinecolor: '#fff', color: '#fff' },
+                zaxis: { gridcolor: '#334155', zerolinecolor: '#fff', color: '#fff' }
+            },
+            margin: { l:0, r:0, b:0, t:0 }, showlegend: false
+        };
+    }
+
+    renderInputs();
+    update();
+</script>
+
+</body>
+</html>
