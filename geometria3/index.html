@@ -1420,17 +1420,71 @@ Wektory są równoległe.
 <p><strong>Punkt na prostej</strong> <span class="arithmatex">\(P_0\)</span>: Rozwiąż układ równań płaszczyzn, np. podstawiając <span class="arithmatex">\(z=0\)</span> (lub inną wygodną wartość).</p>
 </li>
 </ol>
+<p><strong>Przykład 2</strong>: Szukanie prostej przecięcia Mamy dwie płaszczyzny:</p>
+<ul>
+<li><span class="arithmatex">\(\pi_1: x + y + z - 3 = 0 \implies \vec{n}_1 = [1, 1, 1]\)</span></li>
+<li>$\pi_2: x + 2y - z - 2 = 0 \implies \vec{n}_2 = [1, 2, -1]</li>
+</ul>
+<p>$Wektory <span class="arithmatex">\(\vec{n}_1\)</span> i <span class="arithmatex">\(\vec{n}_2\)</span> nie są proporcjonalne, więc płaszczyzny przecinają się wzdłuż prostej <span class="arithmatex">\(L\)</span>.</p>
+<p>Krok 1: Wektor kierunkowy prostej (<span class="arithmatex">\(\vec{v} = \vec{n}_1 \times \vec{n}_2\)</span>)Liczmy iloczyn wektorowy (metodą Sarrusa):</p>
+<p>Odejmujemy: <span class="arithmatex">\((-\vec{i} + \vec{j} + 2\vec{k}) - (2\vec{i} - \vec{j} + \vec{k}) = \mathbf{-3\vec{i} + 2\vec{j} + \vec{k}}\)</span></p>
+<p>Wektor kierunkowy prostej to <span class="arithmatex">\(\vec{v} = [-3, 2, 1]\)</span>.</p>
+<p>Krok 2: Punkt na prostej <span class="arithmatex">\(P_0\)</span></p>
+<p>Rozwiązujemy układ równań. Najwygodniej przyjąć jedną zmienną za zero, np. <span class="arithmatex">\(z = 0\)</span>:</p>
+<p><span class="arithmatex">\(x + y + 0 - 3 = 0 \implies x + y = 3\)</span></p>
+<p><span class="arithmatex">\(x + 2y - 0 - 2 = 0 \implies x + 2y = 2\)</span></p>
+<p>Odejmujemy pierwsze równanie od drugiego:<span class="arithmatex">\((x + 2y) - (x + y) = 2 - 3\)</span><span class="arithmatex">\(y = -1\)</span></p>
+<p>Podstawiamy <span class="arithmatex">\(y\)</span> do pierwszego równania:<span class="arithmatex">\(x + (-1) = 3 \implies \mathbf{x = 4}\)</span>Punkt to <span class="arithmatex">\(P_0(4, -1, 0)\)</span>.</p>
+<p>Krok 3: Równanie parametryczne prostej</p>
+<p>Składamy punkt i wektor:</p>
+<div class="arithmatex">\[L: \begin{cases} x = 4 - 3t \\ y = -1 + 2t \\ z = 0 + 1t \end{cases}\]</div>
+<p>Wynik: To jest równanie prostej, wzdłuż której przecinają się obie płaszczyzny.</p>
 <h4 id="3-poozenie-dwoch-prostych">3. Położenie Dwóch Prostych<a class="headerlink" href="#3-poozenie-dwoch-prostych" title="Permanent link">&para;</a></h4>
 <p>Decyduje <strong>równoległość</strong> ich wektorów kierunkowych <span class="arithmatex">\(\vec{v}_1\)</span> i <span class="arithmatex">\(\vec{v}_2\)</span>. Jeśli nie są równoległe, sprawdzamy <strong>koplanarność</strong>.</p>
 <ul>
 <li><strong>Równoległe:</strong> <span class="arithmatex">\(\vec{v}_1 = k \cdot \vec{v}_2\)</span>.</li>
 <li><strong>Skośne lub Przecinające się:</strong> <span class="arithmatex">\(\vec{v}_1\)</span> i <span class="arithmatex">\(\vec{v}_2\)</span> nie są równoległe.<ul>
 <li><strong>Iloczyn mieszany:</strong> Oblicz <span class="arithmatex">\(\text{Det}(\vec{v}_1, \vec{v}_2, \vec{w})\)</span>, gdzie <span class="arithmatex">\(\vec{w}\)</span> jest wektorem łączącym punkty z <span class="arithmatex">\(L_1\)</span> i <span class="arithmatex">\(L_2\)</span>.</li>
-<li>Jeśli <span class="arithmatex">\(\text{Det} = 0 \rightarrow\)</span> <strong>Przecinające się</strong> (są koplanarne).</li>
+<li>Jeśli <span class="arithmatex">\(\text{Det} = 0 \rightarrow\)</span> <strong>Przecinające się</strong> (są koplanarne - czyli w jednej płaszczyżnie leża).</li>
 <li>Jeśli <span class="arithmatex">\(\text{Det} \neq 0 \rightarrow\)</span> <strong>Skośne</strong> (nie są koplanarne).</li>
 </ul>
 </li>
 </ul>
+<p><strong>Przykład</strong>: Czy proste są koplanarne (przecinające się)?</p>
+<p>Mamy dwie proste:</p>
+<p>Prosta <span class="arithmatex">\(L_1\)</span>: przechodzi przez <span class="arithmatex">\(P_1(1, 0, 1)\)</span> z wektorem <span class="arithmatex">\(\vec{v}_1 = [2, 1, 0]\)</span></p>
+<p>Prosta <span class="arithmatex">\(L_2\)</span>: przechodzi przez <span class="arithmatex">\(P_2(3, 1, 1)\)</span> z wektorem <span class="arithmatex">\(\vec{v}_2 = [1, 1, 1]\)</span></p>
+<p>Krok 1: Wektor łączący punkty (<span class="arithmatex">\(\vec{w}\)</span>)Tworzymy wektor <span class="arithmatex">\(\vec{w}\)</span> łączący punkt z pierwszej prostej z punktem z drugiej prostej:</p>
+<div class="arithmatex">\[\vec{w} = P_2 - P_1 = [3-1, 1-0, 1-1] = [\mathbf{2, 1, 0}]\]</div>
+<p>Krok 2: Obliczanie iloczynu mieszanego (Wyznacznik)Wstawiamy wektory <span class="arithmatex">\(\vec{v}_1, \vec{v}_2\)</span> oraz <span class="arithmatex">\(\vec{w}\)</span> do macierzy i liczymy wyznacznik (np. metodą Sarrusa):</p>
+<div class="arithmatex">\[\text{Det}(\vec{v}_1, \vec{v}_2, \vec{w}) = \begin{vmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ 2 &amp; 1 &amp; 0 \end{vmatrix}\]</div>
+<p>Krok 3: Analiza wyniku.Zauważ, że pierwszy i trzeci wiersz są identyczne (<span class="arithmatex">\([2, 1, 0]\)</span>). Z własności wyznaczników wiemy, że jeśli dwa wiersze są takie same, to wyznacznik wynosi 0.</p>
+<p>Wynik: <span class="arithmatex">\(\text{Det} = 0\)</span>.</p>
+<p>Wniosek: Wektory są liniowo zależne, co oznacza, że proste są koplanarne. Ponieważ ich wektory kierunkowe <span class="arithmatex">\([2, 1, 0]\)</span> i <span class="arithmatex">\([1, 1, 1]\)</span> nie są proporcjonalne (nie są równoległe), te proste na pewno się przecinają.</p>
+<p>Co gdyby Det <span class="arithmatex">\(\neq 0\)</span>? Gdyby wyznacznik wyszedł np. 5, oznaczałoby to, że wektory "rozpinają" objętość (równoległościan), czyli proste leżą w różnych płaszczyznach i mijają się w przestrzeni bez kontaktu — są to wtedy proste skośne.</p>
+<p><strong>Szukanie punktu</strong> przeciecia dwóch prostych o równaniach
+Równania parametryczne (różne litery!)</p>
+<p><span class="arithmatex">\(L_1\)</span> (punkt <span class="arithmatex">\(P_1\)</span>, wektor <span class="arithmatex">\(\vec{v}_1\)</span>): <span class="arithmatex">\(\begin{cases} x = 1 + 2t \\ y = t \\ z = 1 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(L_2\)</span> (punkt <span class="arithmatex">\(P_2\)</span>, wektor <span class="arithmatex">\(\vec{v}_2\)</span>): <span class="arithmatex">\(\begin{cases} x = 3 + s \\ y = 1 + s \\ z = 1 + s \end{cases}\)</span></p>
+<p>Układ równań (<span class="arithmatex">\(x=x, y=y, z=z\)</span>)</p>
+<ul>
+<li><span class="arithmatex">\(1 + 2t = 3 + s\)</span>,</li>
+<li><span class="arithmatex">\(t = 1 + s\)</span>,</li>
+<li><span class="arithmatex">\(1 = 1 + s\)</span></li>
+</ul>
+<p>Rozwiązanie
+* Z (3): <span class="arithmatex">\(s = 0\)</span>
+* Podstaw <span class="arithmatex">\(s\)</span> do (2): <span class="arithmatex">\(t = 1 + 0 \implies \mathbf{t = 1}\)</span>
+* Podstawiamy <span class="arithmatex">\(t=1\)</span> i <span class="arithmatex">\(s=0\)</span> do pierwszego równania:</p>
+<div class="arithmatex">\[L: 1 + 2(1) = 3 \quad \text{oraz} \quad P: 3 + 0 = 3\]</div>
+<div class="arithmatex">\[3 = 3\]</div>
+<p>Punkt przecięcia</p>
+<p>Teraz wystarczy podstawić wyliczony parametr do dowolnej prostej:</p>
+<ul>
+<li>Podstawiając <span class="arithmatex">\(t = 1\)</span> do <span class="arithmatex">\(L_1\)</span>:<span class="arithmatex">\(x = 1 + 2(1) = 3\)</span><span class="arithmatex">\(y = 1\)</span><span class="arithmatex">\(z = 1\)</span></li>
+<li>Podstawiając <span class="arithmatex">\(s = 0\)</span> do <span class="arithmatex">\(L_2\)</span>:<span class="arithmatex">\(x = 3 + 0 = 3\)</span><span class="arithmatex">\(y = 1 + 0 = 1\)</span><span class="arithmatex">\(z = 1 + 0 = 1\)</span></li>
+</ul>
+<p>Wynik: Punktem przecięcia jest <span class="arithmatex">\(P(3, 1, 1)\)</span>.</p>
 <p><strong>Ważna uwaga:</strong> Przy badaniu przecięcia prostych zawsze używaj <strong>różnych parametrów</strong> (<span class="arithmatex">\(t\)</span> i <span class="arithmatex">\(s\)</span>) dla każdej prostej.</p>
 <div class="arithmatex">\[\begin{cases} x_1(t) = x_2(s) \\ y_1(t) = y_2(s) \\ z_1(t) = z_2(s) \end{cases}\]</div>
 <p>Jeśli układ 3 równań z 2 niewiadomymi (<span class="arithmatex">\(t, s\)</span>) ma unikalne rozwiązanie, proste się przecinają.</p>
