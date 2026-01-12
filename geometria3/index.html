@@ -1398,18 +1398,26 @@ z = 1 + 6t
 <li><strong>Przecinające się (wzdłuż prostej <span class="arithmatex">\(L\)</span>):</strong> <span class="arithmatex">\(\vec{n}_1\)</span> i <span class="arithmatex">\(\vec{n}_2\)</span> <strong>nie są</strong> równoległe.</li>
 </ul>
 <p><strong>Przykład 1</strong>: Mamy dwie płaszczyzny:<span class="arithmatex">\(\pi_1: 2x - 4y + 6z - 10 = 0\)</span>
-<span class="arithmatex">\(\pi_2: -x + 2y - 3z + 5 = 0\)</span>
-1. Wyciągamy wektory normalne:
-<span class="arithmatex">\(\vec{n}_1 = [2, -4, 6]\)</span> 
-<span class="arithmatex">\(\vec{n}_2 = [-1, 2, -3]\)</span>
-2. Sprawdzamy równoległość (<span class="arithmatex">\(\vec{n}_1 = k \cdot \vec{n}_2\)</span>) Widać, że jeśli pomnożymy <span class="arithmatex">\(\vec{n}_2\)</span> przez <span class="arithmatex">\(k = -2\)</span>, otrzymamy <span class="arithmatex">\(\vec{n}_1\)</span>:</p>
-<p><span class="arithmatex">\(-1 \cdot (-2) = 2\)</span>
-<span class="arithmatex">\(2 \cdot (-2) = -4\)</span>
-<span class="arithmatex">\(-3 \cdot (-2) = 6\)</span>
-Wektory są równoległe.
-3. Sprawdzamy wyraz wolny <span class="arithmatex">\(D\)</span>.Sprawdzamy, czy ta sama proporcja (<span class="arithmatex">\(k = -2\)</span>) zachodzi dla <span class="arithmatex">\(D\)</span>:</p>
-<p><span class="arithmatex">\(D_2 \cdot (-2) = 5 \cdot (-2) = -10\)</span>
-<span class="arithmatex">\(D_1 = -10\)</span>Zależność <span class="arithmatex">\(D_1 = k \cdot D_2\)</span> jest spełniona (<span class="arithmatex">\(-10 = -10\)</span>).</p>
+<span class="arithmatex">\(\pi_2: -x + 2y - 3z + 5 = 0\)</span></p>
+<ol>
+<li>
+<p>Wyciągamy wektory normalne:
+    <span class="arithmatex">\(\vec{n}_1 = [2, -4, 6]\)</span> <span class="arithmatex">\(\vec{n}_2 = [-1, 2, -3]\)</span></p>
+</li>
+<li>
+<p>Sprawdzamy równoległość (<span class="arithmatex">\(\vec{n}_1 = k \cdot \vec{n}_2\)</span>) Widać, że jeśli pomnożymy <span class="arithmatex">\(\vec{n}_2\)</span> przez <span class="arithmatex">\(k = -2\)</span>, otrzymamy <span class="arithmatex">\(\vec{n}_1\)</span>:</p>
+</li>
+</ol>
+<p><span class="arithmatex">\(-1 \cdot (-2) = 2\)</span></p>
+<p><span class="arithmatex">\(2 \cdot (-2) = -4\)</span></p>
+<p><span class="arithmatex">\(-3 \cdot (-2) = 6\)</span></p>
+<p>Wektory są równoległe.</p>
+<ol>
+<li>Sprawdzamy wyraz wolny <span class="arithmatex">\(D\)</span>.Sprawdzamy, czy ta sama proporcja (<span class="arithmatex">\(k = -2\)</span>) zachodzi dla <span class="arithmatex">\(D\)</span>:</li>
+</ol>
+<p><span class="arithmatex">\(D_2 \cdot (-2) = 5 \cdot (-2) = -10\)</span></p>
+<p><span class="arithmatex">\(D_1 = -10\)</span></p>
+<p>Zależność <span class="arithmatex">\(D_1 = k \cdot D_2\)</span> jest spełniona (<span class="arithmatex">\(-10 = -10\)</span>).</p>
 <p>Wynik: Płaszczyzny pokrywają się. </p>
 <p><strong>Znajdowanie prostej przecięcia <span class="arithmatex">\(L\)</span>:</strong></p>
 <ol>
@@ -1423,7 +1431,7 @@ Wektory są równoległe.
 <p><strong>Przykład 2</strong>: Szukanie prostej przecięcia Mamy dwie płaszczyzny:</p>
 <ul>
 <li><span class="arithmatex">\(\pi_1: x + y + z - 3 = 0 \implies \vec{n}_1 = [1, 1, 1]\)</span></li>
-<li>$\pi_2: x + 2y - z - 2 = 0 \implies \vec{n}_2 = [1, 2, -1]</li>
+<li><span class="arithmatex">\(\pi_2: x + 2y - z - 2 = 0 \implies \vec{n}_2 = [1, 2, -1]\)</span></li>
 </ul>
 <p>$Wektory <span class="arithmatex">\(\vec{n}_1\)</span> i <span class="arithmatex">\(\vec{n}_2\)</span> nie są proporcjonalne, więc płaszczyzny przecinają się wzdłuż prostej <span class="arithmatex">\(L\)</span>.</p>
 <p>Krok 1: Wektor kierunkowy prostej (<span class="arithmatex">\(\vec{v} = \vec{n}_1 \times \vec{n}_2\)</span>)Liczmy iloczyn wektorowy (metodą Sarrusa):</p>
@@ -1434,7 +1442,8 @@ Wektory są równoległe.
 <p><span class="arithmatex">\(x + y + 0 - 3 = 0 \implies x + y = 3\)</span></p>
 <p><span class="arithmatex">\(x + 2y - 0 - 2 = 0 \implies x + 2y = 2\)</span></p>
 <p>Odejmujemy pierwsze równanie od drugiego:<span class="arithmatex">\((x + 2y) - (x + y) = 2 - 3\)</span><span class="arithmatex">\(y = -1\)</span></p>
-<p>Podstawiamy <span class="arithmatex">\(y\)</span> do pierwszego równania:<span class="arithmatex">\(x + (-1) = 3 \implies \mathbf{x = 4}\)</span>Punkt to <span class="arithmatex">\(P_0(4, -1, 0)\)</span>.</p>
+<p>Podstawiamy <span class="arithmatex">\(y\)</span> do pierwszego równania:<span class="arithmatex">\(x + (-1) = 3 \implies \mathbf{x = 4}\)</span></p>
+<p>Punkt to <span class="arithmatex">\(P_0(4, -1, 0)\)</span>.</p>
 <p>Krok 3: Równanie parametryczne prostej</p>
 <p>Składamy punkt i wektor:</p>
 <div class="arithmatex">\[L: \begin{cases} x = 4 - 3t \\ y = -1 + 2t \\ z = 0 + 1t \end{cases}\]</div>
@@ -1450,7 +1459,7 @@ Wektory są równoległe.
 </ul>
 </li>
 </ul>
-<p><strong>Przykład</strong>: Czy proste są koplanarne (przecinające się)?</p>
+<p><strong>Przykład 1</strong>: Czy proste są koplanarne (przecinające się)?</p>
 <p>Mamy dwie proste:</p>
 <p>Prosta <span class="arithmatex">\(L_1\)</span>: przechodzi przez <span class="arithmatex">\(P_1(1, 0, 1)\)</span> z wektorem <span class="arithmatex">\(\vec{v}_1 = [2, 1, 0]\)</span></p>
 <p>Prosta <span class="arithmatex">\(L_2\)</span>: przechodzi przez <span class="arithmatex">\(P_2(3, 1, 1)\)</span> z wektorem <span class="arithmatex">\(\vec{v}_2 = [1, 1, 1]\)</span></p>
@@ -1462,8 +1471,7 @@ Wektory są równoległe.
 <p>Wynik: <span class="arithmatex">\(\text{Det} = 0\)</span>.</p>
 <p>Wniosek: Wektory są liniowo zależne, co oznacza, że proste są koplanarne. Ponieważ ich wektory kierunkowe <span class="arithmatex">\([2, 1, 0]\)</span> i <span class="arithmatex">\([1, 1, 1]\)</span> nie są proporcjonalne (nie są równoległe), te proste na pewno się przecinają.</p>
 <p>Co gdyby Det <span class="arithmatex">\(\neq 0\)</span>? Gdyby wyznacznik wyszedł np. 5, oznaczałoby to, że wektory "rozpinają" objętość (równoległościan), czyli proste leżą w różnych płaszczyznach i mijają się w przestrzeni bez kontaktu — są to wtedy proste skośne.</p>
-<p><strong>Szukanie punktu</strong> przeciecia dwóch prostych o równaniach
-Równania parametryczne (różne litery!)</p>
+<p><strong>Przykład 2</strong>: Szukanie punktu przeciecia dwóch prostych o równaniach</p>
 <p><span class="arithmatex">\(L_1\)</span> (punkt <span class="arithmatex">\(P_1\)</span>, wektor <span class="arithmatex">\(\vec{v}_1\)</span>): <span class="arithmatex">\(\begin{cases} x = 1 + 2t \\ y = t \\ z = 1 \end{cases}\)</span></p>
 <p><span class="arithmatex">\(L_2\)</span> (punkt <span class="arithmatex">\(P_2\)</span>, wektor <span class="arithmatex">\(\vec{v}_2\)</span>): <span class="arithmatex">\(\begin{cases} x = 3 + s \\ y = 1 + s \\ z = 1 + s \end{cases}\)</span></p>
 <p>Układ równań (<span class="arithmatex">\(x=x, y=y, z=z\)</span>)</p>
@@ -1472,10 +1480,12 @@ Równania parametryczne (różne litery!)</p>
 <li><span class="arithmatex">\(t = 1 + s\)</span>,</li>
 <li><span class="arithmatex">\(1 = 1 + s\)</span></li>
 </ul>
-<p>Rozwiązanie
-* Z (3): <span class="arithmatex">\(s = 0\)</span>
-* Podstaw <span class="arithmatex">\(s\)</span> do (2): <span class="arithmatex">\(t = 1 + 0 \implies \mathbf{t = 1}\)</span>
-* Podstawiamy <span class="arithmatex">\(t=1\)</span> i <span class="arithmatex">\(s=0\)</span> do pierwszego równania:</p>
+<p>Rozwiązanie</p>
+<ul>
+<li>Z (3): <span class="arithmatex">\(s = 0\)</span></li>
+<li>Podstaw <span class="arithmatex">\(s\)</span> do (2): <span class="arithmatex">\(t = 1 + 0 \implies \mathbf{t = 1}\)</span></li>
+<li>Podstawiamy <span class="arithmatex">\(t=1\)</span> i <span class="arithmatex">\(s=0\)</span> do pierwszego równania:</li>
+</ul>
 <div class="arithmatex">\[L: 1 + 2(1) = 3 \quad \text{oraz} \quad P: 3 + 0 = 3\]</div>
 <div class="arithmatex">\[3 = 3\]</div>
 <p>Punkt przecięcia</p>
