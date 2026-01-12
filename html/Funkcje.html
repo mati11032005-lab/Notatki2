@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analizator Funkcji Pro + Dziedzina</title>
+    <title>Analizator Funkcji Pro - Full Control</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -12,31 +12,40 @@
         :root {
             --bg: #0f172a; --panel: #1e293b; --input: #334155;
             --text: #f1f5f9; --accent: #38bdf8;
-            --up: #22c55e; --down: #ef4444; --zero: #fbbf24; --domain: #a855f7;
+            --up: #22c55e; --down: #ef4444; --zero: #fbbf24; 
+            --domain: #a855f7; --extremum: #f472b6;
         }
         body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
         
-        .sidebar { width: 400px; background: var(--panel); padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; box-shadow: 5px 0 15px rgba(0,0,0,0.3); z-index: 10; }
+        .sidebar { width: 420px; background: var(--panel); padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; box-shadow: 5px 0 15px rgba(0,0,0,0.3); z-index: 10; }
         .viewer { flex-grow: 1; position: relative; }
         #plot { width: 100%; height: 100%; }
 
-        h1 { font-size: 1.3rem; margin: 0; color: var(--accent); text-align: center; }
+        h1 { font-size: 1.2rem; margin: 0; color: var(--accent); text-align: center; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px; }
         
-        .input-box { background: var(--bg); padding: 12px; border-radius: 10px; border: 1px solid var(--input); }
-        label { font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 6px; text-transform: uppercase; font-weight: bold; }
-        input { width: 100%; background: var(--input); border: 1px solid #475569; color: white; padding: 10px; border-radius: 6px; font-size: 1.1rem; box-sizing: border-box; outline: none; }
+        .input-box { background: var(--bg); padding: 10px; border-radius: 10px; border: 1px solid var(--input); }
+        label { font-size: 0.7rem; color: #94a3b8; display: block; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; }
+        input { width: 100%; background: var(--input); border: 1px solid #475569; color: white; padding: 8px; border-radius: 6px; font-size: 1rem; box-sizing: border-box; outline: none; }
+        input:focus { border-color: var(--accent); }
         
-        .analysis-card { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 12px; border-left: 4px solid var(--accent); }
-        .analysis-card h3 { margin: 0 0 8px 0; font-size: 0.85rem; color: var(--accent); text-transform: uppercase; }
-        .data-row { font-size: 0.9rem; line-height: 1.4; }
+        .range-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px; }
+        .range-item { display: flex; align-items: center; gap: 5px; background: var(--input); padding: 4px 8px; border-radius: 4px; border: 1px solid #475569; }
+        .range-item span { font-size: 0.7rem; font-weight: bold; color: var(--accent); }
+        .range-item input { background: transparent; border: none; padding: 2px; font-size: 0.85rem; text-align: center; }
+
+        .analysis-card { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 10px; border-left: 4px solid var(--accent); }
+        .analysis-card h3 { margin: 0 0 5px 0; font-size: 0.75rem; color: var(--accent); text-transform: uppercase; }
+        .data-row { font-size: 0.85rem; line-height: 1.3; color: #cbd5e1; }
         
         .color-up { color: var(--up); font-weight: bold; }
         .color-down { color: var(--down); font-weight: bold; }
         .color-zero { color: var(--zero); font-weight: bold; }
         .color-domain { color: var(--domain); font-weight: bold; }
+        .color-ext { color: var(--extremum); font-weight: bold; }
 
-        .hint { font-size: 0.7rem; color: #64748b; margin-top: 5px; }
-        b { color: var(--text); } /* Dla przedziałów */
+        b { color: var(--text); }
+        .sidebar::-webkit-scrollbar { width: 5px; }
+        .sidebar::-webkit-scrollbar-thumb { background: var(--input); border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -47,29 +56,43 @@
     <div class="input-box">
         <label>Równanie f(x):</label>
         <input type="text" id="equation" value="(x^2 + x)/(x + 1)" oninput="analyze()">
-        <div class="hint">Wpisz np. x^2, sin(x), 1/x, (x^2+x)/(x+1)</div>
+    </div>
+
+    <div class="input-box">
+        <label>Zakres Wykresu:</label>
+        <div class="range-grid">
+            <div class="range-item"><span>Xmin</span><input type="number" id="xmin" value="-10" oninput="analyze()"></div>
+            <div class="range-item"><span>Xmax</span><input type="number" id="xmax" value="10" oninput="analyze()"></div>
+            <div class="range-item"><span>Ymin</span><input type="number" id="ymin" value="-10" oninput="analyze()"></div>
+            <div class="range-item"><span>Ymax</span><input type="number" id="ymax" value="10" oninput="analyze()"></div>
+        </div>
     </div>
 
     <div class="analysis-card" style="border-color: var(--domain)">
-        <h3>Dziedzina i punkty osobliwe</h3>
-        <div id="domain-output" class="data-row">Obliczanie...</div>
+        <h3>Dziedzina funkcji</h3>
+        <div id="domain-output" class="data-row">Czekam...</div>
+    </div>
+
+    <div class="analysis-card" style="border-color: var(--extremum)">
+        <h3>Wartości Ekstremalne</h3>
+        <div id="extrema-output" class="data-row">Czekam...</div>
     </div>
 
     <div class="analysis-card" style="border-color: var(--zero)">
         <h3>Miejsca Zerowe</h3>
-        <div id="roots-output" class="data-row">Obliczanie...</div>
+        <div id="roots-output" class="data-row">Czekam...</div>
     </div>
 
     <div class="analysis-card" style="border-color: var(--up)">
         <h3>Monotoniczność</h3>
-        <div id="mono-output" class="data-row">Obliczanie...</div>
+        <div id="mono-output" class="data-row">Czekam...</div>
     </div>
 
-    <div style="margin-top: auto; font-size: 0.7rem; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+    <div style="margin-top: auto; font-size: 0.65rem; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding-top: 10px; border-top: 1px solid #334155;">
         <span><span style="color:var(--up)">⬤</span> Rosnąca</span>
         <span><span style="color:var(--down)">⬤</span> Malejąca</span>
-        <span><span style="color:var(--zero)">⬤</span> Miejsce zerowe</span>
-        <span><span style="color:var(--domain)">◯</span> Punkt spoza dziedziny</span>
+        <span><span style="color:var(--zero)">⬤</span> Zero</span>
+        <span><span style="color:var(--domain)">◯</span> Punkt osobliwy</span>
     </div>
 </div>
 
@@ -83,12 +106,18 @@
         const rootsDiv = document.getElementById('roots-output');
         const monoDiv = document.getElementById('mono-output');
         const domainDiv = document.getElementById('domain-output');
+        const extremaDiv = document.getElementById('extrema-output');
+
+        // Pobieranie zakresów
+        const xMin = parseFloat(document.getElementById('xmin').value) || -10;
+        const xMax = parseFloat(document.getElementById('xmax').value) || 10;
+        const yMin = parseFloat(document.getElementById('ymin').value) || -10;
+        const yMax = parseFloat(document.getElementById('ymax').value) || 10;
         
         try {
             const node = math.parse(exprString);
             const code = node.compile();
             
-            // Funkcja z obsługą błędów (dziedzina)
             const f = (x) => {
                 try {
                     const res = code.evaluate({x: x});
@@ -96,7 +125,6 @@
                 } catch { return NaN; }
             };
 
-            // Pochodna
             const derivativeNode = math.derivative(exprString, 'x');
             const dfCode = derivativeNode.compile();
             const df = (x) => {
@@ -106,41 +134,37 @@
                 } catch { return NaN; }
             };
 
-            const xRange = math.range(-10.1, 10.1, 0.05).toArray();
+            // Dynamiczny krok obliczeń
+            const step = (xMax - xMin) / 400;
+            const xRange = [];
+            for(let x = xMin; x <= xMax; x += step) xRange.push(x);
+
             const yValues = xRange.map(x => f(x));
             const dfValues = xRange.map(x => df(x));
 
             const traces = [];
             const domainIssues = [];
 
-            // 1. Monotoniczność i Rysowanie (z przerwami w dziedzinie)
+            // 1. Rysowanie
             let currentSegment = null;
-
             for (let i = 0; i < xRange.length; i++) {
                 const x = xRange[i];
                 const y = yValues[i];
                 const d = dfValues[i];
 
                 if (isNaN(y)) {
-                    // Punkt poza dziedziną
-                    if (currentSegment) {
-                        traces.push(createTrace(currentSegment));
-                        currentSegment = null;
-                    }
-                    // Szukanie dokładniejszego punktu osobliwego (tylko raz dla obszaru)
-                    if (domainIssues.length === 0 || Math.abs(x - domainIssues[domainIssues.length-1]) > 0.5) {
+                    if (currentSegment) { traces.push(createTrace(currentSegment)); currentSegment = null; }
+                    if (domainIssues.length === 0 || Math.abs(x - domainIssues[domainIssues.length-1]) > (xMax-xMin)/20) {
                         domainIssues.push(Number(x.toFixed(2)));
                     }
                     continue;
                 }
 
                 const type = d >= 0 ? 'up' : 'down';
-
                 if (!currentSegment) {
                     currentSegment = { x: [x], y: [y], type: type };
                 } else if (type === currentSegment.type) {
-                    currentSegment.x.push(x);
-                    currentSegment.y.push(y);
+                    currentSegment.x.push(x); currentSegment.y.push(y);
                 } else {
                     traces.push(createTrace(currentSegment));
                     currentSegment = { x: [xRange[i-1], x], y: [yValues[i-1], y], type: type };
@@ -148,7 +172,17 @@
             }
             if (currentSegment) traces.push(createTrace(currentSegment));
 
-            // 2. Miejsca zerowe
+            // 2. Ekstrema
+            const validY = yValues.filter(v => !isNaN(v) && isFinite(v));
+            if (validY.length > 0) {
+                const minY = Math.min(...validY);
+                const maxY = Math.max(...validY);
+                const minX = xRange[yValues.indexOf(minY)];
+                const maxX = xRange[yValues.indexOf(maxY)];
+                extremaDiv.innerHTML = `Min: <span class="color-ext">${minY.toFixed(2)}</span> (x:${minX.toFixed(1)})<br>Max: <span class="color-ext">${maxY.toFixed(2)}</span> (x:${maxX.toFixed(1)})`;
+            } else { extremaDiv.innerHTML = "Brak wartości."; }
+
+            // 3. Zera
             const roots = [];
             for (let i = 0; i < xRange.length - 1; i++) {
                 if (!isNaN(yValues[i]) && !isNaN(yValues[i+1]) && yValues[i] * yValues[i+1] <= 0) {
@@ -157,81 +191,47 @@
                 }
             }
 
-            // Markery: Miejsca zerowe i Dziury w dziedzinie
+            // Markery
             if (roots.length > 0) {
-                traces.push({
-                    x: roots, y: roots.map(() => 0),
-                    mode: 'markers', name: 'Zera',
-                    marker: { color: '#fbbf24', size: 10, symbol: 'diamond' }, hoverinfo: 'x'
-                });
+                traces.push({ x: roots, y: roots.map(() => 0), mode: 'markers', name: 'Zera', marker: { color: '#fbbf24', size: 10, symbol: 'diamond' }});
             }
             if (domainIssues.length > 0) {
-                traces.push({
-                    x: domainIssues, y: domainIssues.map(x => f(x + 0.0001) || 0),
-                    mode: 'markers', name: 'Osobliwość',
-                    marker: { color: '#a855f7', size: 12, symbol: 'circle-open', line: {width: 3} }, hoverinfo: 'x'
-                });
+                traces.push({ x: domainIssues, y: domainIssues.map(x => f(x + 0.01) || 0), mode: 'markers', name: 'Dziura', marker: { color: '#a855f7', size: 10, symbol: 'circle-open', line: {width: 2} }});
             }
 
-            // 3. Opisy tekstowe (NAPRAWA DOLARÓW)
+            // 4. Monotoniczność i Dziedzina
             let intervals = [];
-            let start = null;
-            let lastType = null;
-            
+            let start = null, lastType = null;
             for (let i = 0; i < xRange.length; i++) {
                 if (isNaN(yValues[i])) { start = null; continue; }
                 const currentType = dfValues[i] >= 0 ? 'rosnąca' : 'malejąca';
-                
-                if (start === null) {
-                    start = xRange[i];
-                    lastType = currentType;
-                } else if (currentType !== lastType) {
-                    intervals.push(`<span class="${lastType === 'rosnąca' ? 'color-up' : 'color-down'}">${lastType}</span> w <b>(${start.toFixed(1)}, ${xRange[i].toFixed(1)})</b>`);
-                    start = xRange[i];
-                    lastType = currentType;
+                if (start === null) { start = xRange[i]; lastType = currentType; }
+                else if (currentType !== lastType) {
+                    intervals.push(`<span class="${lastType === 'rosnąca' ? 'color-up' : 'color-down'}">${lastType}</span>: <b>(${start.toFixed(1)}, ${xRange[i].toFixed(1)})</b>`);
+                    start = xRange[i]; lastType = currentType;
                 }
             }
-            if (start !== null) {
-                intervals.push(`<span class="${lastType === 'rosnąca' ? 'color-up' : 'color-down'}">${lastType}</span> w <b>(${start.toFixed(1)}, 10.0)</b>`);
-            }
+            if (start !== null) intervals.push(`<span class="${lastType === 'rosnąca' ? 'color-up' : 'color-down'}">${lastType}</span>: <b>(${start.toFixed(1)}, ${xMax.toFixed(1)})</b>`);
 
-            // Wyniki do HTML
-            domainDiv.innerHTML = domainIssues.length > 0 
-                ? `Wyłączone punkty: ` + domainIssues.map(d => `<span class="color-domain">${d}</span>`).join(', ')
-                : "Dziedzina: $x \\in \\mathbb{R}$";
-            
-            rootsDiv.innerHTML = roots.length > 0 
-                ? roots.map(r => `<span class="color-zero">${r}</span>`).join(', ') 
-                : "Brak";
-            
-            monoDiv.innerHTML = intervals.length > 0 ? intervals.join('<br>') : "Stała";
+            domainDiv.innerHTML = domainIssues.length > 0 ? `Wyłączone: ` + domainIssues.map(d => `<span class="color-domain">${d}</span>`).join(', ') : "Zbiór liczb rzeczywistych";
+            rootsDiv.innerHTML = roots.length > 0 ? roots.map(r => `<span class="color-zero">${r}</span>`).join(', ') : "Brak";
+            monoDiv.innerHTML = intervals.join('<br>');
 
-            Plotly.react('plot', traces, getLayout());
-            
-            // Renderuj tylko tam, gdzie faktycznie jest LaTeX (równanie dziedziny)
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                MathJax.typesetPromise([domainDiv]);
-            }
+            Plotly.react('plot', traces, getLayout(xMin, xMax, yMin, yMax));
 
-        } catch (e) {
-            rootsDiv.innerHTML = "<span style='color:red'>Błąd składni równania!</span>";
-        }
+        } catch (e) { rootsDiv.innerHTML = "<span style='color:red'>Błąd funkcji</span>"; }
     }
 
     function createTrace(seg) {
-        return {
-            x: seg.x, y: seg.y, mode: 'lines',
-            line: { color: seg.type === 'up' ? '#22c55e' : '#ef4444', width: 3 },
-            showlegend: false, hoverinfo: 'x+y'
-        };
+        return { x: seg.x, y: seg.y, mode: 'lines', line: { color: seg.type === 'up' ? '#22c55e' : '#ef4444', width: 3.5 }, showlegend: false, hoverinfo: 'x+y' };
     }
 
-    function getLayout() {
+    function getLayout(x1, x2, y1, y2) {
         return {
             paper_bgcolor: '#0f172a', plot_bgcolor: '#0f172a',
             margin: { l: 40, r: 20, b: 40, t: 20 },
-            xaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [-10, 10] },
-            yaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [-10, 10] },
+            xaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [x1, x2] },
+            yaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [y1, y2] },
             showlegend: false
         };
     }
