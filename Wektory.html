@@ -2,245 +2,266 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator i Wizualizacja Wektorów 3D</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wizualizator Wektorów 3D Pro</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+          svg: { fontCache: 'global' }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #475569;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --vec-a: #ef4444; /* Czerwony */
-            --vec-b: #3b82f6; /* Niebieski */
-            --vec-c: #10b981; /* Zielony */
-            --vec-res: #8b5cf6; /* Fioletowy */
+            --bg-app: #121212;
+            --bg-panel: #1e1e2e;
+            --bg-input: #2a2a3c;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --accent-dot: #FF9F1C;  /* Pomarańczowy */
+            --accent-cross: #CB6CE6; /* Fioletowy */
+            --accent-mixed: #2EC4B6; /* Morski */
+            
+            --vec-a: #ff5252; /* Czerwony jasny */
+            --vec-b: #448aff; /* Niebieski jasny */
+            --vec-c: #69f0ae; /* Zielony miętowy */
+            --vec-res: #CB6CE6; /* Fioletowy */
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: var(--bg);
-            color: #1e293b;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 20px;
-            height: 90vh;
-        }
-
-        /* Panel Sterowania */
-        .controls {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
+            padding: 0;
+            background-color: var(--bg-app);
+            color: var(--text-primary);
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
-        h1 { font-size: 1.5rem; margin-top: 0; text-align: center; }
-        h2 { font-size: 1.1rem; margin-bottom: 10px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .main-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            flex-grow: 1;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* --- Panel Boczny (Sterowanie) --- */
+        .controls-panel {
+            background: var(--bg-panel);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        h1 { font-size: 1.4rem; margin: 0; font-weight: 600; letter-spacing: 0.5px; }
+        .panel-section { display: flex; flex-direction: column; gap: 15px; }
 
         /* Zakładki */
-        .tabs {
+        .mode-tabs {
             display: flex;
-            gap: 5px;
-            background: #e2e8f0;
+            background: var(--bg-input);
             padding: 5px;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 8px;
+            padding: 10px;
             border: none;
             background: transparent;
+            color: var(--text-secondary);
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .tab-btn.active {
-            background: var(--card-bg);
-            color: var(--primary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        .tab-btn.active.dot { background: var(--accent-dot); color: white; box-shadow: 0 4px 12px -2px rgba(255, 159, 28, 0.5); }
+        .tab-btn.active.cross { background: var(--accent-cross); color: white; box-shadow: 0 4px 12px -2px rgba(203, 108, 230, 0.5); }
+        .tab-btn.active.mixed { background: var(--accent-mixed); color: white; box-shadow: 0 4px 12px -2px rgba(46, 196, 182, 0.5); }
 
         /* Inputy wektorów */
-        .vector-group {
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
+        .vector-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 15px 20px;
             position: relative;
+            border-left: 4px solid transparent;
         }
+        .card-a { border-color: var(--vec-a); }
+        .card-b { border-color: var(--vec-b); }
+        .card-c { border-color: var(--vec-c); }
 
-        .vector-label {
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            background: var(--card-bg);
-            padding: 0 5px;
-            font-weight: bold;
+        .vector-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
             font-size: 0.9rem;
         }
-        
         .label-a { color: var(--vec-a); }
         .label-b { color: var(--vec-b); }
         .label-c { color: var(--vec-c); }
 
-        .input-row {
-            display: flex;
+        .inputs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            align-items: center;
-            margin-top: 5px;
         }
 
-        .input-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .input-wrapper label { font-size: 0.8rem; color: #64748b; margin-bottom: 2px; }
+        .input-wrapper { display: flex; flex-direction: column; align-items: center; }
+        .input-wrapper label { font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 4px; }
 
         input[type="number"] {
             width: 100%;
-            padding: 6px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
+            padding: 8px 5px;
+            background: var(--bg-input);
+            border: 1px solid transparent;
+            border-radius: 6px;
+            color: var(--text-primary);
             text-align: center;
+            font-family: inherit;
+            font-weight: 500;
+            transition: border-color 0.2s;
+             
         }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } /* Usuwa strzałki w Chrome/Safari */
+        input[type="number"]:focus { outline: none; border-color: var(--text-secondary); }
 
-        /* Wyniki */
-        .results-box {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-        }
 
-        .step-title {
-            font-weight: bold;
-            color: var(--secondary);
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .math-display {
-            overflow-x: auto;
-            font-size: 0.95rem;
-        }
-
-        /* Wykres */
-        .visualization {
-            background: var(--card-bg);
+        /* Panel Wyników */
+        .results-container {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            position: relative;
-            height: 100%;
-            min-height: 500px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-        
+        .results-title { font-weight: 600; color: var(--text-secondary); margin-bottom: 15px; display: block; font-size: 0.9rem; }
+        #calc-steps {
+            font-size: 1rem;
+            overflow-x: auto;
+            flex-grow: 1;
+            /* Stylizacja paska przewijania dla MathJax */
+            scrollbar-width: thin;
+            scrollbar-color: var(--bg-input) transparent;
+        }
+
+        /* --- Panel Wizualizacji --- */
+        .visualization-panel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
         #plotDiv { width: 100%; height: 100%; }
 
-        @media (max-width: 800px) {
-            .container { grid-template-columns: 1fr; height: auto; }
-            .visualization { height: 400px; }
+        /* Responsywność */
+        @media (max-width: 900px) {
+            .main-container { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+            .controls-panel { max-height: 50vh; padding: 15px; gap: 15px; }
+            .visualization-panel { height: 50vh; min-height: 300px; }
+            .inputs-grid { gap: 5px; }
+            .vector-card { padding: 10px 15px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="controls">
-        <h1>Kalkulator Wektorów</h1>
+<div class="main-container">
+    <div class="controls-panel">
+        <h1>Kalkulator Wektorów 3D</h1>
         
-        <div class="tabs">
-            <button class="tab-btn active" onclick="setMode('dot')">Skalarny</button>
-            <button class="tab-btn" onclick="setMode('cross')">Wektorowy</button>
-            <button class="tab-btn" onclick="setMode('mixed')">Mieszany</button>
-        </div>
-
-        <div class="vector-group">
-            <span class="vector-label label-a">Wektor A</span>
-            <div class="input-row">
-                <div class="input-wrapper"><label>x</label><input type="number" id="ax" value="2" oninput="update()"></div>
-                <div class="input-wrapper"><label>y</label><input type="number" id="ay" value="3" oninput="update()"></div>
-                <div class="input-wrapper"><label>z</label><input type="number" id="az" value="1" oninput="update()"></div>
+        <div class="panel-section">
+            <div class="mode-tabs">
+                <button class="tab-btn active dot" onclick="setMode('dot')">Skalarny</button>
+                <button class="tab-btn cross" onclick="setMode('cross')">Wektorowy</button>
+                <button class="tab-btn mixed" onclick="setMode('mixed')">Mieszany</button>
             </div>
         </div>
 
-        <div class="vector-group">
-            <span class="vector-label label-b">Wektor B</span>
-            <div class="input-row">
-                <div class="input-wrapper"><label>x</label><input type="number" id="bx" value="-1" oninput="update()"></div>
-                <div class="input-wrapper"><label>y</label><input type="number" id="by" value="2" oninput="update()"></div>
-                <div class="input-wrapper"><label>z</label><input type="number" id="bz" value="0" oninput="update()"></div>
-            </div>
-        </div>
-
-        <div class="vector-group" id="vec-c-container" style="display: none;">
-            <span class="vector-label label-c">Wektor C</span>
-            <div class="input-row">
-                <div class="input-wrapper"><label>x</label><input type="number" id="cx" value="1" oninput="update()"></div>
-                <div class="input-wrapper"><label>y</label><input type="number" id="cy" value="1" oninput="update()"></div>
-                <div class="input-wrapper"><label>z</label><input type="number" id="cz" value="2" oninput="update()"></div>
-            </div>
-        </div>
-
-        <div class="results-box">
-            <span class="step-title">Wynik i Obliczenia:</span>
-            <div id="calc-steps" class="math-display">
+        <div class="panel-section">
+            <div class="vector-card card-a">
+                <div class="vector-header"><span class="label-a">Wektor A</span></div>
+                <div class="inputs-grid">
+                    <div class="input-wrapper"><label>X</label><input type="number" id="ax" value="3" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Y</label><input type="number" id="ay" value="2" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Z</label><input type="number" id="az" value="5" oninput="update()"></div>
                 </div>
+            </div>
+
+            <div class="vector-card card-b">
+                <div class="vector-header"><span class="label-b">Wektor B</span></div>
+                <div class="inputs-grid">
+                    <div class="input-wrapper"><label>X</label><input type="number" id="bx" value="1" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Y</label><input type="number" id="by" value="-4" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Z</label><input type="number" id="bz" value="2" oninput="update()"></div>
+                </div>
+            </div>
+
+            <div class="vector-card card-c" id="vec-c-container" style="display: none;">
+                <div class="vector-header"><span class="label-c">Wektor C</span></div>
+                <div class="inputs-grid">
+                    <div class="input-wrapper"><label>X</label><input type="number" id="cx" value="2" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Y</label><input type="number" id="cy" value="1" oninput="update()"></div>
+                    <div class="input-wrapper"><label>Z</label><input type="number" id="cz" value="-3" oninput="update()"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <span class="results-title">KROKI OBLICZEŃ I WYNIK:</span>
+            <div id="calc-steps"></div>
         </div>
     </div>
 
-    <div class="visualization">
+    <div class="visualization-panel">
         <div id="plotDiv"></div>
     </div>
 </div>
 
 <script>
-    let currentMode = 'dot'; // 'dot', 'cross', 'mixed'
+    let currentMode = 'dot';
+    const colors = {
+        bg: '#121212', grid: '#2a2a3c', text: '#e0e0e0',
+        a: '#ff5252', b: '#448aff', c: '#69f0ae', res: '#CB6CE6'
+    };
 
-    // Inicjalizacja
     document.addEventListener('DOMContentLoaded', () => {
+        // Inicjalizacja pustego wykresu, żeby nie było "skoku" przy ładowaniu
+        Plotly.newPlot('plotDiv', [], getLayout(), {displayModeBar: false});
         update();
     });
 
     function setMode(mode) {
         currentMode = mode;
-        
-        // Aktualizacja UI przycisków
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-
-        // Pokaż/ukryj Wektor C
-        const vecC = document.getElementById('vec-c-container');
-        vecC.style.display = (mode === 'mixed') ? 'block' : 'none';
-
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if(btn.classList.contains(mode)) btn.classList.add('active');
+        });
+        document.getElementById('vec-c-container').style.display = (mode === 'mixed') ? 'block' : 'none';
         update();
     }
 
+    // Ulepszona funkcja pobierania wartości (naprawia błąd NaN)
     function getVal(id) {
-        return parseFloat(document.getElementById(id).value) || 0;
+        const el = document.getElementById(id);
+        if (!el || el.value.trim() === '' || el.value.trim() === '-') return 0;
+        const val = parseFloat(el.value);
+        return isNaN(val) ? 0 : val;
     }
 
     function update() {
-        // Pobierz dane
         const A = { x: getVal('ax'), y: getVal('ay'), z: getVal('az') };
         const B = { x: getVal('bx'), y: getVal('by'), z: getVal('bz') };
         const C = { x: getVal('cx'), y: getVal('cy'), z: getVal('cz') };
@@ -248,16 +269,14 @@
         let resultHtml = '';
         let resultVector = null;
 
-        // --- OBLICZENIA ---
         if (currentMode === 'dot') {
             // Iloczyn Skalarny
             const dot = (A.x * B.x) + (A.y * B.y) + (A.z * B.z);
-            
             resultHtml = `
                 $$ \\vec{A} \\circ \\vec{B} = a_x b_x + a_y b_y + a_z b_z $$
-                $$ = (${A.x} \\cdot ${B.x}) + (${A.y} \\cdot ${B.y}) + (${A.z} \\cdot ${B.z}) $$
-                $$ = (${A.x * B.x}) + (${A.y * B.y}) + (${A.z * B.z}) $$
-                $$ \\text{Wynik} = \\mathbf{${dot}} $$
+                $$ = (${A.x})(${B.x}) + (${A.y})(${B.y}) + (${A.z})(${B.z}) $$
+                $$ = ${A.x*B.x} + ${A.y*B.y} + ${A.z*B.z} $$
+                $$ \\text{Wynik (Skalar)} = \\mathbf{${Number(dot.toFixed(4))}} $$
             `;
 
         } else if (currentMode === 'cross') {
@@ -265,123 +284,88 @@
             const rx = (A.y * B.z) - (A.z * B.by);
             const ry = (A.z * B.x) - (A.x * B.z);
             const rz = (A.x * B.y) - (A.y * B.x);
-            
             resultVector = { x: rx, y: ry, z: rz };
-
+            
             resultHtml = `
-                $$ \\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ a_x & a_y & a_z \\\\ b_x & b_y & b_z \\end{vmatrix} $$
-                $$ x = a_y b_z - a_z b_y = (${A.y} \\cdot ${B.z}) - (${A.z} \\cdot ${B.y}) = ${rx} $$
-                $$ y = a_z b_x - a_x b_z = (${A.z} \\cdot ${B.x}) - (${A.x} \\cdot ${B.z}) = ${ry} $$
-                $$ z = a_x b_y - a_y b_x = (${A.x} \\cdot ${B.y}) - (${A.y} \\cdot ${B.x}) = ${rz} $$
-                $$ \\text{Wynik} = [${rx}, ${ry}, ${rz}] $$
+                $$ \\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ ${A.x} & ${A.y} & ${A.z} \\\\ ${B.x} & ${B.y} & ${B.z} \\end{vmatrix} $$
+                $$ \\mathbf{i}(${A.y}\\cdot${B.z} - ${A.z}\\cdot${B.by}) = \\mathbf{i}(${rx}) $$
+                $$ -\\mathbf{j}(${A.x}\\cdot${B.z} - ${A.z}\\cdot${B.x}) = -\\mathbf{j}(${-ry}) = \\mathbf{j}(${ry}) $$
+                $$ \\mathbf{k}(${A.x}\\cdot${B.by} - ${A.y}\\cdot${B.x}) = \\mathbf{k}(${rz}) $$
+                $$ \\text{Wynik (Wektor)} = [\\mathbf{${Number(rx.toFixed(4))}}, \\mathbf{${Number(ry.toFixed(4))}}, \\mathbf{${Number(rz.toFixed(4))}}] $$
             `;
 
         } else if (currentMode === 'mixed') {
-            // Iloczyn Mieszany (wyznacznik macierzy 3x3)
-            // Det = Ax(ByCz − BzCy) − Ay(BxCz − BzCx) + Az(BxCy − ByCx)
-            const term1 = A.x * ((B.y * C.z) - (B.z * C.y));
-            const term2 = A.y * ((B.x * C.z) - (B.z * C.x));
-            const term3 = A.z * ((B.x * C.y) - (B.y * C.x));
-            const mixed = term1 - term2 + term3;
+            // Iloczyn Mieszany
+            const detX = (B.y * C.z) - (B.z * C.y);
+            const detY = (B.x * C.z) - (B.z * C.x);
+            const detZ = (B.x * C.y) - (B.y * C.x);
+            const mixed = (A.x * detX) - (A.y * detY) + (A.z * detZ);
 
             resultHtml = `
-                $$ (\\vec{A} \\times \\vec{B}) \\circ \\vec{C} = \\begin{vmatrix} a_x & a_y & a_z \\\\ b_x & b_y & b_z \\\\ c_x & c_y & c_z \\end{vmatrix} $$
-                $$ = a_x(b_y c_z - b_z c_y) - a_y(b_x c_z - b_z c_x) + a_z(b_x c_y - b_y c_x) $$
+                $$ (\\vec{A} \\times \\vec{B}) \\circ \\vec{C} = \\det(\\vec{A}, \\vec{B}, \\vec{C}) $$
+                $$ \\text{Rozwinięcie Laplace'a względem pierwszego wiersza:} $$
+                $$ a_x \\begin{vmatrix} b_y & b_z \\\\ c_y & c_z \\end{vmatrix} - a_y \\begin{vmatrix} b_x & b_z \\\\ c_x & c_z \\end{vmatrix} + a_z \\begin{vmatrix} b_x & b_y \\\\ c_x & c_y \\end{vmatrix} $$
                 $$ = ${A.x}(${B.y}\\cdot${C.z} - ${B.z}\\cdot${C.y}) - ${A.y}(${B.x}\\cdot${C.z} - ${B.z}\\cdot${C.x}) + ${A.z}(${B.x}\\cdot${C.y} - ${B.y}\\cdot${C.x}) $$
-                $$ = ${term1} - (${term2}) + (${term3}) $$
-                $$ \\text{Wynik (Objętość)} = \\mathbf{${mixed}} $$
+                $$ = ${A.x}(${detX}) - ${A.y}(${detY}) + ${A.z}(${detZ}) $$
+                $$ = ${A.x*detX} - (${A.y*detY}) + ${A.z*detZ} $$
+                $$ \\text{Wynik (Objętość)} = \\mathbf{${Number(mixed.toFixed(4))}} $$
             `;
         }
 
-        // Wyświetl kroki
         const calcContainer = document.getElementById('calc-steps');
         calcContainer.innerHTML = resultHtml;
-        if(window.MathJax) MathJax.typesetPromise([calcContainer]);
-
-        // --- WIZUALIZACJA ---
+        MathJax.typesetPromise([calcContainer]);
         draw3D(A, B, C, resultVector);
+    }
+
+    function getLayout() {
+        const axisStyle = {
+            showgrid: true, zeroline: true, showline: true,
+            gridcolor: colors.grid, zerolinecolor: '#555', linecolor: colors.grid,
+            tickfont: { color: colors.text }, titlefont: { color: colors.text }
+        };
+        return {
+            paper_bgcolor: colors.bg,
+            plot_bgcolor: colors.bg,
+            margin: { l: 0, r: 0, b: 0, t: 0 },
+            scene: {
+                aspectmode: 'cube',
+                xaxis: { ...axisStyle, title: 'X' },
+                yaxis: { ...axisStyle, title: 'Y' },
+                zaxis: { ...axisStyle, title: 'Z' },
+                camera: { eye: {x: 1.6, y: 1.6, z: 1.6} }
+            },
+            showlegend: true,
+            legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(30,30,46,0.8)', font: {color: colors.text} }
+        };
     }
 
     function draw3D(A, B, C, resVec) {
         const data = [];
-
-        // Helper dla linii wektora
-        function createVectorTrace(vec, name, color) {
-            return {
-                type: 'scatter3d',
-                mode: 'lines+markers',
-                name: name,
-                x: [0, vec.x],
-                y: [0, vec.y],
-                z: [0, vec.z],
-                line: { width: 6, color: color },
-                marker: { size: 4, color: color },
-                hoverinfo: 'text',
-                text: [`Początek`, `Koniec (${vec.x}, ${vec.y}, ${vec.z})`]
-            };
-        }
-
-        // Helper dla stożka (strzałki) na końcu
-        function createArrowHead(vec, color) {
-            return {
-                type: 'cone',
-                x: [vec.x], y: [vec.y], z: [vec.z],
-                u: [vec.x], v: [vec.y], w: [vec.z],
-                sizemode: 'absolute',
-                sizeref: 0.5,
-                showscale: false,
-                colorscale: [[0, color], [1, color]],
-                hoverinfo: 'none'
-            };
-        }
-
-        // Dodaj Wektor A
-        data.push(createVectorTrace(A, 'Wektor A', '#ef4444'));
-        data.push(createArrowHead(A, '#ef4444'));
-
-        // Dodaj Wektor B
-        data.push(createVectorTrace(B, 'Wektor B', '#3b82f6'));
-        data.push(createArrowHead(B, '#3b82f6'));
-
-        // Dodaj Wektor C (tylko w trybie mixed)
-        if (currentMode === 'mixed') {
-            data.push(createVectorTrace(C, 'Wektor C', '#10b981'));
-            data.push(createArrowHead(C, '#10b981'));
-        }
-
-        // Dodaj Wektor Wynikowy (tylko w trybie cross)
-        if (currentMode === 'cross' && resVec) {
-            data.push(createVectorTrace(resVec, 'Wynik (A x B)', '#8b5cf6'));
-            data.push(createArrowHead(resVec, '#8b5cf6'));
-        }
-
-        // Dodaj punkt (0,0,0) dla odniesienia
-        data.push({
-            type: 'scatter3d',
-            mode: 'markers',
-            x: [0], y: [0], z: [0],
-            marker: { size: 5, color: '#000' },
-            name: 'Origin',
-            showlegend: false
+        const createTrace = (vec, name, color) => ({
+            type: 'scatter3d', mode: 'lines+markers', name: name,
+            x: [0, vec.x], y: [0, vec.y], z: [0, vec.z],
+            line: { width: 8, color: color }, marker: { size: 5, color: color },
+            hoverinfo: 'text', text: `Koniec ${name}: (${vec.x}, ${vec.y}, ${vec.z})`
+        });
+        const createCone = (vec, color) => ({
+            type: 'cone', x: [vec.x], y: [vec.y], z: [vec.z], u: [vec.x], v: [vec.y], w: [vec.z],
+            sizemode: 'scaled', sizeref: 0.4, showscale: false, colorscale: [[0, color], [1, color]], hoverinfo: 'none'
         });
 
-        const layout = {
-            margin: { l: 0, r: 0, b: 0, t: 0 },
-            scene: {
-                aspectmode: 'cube',
-                xaxis: { title: 'X', zerolinecolor: '#000' },
-                yaxis: { title: 'Y', zerolinecolor: '#000' },
-                zaxis: { title: 'Z', zerolinecolor: '#000' },
-                camera: {
-                    eye: {x: 1.5, y: 1.5, z: 1.5}
-                }
-            },
-            legend: { x: 0, y: 1 }
-        };
+        data.push(createTrace(A, 'A', colors.a), createCone(A, colors.a));
+        data.push(createTrace(B, 'B', colors.b), createCone(B, colors.b));
 
-        Plotly.newPlot('plotDiv', data, layout, {responsive: true, displayModeBar: false});
+        if (currentMode === 'mixed') {
+            data.push(createTrace(C, 'C', colors.c), createCone(C, colors.c));
+        }
+        if (currentMode === 'cross' && resVec) {
+            data.push(createTrace(resVec, 'Wynik (A×B)', colors.res), createCone(resVec, colors.res));
+        }
+        data.push({ type: 'scatter3d', mode: 'markers', x:[0], y:[0], z:[0], marker:{size:6, color:colors.text}, name:'Zero', showlegend:false, hoverinfo:'none'});
+
+        Plotly.react('plotDiv', data, getLayout(), {responsive: true, displayModeBar: false});
     }
 </script>
-
 </body>
 </html>
