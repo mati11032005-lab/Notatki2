@@ -1313,7 +1313,7 @@
 <li>Pochodna tangensa: <span class="arithmatex">\((\mathbf{\tan x})' = \frac{1}{\cos^2 x}\)</span></li>
 </ul>
 <p><strong>Liczenie pochodnej cotangensa</strong></p>
-<div class="arithmatex">\[(\mathbf{\cot x})' = \left(\frac{\cos x}{\sin x}\right)'$$= \frac{(\cos x)' \cdot \sin x - \cos x \cdot (\sin x)'}{\sin^2 x}$$= \frac{-\sin x \cdot \sin x - \cos x \cdot \cos x}{\sin^2 x}$$= \frac{-\sin^2 x - \cos^2 x}{\sin^2 x}$$= \frac{-(\sin^2 x + \cos^2 x)}{\sin^2 x}$$= \mathbf{-\frac{1}{\sin^2 x}}\]</div>
+<div class="arithmatex">\[(\mathbf{\cot x})' = \left(\frac{\cos x}{\sin x}\right)'= \frac{(\cos x)' \cdot \sin x - \cos x \cdot (\sin x)'}{\sin^2 x}= \frac{-\sin x \cdot \sin x - \cos x \cdot \cos x}{\sin^2 x}= \frac{-\sin^2 x - \cos^2 x}{\sin^2 x}= \frac{-(\sin^2 x + \cos^2 x)}{\sin^2 x}= \mathbf{-\frac{1}{\sin^2 x}}\]</div>
 <h3 id="gowne-reguy">Główne Reguły<a class="headerlink" href="#gowne-reguy" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1344,11 +1344,13 @@
 <li><span class="arithmatex">\(g'(x) = (e^x)' = e^x\)</span>.</li>
 </ul>
 </li>
-<li><strong>Zastosowanie Reguły Ilorazu:</strong>
-    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{(2\cos(2x)) \cdot e^x - \sin(2x) \cdot e^x}{(e^x)^2}\)</span>\)</span></li>
-<li><strong>Uproszczenie:</strong> Wyciągamy <span class="arithmatex">\(e^x\)</span> z licznika i skracamy:
-    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{e^x(2\cos(2x) - \sin(2x))}{e^{2x}} = \frac{2\cos(2x) - \sin(2x)}{e^x}\)</span>\)</span></li>
-<li><strong>Wynik:</strong> <span class="arithmatex">\(\mathbf{f'(x) = e^{-x}(2\cos(2x) - \sin(2x))}\)</span>.</li>
+<li>
+<p><strong>Zastosowanie Reguły Ilorazu:</strong></p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{(2\cos(2x)) \cdot e^x - \sin(2x) \cdot e^x}{(e^x)^2}\)</span>\)</span>
+4.  <strong>Uproszczenie:</strong> Wyciągamy <span class="arithmatex">\(e^x\)</span> z licznika i skracamy:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{e^x(2\cos(2x) - \sin(2x))}{e^{2x}} = \frac{2\cos(2x) - \sin(2x)}{e^x}\)</span>\)</span>
+5.  <strong>Wynik:</strong> <span class="arithmatex">\(\mathbf{f'(x) = e^{-x}(2\cos(2x) - \sin(2x))}\)</span>.</p>
+</li>
 </ol>
 <hr />
 <h2 id="iii-zastosowanie-ekstrema-lokalne-i-krzywizna">III. Zastosowanie: Ekstrema Lokalne i Krzywizna<a class="headerlink" href="#iii-zastosowanie-ekstrema-lokalne-i-krzywizna" title="Permanent link">&para;</a></h2>
@@ -1407,14 +1409,16 @@
 <p><strong>Zadanie:</strong> Mamy <span class="arithmatex">\(100 \text{ m}\)</span> ogrodzenia. Jakie wymiary prostokątnego ogródka dadzą największe pole?</p>
 <p><strong>Rozwiązanie:</strong></p>
 <ol>
-<li><strong>Definicja funkcji (Pole):</strong> Niech wymiary to <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>. 
-    Obwód: <span class="arithmatex">\(2x + 2y = 100 \implies y = 50 - x\)</span>.
-    Funkcja Pola: <span class="arithmatex">\(\mathbf{P(x) = x(50 - x) = 50x - x^2}\)</span>.</li>
-<li><strong>Pochodna:</strong> <span class="arithmatex">\(P'(x) = 50 - 2x\)</span>.</li>
-<li><strong>Punkt Stacjonarny:</strong> <span class="arithmatex">\(P'(x) = 0 \implies 50 - 2x = 0 \implies \mathbf{x = 25}\)</span>.</li>
-<li><strong>Weryfikacja:</strong> Druga pochodna <span class="arithmatex">\(P''(x) = -2\)</span> (jest ujemna, co gwarantuje maksimum).</li>
-<li><strong>Wynik:</strong> <span class="arithmatex">\(x = 25 \text{ m}\)</span>. Wymiar <span class="arithmatex">\(y = 50 - 25 = 25 \text{ m}\)</span>.
-    Wymiary to <span class="arithmatex">\(\mathbf{25 \text{ m} \times 25 \text{ m}}\)</span> (kwadrat).</li>
+<li>
+<p><strong>Definicja funkcji (Pole):</strong> Niech wymiary to <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>. </p>
+<p>Obwód: <span class="arithmatex">\(2x + 2y = 100 \implies y = 50 - x\)</span>.</p>
+<p>Funkcja Pola: <span class="arithmatex">\(\mathbf{P(x) = x(50 - x) = 50x - x^2}\)</span>.
+2.  <strong>Pochodna:</strong> <span class="arithmatex">\(P'(x) = 50 - 2x\)</span>.
+3.  <strong>Punkt Stacjonarny:</strong> <span class="arithmatex">\(P'(x) = 0 \implies 50 - 2x = 0 \implies \mathbf{x = 25}\)</span>.
+4.  <strong>Weryfikacja:</strong> Druga pochodna <span class="arithmatex">\(P''(x) = -2\)</span> (jest ujemna, co gwarantuje maksimum).
+5.  <strong>Wynik:</strong> <span class="arithmatex">\(x = 25 \text{ m}\)</span>. Wymiar <span class="arithmatex">\(y = 50 - 25 = 25 \text{ m}\)</span>.</p>
+<p>Wymiary to <span class="arithmatex">\(\mathbf{25 \text{ m} \times 25 \text{ m}}\)</span> (kwadrat).</p>
+</li>
 </ol>
 
 
