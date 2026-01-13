@@ -893,6 +893,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#podstawowe-wzory-pochodnych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podstawowe wzory pochodnych
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gowne-reguy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1128,6 +1139,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#podstawowe-wzory-pochodnych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podstawowe wzory pochodnych
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gowne-reguy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1277,7 +1299,19 @@
 </ol>
 <hr />
 <h2 id="ii-reguy-rozniczkowania">II. Reguły Różniczkowania<a class="headerlink" href="#ii-reguy-rozniczkowania" title="Permanent link">&para;</a></h2>
-<p>Aby przyspieszyć obliczenia, używamy reguł pochodnych, bazując na pochodnych podstawowych funkcji (np. <span class="arithmatex">\((\mathbf{x^n})' = nx^{n-1}\)</span>, <span class="arithmatex">\((\mathbf{e^x})' = e^x\)</span>, <span class="arithmatex">\((\mathbf{\sin x})' = \cos x\)</span>).</p>
+<p>Aby przyspieszyć obliczenia, używamy reguł pochodnych, bazując na pochodnych podstawowych funkcji.</p>
+<h3 id="podstawowe-wzory-pochodnych">Podstawowe wzory pochodnych<a class="headerlink" href="#podstawowe-wzory-pochodnych" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pochodna stałej (liczby): <span class="arithmatex">\((\mathbf{c})' = 0\)</span></li>
+<li>Pochodna potęgi: <span class="arithmatex">\((\mathbf{x^n})' = nx^{n-1}\)</span></li>
+<li>Pochodna samego x: <span class="arithmatex">\((\mathbf{x})' = 1\)</span></li>
+<li>Pochodna pierwiastka: <span class="arithmatex">\((\mathbf{\sqrt{x}})' = \frac{1}{2\sqrt{x}}\)</span></li>
+<li>Pochodna funkcji wykładniczej: <span class="arithmatex">\((\mathbf{e^x})' = e^x\)</span></li>
+<li>Pochodna logarytmu naturalnego: <span class="arithmatex">\((\mathbf{\ln x})' = \frac{1}{x}\)</span></li>
+<li>Pochodna sinusa: <span class="arithmatex">\((\mathbf{\sin x})' = \cos x\)</span></li>
+<li>Pochodna cosinusa: <span class="arithmatex">\((\mathbf{\cos x})' = -\sin x\)</span></li>
+<li>Pochodna tangensa: <span class="arithmatex">\((\mathbf{\tan x})' = \frac{1}{\cos^2 x}\)</span></li>
+</ul>
 <h3 id="gowne-reguy">Główne Reguły<a class="headerlink" href="#gowne-reguy" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1300,16 +1334,20 @@
 </ol>
 <h3 id="zadanie-i-rozwiazanie-reguy-ilorazu-i-ancuchowa">Zadanie i Rozwiązanie (Reguły Ilorazu i Łańcuchowa)<a class="headerlink" href="#zadanie-i-rozwiazanie-reguy-ilorazu-i-ancuchowa" title="Permanent link">&para;</a></h3>
 <p><strong>Zadanie:</strong> Oblicz pochodną funkcji <span class="arithmatex">\(f(x) = \frac{\sin(2x)}{e^x}\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-1.  <strong>Identyfikacja:</strong> Licznik <span class="arithmatex">\(f(x) = \sin(2x)\)</span>, Mianownik <span class="arithmatex">\(g(x) = e^x\)</span>.
-2.  <strong>Pochodne składowe:</strong>
-    * <span class="arithmatex">\(f'(x) = (\sin(2x))' = \cos(2x) \cdot 2 = 2\cos(2x)\)</span> (Reguła Łańcuchowa).
-    * <span class="arithmatex">\(g'(x) = (e^x)' = e^x\)</span>.
-3.  <strong>Zastosowanie Reguły Ilorazu:</strong>
-    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{(2\cos(2x)) \cdot e^x - \sin(2x) \cdot e^x}{(e^x)^2}\)</span>\)</span>
-4.  <strong>Uproszczenie:</strong> Wyciągamy <span class="arithmatex">\(e^x\)</span> z licznika i skracamy:
-    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{e^x(2\cos(2x) - \sin(2x))}{e^{2x}} = \frac{2\cos(2x) - \sin(2x)}{e^x}\)</span>\)</span>
-5.  <strong>Wynik:</strong> <span class="arithmatex">\(\mathbf{f'(x) = e^{-x}(2\cos(2x) - \sin(2x))}\)</span>.</p>
+<p><strong>Rozwiązanie:</strong></p>
+<ol>
+<li><strong>Identyfikacja:</strong> Licznik <span class="arithmatex">\(f(x) = \sin(2x)\)</span>, Mianownik <span class="arithmatex">\(g(x) = e^x\)</span>.</li>
+<li><strong>Pochodne składowe:</strong><ul>
+<li><span class="arithmatex">\(f'(x) = (\sin(2x))' = \cos(2x) \cdot 2 = 2\cos(2x)\)</span> (Reguła Łańcuchowa).</li>
+<li><span class="arithmatex">\(g'(x) = (e^x)' = e^x\)</span>.</li>
+</ul>
+</li>
+<li><strong>Zastosowanie Reguły Ilorazu:</strong>
+    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{(2\cos(2x)) \cdot e^x - \sin(2x) \cdot e^x}{(e^x)^2}\)</span>\)</span></li>
+<li><strong>Uproszczenie:</strong> Wyciągamy <span class="arithmatex">\(e^x\)</span> z licznika i skracamy:
+    <span class="arithmatex">\(<span class="arithmatex">\(f'(x) = \frac{e^x(2\cos(2x) - \sin(2x))}{e^{2x}} = \frac{2\cos(2x) - \sin(2x)}{e^x}\)</span>\)</span></li>
+<li><strong>Wynik:</strong> <span class="arithmatex">\(\mathbf{f'(x) = e^{-x}(2\cos(2x) - \sin(2x))}\)</span>.</li>
+</ol>
 <hr />
 <h2 id="iii-zastosowanie-ekstrema-lokalne-i-krzywizna">III. Zastosowanie: Ekstrema Lokalne i Krzywizna<a class="headerlink" href="#iii-zastosowanie-ekstrema-lokalne-i-krzywizna" title="Permanent link">&para;</a></h2>
 <p>Pochodne wyższych rzędów (druga pochodna <span class="arithmatex">\(\mathbf{f''(x)}\)</span>) opisują kształt wykresu i pomagają klasyfikować punkty stacjonarne.</p>
@@ -1335,21 +1373,31 @@
 </ul>
 <h3 id="zadanie-pena-analiza-funkcji">Zadanie: Pełna Analiza Funkcji<a class="headerlink" href="#zadanie-pena-analiza-funkcji" title="Permanent link">&para;</a></h3>
 <p><strong>Zadanie:</strong> Przeprowadź pełną analizę funkcji <span class="arithmatex">\(f(x) = x^3 - 3x\)</span> (monotoniczność, ekstrema, krzywizna).</p>
-<p><strong>Rozwiązanie:</strong>
-1.  <strong>Pierwsza pochodna i punkty stacjonarne:</strong>
-    * <span class="arithmatex">\(f'(x) = 3x^2 - 3\)</span>.
-    * <span class="arithmatex">\(f'(x) = 0 \implies 3x^2 - 3 = 0 \implies x^2 = 1 \implies \mathbf{x = -1}\)</span> i <span class="arithmatex">\(\mathbf{x = 1}\)</span>.
-2.  <strong>Monotoniczność i Ekstrema (Analiza znaku <span class="arithmatex">\(f'(x)\)</span>):</strong>
-    * <span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (-\infty, -1) \cup (1, \infty)\)</span> (Funkcja rośnie).
-    * <span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (-1, 1)\)</span> (Funkcja maleje).
-    * Zmiana znaku z + na - w <span class="arithmatex">\(x=-1\)</span> to <strong>MAKSIMUM LOKALNE</strong>.
-    * Zmiana znaku z - na + w <span class="arithmatex">\(x=1\)</span> to <strong>MINIMUM LOKALNE</strong>.
-3.  <strong>Druga pochodna i Punkt Przegięcia:</strong>
-    * <span class="arithmatex">\(f''(x) = (3x^2 - 3)' = \mathbf{6x}\)</span>.
-    * <span class="arithmatex">\(f''(x) = 0 \implies 6x = 0 \implies \mathbf{x = 0}\)</span> (Punkt Przegięcia).
-4.  <strong>Krzywizna:</strong>
-    * Dla <span class="arithmatex">\(x &lt; 0\)</span>, <span class="arithmatex">\(f''(x) &lt; 0\)</span> (Wklęsłość).
-    * Dla <span class="arithmatex">\(x &gt; 0\)</span>, <span class="arithmatex">\(f''(x) &gt; 0\)</span> (Wypukłość).</p>
+<p><strong>Rozwiązanie:</strong></p>
+<ol>
+<li><strong>Pierwsza pochodna i punkty stacjonarne:</strong><ul>
+<li><span class="arithmatex">\(f'(x) = 3x^2 - 3\)</span>.</li>
+<li><span class="arithmatex">\(f'(x) = 0 \implies 3x^2 - 3 = 0 \implies x^2 = 1 \implies \mathbf{x = -1}\)</span> i <span class="arithmatex">\(\mathbf{x = 1}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Monotoniczność i Ekstrema (Analiza znaku <span class="arithmatex">\(f'(x)\)</span>):</strong><ul>
+<li><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (-\infty, -1) \cup (1, \infty)\)</span> (Funkcja rośnie).</li>
+<li><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (-1, 1)\)</span> (Funkcja maleje).</li>
+<li>Zmiana znaku z + na - w <span class="arithmatex">\(x=-1\)</span> to <strong>MAKSIMUM LOKALNE</strong>.</li>
+<li>Zmiana znaku z - na + w <span class="arithmatex">\(x=1\)</span> to <strong>MINIMUM LOKALNE</strong>.</li>
+</ul>
+</li>
+<li><strong>Druga pochodna i Punkt Przegięcia:</strong><ul>
+<li><span class="arithmatex">\(f''(x) = (3x^2 - 3)' = \mathbf{6x}\)</span>.</li>
+<li><span class="arithmatex">\(f''(x) = 0 \implies 6x = 0 \implies \mathbf{x = 0}\)</span> (Punkt Przegięcia).</li>
+</ul>
+</li>
+<li><strong>Krzywizna:</strong><ul>
+<li>Dla <span class="arithmatex">\(x &lt; 0\)</span>, <span class="arithmatex">\(f''(x) &lt; 0\)</span> (Wklęsłość).</li>
+<li>Dla <span class="arithmatex">\(x &gt; 0\)</span>, <span class="arithmatex">\(f''(x) &gt; 0\)</span> (Wypukłość).</li>
+</ul>
+</li>
+</ol>
 <hr />
 <h2 id="iv-zastosowanie-problemy-optymalizacyjne">IV. Zastosowanie: Problemy Optymalizacyjne<a class="headerlink" href="#iv-zastosowanie-problemy-optymalizacyjne" title="Permanent link">&para;</a></h2>
 <p>Pochodne są kluczowe w optymalizacji, pozwalając znaleźć maksymalne lub minimalne wartości (np. największy zysk, najmniejszy koszt).</p>
@@ -1357,17 +1405,14 @@
 <p><strong>Zadanie:</strong> Mamy <span class="arithmatex">\(100 \text{ m}\)</span> ogrodzenia. Jakie wymiary prostokątnego ogródka dadzą największe pole?</p>
 <p><strong>Rozwiązanie:</strong></p>
 <ol>
-<li><strong>Definicja funkcji (Pole):</strong> Niech wymiary to <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>. Obwód: <span class="arithmatex">\(2x + 2y = 100 \implies y = 50 - x\)</span>.<ul>
-<li>Funkcja Pola: <span class="arithmatex">\(\mathbf{P(x) = x(50 - x) = 50x - x^2}\)</span>.</li>
-</ul>
-</li>
+<li><strong>Definicja funkcji (Pole):</strong> Niech wymiary to <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>. 
+    Obwód: <span class="arithmatex">\(2x + 2y = 100 \implies y = 50 - x\)</span>.
+    Funkcja Pola: <span class="arithmatex">\(\mathbf{P(x) = x(50 - x) = 50x - x^2}\)</span>.</li>
 <li><strong>Pochodna:</strong> <span class="arithmatex">\(P'(x) = 50 - 2x\)</span>.</li>
 <li><strong>Punkt Stacjonarny:</strong> <span class="arithmatex">\(P'(x) = 0 \implies 50 - 2x = 0 \implies \mathbf{x = 25}\)</span>.</li>
 <li><strong>Weryfikacja:</strong> Druga pochodna <span class="arithmatex">\(P''(x) = -2\)</span> (jest ujemna, co gwarantuje maksimum).</li>
-<li><strong>Wynik:</strong> <span class="arithmatex">\(x = 25 \text{ m}\)</span>. Wymiar <span class="arithmatex">\(y = 50 - 25 = 25 \text{ m}\)</span>.<ul>
-<li>Wymiary to <span class="arithmatex">\(\mathbf{25 \text{ m} \times 25 \text{ m}}\)</span> (kwadrat).</li>
-</ul>
-</li>
+<li><strong>Wynik:</strong> <span class="arithmatex">\(x = 25 \text{ m}\)</span>. Wymiar <span class="arithmatex">\(y = 50 - 25 = 25 \text{ m}\)</span>.
+    Wymiary to <span class="arithmatex">\(\mathbf{25 \text{ m} \times 25 \text{ m}}\)</span> (kwadrat).</li>
 </ol>
 
 
