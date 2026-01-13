@@ -1008,15 +1008,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-ciagosc-funkcji" class="md-nav__link">
+  <a href="#iv-ciagosc-funkcji-i-twierdzenie-darboux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IV. Ciągłość funkcji
+        IV. Ciągłość funkcji i twierdzenie darboux
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="IV. Ciągłość funkcji">
+    <nav class="md-nav" aria-label="IV. Ciągłość funkcji i twierdzenie darboux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1024,6 +1024,28 @@
     <span class="md-ellipsis">
       
         Ciągłość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rodzaje-nieciagosci-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rodzaje nieciągłości funkcji
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twierdzenie-darbouxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Twierdzenie Darbouxa
       
     </span>
   </a>
@@ -1337,15 +1359,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-ciagosc-funkcji" class="md-nav__link">
+  <a href="#iv-ciagosc-funkcji-i-twierdzenie-darboux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IV. Ciągłość funkcji
+        IV. Ciągłość funkcji i twierdzenie darboux
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="IV. Ciągłość funkcji">
+    <nav class="md-nav" aria-label="IV. Ciągłość funkcji i twierdzenie darboux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1353,6 +1375,28 @@
     <span class="md-ellipsis">
       
         Ciągłość
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rodzaje-nieciagosci-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rodzaje nieciągłości funkcji
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twierdzenie-darbouxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Twierdzenie Darbouxa
       
     </span>
   </a>
@@ -1583,12 +1627,33 @@
 </li>
 </ol>
 <hr />
-<h3 id="iv-ciagosc-funkcji">IV. Ciągłość funkcji<a class="headerlink" href="#iv-ciagosc-funkcji" title="Permanent link">&para;</a></h3>
+<h3 id="iv-ciagosc-funkcji-i-twierdzenie-darboux">IV. Ciągłość funkcji i twierdzenie darboux<a class="headerlink" href="#iv-ciagosc-funkcji-i-twierdzenie-darboux" title="Permanent link">&para;</a></h3>
 <h4 id="ciagosc">Ciągłość<a class="headerlink" href="#ciagosc" title="Permanent link">&para;</a></h4>
 <p>Pojęcie granicy definiuje <strong>ciągłość</strong> funkcji. Funkcja jest ciągła w punkcie <span class="arithmatex">\(x_0\)</span>, gdy wartość granicy jest równa wartości funkcji:</p>
 <div class="arithmatex">\[\lim_{x \to x_0} f(x) = f(x_0)\]</div>
-<p><strong>Przykłady nieciągłości funkcji</strong></p>
+<p><strong>Funkcja z "dziurą" (nieciągłość usuwalna)</strong> </p>
+<div class="arithmatex">\[f(x) = \frac{x^2 - 1}{x - 1}\]</div>
+<p>Ponieważ nie wolno dzielić przez zero, więc funkcja nie istnieje dla <span class="arithmatex">\(x = 1\)</span>.Funkcja ma w tym miejscu niezamalowane kółko.</p>
+<h4 id="rodzaje-nieciagosci-funkcji">Rodzaje nieciągłości funkcji<a class="headerlink" href="#rodzaje-nieciagosci-funkcji" title="Permanent link">&para;</a></h4>
 <p><img alt="Rodzaje nieciaglosci funkcji " src="../../images/Nieciaglosc.png" /></p>
+<h4 id="twierdzenie-darbouxa">Twierdzenie Darbouxa<a class="headerlink" href="#twierdzenie-darbouxa" title="Permanent link">&para;</a></h4>
+<p>Jeśli funkcja <span class="arithmatex">\(f\)</span> jest ciągła na przedziale domkniętym <span class="arithmatex">\([a, b]\)</span>, to dla każdej wartości <span class="arithmatex">\(y\)</span> leżącej pomiędzy <span class="arithmatex">\(f(a)\)</span> a <span class="arithmatex">\(f(b)\)</span> istnieje co najmniej jeden taki punkt <span class="arithmatex">\(c\)</span> należący do przedziału <span class="arithmatex">\((a, b)\)</span>, że:</p>
+<div class="arithmatex">\[f(c) = y\]</div>
+<p>Mówiąc najprościej: jeśli funkcja ciągła przechodzi od jednej wartości do drugiej, to po drodze musi przyjąć każdą wartość pośrednią.</p>
+<p>W praktyce: twierdzenia Darboux używa się najczęściej do udowadniania, że równanie ma rozwiązanie (miejsce zerowe), nawet jeśli nie umiemy go dokładnie wyliczyć.</p>
+<p>Zasada: Jeśli na końcach przedziału funkcja ma różne znaki (jeden wynik ujemny, drugi dodatni), to gdzieś w środku musi przeciąć oś OX (czyli wynieść 0).Przykład krok po kroku</p>
+<p><strong>Zadanie</strong>: Wykaż, że równanie <span class="arithmatex">\(x^3 + x - 1 = 0\)</span> ma co najmniej jedno rozwiązanie w przedziale <span class="arithmatex">\([0, 1]\)</span>.</p>
+<ul>
+<li>
+<p>Zdefiniuj funkcję: <span class="arithmatex">\(f(x) = x^3 + x - 1\)</span>. Jest to wielomian, więc jest funkcją ciągłą.</p>
+</li>
+<li>
+<p>Sprawdź wartości na końcach przedziału:</p>
+</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x = 0\)</span>: <span class="arithmatex">\(f(0) = 0^3 + 0 - 1 = \mathbf{-1}\)</span> (wynik ujemny)</p>
+<p>Dla <span class="arithmatex">\(x = 1\)</span>: <span class="arithmatex">\(f(1) = 1^3 + 1 - 1 = \mathbf{1}\)</span> (wynik dodatni)</p>
+<p>Wniosek:Skoro <span class="arithmatex">\(f(0) = -1\)</span>, a <span class="arithmatex">\(f(1) = 1\)</span>, to funkcja musi „przejść” przez wszystkie liczby między <span class="arithmatex">\(-1\)</span> a <span class="arithmatex">\(1\)</span>. Ponieważ zero leży między tymi wartościami, to zgodnie z twierdzeniem Darboux musi istnieć taki argument <span class="arithmatex">\(c \in (0, 1)\)</span>, dla którego: <span class="arithmatex">\(f(c) = 0\)</span> <strong>To dowodzi, że równanie ma co najmniej jedno rozwiązanie w tym przedziale.</strong></p>
 
 
 
