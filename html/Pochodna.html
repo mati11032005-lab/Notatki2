@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizualizacja Ilorazu Różnicowego</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.js"></script>
+    <style>
+        :root {
+            --bg: #0f172a; --panel: #1e293b; --input: #334155;
+            --text: #f1f5f9; --accent: #38bdf8;
+            --point-p: #f87171; --point-q: #60a5fa; --secant: #fbbf24;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
+        
+        .sidebar { width: 400px; background: var(--panel); padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; box-shadow: 5px 0 15px rgba(0,0,0,0.3); z-index: 10; }
+        .viewer { flex-grow: 1; position: relative; }
+        #plot { width: 100%; height: 100%; }
+
+        h1 { font-size: 1.2rem; margin: 0; color: var(--accent); text-align: center; font-weight: 800; }
+        
+        .control-group { background: var(--bg); padding: 15px; border-radius: 10px; border: 1px solid var(--input); }
+        label { font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; text-transform: uppercase; font-weight: bold; }
+        
+        input[type="text"] { width: 100%; background: var(--input); border: 1px solid #475569; color: white; padding: 10px; border-radius: 6px; font-size: 1rem; box-sizing: border-box; outline: none; margin-bottom: 10px; }
+        
+        .slider-wrap { margin-bottom: 15px; }
+        .slider-header { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px; }
+        input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent); }
+
+        .calc-card { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 15px; border-left: 4px solid var(--secant); }
+        .calc-card h3 { margin: 0 0 10px 0; font-size: 0.85rem; color: var(--secant); text-transform: uppercase; }
+        .formula { font-family: 'serif'; font-size: 1.1rem; text-align: center; margin: 10px 0; background: #000; padding: 10px; border-radius: 5px; }
+        .data-row { font-size: 0.9rem; line-height: 1.5; color: #cbd5e1; }
+
+        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; margin-top: 5px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>Iloraz Różnicowy</h1>
+    
+    <div class="control-group">
+        <label>Funkcja f(x):</label>
+        <input type="text" id="equation" value="0.5 * x^2" oninput="update()">
+        
+        <div class="slider-wrap">
+            <div class="slider-header"><span>Punkt x₀</span> <b id="val-x0">2.0</b></div>
+            <input type="range" id="x0" min="-5" max="5" step="0.1" value="2" oninput="update()">
+        </div>
+
+        <div class="slider-wrap">
+            <div class="slider-header"><span>Przyrost h</span> <b id="val-h">2.0</b></div>
+            <input type="range" id="h" min="0.01" max="5" step="0.05" value="2" oninput="update()">
+        </div>
+    </div>
+
+    <div class="calc-card">
+        <h3>Wzór i Wynik</h3>
+        <div class="formula">
+            Δy / Δx = <span id="res-val" style="color:var(--secant); font-weight:bold;">0.00</span>
+        </div>
+        <div class="data-row">
+            f(x₀) = <span id="res-fx0">0</span><br>
+            f(x₀ + h) = <span id="res-fxh">0</span><br>
+            <b>Nachylenie siecznej = <span id="res-slope">0</span></b>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label>Legenda Wykresu</label>
+        <div class="legend-item"><span class="dot" style="background:var(--accent)"></span> Funkcja f(x)</div>
+        <div class="legend-item"><span class="dot" style="background:var(--secant)"></span> Sieczna (iloraz różnicowy)</div>
+        <div class="legend-item"><span class="dot" style="background:var(--point-p)"></span> Punkt P (x₀, f(x₀))</div>
+        <div class="legend-item"><span class="dot" style="background:var(--point-q)"></span> Punkt Q (x₀+h, f(x₀+h))</div>
+    </div>
+</div>
+
+<div class="viewer">
+    <div id="plot"></div>
+</div>
+
+<script>
+    function update() {
+        const exprString = document.getElementById('equation').value;
+        const x0 = parseFloat(document.getElementById('x0').value);
+        const h = parseFloat(document.getElementById('h').value);
+        
+        document.getElementById('val-x0').innerText = x0.toFixed(1);
+        document.getElementById('val-h').innerText = h.toFixed(2);
+
+        try {
+            const node = math.parse(exprString);
+            const f = (x) => node.evaluate({x: x});
+
+            const y0 = f(x0);
+            const x1 = x0 + h;
+            const y1 = f(x1);
+            const slope = (y1 - y0) / h;
+
+            // Dane do wykresu funkcji
+            const xRange = math.range(-8, 8, 0.1).toArray();
+            const yValues = xRange.map(x => {
+                try { return f(x); } catch { return NaN; }
+            });
+
+            // Dane siecznej (prosta przechodząca przez P i Q)
+            // y = slope * (x - x0) + y0
+            const secantX = [x0 - 2, x1 + 2];
+            const secantY = secantX.map(x => slope * (x - x0) + y0);
+
+            // Trójkąt przyrostów
+            const triangleTrace = {
+                x: [x0, x1, x1],
+                y: [y0, y0, y1],
+                mode: 'lines',
+                line: { color: 'rgba(255,255,255,0.3)', dash: 'dot' },
+                name: 'Przyrosty',
+                showlegend: false
+            };
+
+            const traces = [
+                { x: xRange, y: yValues, mode: 'lines', name: 'f(x)', line: { color: '#38bdf8', width: 3 } },
+                { x: secantX, y: secantY, mode: 'lines', name: 'Sieczna', line: { color: '#fbbf24', width: 2, dash: 'dash' } },
+                triangleTrace,
+                { x: [x0], y: [y0], mode: 'markers', name: 'P', marker: { color: '#f87171', size: 12 } },
+                { x: [x1], y: [y1], mode: 'markers', name: 'Q', marker: { color: '#60a5fa', size: 12 } }
+            ];
+
+            // Aktualizacja UI
+            document.getElementById('res-val').innerText = slope.toFixed(3);
+            document.getElementById('res-fx0').innerText = y0.toFixed(2);
+            document.getElementById('res-fxh').innerText = y1.toFixed(2);
+            document.getElementById('res-slope').innerText = slope.toFixed(3);
+
+            Plotly.react('plot', traces, {
+                paper_bgcolor: '#0f172a', plot_bgcolor: '#0f172a',
+                margin: { l: 40, r: 20, b: 40, t: 20 },
+                xaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [-7, 7] },
+                yaxis: { gridcolor: '#1e293b', zerolinecolor: '#475569', color: '#94a3b8', range: [-5, 15] },
+                showlegend: false,
+                annotations: [
+                    { x: x0 + h/2, y: y0, text: 'Δx = h', showarrow: false, font: {color: '#94a3b8'}, ay: 20 },
+                    { x: x1, y: y0 + (y1-y0)/2, text: 'Δy', showarrow: false, font: {color: '#94a3b8'}, ax: 30 }
+                ]
+            });
+
+        } catch (e) {
+            console.error("Błąd formuły");
+        }
+    }
+
+    update();
+</script>
+</body>
+</html>
