@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizualizacja Sum Riemanna</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --bg: #f4f6f8;
+            --panel-bg: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 20px; }
+        
+        /* Panel sterowania */
+        .controls { background: var(--panel-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content; }
+        h1 { font-size: 1.5rem; color: var(--secondary); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; color: #555; }
+        input[type="text"], input[type="number"], select {
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; box-sizing: border-box; transition: 0.3s;
+        }
+        input:focus, select:focus { border-color: var(--primary); outline: none; background: #f0f8ff; }
+        
+        /* Suwak */
+        input[type="range"] { width: 100%; margin-top: 5px; cursor: pointer; }
+        .range-value { text-align: right; font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-top: 5px; }
+
+        /* Wyniki */
+        .results { margin-top: 30px; padding-top: 20px; border-top: 2px solid #eee; }
+        .res-box { margin-bottom: 15px; }
+        .res-label { font-size: 0.85rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
+        .res-value { font-size: 1.4rem; font-weight: bold; color: var(--secondary); }
+        .res-diff { font-size: 0.9rem; color: var(--accent); font-weight: 600; }
+
+        /* Wykres */
+        .chart-container { background: var(--panel-bg); padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-height: 600px; }
+        
+        .error-msg { color: var(--accent); font-size: 0.9rem; margin-top: 5px; display: none; }
+
+        @media (max-width: 800px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="controls">
+        <h1>Parametry Całki</h1>
+
+        <div class="input-group">
+            <label>Funkcja f(x):</label>
+            <input type="text" id="funcInput" value="x^2 + 1" placeholder="np. sin(x), x^2, 1/x">
+            <div id="funcError" class="error-msg">Błąd we wzorze funkcji!</div>
+        </div>
+
+        <div class="input-group" style="display: flex; gap: 10px;">
+            <div style="flex:1">
+                <label>Start (a):</label>
+                <input type="number" id="aInput" value="0" step="0.5">
+            </div>
+            <div style="flex:1">
+                <label>Koniec (b):</label>
+                <input type="number" id="bInput" value="4" step="0.5">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Liczba prostokątów (n):</label>
+            <input type="range" id="nSlider" min="1" max="100" value="10">
+            <div class="range-value"><span id="nValue">10</span></div>
+        </div>
+
+        <div class="input-group">
+            <label>Metoda aproksymacji:</label>
+            <select id="methodInput">
+                <option value="left">Lewostronna (Left Riemann)</option>
+                <option value="mid">Punktu Środkowego (Midpoint)</option>
+                <option value="right">Prawostronna (Right Riemann)</option>
+            </select>
+        </div>
+
+        <div class="results">
+            <div class="res-box">
+                <div class="res-label">Suma Riemanna (Pole prostokątów)</div>
+                <div class="res-value" id="riemannSumVal">--</div>
+            </div>
+            <div class="res-box">
+                <div class="res-label">Dokładna Całka (Numeryczna)</div>
+                <div class="res-value" id="exactVal" style="color: #27ae60;">--</div>
+            </div>
+            <div class="res-box">
+                <div class="res-label">Błąd aproksymacji</div>
+                <div class="res-diff" id="errorVal">--</div>
+            </div>
+            <div style="font-size: 0.8rem; color: #aaa; margin-top:10px;">
+                Szerokość prostokąta (Δx): <span id="dxVal">--</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div id="plotDiv" style="width:100%; height:100%;"></div>
+    </div>
+</div>
+
+<script>
+    // --- Konfiguracja i Zmienne ---
+    const funcInput = document.getElementById('funcInput');
+    const aInput = document.getElementById('aInput');
+    const bInput = document.getElementById('bInput');
+    const nSlider = document.getElementById('nSlider');
+    const nValueDisplay = document.getElementById('nValue');
+    const methodInput = document.getElementById('methodInput');
+    const funcError = document.getElementById('funcError');
+
+    // --- Funkcja Obliczająca Całkę (Simpsona) dla porównania ---
+    // Służy do pokazania "rzeczywistej" wartości
+    function simpsonIntegrate(f, a, b, n = 1000) {
+        if (n % 2 !== 0) n++; // Simpson wymaga parzystego n
+        const h = (b - a) / n;
+        let sum = f(a) + f(b);
+        for (let i = 1; i < n; i++) {
+            sum += f(a + i * h) * (i % 2 === 0 ? 2 : 4);
+        }
+        return sum * h / 3;
+    }
+
+    // --- Główna Funkcja Rysująca ---
+    function updatePlot() {
+        try {
+            // 1. Pobranie danych
+            const expr = funcInput.value;
+            const a = parseFloat(aInput.value);
+            const b = parseFloat(bInput.value);
+            const n = parseInt(nSlider.value);
+            const method = methodInput.value;
+
+            nValueDisplay.textContent = n;
+
+            // Kompilacja funkcji
+            const code = math.compile(expr);
+            const f = (x) => code.evaluate({x: x});
+
+            // Walidacja - czy funkcja zwraca liczbę dla a i b?
+            f(a); f(b);
+            funcError.style.display = 'none';
+
+            // 2. Obliczenia Riemanna
+            const dx = (b - a) / n;
+            let currentSum = 0;
+            
+            // Tablice do wykresu prostokątów (Bar Chart)
+            let xBars = [];
+            let yBars = [];
+            
+            for (let i = 0; i < n; i++) {
+                let x_eval; // Punkt w którym liczymy wysokość
+                let x_pos;  // Środek prostokąta na wykresie
+
+                if (method === 'left') {
+                    x_eval = a + i * dx;
+                } else if (method === 'right') {
+                    x_eval = a + (i + 1) * dx;
+                } else { // mid
+                    x_eval = a + (i + 0.5) * dx;
+                }
+
+                const height = f(x_eval);
+                currentSum += height * dx;
+
+                // Do wykresu słupkowego Plotly potrzebujemy środka słupka
+                // Słupek zaczyna się na (a + i*dx), szerokość dx, więc środek to:
+                x_pos = (a + i * dx) + (dx / 2);
+                
+                xBars.push(x_pos);
+                yBars.push(height);
+            }
+
+            // 3. Generowanie Wykresu Liniowego Funkcji (Gładka linia)
+            // Generujemy więcej punktów niż n, żeby linia była ładna
+            const resolution = 500;
+            const xLine = [];
+            const yLine = [];
+            const step = (b - a) / resolution;
+            
+            // Margines dla wykresu, żeby nie kończył się idealnie na a i b
+            const margin = (b - a) * 0.1;
+            for (let x = a - margin; x <= b + margin; x += step) {
+                xLine.push(x);
+                yLine.push(f(x));
+            }
+
+            // 4. Konfiguracja Plotly
+            const traceFunction = {
+                x: xLine,
+                y: yLine,
+                mode: 'lines',
+                name: `f(x) = ${expr}`,
+                line: { color: '#2c3e50', width: 3 }
+            };
+
+            const traceRectangles = {
+                x: xBars,
+                y: yBars,
+                type: 'bar',
+                width: dx, // Szerokość słupków
+                name: 'Prostokąty',
+                marker: {
+                    color: 'rgba(52, 152, 219, 0.4)', // Półprzezroczysty niebieski
+                    line: {
+                        color: 'rgba(52, 152, 219, 1)',
+                        width: 1
+                    }
+                },
+                hoverinfo: 'x+y'
+            };
+
+            const layout = {
+                title: 'Wizualizacja Graficzna',
+                xaxis: { title: 'Oś X', range: [a - margin, b + margin] },
+                yaxis: { title: 'f(x)' },
+                showlegend: true,
+                bargap: 0, // Brak odstępu między słupkami (kluczowe dla Riemanna!)
+                hovermode: 'closest'
+            };
+
+            Plotly.newPlot('plotDiv', [traceRectangles, traceFunction], layout, {responsive: true});
+
+            // 5. Aktualizacja Wyników Liczbowych
+            const exact = simpsonIntegrate(f, a, b);
+            const error = Math.abs(exact - currentSum);
+
+            document.getElementById('riemannSumVal').textContent = currentSum.toFixed(5);
+            document.getElementById('exactVal').textContent = exact.toFixed(5);
+            document.getElementById('errorVal').textContent = error.toFixed(5);
+            document.getElementById('dxVal').textContent = dx.toFixed(4);
+
+        } catch (err) {
+            console.error(err);
+            funcError.style.display = 'block';
+            funcError.textContent = "Błąd: Sprawdź składnię funkcji";
+        }
+    }
+
+    // --- Event Listeners ---
+    const inputs = [funcInput, aInput, bInput, nSlider, methodInput];
+    inputs.forEach(input => {
+        input.addEventListener('input', updatePlot);
+    });
+
+    // Inicjalizacja na start
+    updatePlot();
+
+</script>
+
+</body>
+</html>
