@@ -965,6 +965,9 @@
 
   <h1>4.Całki</h1>
 
+<p>Funkcja pierwotna (antypochodna) F(x) dla danej funkcji f(x) to funkcja, której pochodna jest równa funkcji f(x), czyli <span class="arithmatex">\(F^{\prime }(x)=f(x)\)</span> dla każdego <span class="arithmatex">\(x\)</span> z danego przedziału. Jest to działanie odwrotne do różniczkowania; proces znajdowania funkcji pierwotnej nazywamy całkowaniem. Jeśli funkcja f(x) ma jedną funkcję pierwotną F(x), to ma ich nieskończenIe wiele, które różnią się o stałą, np. <span class="arithmatex">\(F(x)+C\)</span>, gdzie C jest dowolną stałą. </p>
+<p>Podstawowe Twierdzenie Rachunku Całkowego (Wzór Newtona-Leibniza)Wcześniej nauczyliśmy się szukać funkcji pierwotnej <span class="arithmatex">\(F(x)\)</span> (całka nieoznaczona). Przed chwilą powiedzieliśmy, że całka oznaczona to pole pod wykresem. Jak to połączyć?Robi to wzór Newtona-Leibniza:<span class="arithmatex">\(<span class="arithmatex">\(\int_{a}^{b} f(x) \, dx = F(b) - F(a)\)</span>\)</span>O co w tym chodzi?Zamiast bawić się w nieskończone sumowanie prostokątów (sumy Riemanna), wystarczy:Znaleźć funkcję pierwotną <span class="arithmatex">\(F(x)\)</span> (tak jak w Temacie 1).Podstawić do niej górną granicę całkowania (<span class="arithmatex">\(b\)</span>).Podstawić dolną granicę (<span class="arithmatex">\(a\)</span>).Odjąć te dwa wyniki od siebie.</p>
+<p>Ważna uwaga techniczna: Przy obliczaniu całki oznaczonej stała <span class="arithmatex">\(C\)</span> nam znika, ponieważ <span class="arithmatex">\((F(b) + C) - (F(a) + C) = F(b) - F(a)\)</span>. Więc tutaj o <span class="arithmatex">\(C\)</span> nie musisz się martwić.</p>
 <table>
 <thead>
 <tr>
@@ -1019,10 +1022,11 @@ U nas <span class="arithmatex">\(n = 1\)</span>, więc:</p>
 <div class="arithmatex">\[2 \cdot \left( \frac{x^2}{2} \right) + C\]</div>
 <p><strong>Krok 3: Uproszczenie wyniku</strong>
 Zauważ, że dwójka w liczniku i dwójka w mianowniku się skracają:</p>
-<div class="arithmatex">\[\cancel{2} \cdot \frac{x^2}{\cancel{2}} + C = x^2 + C\]</div>
+<div class="arithmatex">\[{2} \cdot \frac{x^2}{{2}} + C = x^2 + C\]</div>
 <p><strong>Sprawdzenie (Pochodna)</strong></p>
 <p>Aby mieć 100% pewności, policzmy pochodną z naszego wyniku:</p>
 <div class="arithmatex">\[(x^2 + C)' = (x^2)' + (C)' = 2x + 0 = 2x\]</div>
+<p>obliczymy pole pod wykresem funkcji <span class="arithmatex">\(f(x) = 2x\)</span> na przedziale od <span class="arithmatex">\(x = 0\)</span> do <span class="arithmatex">\(x = 3\)</span>.Krok 1: Zapisanie całki oznaczonejChcemy obliczyć:<span class="arithmatex">\(<span class="arithmatex">\(\int_{0}^{3} 2x \, dx\)</span>\)</span>Krok 2: Znalezienie funkcji pierwotnejZ Tematu 1 wiemy już, że funkcją pierwotną dla <span class="arithmatex">\(2x\)</span> jest <span class="arithmatex">\(x^2\)</span>. W całkach oznaczonych zapisujemy to w specjalnym nawiasie z granicami:<span class="arithmatex">\(<span class="arithmatex">\(\left[ x^2 \right]_{0}^{3}\)</span>\)</span>Krok 3: Zastosowanie wzoru Newtona-LeibnizaPodstawiamy najpierw górną granicę (<span class="arithmatex">\(3\)</span>), a potem dolną (<span class="arithmatex">\(0\)</span>) i odejmujemy wyniki:<span class="arithmatex">\(<span class="arithmatex">\(F(3) - F(0) = (3^2) - (0^2) = 9 - 0 = \mathbf{9}\)</span>\)</span>Krok 4: Sprawdzenie geometryczne (czy to ma sens?)Narysujmy to sobie w wyobraźni (lub spójrz na opis poniżej):Funkcja <span class="arithmatex">\(f(x) = 2x\)</span> to linia prosta przechodząca przez środek układu współrzędnych.Na przedziale od <span class="arithmatex">\(0\)</span> do <span class="arithmatex">\(3\)</span>, obszar pod tą linią tworzy trójkąt prostokątny.Podstawa (<span class="arithmatex">\(b\)</span>): wynosi <span class="arithmatex">\(3\)</span> (od <span class="arithmatex">\(0\)</span> do <span class="arithmatex">\(3\)</span>).Wysokość (<span class="arithmatex">\(h\)</span>): to wartość funkcji w punkcie <span class="arithmatex">\(x=3\)</span>, czyli <span class="arithmatex">\(f(3) = 2 \cdot 3 = 6\)</span>.Teraz użyjmy wzoru na pole trójkąta z podstawówki:<span class="arithmatex">\(<span class="arithmatex">\(P = \frac{1}{2} \cdot podstawa \cdot wysokość = \frac{1}{2} \cdot 3 \cdot 6 = \mathbf{9}\)</span>\)</span>Wynik jest identyczny! Całka poprawnie obliczyła pole powierzchni.</p>
 
 
 
