@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-metoda-przez-podstawienie-metoda-t" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -894,6 +899,103 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-metoda-przez-podstawienie-metoda-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Metoda przez Podstawienie (Metoda "t")
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Metoda przez Podstawienie (Metoda &#34;t&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorytm-postepowania-z-komentarzami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorytm postępowania z komentarzami:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-z-komentarzami-int-x-cdot-ex2-dx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład z komentarzami: \(\int x \cdot e^{x^2} \, dx\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metoda-przez-czesci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Metoda przez Części
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metoda przez Części">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorytm-postepowania-z-komentarzami_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorytm postępowania z komentarzami:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykad-z-komentarzami-int-x-cdot-lnx-dx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykład z komentarzami: \(\int x \cdot \ln(x) \, dx\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szybka-sciaga-strategia-wyboru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Szybka ściąga: Strategia wyboru
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -911,7 +1013,94 @@
 
   <h1>Pomoc</h1>
 
-
+<h2 id="1-metoda-przez-podstawienie-metoda-t">1. Metoda przez Podstawienie (Metoda "t")<a class="headerlink" href="#1-metoda-przez-podstawienie-metoda-t" title="Permanent link">&para;</a></h2>
+<p>Stosujemy ją, gdy funkcja podcałkowa składa się z "funkcji wewnętrznej" oraz jej pochodnej (lub czegoś bardzo do niej podobnego).</p>
+<h3 id="algorytm-postepowania-z-komentarzami">Algorytm postępowania z komentarzami:<a class="headerlink" href="#algorytm-postepowania-z-komentarzami" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Analiza:</strong> Poszukaj fragmentu, który "psuje" prostotę całki (np. to, co jest pod pierwiastkiem, w potędze lub w nawiasie). Sprawdź, czy jego pochodna stoi obok.</li>
+<li><strong>Podstawienie:</strong> Wybrany fragment nazywamy nową zmienną <span class="arithmatex">\(t\)</span>. Cel: zamienić skomplikowany zapis na jedną literę.</li>
+<li><strong>Różniczkowanie (Kluczowy krok):</strong> Musimy wiedzieć, jak szybko zmienia się <span class="arithmatex">\(t\)</span> względem <span class="arithmatex">\(x\)</span>. Liczymy pochodną i dopisujemy <span class="arithmatex">\(dx\)</span> oraz <span class="arithmatex">\(dt\)</span>. <em>Komentarz: Bez tego kroku nie możemy legalnie zamienić symbolu całowania.</em></li>
+<li><strong>Podmiana:</strong> Wstawiamy <span class="arithmatex">\(t\)</span> i <span class="arithmatex">\(dt\)</span> w odpowiednie miejsca. <em>Komentarz: Jeśli po tym kroku w całce nadal masz jakieś <span class="arithmatex">\(x\)</span>, to znaczy, że albo podstawienie było złe, albo musisz jeszcze coś przekształcić.</em></li>
+<li><strong>Całkowanie:</strong> Teraz liczysz całkę z tablicy (np. <span class="arithmatex">\(\int e^t, \int t^n\)</span>).</li>
+<li><strong>Powrót:</strong> Pamiętaj, że wynik musi być w tych samych "jednostkach" co pytanie. Zamień <span class="arithmatex">\(t\)</span> z powrotem na wyrażenie z <span class="arithmatex">\(x\)</span>.</li>
+</ol>
+<h3 id="przykad-z-komentarzami-int-x-cdot-ex2-dx">Przykład z komentarzami: <span class="arithmatex">\(\int x \cdot e^{x^2} \, dx\)</span><a class="headerlink" href="#przykad-z-komentarzami-int-x-cdot-ex2-dx" title="Permanent link">&para;</a></h3>
+<p><strong>Krok 1 (Wybór):</strong> Widzimy <span class="arithmatex">\(x^2\)</span> w potędze. Pochodna z <span class="arithmatex">\(x^2\)</span> to <span class="arithmatex">\(2x\)</span>. Mamy <span class="arithmatex">\(x\)</span> przed <span class="arithmatex">\(e\)</span>, więc pasuje idealnie!</p>
+<p><strong>Krok 2 i 3 (Zapis pomocniczy):</strong>
+$$
+\left| \begin{matrix} 
+t = x^2 &amp; \text{// To nasze podstawienie} \ 
+dt = 2x \, dx &amp; \text{// Pochodna obu stron} \
+\frac{1}{2} dt = x \, dx &amp; \text{// Dzielimy przez 2, bo w całce mamy tylko } x \, dx
+\end{matrix} \right|
+$$</p>
+<p><strong>Krok 4 (Podmiana):</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\int \underbrace{e^t}_{e^{x^2}} \cdot \underbrace{\frac{1}{2} dt}_{x \, dx}\)</span>\)</span></p>
+<p><strong>Krok 5 (Obliczenie):</strong> Wyciągamy <span class="arithmatex">\(\frac{1}{2}\)</span> przed całkę. Całka z <span class="arithmatex">\(e^t\)</span> to po prostu <span class="arithmatex">\(e^t\)</span>.
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} e^t + C\)</span>\)</span></p>
+<p><strong>Krok 6 (Powrót):</strong> Podstawiamy <span class="arithmatex">\(x^2\)</span> za <span class="arithmatex">\(t\)</span>.
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{\frac{1}{2} e^{x^2} + C}\)</span>\)</span></p>
+<hr />
+<h2 id="2-metoda-przez-czesci">2. Metoda przez Części<a class="headerlink" href="#2-metoda-przez-czesci" title="Permanent link">&para;</a></h2>
+<p>Stosujemy ją, gdy mamy iloczyn dwóch funkcji różnych "gatunków". Wzór: <span class="arithmatex">\(\int u \, dv = uv - \int v \, du\)</span>.</p>
+<h3 id="algorytm-postepowania-z-komentarzami_1">Algorytm postępowania z komentarzami:<a class="headerlink" href="#algorytm-postepowania-z-komentarzami_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Wybór <span class="arithmatex">\(u\)</span> oraz <span class="arithmatex">\(dv\)</span>:</strong></li>
+<li><span class="arithmatex">\(u\)</span>: to funkcja, którą chcemy "zniszczyć" pochodną (np. wielomian <span class="arithmatex">\(x\)</span> zmieni się w <span class="arithmatex">\(1\)</span>).</li>
+<li><span class="arithmatex">\(dv\)</span>: to funkcja, której "nie boimy się" całkować (np. <span class="arithmatex">\(e^x\)</span> lub <span class="arithmatex">\(\sin x\)</span> po całce nadal są łatwe).</li>
+<li><em>Komentarz: Wyjątkiem jest <span class="arithmatex">\(\ln x\)</span> – on zawsze musi być <span class="arithmatex">\(u\)</span>, bo nie umiemy go łatwo scałkować na początku.</em></li>
+<li><strong>Obliczenia pomocnicze:</strong> Z <span class="arithmatex">\(u\)</span> robisz pochodną (<span class="arithmatex">\(du\)</span>), a z <span class="arithmatex">\(dv\)</span> robisz całkę (<span class="arithmatex">\(v\)</span>).</li>
+<li><strong>Podstawienie do wzoru:</strong> Składamy "puzzle" według wzoru. <em>Komentarz: Uważaj na znaki, zwłaszcza jeśli w wyniku całowania <span class="arithmatex">\(dv\)</span> pojawił się minus!</em></li>
+<li><strong>Finał:</strong> Liczysz ostatnią całkę. Jeśli wybrałeś <span class="arithmatex">\(u\)</span> i <span class="arithmatex">\(dv\)</span> poprawnie, ta całka będzie prostsza od wyjściowej.</li>
+</ol>
+<h3 id="przykad-z-komentarzami-int-x-cdot-lnx-dx">Przykład z komentarzami: <span class="arithmatex">\(\int x \cdot \ln(x) \, dx\)</span><a class="headerlink" href="#przykad-z-komentarzami-int-x-cdot-lnx-dx" title="Permanent link">&para;</a></h3>
+<p><strong>Krok 1 i 2 (Wybór i pomocnicze):</strong>
+$$
+\left| \begin{matrix} 
+u = \ln(x) &amp; \implies du = \frac{1}{x} dx &amp; \text{// Logarytm wybieramy jako u} \ 
+dv = x \, dx &amp; \implies v = \frac{1}{2}x^2 &amp; \text{// Wielomian idzie do całowania}
+\end{matrix} \right|
+$$</p>
+<p><strong>Krok 3 (Zastosowanie wzoru):</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\ln(x) \cdot \frac{1}{2}x^2 - \int \frac{1}{2}x^2 \cdot \frac{1}{x} \, dx\)</span>\)</span></p>
+<p><strong>Krok 4 (Uproszczenie i wynik):</strong>
+<em>Komentarz: Pod całką <span class="arithmatex">\(x^2\)</span> skraca się z <span class="arithmatex">\(x\)</span>, zostaje samo <span class="arithmatex">\(x\)</span>.</em>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2}x^2 \ln(x) - \frac{1}{2} \int x \, dx\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2}x^2 \ln(x) - \frac{1}{2} \cdot (\frac{1}{2}x^2) + C\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{\frac{1}{2}x^2 \ln(x) - \frac{1}{4}x^2 + C}\)</span>\)</span></p>
+<hr />
+<h2 id="szybka-sciaga-strategia-wyboru">Szybka ściąga: Strategia wyboru<a class="headerlink" href="#szybka-sciaga-strategia-wyboru" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Jeśli pod całką...</th>
+<th style="text-align: left;">Wybierz:</th>
+<th style="text-align: left;">Komentarz / Dlaczego?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Widzisz funkcję i jej pochodną</td>
+<td style="text-align: left;"><strong>Podstawianie</strong></td>
+<td style="text-align: left;">To najszybsza metoda, "czyści" zapis.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wielomian <span class="arithmatex">\(\cdot\)</span> <span class="arithmatex">\(e^x, \sin x, \cos x\)</span></td>
+<td style="text-align: left;"><strong>Przez części</strong></td>
+<td style="text-align: left;">Wielomian z każdym krokiem maleje (np. <span class="arithmatex">\(x^2 \to 2x \to 2\)</span>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Logarytm <span class="arithmatex">\(\ln x\)</span></td>
+<td style="text-align: left;"><strong>Przez części</strong></td>
+<td style="text-align: left;">Przyjmij <span class="arithmatex">\(u = \ln x\)</span> oraz <span class="arithmatex">\(dv = 1 dx\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Skomplikowany nawias/potęga</td>
+<td style="text-align: left;"><strong>Podstawianie</strong></td>
+<td style="text-align: left;">Chcemy zamienić "wnętrze" na jedną literę <span class="arithmatex">\(t\)</span>.</td>
+</tr>
+</tbody>
+</table>
 
 
 
