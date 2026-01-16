@@ -1616,7 +1616,7 @@ Zauważ, że dwójka w liczniku i dwójka w mianowniku się skracają:</p>
 <p>Aby mieć 100% pewności, policzmy pochodną z naszego wyniku:</p>
 <div class="arithmatex">\[(x^2 + C)' = (x^2)' + (C)' = 2x + 0 = 2x\]</div>
 <p><strong>Przykłady :</strong></p>
-<ul>
+<ol>
 <li>
 <p><span class="arithmatex">\(\int 3x^2 \, dx\)</span>:</p>
 </li>
@@ -1638,7 +1638,7 @@ Zauważ, że dwójka w liczniku i dwójka w mianowniku się skracają:</p>
 <li>
 <p>Wynik: <span class="arithmatex">\(5x + C\)</span></p>
 </li>
-</ul>
+</ol>
 <h2 id="ii-caka-oznaczona-i-sumy-riemanna">II. Całka Oznaczona i Sumy Riemanna<a class="headerlink" href="#ii-caka-oznaczona-i-sumy-riemanna" title="Permanent link">&para;</a></h2>
 <h3 id="suma-riemanna-fundament-pola-powierzchni">Suma Riemanna: Fundament Pola Powierzchni<a class="headerlink" href="#suma-riemanna-fundament-pola-powierzchni" title="Permanent link">&para;</a></h3>
 <p>Zanim powstały wzory, pole pod krzywą przybliżano prostokątami.
@@ -1777,7 +1777,9 @@ dv = x \, dx &amp; \implies v = \frac{1}{2}x^2 &amp; \text{// Wielomian idzie do
 </ul>
 <div class="arithmatex">\[V = \pi \int_{a}^{b} [f(x)]^2 dx\]</div>
 <h3 id="2-dugosc-uku-krzywej">2. Długość łuku krzywej<a class="headerlink" href="#2-dugosc-uku-krzywej" title="Permanent link">&para;</a></h3>
-<p>Aby zmierzyć długość krzywej, dzielimy ją na mikroskopijne odcinki proste. Korzystając z twierdzenia Pitagorasa dla małego przyrostu <span class="arithmatex">\(dx\)</span> i <span class="arithmatex">\(dy\)</span>, długość takiego odcinka <span class="arithmatex">\(dL\)</span> wynosi <span class="arithmatex">\(\sqrt{(dx)^2 + (dy)^2}\)</span>. Po przekształceniach różniczkowych otrzymujemy wzór:</p>
+<p>Aby zmierzyć długość krzywej, dzielimy ją na mikroskopijne odcinki proste. Korzystając z twierdzenia Pitagorasa dla małego przyrostu <span class="arithmatex">\(dx\)</span> i <span class="arithmatex">\(dy\)</span>, długość takiego odcinka <span class="arithmatex">\(dL\)</span> wynosi </p>
+<div class="arithmatex">\[\sqrt{(dx)^2 + (dy)^2}\]</div>
+<p>Po przekształceniach różniczkowych otrzymujemy wzór:</p>
 <div class="arithmatex">\[L = \int_{a}^{b} \sqrt{1 + [f'(x)]^2} dx\]</div>
 <hr />
 <h3 id="3-obliczanie-objetosci-kuli">3. Obliczanie objętości kuli<a class="headerlink" href="#3-obliczanie-objetosci-kuli" title="Permanent link">&para;</a></h3>
@@ -1789,19 +1791,16 @@ dv = x \, dx &amp; \implies v = \frac{1}{2}x^2 &amp; \text{// Wielomian idzie do
 <li>
 <p><strong>Uproszczenie funkcji podcałkowej:</strong>
     Pierwiastek kwadratowy podniesiony do kwadratu znosi się:</p>
-<pre><code>$$V = \pi \int_{-R}^{R} (R^2 - x^2) dx$$
-</code></pre>
+<div class="arithmatex">\[V = \pi \int_{-R}^{R} (R^2 - x^2) dx\]</div>
 </li>
 <li>
 <p><strong>Wyznaczenie całki nieoznaczonej:</strong>
     Całkujemy po zmiennej <span class="arithmatex">\(x\)</span> (pamiętając, że <span class="arithmatex">\(R^2\)</span> to stała):</p>
-<pre><code>$$\int (R^2 - x^2) dx = R^2x - \frac{1}{3}x^3$$
-</code></pre>
+<div class="arithmatex">\[\int (R^2 - x^2) dx = R^2x - \frac{1}{3}x^3\]</div>
 </li>
 <li>
-<p><strong>Zastosowanie granic całkowania (Twierdzenie Newtona-Leibniza):</strong></p>
-<pre><code>$$V = \pi \left[ R^2x - \frac{1}{3}x^3 \right]_{-R}^{R}$$
-</code></pre>
+<p><strong>Zastosowanie granic całkowania</strong> (Twierdzenie Newtona-Leibniza):</p>
+<div class="arithmatex">\[V = \pi \left[ R^2x - \frac{1}{3}x^3 \right]_{-R}^{R}\]</div>
 </li>
 <li>
 <p><strong>Podstawienie wartości:</strong></p>
