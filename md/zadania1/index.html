@@ -1051,21 +1051,21 @@ D^{-1} = \begin{pmatrix} 2^{-1} &amp; 0 &amp; 0 \ 0 &amp; (-3)^{-1} &amp; 0 \ 0 
 <p><span class="arithmatex">\(\*\)</span> Dla macierzy</p>
 <div class="arithmatex">\[ P=\begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} \]</div>
 <p>oblicz <span class="arithmatex">\(P^{2}\)</span> i <span class="arithmatex">\(P^{3}\)</span>. Czy ciąg <span class="arithmatex">\(P^{n}\)</span> ma zauważalny wzorzec dla <span class="arithmatex">\(n=1,2,3\)</span>?</p>
-<p><strong>Rozwiązanie:</strong>
-$$ 
-P^2 = P \cdot P = \begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} \begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} = \begin{pmatrix}1 &amp; 2 &amp; 1\ 1 &amp; 1 &amp; 2\ 2 &amp; 1 &amp; 1\end{pmatrix} $$ </p>
+<p><strong>Rozwiązanie:</strong></p>
+<div class="arithmatex">\[ 
+P^2 = P \cdot P = \begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} \begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} = \begin{pmatrix}1 &amp; 2 &amp; 1\ 1 &amp; 1 &amp; 2\ 2 &amp; 1 &amp; 1\end{pmatrix} \]</div>
 <div class="arithmatex">\[ 
 P^3 = P^2 \cdot P = \begin{pmatrix}1 &amp; 2 &amp; 1\ 1 &amp; 1 &amp; 2\ 2 &amp; 1 &amp; 1\end{pmatrix} \begin{pmatrix}1 &amp; 1 &amp; 0\ 0 &amp; 1 &amp; 1\ 1 &amp; 0 &amp; 1\end{pmatrix} = \begin{pmatrix}2 &amp; 3 &amp; 3\ 3 &amp; 2 &amp; 3\ 3 &amp; 3 &amp; 2\end{pmatrix} \]</div>
 <p>Wzorzec: Dla <span class="arithmatex">\(P^n\)</span>, elementy na przekątnej wydają się rosnąć, podobnie jak elementy poza przekątną. Można zauważyć, że <span class="arithmatex">\(P^n_{ii} + P^n_{ij} = \text{const}\)</span> dla <span class="arithmatex">\(j \neq i\)</span> w danym wierszu/kolumnie dla <span class="arithmatex">\(n=2,3\)</span>. Nie jest to jednak prosty wzorzec.</p>
 <hr />
 <p><span class="arithmatex">\(\*\)</span> Przykład kodowania rotacji
 Policz iloczyn macierzy rotacji o kącie <span class="arithmatex">\(\theta\)</span> w przestrzeni 2D:</p>
-<p>$$ 
+<div class="arithmatex">\[ 
   R(\theta) = \begin{pmatrix}
   \cos\theta &amp; -\sin\theta\ 
   \sin\theta &amp; \cos\theta
   \end{pmatrix} 
-  $$ </p>
+  \]</div>
 <p>Sprawdź, że <span class="arithmatex">\(R(\theta_1)R(\theta_2) = R(\theta_1 + \theta_2)\)</span>.</p>
 <p><strong>Rozwiązanie:</strong>
 $$ 
@@ -1085,12 +1085,12 @@ $$
 \sin(\theta_1+\theta_2) &amp; \cos(\theta_1+\theta_2)
 \end{pmatrix} = R(\theta_1+\theta_2) $$ </p>
 <hr />
-<p><span class="arithmatex">\(\*\)</span> Wiedząc, że
-$$ 
+<p><span class="arithmatex">\(\*\)</span> Wiedząc, że</p>
+<div class="arithmatex">\[ 
 \begin{aligned} \cos(x)&amp;=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\ldots \ 
 \sin(x)&amp;=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\ldots 
-\end{aligned} $$ 
-(Uwaga: podane rozwinięcie dla <span class="arithmatex">\(\cos(x)\)</span> i <span class="arithmatex">\(\sin(x)\)</span> jest niepoprawne, <span class="arithmatex">\(\sin(x)\)</span> i <span class="arithmatex">\(\cos(x)\)</span> są zamienione miejscami. Prawidłowe to <span class="arithmatex">\(\cos(x) = 1 - x^2/2! + ...\)</span> oraz <span class="arithmatex">\(\sin(x) = x - x^3/3! + ...\)</span>. Zadanie zostanie rozwiązane z poprawnymi wzorami.)</p>
+\end{aligned} \]</div>
+<p>(Uwaga: podane rozwinięcie dla <span class="arithmatex">\(\cos(x)\)</span> i <span class="arithmatex">\(\sin(x)\)</span> jest niepoprawne, <span class="arithmatex">\(\sin(x)\)</span> i <span class="arithmatex">\(\cos(x)\)</span> są zamienione miejscami. Prawidłowe to <span class="arithmatex">\(\cos(x) = 1 - x^2/2! + ...\)</span> oraz <span class="arithmatex">\(\sin(x) = x - x^3/3! + ...\)</span>. Zadanie zostanie rozwiązane z poprawnymi wzorami.)</p>
 <p>pokaż, że macierz rotacji <span class="arithmatex">\(R(\theta)\)</span> może być zapisana jako
 $$ R(\theta) = I + A + \frac{1}{2!} A^{2} + \frac{1}{3!} A^{3} + \ldots = e^A $$ 
 gdzie
