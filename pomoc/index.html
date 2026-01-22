@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#wyprowadzenie-wzoru-metoda-plasterkow-dyskow" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -983,36 +978,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wyprowadzenie-wzoru-metoda-plasterkow-dyskow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wyprowadzenie wzoru: Metoda Plasterków (Dysków)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jak-wyprowadzic-wzor-na-objetosc-kuli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Jak wyprowadzić wzór na objętość kuli
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1030,31 +995,167 @@
 
   <h1>Pomoc</h1>
 
-<h3 id="wyprowadzenie-wzoru-metoda-plasterkow-dyskow">Wyprowadzenie wzoru: Metoda Plasterków (Dysków)<a class="headerlink" href="#wyprowadzenie-wzoru-metoda-plasterkow-dyskow" title="Permanent link">&para;</a></h3>
-<p>Kiedy weźmiemy płaski obszar pod funkcją i zaczniemy nim "kręcić" wokół osi <span class="arithmatex">\(OX\)</span>, powstanie bryła obrotowa (np. wazon, kula, stożek).</p>
-<ol>
-<li>Dzielimy bryłę na "plasterki" o grubości <span class="arithmatex">\(dx\)</span>.</li>
-<li>Każdy plasterek to koło o promieniu <span class="arithmatex">\(r = f(x)\)</span>.</li>
-<li>Pole koła to <span class="arithmatex">\(\pi r^2 = \pi [f(x)]^2\)</span>.</li>
-<li>Objętość jednego plasterka to <span class="arithmatex">\(\text{Pole} \cdot \text{grubość} = \pi [f(x)]^2 dx\)</span>.</li>
-<li>Sumujemy całką: </li>
-</ol>
-<div class="arithmatex">\[V = \pi \int_{a}^{b} [f(x)]^2 \, dx\]</div>
-<h3 id="jak-wyprowadzic-wzor-na-objetosc-kuli">Jak wyprowadzić wzór na objętość kuli<a class="headerlink" href="#jak-wyprowadzic-wzor-na-objetosc-kuli" title="Permanent link">&para;</a></h3>
-<p><strong>Objętość Kuli o promieniu <span class="arithmatex">\(R\)</span></strong>
-Kula to obrócony półokrąg: </p>
-<div class="arithmatex">\[f(x) = \sqrt{R^2 - x^2}$ od $-R$ do $R\]</div>
-<ol>
-<li>Wstawiamy do wzoru: <span class="arithmatex">\(V = \pi \int_{-R}^{R} (\sqrt{R^2 - x^2})^2 \, dx\)</span></li>
-<li>Pierwiastek i kwadrat znoszą się: <span class="arithmatex">\(V = \pi \int_{-R}^{R} (R^2 - x^2) \, dx\)</span></li>
-<li>Całkujemy: <span class="arithmatex">\(V = \pi [R^2x - \frac{x^3}{3}]_{-R}^R\)</span></li>
-<li>Podstawiamy <span class="arithmatex">\(R\)</span> i <span class="arithmatex">\(-R\)</span>:</li>
-<li>Dla <span class="arithmatex">\(R\)</span>: <span class="arithmatex">\(R^3 - \frac{1}{3}R^3 = \frac{2}{3}R^3\)</span></li>
-<li>Dla <span class="arithmatex">\(-R\)</span>: <span class="arithmatex">\(-R^3 - (-\frac{1}{3}R^3) = -\frac{2}{3}R^3\)</span></li>
-<li>Różnica: <span class="arithmatex">\(\frac{2}{3}R^3 - (-\frac{2}{3}R^3) = \frac{4}{3}R^3\)</span></li>
-<li>Mnożymy przez <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(V = \frac{4}{3} \pi R^3\)</span></li>
-</ol>
-<p>Koniec Kompleksowej Notatki.</p>
+<p>Zasada ogólna: Funkcja <span class="arithmatex">\(f(x)\)</span> jest ciągła w punkcie <span class="arithmatex">\(x_0\)</span>, gdy istnieje granica w tym punkcie i jest ona równa wartości funkcji:</p>
+<div class="arithmatex">\[\lim_{x \to x_0} f(x) = f(x_0)\]</div>
+<p>1) <span class="arithmatex">\(f(x) = \frac{x^2-25}{x+5}\)</span> dla <span class="arithmatex">\(x \neq -5\)</span> i <span class="arithmatex">\(f(-5)=-10\)</span></p>
+<p>Obliczenie granicy w <span class="arithmatex">\(x_0 = -5\)</span>:</p>
+<div class="arithmatex">\[\lim_{x \to -5} \frac{x^2-25}{x+5} = \lim_{x \to -5} \frac{(x-5)(x+5)}{x+5} = \lim_{x \to -5} (x-5) = -5 - 5 = -10\]</div>
+<p>Wniosek:</p>
+<p>Granica wynosi <span class="arithmatex">\(-10\)</span>, a wartość funkcji <span class="arithmatex">\(f(-5) = -10\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to -5} f(x) = f(-5)\]</div>
+<p>Funkcja jest ciągła.</p>
+<p>2) <span class="arithmatex">\(f(x) = \frac{\sin x}{x}\)</span> dla <span class="arithmatex">\(x \neq 0\)</span> i <span class="arithmatex">\(f(0)=1\)</span></p>
+<p>Obliczenie granicy w <span class="arithmatex">\(x_0 = 0\)</span>:</p>
+<p>Jest to podstawowa granica wyrażeń nieoznaczonych:</p>
+<div class="arithmatex">\[\lim_{x \to 0} \frac{\sin x}{x} = 1\]</div>
+<p>Wniosek:</p>
+<p>Granica wynosi <span class="arithmatex">\(1\)</span>, wartość funkcji <span class="arithmatex">\(f(0) = 1\)</span>.</p>
+<p>Funkcja jest ciągła.</p>
+<p>3) <span class="arithmatex">\(f(x) = \frac{\sin x}{|x|}\)</span> dla <span class="arithmatex">\(x \neq 0\)</span> i <span class="arithmatex">\(f(0)=1\)</span></p>
+<p>Obliczenie granic jednostronnych w <span class="arithmatex">\(x_0 = 0\)</span>:</p>
+<p>Prawostronna (<span class="arithmatex">\(x &gt; 0 \Rightarrow |x| = x\)</span>):</p>
+<div class="arithmatex">\[\lim_{x \to 0^+} \frac{\sin x}{x} = 1\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x &lt; 0 \Rightarrow |x| = -x\)</span>):</p>
+<div class="arithmatex">\[\lim_{x \to 0^-} \frac{\sin x}{-x} = - \lim_{x \to 0^-} \frac{\sin x}{x} = -1\]</div>
+<p>Wniosek:</p>
+<p>Granice jednostronne są różne (<span class="arithmatex">\(1 \neq -1\)</span>), więc granica funkcji w punkcie <span class="arithmatex">\(0\)</span> nie istnieje.</p>
+<p>Funkcja jest nieciągła (nieciągłość I rodzaju - skok).
+Nie można jej dodefiniować, aby była ciągła.</p>
+<p>4) <span class="arithmatex">\(f(x) = x + \frac{1}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>Obliczenie granicy:</p>
+<div class="arithmatex">\[\lim_{x \to 0^+} \left( x + \frac{1}{x} \right) = 0 + \infty = +\infty\]</div>
+<div class="arithmatex">\[\lim_{x \to 0^-} \left( x + \frac{1}{x} \right) = 0 - \infty = -\infty\]</div>
+<p>Wniosek:</p>
+<p>Granica jest niewłaściwa (nieskończona).
+Funkcja jest nieciągła.
+Nie można jej dodefiniować (nieciągłość II rodzaju).</p>
+<p>5) <span class="arithmatex">\(f(x) = \frac{x^2-x^3}{|x-1|}\)</span> (badamy w <span class="arithmatex">\(x=1\)</span>)</p>
+<p>Przekształcenie licznika: <span class="arithmatex">\(x^2-x^3 = x^2(1-x)\)</span>.</p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to 1^+ \Rightarrow |x-1| = x-1\)</span>):</p>
+<div class="arithmatex">\[\lim_{x \to 1^+} \frac{x^2(1-x)}{x-1} = \lim_{x \to 1^+} \frac{-x^2(x-1)}{x-1} = \lim_{x \to 1^+} (-x^2) = -1\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to 1^- \Rightarrow |x-1| = -(x-1) = 1-x\)</span>):</p>
+<div class="arithmatex">\[\lim_{x \to 1^-} \frac{x^2(1-x)}{1-x} = \lim_{x \to 1^-} (x^2) = 1\]</div>
+<p>Wniosek:</p>
+<p>Granice są różne (<span class="arithmatex">\(-1 \neq 1\)</span>).
+Funkcja jest nieciągła (skok).
+Nie można jej dodefiniować.</p>
+<p>6) <span class="arithmatex">\(f(x) = x - [x]\)</span> (badamy w punktach całkowitych <span class="arithmatex">\(k \in \mathbb{Z}\)</span>)</p>
+<p>Obliczenie granic jednostronnych dla liczby całkowitej <span class="arithmatex">\(k\)</span>:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to k^+\)</span>): Wtedy <span class="arithmatex">\([x] = k\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to k^+} (x - k) = k - k = 0\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to k^-\)</span>): Wtedy <span class="arithmatex">\([x] = k-1\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to k^-} (x - (k-1)) = k - (k-1) = 1\]</div>
+<p>Wniosek:</p>
+<p><span class="arithmatex">\(0 \neq 1\)</span>.
+Funkcja jest nieciągła w każdym punkcie całkowitym.
+Nie można jej dodefiniować.</p>
+<p>7) <span class="arithmatex">\(f(x) = [x] + [-x]\)</span> (badamy w punktach całkowitych <span class="arithmatex">\(k\)</span>)</p>
+<p>Obliczenie wartości i granicy:</p>
+<p>Wartość dla <span class="arithmatex">\(x=k\)</span> (całkowite):</p>
+<div class="arithmatex">\[f(k) = [k] + [-k] = k + (-k) = 0\]</div>
+<p>Granica gdy <span class="arithmatex">\(x \to k\)</span> (ale <span class="arithmatex">\(x \neq k\)</span>):</p>
+<p>Niech <span class="arithmatex">\(x\)</span> dąży do <span class="arithmatex">\(k\)</span>. Wtedy <span class="arithmatex">\(x\)</span> nie jest liczbą całkowitą.
+Dla <span class="arithmatex">\(x \notin \mathbb{Z}\)</span> zachodzi tożsamość <span class="arithmatex">\([x] + [-x] = -1\)</span>.
+Zatem <span class="arithmatex">\(\lim_{x \to k} f(x) = -1\)</span>.</p>
+<p>Wniosek:</p>
+<p>Granica istnieje (<span class="arithmatex">\(-1\)</span>), ale jest różna od wartości funkcji (<span class="arithmatex">\(0\)</span>).
+Funkcja jest nieciągła.
+Można ją dodefiniować, zmieniając wartość w punktach całkowitych na <span class="arithmatex">\(-1\)</span>. Wtedy <span class="arithmatex">\(f(x)=-1\)</span> dla każdego <span class="arithmatex">\(x\)</span>.</p>
+<p>8) <span class="arithmatex">\(f(x) = \frac{\sqrt{1+x}-1}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>Obliczenie granicy:</p>
+<div class="arithmatex">\[\lim_{x \to 0} \frac{\sqrt{1+x}-1}{x} \cdot \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1} = \lim_{x \to 0} \frac{(1+x)-1}{x(\sqrt{1+x}+1)} = \lim_{x \to 0} \frac{x}{x(\sqrt{1+x}+1)}\]</div>
+<div class="arithmatex">\[= \lim_{x \to 0} \frac{1}{\sqrt{1+x}+1} = \frac{1}{\sqrt{1}+1} = \frac{1}{2}\]</div>
+<p>Wniosek:</p>
+<p>Funkcja nie jest określona w <span class="arithmatex">\(x=0\)</span>, więc jest nieciągła. Granica jednak istnieje i wynosi <span class="arithmatex">\(\frac{1}{2}\)</span>.
+Można ją dodefiniować przyjmując:</p>
+<div class="arithmatex">\[f(0) = \frac{1}{2}\]</div>
+<p>9) <span class="arithmatex">\(f(x) = x \sin \frac{\pi}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>Obliczenie granicy:</p>
+<p>Korzystamy z twierdzenia o trzech funkcjach. Wiemy, że <span class="arithmatex">\(-1 \le \sin \alpha \le 1\)</span>, więc:</p>
+<div class="arithmatex">\[-|x| \le x \sin \frac{\pi}{x} \le |x|\]</div>
+<p>Ponieważ <span class="arithmatex">\(\lim_{x \to 0} (-|x|) = 0\)</span> oraz <span class="arithmatex">\(\lim_{x \to 0} |x| = 0\)</span>, to:</p>
+<div class="arithmatex">\[\lim_{x \to 0} f(x) = 0\]</div>
+<p>Wniosek:</p>
+<p>Funkcja nie jest określona w zerze, więc jest nieciągła.
+Można ją dodefiniować przyjmując:</p>
+<div class="arithmatex">\[f(0) = 0\]</div>
+<p>10) <span class="arithmatex">\(f(x) = \frac{\sin^2 x}{1-\cos x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>Obliczenie granicy:</p>
+<p>Korzystamy z jedynki trygonometrycznej: <span class="arithmatex">\(\sin^2 x = 1 - \cos^2 x = (1-\cos x)(1+\cos x)\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0} \frac{(1-\cos x)(1+\cos x)}{1-\cos x} = \lim_{x \to 0} (1+\cos x) = 1 + \cos 0 = 1 + 1 = 2\]</div>
+<p>Wniosek:</p>
+<p>Funkcja nieokreślona w zerze.
+Można ją dodefiniować przyjmując:</p>
+<div class="arithmatex">\[f(0) = 2\]</div>
+<p>11) <span class="arithmatex">\(f(x) = x \left[ \frac{1}{x} \right]\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>Obliczenie granicy:</p>
+<p>Korzystamy z nierówności dla cechy: <span class="arithmatex">\(y - 1 &lt; [y] \le y\)</span>.
+Niech <span class="arithmatex">\(y = \frac{1}{x}\)</span>.</p>
+<div class="arithmatex">\[\frac{1}{x} - 1 &lt; \left[ \frac{1}{x} \right] \le \frac{1}{x}\]</div>
+<p>Mnożymy przez <span class="arithmatex">\(x\)</span> (rozważmy <span class="arithmatex">\(x&gt;0\)</span>):</p>
+<div class="arithmatex">\[x\left(\frac{1}{x}-1\right) &lt; x\left[\frac{1}{x}\right] \le x \cdot \frac{1}{x}\]</div>
+<div class="arithmatex">\[1-x &lt; f(x) \le 1\]</div>
+<p>Przy <span class="arithmatex">\(x \to 0^+\)</span>, lewa strona dąży do <span class="arithmatex">\(1\)</span>, prawa to stała <span class="arithmatex">\(1\)</span>. Z twierdzenia o trzech funkcjach granica to <span class="arithmatex">\(1\)</span>. (Dla <span class="arithmatex">\(x&lt;0\)</span> nierówności się odwracają, ale wynik jest ten sam).</p>
+<p>Wniosek:</p>
+<div class="arithmatex">\[\lim_{x \to 0} f(x) = 1\]</div>
+<p>Można dodefiniować funkcję przyjmując:</p>
+<div class="arithmatex">\[f(0) = 1\]</div>
+<p>12) <span class="arithmatex">\(f(x) = x \frac{b}{x} \left[ \frac{x}{a} \right]\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>Uproszczenie wzoru: <span class="arithmatex">\(f(x) = b \left[ \frac{x}{a} \right]\)</span>.
+Załóżmy <span class="arithmatex">\(a &gt; 0, b \neq 0\)</span>.</p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to 0^+\)</span>): Ułamek <span class="arithmatex">\(\frac{x}{a}\)</span> jest małą liczbą dodatnią (<span class="arithmatex">\(0 &lt; \frac{x}{a} &lt; 1\)</span>). Wtedy cecha <span class="arithmatex">\(\left[ \frac{x}{a} \right] = 0\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0^+} b \cdot 0 = 0\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to 0^-\)</span>): Ułamek <span class="arithmatex">\(\frac{x}{a}\)</span> jest małą liczbą ujemną (<span class="arithmatex">\(-1 &lt; \frac{x}{a} &lt; 0\)</span>). Wtedy cecha <span class="arithmatex">\(\left[ \frac{x}{a} \right] = -1\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0^-} b \cdot (-1) = -b\]</div>
+<p>Wniosek:</p>
+<p>Jeżeli <span class="arithmatex">\(b \neq 0\)</span>, granice są różne (<span class="arithmatex">\(0 \neq -b\)</span>).
+Funkcja jest nieciągła.
+Nie można jej dodefiniować.</p>
+<p>13) <span class="arithmatex">\(f(x) = \frac{e^{\frac{1}{x}}-1}{e^{\frac{1}{x}}+1}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to 0^+\)</span>): <span class="arithmatex">\(\frac{1}{x} \to +\infty \Rightarrow e^{\frac{1}{x}} \to +\infty\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0^+} \frac{e^{\frac{1}{x}}(1 - \frac{1}{e^{1/x}})}{e^{\frac{1}{x}}(1 + \frac{1}{e^{1/x}})} = \frac{1-0}{1+0} = 1\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to 0^-\)</span>): <span class="arithmatex">\(\frac{1}{x} \to -\infty \Rightarrow e^{\frac{1}{x}} \to 0\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0^-} \frac{0 - 1}{0 + 1} = -1\]</div>
+<p>Wniosek:</p>
+<p>Granice są różne (<span class="arithmatex">\(1 \neq -1\)</span>).
+Funkcja jest nieciągła (skok).
+Nie można jej dodefiniować.</p>
+<p>14) <span class="arithmatex">\(f(x) = e^{\frac{1}{1-x^2}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to 1^+\)</span>): Wtedy <span class="arithmatex">\(x &gt; 1 \Rightarrow x^2 &gt; 1 \Rightarrow 1-x^2 \to 0^-\)</span> (zero ujemne).
+Wykładnik <span class="arithmatex">\(\frac{1}{1-x^2} \to -\infty\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 1^+} e^{-\infty} = 0\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to 1^-\)</span>): Wtedy <span class="arithmatex">\(x &lt; 1 \Rightarrow x^2 &lt; 1 \Rightarrow 1-x^2 \to 0^+\)</span> (zero dodatnie).
+Wykładnik <span class="arithmatex">\(\frac{1}{1-x^2} \to +\infty\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 1^-} e^{+\infty} = +\infty\]</div>
+<p>Wniosek:</p>
+<p>Jedna z granic jest nieskończona.
+Funkcja jest nieciągła.
+Nie można jej dodefiniować.</p>
+<p>15) <span class="arithmatex">\(f(x) = x e^{\frac{1}{x}}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Lewostronna (<span class="arithmatex">\(x \to 0^-\)</span>): <span class="arithmatex">\(\frac{1}{x} \to -\infty \Rightarrow e^{1/x} \to 0\)</span>.</p>
+<div class="arithmatex">\[0 \cdot 0 = 0\]</div>
+<p>Prawostronna (<span class="arithmatex">\(x \to 0^+\)</span>): Podstawienie <span class="arithmatex">\(t = \frac{1}{x}\)</span>. Gdy <span class="arithmatex">\(x \to 0^+\)</span>, to <span class="arithmatex">\(t \to +\infty\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 0^+} \frac{e^{1/x}}{1/x} = \lim_{t \to +\infty} \frac{e^t}{t} \stackrel{H}{=} \lim_{t \to +\infty} \frac{e^t}{1} = +\infty\]</div>
+<p>Wniosek:</p>
+<p>Granica prawostronna jest niewłaściwa.
+Funkcja jest nieciągła.
+Nie można jej dodefiniować.</p>
+<p>16) <span class="arithmatex">\(f(x) = \frac{x}{2x+e^{\frac{1}{x-1}}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
+<p>Obliczenie granic jednostronnych:</p>
+<p>Prawostronna (<span class="arithmatex">\(x \to 1^+\)</span>): <span class="arithmatex">\(\frac{1}{x-1} \to +\infty \Rightarrow e^{\frac{1}{x-1}} \to +\infty\)</span>.
+Mianownik dąży do nieskończoności.</p>
+<div class="arithmatex">\[\frac{1}{2 + \infty} = 0\]</div>
+<p>Lewostronna (<span class="arithmatex">\(x \to 1^-\)</span>): <span class="arithmatex">\(\frac{1}{x-1} \to -\infty \Rightarrow e^{\frac{1}{x-1}} \to 0\)</span>.</p>
+<div class="arithmatex">\[\lim_{x \to 1^-} \frac{x}{2x + 0} = \frac{1}{2(1)} = \frac{1}{2}\]</div>
+<p>Wniosek:</p>
+<p>Granice są różne (<span class="arithmatex">\(0 \neq \frac{1}{2}\)</span>).
+Funkcja jest nieciągła (skok).
+Nie można jej dodefiniować.</p>
 
 
 
