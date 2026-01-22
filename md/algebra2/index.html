@@ -1330,28 +1330,6 @@ Pole wynosi <span class="arithmatex">\(|\det(A)| = 2\)</span>. Ponieważ wyznacz
 <li><strong>Obliczenia w geometrii</strong> (pola, objętości).</li>
 <li><strong>Implementacje komputerowe</strong> (np. <code>np.linalg.det(A)</code> w Python/NumPy).</li>
 </ol>
-<p><strong>Przykład zastosowania: Wzory Cramera (Układ 2x2)</strong></p>
-<p>Rozwiążmy układ równań:
-<span class="arithmatex">\(\begin{cases} 2x + 3y = 7 \\ x - 4y = -2 \end{cases}\)</span></p>
-<ol>
-<li><strong>Wyznacznik główny (<span class="arithmatex">\(W\)</span>)</strong>: Zbudowany ze współczynników przy <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span>.</li>
-</ol>
-<p><span class="arithmatex">\(W = \det \begin{pmatrix} 2 &amp; 3 \\ 1 &amp; -4 \end{pmatrix} = (2 \cdot -4) - (3 \cdot 1) = -8 - 3 = -11\)</span></p>
-<p>(Ponieważ <span class="arithmatex">\(W \neq 0\)</span>, układ ma dokładnie jedno rozwiązanie).</p>
-<ol>
-<li><strong>Wyznacznik <span class="arithmatex">\(W_x\)</span></strong>: W macierzy <span class="arithmatex">\(W\)</span> zastępujemy kolumnę od <span class="arithmatex">\(x\)</span> (pierwszą) kolumną wyników <span class="arithmatex">\([7, -2]\)</span>.</li>
-</ol>
-<p><span class="arithmatex">\(W_x = \det \begin{pmatrix} 7 &amp; 3 \\ -2 &amp; -4 \end{pmatrix} = (7 \cdot -4) - (3 \cdot -2) = -28 - (-6) = -28 + 6 = -22\)</span></p>
-<ol>
-<li><strong>Wyznacznik <span class="arithmatex">\(W_y\)</span></strong>: W macierzy <span class="arithmatex">\(W\)</span> zastępujemy kolumnę od <span class="arithmatex">\(y\)</span> (drugą) kolumną wyników <span class="arithmatex">\([7, -2]\)</span>.</li>
-</ol>
-<p><span class="arithmatex">\(W_y = \det \begin{pmatrix} 2 &amp; 7 \\ 1 &amp; -2 \end{pmatrix} = (2 \cdot -2) - (7 \cdot 1) = -4 - 7 = -11\)</span></p>
-<ol>
-<li><strong>Obliczanie rozwiązań</strong>:</li>
-</ol>
-<p><span class="arithmatex">\(x = \frac{W_x}{W} = \frac{-22}{-11} = 2\)</span>
-<span class="arithmatex">\(y = \frac{W_y}{W} = \frac{-11}{-11} = 1\)</span></p>
-<p>Rozwiązanie: <span class="arithmatex">\(x=2, y=1\)</span>.</p>
 
 
 
