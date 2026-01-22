@@ -1721,38 +1721,40 @@ A=\begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix} \quad \text{i} \quad B=\begi
 <h3 id="zadanie-2">Zadanie 2<a class="headerlink" href="#zadanie-2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Dla macierzy </p>
-<div class="arithmatex">\[ A=\begin{pmatrix}1 &amp; 0\ 0 &amp; 2\end{pmatrix}, \quad B =\begin{pmatrix}2 &amp; 0\ 0 &amp; 4\end{pmatrix}, \quad C=\begin{pmatrix}4 &amp; 0\ 0 &amp; 8\end{pmatrix}, \quad D=\begin{pmatrix}8 &amp; 0\ 0 &amp; 16\end{pmatrix} \]</div>
+<div class="arithmatex">\[ A=\begin{pmatrix}1 &amp; 0\\ 0 &amp; 2\end{pmatrix}, \quad B =\begin{pmatrix}2 &amp; 0\\ 0 &amp; 4\end{pmatrix}, \quad C=\begin{pmatrix}4 &amp; 0\\ 0 &amp; 8\end{pmatrix}, \quad D=\begin{pmatrix}8 &amp; 0\\ 0 &amp; 16\end{pmatrix} \]</div>
 <p>sprawdź, czy</p>
 <div class="arithmatex">\[ A\cdot B\cdot C\cdot D = B\cdot A\cdot D\cdot C = D\cdot C\cdot B\cdot A. \]</div>
 <p><strong>Rozwiązanie:</strong></p>
 <p>Wszystkie podane macierze są <strong>diagonalne</strong> (mają wartości tylko na głównej przekątnej, poza nią zera).
 Mnożenie macierzy diagonalnych tego samego wymiaru polega po prostu na mnożeniu odpowiadających sobie elementów na przekątnej. Ponieważ mnożenie liczb rzeczywistych jest przemienne (<span class="arithmatex">\(a\cdot b = b\cdot a\)</span>), to mnożenie macierzy diagonalnych również jest przemienne.
-<strong>Odpowiedź:</strong> Tak, równość zachodzi: <span class="arithmatex">\(A\cdot B\cdot C\cdot D = D\cdot C\cdot B\cdot A\)</span>.</p>
+*
+<em>Odpowiedź:</em>* Tak, równość zachodzi: <span class="arithmatex">\(A\cdot B\cdot C\cdot D = D\cdot C\cdot B\cdot A\)</span>.</p>
 <hr />
 <h3 id="zadanie-3">Zadanie 3<a class="headerlink" href="#zadanie-3" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
-Dla macierzy 
-<span class="arithmatex">\(<span class="arithmatex">\(C=\begin{pmatrix} 1 &amp; 0 &amp; 2\\ -1 &amp; 3 &amp; 1\\ 0 &amp; 2 &amp; -1 \end{pmatrix}\)</span>\)</span></p>
+Dla macierzy </p>
+<div class="arithmatex">\[C=\begin{pmatrix} 1 &amp; 0 &amp; 2\\ -1 &amp; 3 &amp; 1\\ 0 &amp; 2 &amp; -1 \end{pmatrix}\]</div>
 <ol>
 <li>Zamień 1. i 3. wiersz.</li>
 <li>Dodaj do 2. wiersza dwukrotność nowego 1. wiersza.</li>
 </ol>
-<p><strong>Rozwiązanie:</strong>
-1.  <strong>Zamiana wierszy <span class="arithmatex">\(w_1 \leftrightarrow w_3\)</span>:</strong></p>
-<pre><code>$$
+<p><strong>Rozwiązanie:</strong></p>
+<ol>
+<li>
+<p><strong>Zamiana wierszy <span class="arithmatex">\(w_1 \leftrightarrow w_3\)</span>:</strong></p>
+<div class="arithmatex">\[
 \begin{pmatrix}
 0 &amp; 2 &amp; -1 \\
 -1 &amp; 3 &amp; 1 \\
 1 &amp; 0 &amp; 2
 \end{pmatrix}
-$$
-</code></pre>
-<ol>
+\]</div>
+</li>
 <li>
-<p><strong>Operacja <span class="arithmatex">\(w_2' = w_2 + 2w_1\)</span>:</strong>
-    Nowy wiersz 1 to <span class="arithmatex">\((0, 2, -1)\)</span>.
-    Stary wiersz 2 to <span class="arithmatex">\((-1, 3, 1)\)</span>.
-    Obliczenia:</p>
+<p><strong>Operacja <span class="arithmatex">\(w_2' = w_2 + 2w_1\)</span>:</strong></p>
+<p>Nowy wiersz 1 to <span class="arithmatex">\((0, 2, -1)\)</span>.</p>
+<p>Stary wiersz 2 to <span class="arithmatex">\((-1, 3, 1)\)</span>.</p>
+<p>Obliczenia:</p>
 <ul>
 <li><span class="arithmatex">\(-1 + 2(0) = -1\)</span></li>
 <li><span class="arithmatex">\(3 + 2(2) = 7\)</span></li>
@@ -1786,35 +1788,31 @@ $$
 $$
 </code></pre>
 <ul>
-<li>
-<p><strong>Iloczyn <span class="arithmatex">\(v u^{\top}\)</span></strong>:</p>
-<div class="arithmatex">\[
-\begin{pmatrix}2 \\ 0 \\ -1\end{pmatrix} \cdot \begin{pmatrix}1 &amp; -2 &amp; 3\end{pmatrix} =
-\begin{pmatrix}
-2 &amp; -4 &amp; 6 \\
-0 &amp; 0 &amp; 0 \\
--1 &amp; 2 &amp; -3
-\end{pmatrix}
-\]</div>
-</li>
-<li>
-<p><strong>Rząd macierzy:</strong>
+<li><strong>Iloczyn <span class="arithmatex">\(v u^{\top}\)</span></strong>:</li>
+</ul>
+<div class="arithmatex">\[\begin{pmatrix}2 \\ 0 \\ -1\end{pmatrix} \cdot \begin{pmatrix}1 &amp; -2 &amp; 3\end{pmatrix} = \begin{pmatrix} 2 &amp; -4 &amp; 6 \\ 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -3 \end{pmatrix}\]</div>
+<ul>
+<li><strong>Rząd macierzy:</strong>
     W macierzy <span class="arithmatex">\(uv^{\top}\)</span> każdy wiersz jest wielokrotnością wiersza pierwszego (lub wektora <span class="arithmatex">\(v\)</span>). Wiersze są liniowo zależne.
-    <strong>Rząd wynosi 1.</strong></p>
-</li>
+    <strong>Rząd wynosi 1.</strong></li>
 </ul>
 <hr />
 <h3 id="zadanie-5">Zadanie 5<a class="headerlink" href="#zadanie-5" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(2,-3,5)\)</span> jest przemienna z <span class="arithmatex">\(E=\operatorname{diag}(a,b,c)\)</span>. Oblicz <span class="arithmatex">\(D^3\)</span> i <span class="arithmatex">\(D^{-1}\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-* <strong>Przemienność:</strong> Jak w Zadaniu 2, macierze diagonalne są przemienne.
-    <span class="arithmatex">\(D \cdot E = \operatorname{diag}(2a, -3b, 5c)\)</span>
-    <span class="arithmatex">\(E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\)</span>
-    Są identyczne.
-* <strong><span class="arithmatex">\(D^3\)</span></strong>: Podnosimy każdy element na przekątnej do potęgi 3.</p>
-<pre><code>$$D^3 = \operatorname{diag}(2^3, (-3)^3, 5^3) = \operatorname{diag}(8, -27, 125)$$
-</code></pre>
+<p><strong>Rozwiązanie:</strong></p>
+<ul>
+<li>
+<p><strong>Przemienność:</strong> Jak w Zadaniu 2, macierze diagonalne są przemienne.
+    <span class="arithmatex">\(<span class="arithmatex">\(D \cdot E = \operatorname{diag}(2a, -3b, 5c)\)</span>
+    <span class="arithmatex">\(E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\)</span>\)</span></p>
+<p>Są identyczne.</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(D^3\)</span></strong>: Podnosimy każdy element na przekątnej do potęgi 3.</p>
+</li>
+</ul>
+<div class="arithmatex">\[D^3 = \operatorname{diag}(2^3, (-3)^3, 5^3) = \operatorname{diag}(8, -27, 125)\]</div>
 <ul>
 <li>
 <p><strong><span class="arithmatex">\(D^{-1}\)</span></strong>: Odwracamy każdy element na przekątnej.</p>
@@ -1826,7 +1824,7 @@ Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(
 <h3 id="zadanie-1_1">Zadanie 1<a class="headerlink" href="#zadanie-1_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Oblicz metodą Sarrusa wyznaczniki macierzy <span class="arithmatex">\(A, B, C\)</span>.</p>
-<div class="arithmatex">\[ A=\begin{pmatrix} 2 &amp; 3 &amp; 1\ 0 &amp; -1 &amp; 4\ 5 &amp; 2 &amp; 0 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 2 &amp; 2\ 4 &amp; 0 &amp; 0\ 7 &amp; 8 &amp; 9 \end{pmatrix} \qquad C=\begin{pmatrix} 3 &amp; 0 &amp; 2\ 2 &amp; 0 &amp; -2\ 0 &amp; 1 &amp; 1 \end{pmatrix} \]</div>
+<div class="arithmatex">\[ A=\begin{pmatrix} 2 &amp; 3 &amp; 1\\ 0 &amp; -1 &amp; 4\\ 5 &amp; 2 &amp; 0 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 2 &amp; 2\\ 4 &amp; 0 &amp; 0\\ 7 &amp; 8 &amp; 9 \end{pmatrix} \qquad C=\begin{pmatrix} 3 &amp; 0 &amp; 2\\ 2 &amp; 0 &amp; -2\\ 0 &amp; 1 &amp; 1 \end{pmatrix} \]</div>
 <p><strong>Rozwiązanie:</strong>
 * <strong>Macierz A:</strong></p>
 <pre><code>$$
@@ -1855,7 +1853,7 @@ $$
 <h3 id="zadanie-2_1">Zadanie 2<a class="headerlink" href="#zadanie-2_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Oblicz wyznaczniki metodą Laplace'a.</p>
-<div class="arithmatex">\[ A=\begin{pmatrix} 1 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 0 &amp; 2\ 3 &amp; 1 &amp; 0\ 4 &amp; 5 &amp; 6 \end{pmatrix} \quad C=\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\ 0 &amp; 1 &amp; 0 &amp; 0\ 0 &amp; 0 &amp; 1 &amp; 1\ 0 &amp; 0 &amp; 0 &amp; 2 \end{pmatrix} \]</div>
+<div class="arithmatex">\[ A=\begin{pmatrix} 1 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 0 &amp; 2\\ 3 &amp; 1 &amp; 0\\ 4 &amp; 5 &amp; 6 \end{pmatrix} \quad C=\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 0 &amp; 2 \end{pmatrix} \]</div>
 <p><strong>Rozwiązanie:</strong>
 * <strong>A (1x1):</strong> <span class="arithmatex">\(\det(1) = 1\)</span>.
 * <strong>B:</strong> Rozwinięcie względem 2. wiersza (lub 1. wiersza):
@@ -1883,7 +1881,7 @@ Wyznacznik macierzy trójkątnej z elementami <span class="arithmatex">\((3, -2,
 <h3 id="zadanie-5_1">Zadanie 5<a class="headerlink" href="#zadanie-5_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
 <p>Dla macierzy zależnej od parametru <span class="arithmatex">\(t\)</span>:</p>
-<div class="arithmatex">\[ M(t)=\begin{pmatrix} t &amp; 1\ 2 &amp; t\ \end{pmatrix} \]</div>
+<div class="arithmatex">\[ M(t)=\begin{pmatrix} t &amp; 1\\ 2 &amp; t \end{pmatrix} \]</div>
 <p>oblicz <span class="arithmatex">\(\det(M(t))\)</span> i znajdź wartości <span class="arithmatex">\(t\)</span>, dla których macierz jest singularna.</p>
 <p><strong>Rozwiązanie:</strong>
 <span class="arithmatex">\(\det M(t) = t^2 - 2\)</span>.
@@ -1901,7 +1899,7 @@ Rozwiąż </p>
 <h3 id="zadanie-1_2">Zadanie 1<a class="headerlink" href="#zadanie-1_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
 <p>Znajdź macierz odwrotną używając wzoru dla macierzy <span class="arithmatex">\(2\times2\)</span> </p>
-<div class="arithmatex">\[ A=\begin{pmatrix}2 &amp; 1\ 5 &amp; 3\end{pmatrix} \qquad B=\begin{pmatrix}0 &amp; 1\ 1 &amp; 0\end{pmatrix} \qquad C=\begin{pmatrix}4 &amp; 7\ 2 &amp; 6\end{pmatrix} \]</div>
+<div class="arithmatex">\[ A=\begin{pmatrix}2 &amp; 1\\ 5 &amp; 3\end{pmatrix} \qquad B=\begin{pmatrix}0 &amp; 1\\ 1 &amp; 0\end{pmatrix} \qquad C=\begin{pmatrix}4 &amp; 7\\ 2 &amp; 6\end{pmatrix} \]</div>
 <p><strong>Rozwiązanie:</strong>
 Wzór: </p>
 <div class="arithmatex">\[A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\]</div>
@@ -1919,7 +1917,7 @@ Wzór: </p>
 <hr />
 <h3 id="zadanie-2_2">Zadanie 2<a class="headerlink" href="#zadanie-2_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
-<div class="arithmatex">\[ A=\begin{pmatrix}1 &amp; 2\ 2 &amp; 5\end{pmatrix} \quad B=\begin{pmatrix}12&amp; 5\ 7 &amp; 3\end{pmatrix} \quad C=\begin{pmatrix}1 &amp; 2 &amp; 3\ 0 &amp; 1 &amp; 4\ 5 &amp; 6 &amp; 0\end{pmatrix} \quad D=\begin{pmatrix}2 &amp; 0 &amp; 1\ 1 &amp; 3 &amp; 0\ 0 &amp; 4 &amp; 5\end{pmatrix} \]</div>
+<div class="arithmatex">\[ A=\begin{pmatrix}1 &amp; 2\\ 2 &amp; 5\end{pmatrix} \quad B=\begin{pmatrix}12&amp; 5\\ 7 &amp; 3\end{pmatrix} \quad C=\begin{pmatrix}1 &amp; 2 &amp; 3\\ 0 &amp; 1 &amp; 4\\ 5 &amp; 6 &amp; 0\end{pmatrix} \quad D=\begin{pmatrix}2 &amp; 0 &amp; 1\\ 1 &amp; 3 &amp; 0\\ 0 &amp; 4 &amp; 5\end{pmatrix} \]</div>
 <p>oblicz macierze odwrotne za pomocą metod:</p>
 <ul>
 <li>dołączania macierzy jednostkowej i wykonywania eliminacji Gaussa-Jordana,</li>
