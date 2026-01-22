@@ -2055,7 +2055,7 @@ Rozwiąż równania macierzowe</p>
 <h2 id="dzia-4-ukady-rownan-liniowych">Dział 4 — Układy równań liniowych<a class="headerlink" href="#dzia-4-ukady-rownan-liniowych" title="Permanent link">&para;</a></h2>
 <h2 id="zadanie-1_3">Zadanie 1<a class="headerlink" href="#zadanie-1_3" title="Permanent link">&para;</a></h2>
 <p>Treść: Rozwiąż układ równań </p>
-<div class="arithmatex">\[2x+3y=5,\ x-4y=-2\]</div>
+<div class="arithmatex">\[ \begin{aligned} 2x+3y&amp;=5,\ x-4y&amp;=-2. \end{aligned} \]</div>
 <ol>
 <li>Metoda wyznaczników (Cramera)
 Wyznacznik główny <span class="arithmatex">\(W\)</span>:</li>
@@ -2086,7 +2086,7 @@ Wyznacznik główny <span class="arithmatex">\(W\)</span>:</li>
 <div class="arithmatex">\[\begin{pmatrix} x \\ y \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -4 &amp; -3 \\ -1 &amp; 2 \end{pmatrix} \begin{pmatrix} 5 \\ -2 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -20 + 6 \\ -5 - 4 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -14 \\ -9 \end{pmatrix} = \begin{pmatrix} \frac{14}{11} \\ \frac{9}{11} \end{pmatrix}\]</div>
 <h3 id="zadanie-2_3">Zadanie 2<a class="headerlink" href="#zadanie-2_3" title="Permanent link">&para;</a></h3>
 <p>Treść: Rozwiąż układ </p>
-<div class="arithmatex">\[x+y+z=6,\ 2x-y+3z=14,\ -x+2y-z=-2\]</div>
+<div class="arithmatex">\[ \begin{aligned} x+y+z&amp;=6,\ 2x-y+3z&amp;=14,\ -x+2y-z&amp;=-2. \end{aligned} \]</div>
 <ol>
 <li>Metoda wyznaczników (Cramera)</li>
 </ol>
@@ -2118,7 +2118,10 @@ Dopełnienia algebraiczne:</li>
 <div class="arithmatex">\[A^{-1} = \frac{1}{-3} \begin{pmatrix} -5 &amp; 3 &amp; 4 \\ -1 &amp; 0 &amp; -1 \\ 3 &amp; -3 &amp; -3 \end{pmatrix}\]</div>
 <div class="arithmatex">\[X = -\frac{1}{3} \begin{pmatrix} -5 &amp; 3 &amp; 4 \\ -1 &amp; 0 &amp; -1 \\ 3 &amp; -3 &amp; -3 \end{pmatrix} \begin{pmatrix} 6 \\ 14 \\ -2 \end{pmatrix} = -\frac{1}{3} \begin{pmatrix} -30+42-8 \\ -6+0+2 \\ 18-42+6 \end{pmatrix} = -\frac{1}{3} \begin{pmatrix} 4 \\ -4 \\ -18 \end{pmatrix} = \begin{pmatrix} -\frac{4}{3} \\ \frac{4}{3} \\ 6 \end{pmatrix}\]</div>
 <h3 id="zadanie-3_3">Zadanie 3<a class="headerlink" href="#zadanie-3_3" title="Permanent link">&para;</a></h3>
-<p>Treść: Układ z parametrem </p>
+<p>Treść: 
+Rozważ układ parametryczny zależny od <span class="arithmatex">\(\lambda\)</span>:</p>
+<div class="arithmatex">\[ \begin{aligned} x+\lambda y&amp;=1,\ 2x+(1+\lambda)y&amp;=3. \end{aligned} \]</div>
+<p>Określ wartości <span class="arithmatex">\(\lambda\)</span>, dla których układ ma jedno rozwiązanie, nieskończenie wiele rozwiązań lub brak rozwiązań.</p>
 <div class="arithmatex">\[\lambda$: $x+\lambda y=1,\ 2x+(1+\lambda)y=3\]</div>
 <p>Macierz główna </p>
 <div class="arithmatex">\[A = \begin{pmatrix} 1 &amp; \lambda \\ 2 &amp; 1+\lambda \end{pmatrix}\]</div>
@@ -2140,14 +2143,16 @@ Odpowiedź:</p>
 <p>Układ nigdy nie ma nieskończenie wielu rozwiązań.</p>
 <h3 id="zadanie-4_3">Zadanie 4<a class="headerlink" href="#zadanie-4_3" title="Permanent link">&para;</a></h3>
 <p>Treść: Rozwiąż <span class="arithmatex">\(Ax=b\)</span> dla </p>
-<div class="arithmatex">\[A=\begin{pmatrix}1 &amp; 1 &amp; 1\ 0 &amp; 2 &amp; -1\ 2 &amp; -1 &amp; 3\end{pmatrix}, b=(4,1,3)^{\top}\]</div>
+<p>Dla macierzy współczynników</p>
+<div class="arithmatex">\[ A=\begin{pmatrix}1 &amp; 1 &amp; 1\ 0 &amp; 2 &amp; -1\ 2 &amp; -1 &amp; 3\end{pmatrix} \]</div>
+<p>i wektora prawych stron <span class="arithmatex">\(b=(4,1,3)^{\top}\)</span> rozwiąż <span class="arithmatex">\(Ax=b\)</span> i sprawdź wynik przez podstawienie.</p>
 <p>Macierz rozszerzona:</p>
 <div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 2 &amp; -1 &amp; 3 &amp; 3 \end{array}\right) \xrightarrow{w_3 - 2w_1} \left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; -3 &amp; 1 &amp; -5 \end{array}\right)\]</div>
 <div class="arithmatex">\[\xrightarrow{2w_3 + 3w_2} \left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -7 \end{array}\right)\]</div>
 <p>Rozwiązanie:</p>
-<p><span class="arithmatex">\(-z = -7 \Rightarrow z = 7\)</span>.
-<span class="arithmatex">\(2y - z = 1 \Rightarrow 2y - 7 = 1 \Rightarrow 2y = 8 \Rightarrow y = 4\)</span>.
-<span class="arithmatex">\(x + y + z = 4 \Rightarrow x + 4 + 7 = 4 \Rightarrow x = -7\)</span>.</p>
+<p><span class="arithmatex">\(-z = -7 \Rightarrow z = 7\)</span>.</p>
+<p><span class="arithmatex">\(2y - z = 1 \Rightarrow 2y - 7 = 1 \Rightarrow 2y = 8 \Rightarrow y = 4\)</span>.</p>
+<p><span class="arithmatex">\(x + y + z = 4 \Rightarrow x + 4 + 7 = 4 \Rightarrow x = -7\)</span>.</p>
 <p>Wynik: </p>
 <div class="arithmatex">\[x = \begin{pmatrix} -7 \\ 4 \\ 7 \end{pmatrix}\]</div>
 <p>Sprawdzenie:</p>
