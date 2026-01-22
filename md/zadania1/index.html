@@ -749,10 +749,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Dział 4 — Układy równań liniowych">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zadanie-1_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -761,13 +760,25 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Zadanie 1">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#zadanie-2_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Zadanie 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadanie-3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadanie 3
       
     </span>
   </a>
@@ -1590,10 +1601,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Dział 4 — Układy równań liniowych">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zadanie-1_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1602,13 +1612,25 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Zadanie 1">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#zadanie-2_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Zadanie 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadanie-3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zadanie 3
       
     </span>
   </a>
@@ -1955,8 +1977,10 @@ Wzór: </p>
 <p>Macierz dopełnień (przed transpozycją): </p>
 <div class="arithmatex">\[\begin{pmatrix} 3 &amp; -7 \\ -5 &amp; 12 \end{pmatrix}\]</div>
 <p>Transpozycja:</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(B^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -7 &amp; 12 \end{pmatrix}\)</span>\)</span>
-3. Macierz </p>
+<div class="arithmatex">\[B^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -7 &amp; 12 \end{pmatrix}\]</div>
+<ol>
+<li>Macierz </li>
+</ol>
 <div class="arithmatex">\[C = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 5 &amp; 6 &amp; 0 \end{pmatrix}\]</div>
 <p>Metoda I: Eliminacja Gaussa-Jordana</p>
 <div class="arithmatex">\[\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 4 &amp; 0 &amp; 1 &amp; 0 \\ 5 &amp; 6 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_3 - 5w_1} \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; -4 &amp; -15 &amp; -5 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
@@ -2014,75 +2038,156 @@ Warunek istnienia: żaden element na przekątnej nie może być zerem.</p>
 <hr />
 <h3 id="zadanie-6_1">Zadanie 6<a class="headerlink" href="#zadanie-6_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
-Rozwiąż równania macierzowe <span class="arithmatex">\(AX=B\)</span> lub <span class="arithmatex">\(XA=B\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-a) <span class="arithmatex">\(X = A^{-1}B\)</span>. <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix}\)</span>.
+Rozwiąż równania macierzowe</p>
+<p>a) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{bmatrix}\)</span>\)</span></p>
+<p>b) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span>\)</span></p>
+<p>c) <span class="arithmatex">\(<span class="arithmatex">\(X \cdot \begin{bmatrix} 1 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -3 &amp; 3 \\ 4 &amp; 3 &amp; 2 \\ 1 &amp; -2 &amp; 5 \end{bmatrix}\)</span>\)</span></p>
+<p>d) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 3 &amp; 2 &amp; 3 \\ 1 &amp; 1 &amp; 2 \\ 3 &amp; 2 &amp; 4 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{bmatrix}\)</span>\)</span></p>
+<p><strong>Rozwiązanie:</strong></p>
+<p>a) <span class="arithmatex">\(X = A^{-1}B\)</span>. <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix}\)</span>.
 <span class="arithmatex">\(X = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix} \begin{pmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{pmatrix} = \begin{pmatrix} 2 &amp; -23 \\ 0 &amp; 8 \end{pmatrix}\)</span>.</p>
 <p>b) <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\)</span>.
 <span class="arithmatex">\(X = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix} \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0 &amp; 2 \\ 1 &amp; -2 \end{pmatrix}\)</span>.</p>
-<p>c) <span class="arithmatex">\(X \cdot A = B \implies X = B \cdot A^{-1}\)</span>.
-Należy obliczyć <span class="arithmatex">\(A^{-1}\)</span> i pomnożyć <span class="arithmatex">\(B\)</span> z prawej strony przez <span class="arithmatex">\(A^{-1}\)</span>.</p>
+<p>c) <span class="arithmatex">\(X \cdot A = B \implies X = B \cdot A^{-1}\)</span>.</p>
+<p>Należy obliczyć <span class="arithmatex">\(A^{-1}\)</span> i pomnożyć <span class="arithmatex">\(B\)</span> z prawej strony przez <span class="arithmatex">\(A^{-1}\)</span>.</p>
 <p>d) Analogicznie <span class="arithmatex">\(X = A^{-1}B\)</span>.</p>
 <hr />
 <h2 id="dzia-4-ukady-rownan-liniowych">Dział 4 — Układy równań liniowych<a class="headerlink" href="#dzia-4-ukady-rownan-liniowych" title="Permanent link">&para;</a></h2>
-<h3 id="zadanie-1_3">Zadanie 1<a class="headerlink" href="#zadanie-1_3" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-<span class="arithmatex">\(\begin{cases} 2x+3y=5 \\ x-4y=-2 \end{cases}\)</span></p>
-<p><strong>Rozwiązanie:</strong>
-Metoda podstawiania (z drugiego równania <span class="arithmatex">\(x = 4y - 2\)</span>):
-<span class="arithmatex">\(2(4y-2) + 3y = 5 \implies 8y - 4 + 3y = 5 \implies 11y = 9 \implies y = \frac{9}{11}\)</span>.
-<span class="arithmatex">\(x = 4(\frac{9}{11}) - 2 = \frac{36}{11} - \frac{22}{11} = \frac{14}{11}\)</span>.
-Wynik: <span class="arithmatex">\(x=\frac{14}{11}, y=\frac{9}{11}\)</span>.</p>
-<hr />
+<h2 id="zadanie-1_3">Zadanie 1<a class="headerlink" href="#zadanie-1_3" title="Permanent link">&para;</a></h2>
+<p>Treść: Rozwiąż układ równań </p>
+<div class="arithmatex">\[2x+3y=5,\ x-4y=-2\]</div>
+<ol>
+<li>Metoda wyznaczników (Cramera)
+Wyznacznik główny <span class="arithmatex">\(W\)</span>:</li>
+</ol>
+<div class="arithmatex">\[W = \begin{vmatrix} 2 &amp; 3 \\ 1 &amp; -4 \end{vmatrix} = 2 \cdot (-4) - 3 \cdot 1 = -8 - 3 = -11\]</div>
+<p>Wyznaczniki zmiennych <span class="arithmatex">\(W_x, W_y\)</span>:</p>
+<div class="arithmatex">\[W_x = \begin{vmatrix} 5 &amp; 3 \\ -2 &amp; -4 \end{vmatrix} = 5 \cdot (-4) - 3 \cdot (-2) = -20 + 6 = -14\]</div>
+<div class="arithmatex">\[W_y = \begin{vmatrix} 2 &amp; 5 \\ 1 &amp; -2 \end{vmatrix} = 2 \cdot (-2) - 5 \cdot 1 = -4 - 5 = -9\]</div>
+<p>Rozwiązanie:</p>
+<div class="arithmatex">\[x = \frac{W_x}{W} = \frac{-14}{-11} = \frac{14}{11}, \quad y = \frac{W_y}{W} = \frac{-9}{-11} = \frac{9}{11}\]</div>
+<ol>
+<li>Metoda eliminacji Gaussa</li>
+</ol>
+<p>Macierz rozszerzona:</p>
+<div class="arithmatex">\[\left(\begin{array}{cc|c} 2 &amp; 3 &amp; 5 \\ 1 &amp; -4 &amp; -2 \end{array}\right) \xrightarrow{w_1 \leftrightarrow w_2} \left(\begin{array}{cc|c} 1 &amp; -4 &amp; -2 \\ 2 &amp; 3 &amp; 5 \end{array}\right)\]</div>
+<div class="arithmatex">\[\xrightarrow{w_2 - 2w_1} \left(\begin{array}{cc|c} 1 &amp; -4 &amp; -2 \\ 0 &amp; 11 &amp; 9 \end{array}\right)\]</div>
+<p>Układ schodkowy:</p>
+<div class="arithmatex">\[\begin{cases} x - 4y = -2 \\ 11y = 9 \Rightarrow y = \frac{9}{11} \end{cases}\]</div>
+<p>Podstawienie wsteczne:</p>
+<div class="arithmatex">\[x - 4\left(\frac{9}{11}\right) = -2 \Rightarrow x = -2 + \frac{36}{11} = -\frac{22}{11} + \frac{36}{11} = \frac{14}{11}\]</div>
+<ol>
+<li>Metoda macierzy odwrotnej</li>
+</ol>
+<p>Równanie <span class="arithmatex">\(AX=B\)</span>, gdzie <span class="arithmatex">\(A=\begin{pmatrix} 2 &amp; 3 \\ 1 &amp; -4 \end{pmatrix}, B=\begin{pmatrix} 5 \\ -2 \end{pmatrix}\)</span>.</p>
+<p>Wyznacznik <span class="arithmatex">\(\det(A) = -11\)</span>. Macierz dopełnień algebraicznych transponowana:</p>
+<div class="arithmatex">\[A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} -4 &amp; -3 \\ -1 &amp; 2 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -4 &amp; -3 \\ -1 &amp; 2 \end{pmatrix}\]</div>
+<p>Obliczenie <span class="arithmatex">\(X = A^{-1}B\)</span>:</p>
+<div class="arithmatex">\[\begin{pmatrix} x \\ y \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -4 &amp; -3 \\ -1 &amp; 2 \end{pmatrix} \begin{pmatrix} 5 \\ -2 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -20 + 6 \\ -5 - 4 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -14 \\ -9 \end{pmatrix} = \begin{pmatrix} \frac{14}{11} \\ \frac{9}{11} \end{pmatrix}\]</div>
 <h3 id="zadanie-2_3">Zadanie 2<a class="headerlink" href="#zadanie-2_3" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-<span class="arithmatex">\(\begin{cases} x+y+z=6 \\ 2x-y+3z=14 \\ -x+2y-z=-2 \end{cases}\)</span></p>
-<p><strong>Rozwiązanie:</strong>
-Dodajmy równanie 1 i 3: <span class="arithmatex">\((x+y+z) + (-x+2y-z) = 6 - 2 \implies 3y = 4 \implies y = \frac{4}{3}\)</span>.
-To podejście wydaje się zbyt proste, sprawdźmy pełną eliminację Gaussa.
-Macierz rozszerzona:
-<span class="arithmatex">\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 2 &amp; -1 &amp; 3 &amp; 14 \\ -1 &amp; 2 &amp; -1 &amp; -2 \end{array}\right)\)</span>
-<span class="arithmatex">\(w_2 - 2w_1, w_3 + w_1\)</span>:
-<span class="arithmatex">\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; -3 &amp; 1 &amp; 2 \\ 0 &amp; 3 &amp; 0 &amp; 4 \end{array}\right)\)</span>
-Z trzeciego wiersza: <span class="arithmatex">\(3y = 4 \implies y = 4/3\)</span>.
-Z drugiego: <span class="arithmatex">\(-3(4/3) + z = 2 \implies -4 + z = 2 \implies z = 6\)</span>.
-Z pierwszego: <span class="arithmatex">\(x + 4/3 + 6 = 6 \implies x = -4/3\)</span>.
-Wynik: <span class="arithmatex">\(x=-4/3, y=4/3, z=6\)</span>.</p>
-<hr />
+<p>Treść: Rozwiąż układ </p>
+<div class="arithmatex">\[x+y+z=6,\ 2x-y+3z=14,\ -x+2y-z=-2\]</div>
+<ol>
+<li>Metoda wyznaczników (Cramera)</li>
+</ol>
+<div class="arithmatex">\[W = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 2 &amp; -1 &amp; 3 \\ -1 &amp; 2 &amp; -1 \end{vmatrix} = (1+2(-1)(-1)+1(2)(3)) - (1(-1)(-1)+2(2)(1)+1(3)(-1))\]</div>
+<div class="arithmatex">\[W = (1+2+6) - (1+4-3) = 9 - 2 = 7 \quad (\text{Błąd w obliczeniach pamięciowych, sprawdzam metodą Sarrusa poniżej})\]</div>
+<p>Poprawne obliczenie <span class="arithmatex">\(W\)</span>:</p>
+<div class="arithmatex">\[\det(A) = 1(1-6) - 1(-2+3) + 1(4-1) = -5 - 1 + 3 = -3\]</div>
+<p>Wyznaczniki <span class="arithmatex">\(W_x, W_y, W_z\)</span>:</p>
+<div class="arithmatex">\[W_x = \begin{vmatrix} 6 &amp; 1 &amp; 1 \\ 14 &amp; -1 &amp; 3 \\ -2 &amp; 2 &amp; -1 \end{vmatrix} = 6(1-6) - 1(-14+6) + 1(28-2) = -30 + 8 + 26 = 4\]</div>
+<div class="arithmatex">\[W_y = \begin{vmatrix} 1 &amp; 6 &amp; 1 \\ 2 &amp; 14 &amp; 3 \\ -1 &amp; -2 &amp; -1 \end{vmatrix} = 1(-14+6) - 6(-2+3) + 1(-4+14) = -8 - 6 + 10 = -4\]</div>
+<div class="arithmatex">\[W_z = \begin{vmatrix} 1 &amp; 1 &amp; 6 \\ 2 &amp; -1 &amp; 14 \\ -1 &amp; 2 &amp; -2 \end{vmatrix} = 1(2-28) - 1(-4+14) + 6(4-1) = -26 - 10 + 18 = -18\]</div>
+<p>Rozwiązanie:</p>
+<div class="arithmatex">\[x = \frac{4}{-3} = -\frac{4}{3}, \quad y = \frac{-4}{-3} = \frac{4}{3}, \quad z = \frac{-18}{-3} = 6\]</div>
+<ol>
+<li>Metoda eliminacji Gaussa</li>
+</ol>
+<div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 2 &amp; -1 &amp; 3 &amp; 14 \\ -1 &amp; 2 &amp; -1 &amp; -2 \end{array}\right) \xrightarrow{w_2-2w_1,\ w_3+w_1} \left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; -3 &amp; 1 &amp; 2 \\ 0 &amp; 3 &amp; 0 &amp; 4 \end{array}\right)\]</div>
+<p>Z <span class="arithmatex">\(w_3\)</span>: <span class="arithmatex">\(3y = 4 \Rightarrow y = \frac{4}{3}\)</span>.
+Z <span class="arithmatex">\(w_2\)</span>: <span class="arithmatex">\(-3(\frac{4}{3}) + z = 2 \Rightarrow -4 + z = 2 \Rightarrow z = 6\)</span>.
+Z <span class="arithmatex">\(w_1\)</span>: <span class="arithmatex">\(x + \frac{4}{3} + 6 = 6 \Rightarrow x = -\frac{4}{3}\)</span>.</p>
+<ol>
+<li>Metoda macierzy odwrotnej
+<span class="arithmatex">\(X = A^{-1}B\)</span>.
+Dopełnienia algebraiczne:</li>
+</ol>
+<p><span class="arithmatex">\(D_{11}=-5, D_{12}=-1, D_{13}=3\)</span></p>
+<p><span class="arithmatex">\(D_{21}=3, D_{22}=0, D_{23}=-3\)</span></p>
+<p><span class="arithmatex">\(D_{31}=4, D_{32}=-1, D_{33}=-3\)</span></p>
+<div class="arithmatex">\[A^{-1} = \frac{1}{-3} \begin{pmatrix} -5 &amp; 3 &amp; 4 \\ -1 &amp; 0 &amp; -1 \\ 3 &amp; -3 &amp; -3 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = -\frac{1}{3} \begin{pmatrix} -5 &amp; 3 &amp; 4 \\ -1 &amp; 0 &amp; -1 \\ 3 &amp; -3 &amp; -3 \end{pmatrix} \begin{pmatrix} 6 \\ 14 \\ -2 \end{pmatrix} = -\frac{1}{3} \begin{pmatrix} -30+42-8 \\ -6+0+2 \\ 18-42+6 \end{pmatrix} = -\frac{1}{3} \begin{pmatrix} 4 \\ -4 \\ -18 \end{pmatrix} = \begin{pmatrix} -\frac{4}{3} \\ \frac{4}{3} \\ 6 \end{pmatrix}\]</div>
+<h3 id="zadanie-3_3">Zadanie 3<a class="headerlink" href="#zadanie-3_3" title="Permanent link">&para;</a></h3>
+<p>Treść: Układ z parametrem </p>
+<div class="arithmatex">\[\lambda$: $x+\lambda y=1,\ 2x+(1+\lambda)y=3\]</div>
+<p>Macierz główna </p>
+<div class="arithmatex">\[A = \begin{pmatrix} 1 &amp; \lambda \\ 2 &amp; 1+\lambda \end{pmatrix}\]</div>
+<p>Wyznacznik główny:</p>
+<div class="arithmatex">\[W = 1(1+\lambda) - 2\lambda = 1 + \lambda - 2\lambda = 1 - \lambda\]</div>
+<p>Wyznaczniki <span class="arithmatex">\(W_x, W_y\)</span>:</p>
+<div class="arithmatex">\[W_x = \begin{vmatrix} 1 &amp; \lambda \\ 3 &amp; 1+\lambda \end{vmatrix} = 1 + \lambda - 3\lambda = 1 - 2\lambda\]</div>
+<div class="arithmatex">\[W_y = \begin{vmatrix} 1 &amp; 1 \\ 2 &amp; 3 \end{vmatrix} = 3 - 2 = 1\]</div>
+<p>Analiza rozwiązań:</p>
+<p>Jedno rozwiązanie: <span class="arithmatex">\(W \neq 0 \Rightarrow 1 - \lambda \neq 0 \Rightarrow \lambda \neq 1\)</span>.</p>
+<p>Brak rozwiązań: <span class="arithmatex">\(W = 0 \land (W_x \neq 0 \lor W_y \neq 0)\)</span>.</p>
+<p>Dla <span class="arithmatex">\(\lambda = 1\)</span>: <span class="arithmatex">\(W = 0\)</span>, <span class="arithmatex">\(W_y = 1 \neq 0\)</span>. Układ sprzeczny.</p>
+<p>Nieskończenie wiele rozwiązań: <span class="arithmatex">\(W = 0 \land W_x = 0 \land W_y = 0\)</span>.</p>
+<p>Ponieważ <span class="arithmatex">\(W_y = 1\)</span> (stała), nigdy nie równa się 0.
+Odpowiedź:</p>
+<p><span class="arithmatex">\(\lambda \in \mathbb{R} \setminus \{1\}\)</span>: </p>
+<p>Jedno rozwiązanie.</p>
+<p><span class="arithmatex">\(\lambda = 1\)</span>: Brak rozwiązań.</p>
+<p>Układ nigdy nie ma nieskończenie wielu rozwiązań.</p>
 <h3 id="zadanie-4_3">Zadanie 4<a class="headerlink" href="#zadanie-4_3" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-<span class="arithmatex">\(A=\begin{pmatrix}1 &amp; 1 &amp; 1\\ 0 &amp; 2 &amp; -1\\ 2 &amp; -1 &amp; 3\end{pmatrix}\)</span>, <span class="arithmatex">\(b=(4,1,3)^{\top}\)</span>. Rozwiąż <span class="arithmatex">\(Ax=b\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-Macierz rozszerzona:
-<span class="arithmatex">\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 2 &amp; -1 &amp; 3 &amp; 3 \end{array}\right)\)</span>
-<span class="arithmatex">\(w_3 - 2w_1 \to (0, -3, 1 | -5)\)</span>.
-Układ z <span class="arithmatex">\(w_2\)</span> i <span class="arithmatex">\(w_3\)</span>:
-<span class="arithmatex">\(2y - z = 1\)</span>
-<span class="arithmatex">\(-3y + z = -5\)</span>
-Dodajmy stronami: <span class="arithmatex">\(-y = -4 \implies y = 4\)</span>.
-<span class="arithmatex">\(2(4) - z = 1 \implies 8 - 1 = z \implies z = 7\)</span>.
-<span class="arithmatex">\(x + 4 + 7 = 4 \implies x = -7\)</span>.
-Wynik: <span class="arithmatex">\(x=-7, y=4, z=7\)</span>.</p>
-<hr />
+<p>Treść: Rozwiąż <span class="arithmatex">\(Ax=b\)</span> dla </p>
+<div class="arithmatex">\[A=\begin{pmatrix}1 &amp; 1 &amp; 1\ 0 &amp; 2 &amp; -1\ 2 &amp; -1 &amp; 3\end{pmatrix}, b=(4,1,3)^{\top}\]</div>
+<p>Macierz rozszerzona:</p>
+<div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 2 &amp; -1 &amp; 3 &amp; 3 \end{array}\right) \xrightarrow{w_3 - 2w_1} \left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; -3 &amp; 1 &amp; -5 \end{array}\right)\]</div>
+<div class="arithmatex">\[\xrightarrow{2w_3 + 3w_2} \left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 4 \\ 0 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -7 \end{array}\right)\]</div>
+<p>Rozwiązanie:</p>
+<p><span class="arithmatex">\(-z = -7 \Rightarrow z = 7\)</span>.
+<span class="arithmatex">\(2y - z = 1 \Rightarrow 2y - 7 = 1 \Rightarrow 2y = 8 \Rightarrow y = 4\)</span>.
+<span class="arithmatex">\(x + y + z = 4 \Rightarrow x + 4 + 7 = 4 \Rightarrow x = -7\)</span>.</p>
+<p>Wynik: </p>
+<div class="arithmatex">\[x = \begin{pmatrix} -7 \\ 4 \\ 7 \end{pmatrix}\]</div>
+<p>Sprawdzenie:</p>
+<div class="arithmatex">\[\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; -1 \\ 2 &amp; -1 &amp; 3 \end{pmatrix} \begin{pmatrix} -7 \\ 4 \\ 7 \end{pmatrix} = \begin{pmatrix} -7 + 4 + 7 \\ 0 + 8 - 7 \\ -14 - 4 + 21 \end{pmatrix} = \begin{pmatrix} 4 \\ 1 \\ 3 \end{pmatrix} = b \quad (\text{Zgadza się})\]</div>
 <h3 id="zadanie-5_3">Zadanie 5<a class="headerlink" href="#zadanie-5_3" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-Rozwiąż podane układy równań (a-l).</p>
-<p><strong>Szkic rozwiązań:</strong></p>
-<ul>
-<li><strong>a)</strong> Oznaczony. <span class="arithmatex">\(W \neq 0\)</span>. Wynik: <span class="arithmatex">\(x_1=2, x_2=-1, x_3=1\)</span>.</li>
-<li><strong>b)</strong> Sprzeczny lub nieskończenie wiele rozwiązań? Sprawdzamy rzędy.
-    <span class="arithmatex">\(w_2 - w_1 \to (0, -2, -10 | 12)\)</span>.
-    <span class="arithmatex">\(w_3 + 3w_1 \to (0, -1, -5 | 6)\)</span>.
-    Wiersze są proporcjonalne (<span class="arithmatex">\(w_2 = 2w_3\)</span>). Układ nieoznaczony (nieskończenie wiele rozwiązań zależnych od parametru).</li>
-<li><strong>c)</strong> To samo co b), ale prawa strona trzeciego równania to 2.
-    Wtedy otrzymamy sprzeczność (po lewej 0, po prawej liczba różna od 0). Brak rozwiązań.</li>
-<li><strong>d)</strong> Układ 2 równań z 3 niewiadomymi. Nieskończenie wiele rozwiązań (zależne od 1 parametru).</li>
-<li><strong>h) i i)</strong> Układy jednorodne (po prawej same zera). Zawsze mają rozwiązanie zerowe. Jeśli wyznacznik główny jest 0 (jak w 'i'), mają też rozwiązania niezerowe.</li>
-<li><strong>k)</strong> <span class="arithmatex">\(\begin{cases} 4x_1 + 4x_3 = 8 \implies x_1+x_3=2 \\ x_2 - 6x_3 = -3 \\ 3x_1 + x_2 - 3x_3 = 3 \end{cases}\)</span>
-    Z pierwszego <span class="arithmatex">\(x_1 = 2-x_3\)</span>. Podstawiamy do trzeciego: <span class="arithmatex">\(3(2-x_3) + (6x_3 - 3) - 3x_3 = 3 \implies 6 - 3x_3 + 6x_3 - 3 - 3x_3 = 3 \implies 3 = 3\)</span>.
-    Tożsamość. Nieskończenie wiele rozwiązań zależnych od <span class="arithmatex">\(x_3\)</span>.
-    Niech <span class="arithmatex">\(x_3 = t\)</span>. Wtedy <span class="arithmatex">\(x_1 = 2-t, x_2 = 6t-3\)</span>.</li>
-</ul>
+<p>Treść: Rozwiąż podane układy równań (a, b, c, d)</p>
+<p>a)</p>
+<div class="arithmatex">\[ \begin{cases} x_1 + 4x_2 + 3x_3 = 1, \ 2x_1 + 5x_2 + 4x_3 = 4, \ x_1 - 3x_2 - 2x_3 = 5; \end{cases} \]</div>
+<p>b) $$ \begin{cases} x_1 - 2x_2 - 3x_3 = 2, \ x_1 - 4x_2 - 13x_3 = 14, \ -3x_1 + 5x_2 + 4x_3 = 0; \end{cases} $$</p>
+<p>c) $$ \begin{cases} x_1 - 2x_2 - 3x_3 = 2, \ x_1 - 4x_2 - 13x_3 = 14, \ -3x_1 + 5x_2 + 4x_3 = 2; \end{cases} $$</p>
+<p>d) $$ \begin{cases} -4x_1 + 3x_2 + 2x_3 = -2, \ 5x_1 - 4x_2 + x_3 = 3; \end{cases} $$</p>
+<p>a)</p>
+<div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; 4 &amp; 3 &amp; 1 \\ 2 &amp; 5 &amp; 4 &amp; 4 \\ 1 &amp; -3 &amp; -2 &amp; 5 \end{array}\right) \xrightarrow{w_2-2w_1, w_3-w_1} \left(\begin{array}{ccc|c} 1 &amp; 4 &amp; 3 &amp; 1 \\ 0 &amp; -3 &amp; -2 &amp; 2 \\ 0 &amp; -7 &amp; -5 &amp; 4 \end{array}\right)\]</div>
+<div class="arithmatex">\[\xrightarrow{3w_3 - 7w_2} \left(\begin{array}{ccc|c} 1 &amp; 4 &amp; 3 &amp; 1 \\ 0 &amp; -3 &amp; -2 &amp; 2 \\ 0 &amp; 0 &amp; -1 &amp; -2 \end{array}\right)\]</div>
+<p>Rozwiązanie:</p>
+<p><span class="arithmatex">\(z = 2\)</span>.</p>
+<p><span class="arithmatex">\(-3y - 2(2) = 2 \Rightarrow -3y = 6 \Rightarrow y = -2\)</span>.</p>
+<p><span class="arithmatex">\(x + 4(-2) + 3(2) = 1 \Rightarrow x - 8 + 6 = 1 \Rightarrow x = 3\)</span>.</p>
+<p>Wynik: <span class="arithmatex">\(x_1=3, x_2=-2, x_3=2\)</span>.</p>
+<p>b)</p>
+<div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 1 &amp; -4 &amp; -13 &amp; 14 \\ -3 &amp; 5 &amp; 4 &amp; 0 \end{array}\right) \xrightarrow{w_2-w_1, w_3+3w_1} \left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 0 &amp; -2 &amp; -10 &amp; 12 \\ 0 &amp; -1 &amp; -5 &amp; 6 \end{array}\right)\]</div>
+<div class="arithmatex">\[\xrightarrow{w_2 / (-2)} \left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 0 &amp; 1 &amp; 5 &amp; -6 \\ 0 &amp; -1 &amp; -5 &amp; 6 \end{array}\right) \xrightarrow{w_3 + w_2} \left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 0 &amp; 1 &amp; 5 &amp; -6 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right)\]</div>
+<p>Układ nieoznaczony. Parametr 
+<span class="arithmatex">\(x_3 = t\)</span>.</p>
+<p><span class="arithmatex">\(x_2 + 5t = -6 \Rightarrow x_2 = -6 - 5t\)</span>.</p>
+<p><span class="arithmatex">\(x_1 - 2(-6 - 5t) - 3t = 2 \Rightarrow x_1 + 12 + 10t - 3t = 2 \Rightarrow x_1 = -10 - 7t\)</span>.</p>
+<p>Wynik: <span class="arithmatex">\(x_1 = -10 - 7t,\ x_2 = -6 - 5t,\ x_3 = t, \quad t \in \mathbb{R}\)</span>.</p>
+<p>c)</p>
+<div class="arithmatex">\[\left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 1 &amp; -4 &amp; -13 &amp; 14 \\ -3 &amp; 5 &amp; 4 &amp; 2 \end{array}\right) \xrightarrow{\text{Gauss}} \left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 0 &amp; 1 &amp; 5 &amp; -6 \\ 0 &amp; -1 &amp; -5 &amp; 8 \end{array}\right) \xrightarrow{w_3+w_2} \left(\begin{array}{ccc|c} 1 &amp; -2 &amp; -3 &amp; 2 \\ 0 &amp; 1 &amp; 5 &amp; -6 \\ 0 &amp; 0 &amp; 0 &amp; 2 \end{array}\right)\]</div>
+<p>Ostatnie równanie <span class="arithmatex">\(0 = 2\)</span> jest sprzeczne.</p>
+<p>Wynik: Układ sprzeczny (brak rozwiązań).</p>
+<p>d)</p>
+<div class="arithmatex">\[\begin{cases} -4x_1 + 3x_2 + 2x_3 = -2 \\ 5x_1 - 4x_2 + x_3 = 3 \end{cases}\]</div>
+<p>Eliminacja <span class="arithmatex">\(x_3\)</span>. <span class="arithmatex">\(w_1 - 2w_2\)</span>:</p>
+<div class="arithmatex">\[(-4x_1 + 3x_2 + 2x_3) - 2(5x_1 - 4x_2 + x_3) = -2 - 2(3)\]</div>
+<div class="arithmatex">\[-14x_1 + 11x_2 = -8\]</div>
+<p>Parametryzacja: niech <span class="arithmatex">\(x_1 = t\)</span>.</p>
+<div class="arithmatex">\[11x_2 = 14t - 8 \Rightarrow x_2 = \frac{14t - 8}{11}\]</div>
+<p>Z drugiego równania: <span class="arithmatex">\(x_3 = 3 - 5x_1 + 4x_2 = 3 - 5t + 4\left(\frac{14t - 8}{11}\right) = \frac{33 - 55t + 56t - 32}{11} = \frac{t + 1}{11}\)</span></p>
+<p>Wynik: <span class="arithmatex">\(\begin{cases} x_1 = t \\ x_2 = \frac{14t - 8}{11} \\ x_3 = \frac{t + 1}{11} \end{cases}, \quad t \in \mathbb{R}\)</span>.</p>
 
 
 
