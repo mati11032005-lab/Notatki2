@@ -1774,19 +1774,20 @@ Dla macierzy </p>
 <h3 id="zadanie-4">Zadanie 4<a class="headerlink" href="#zadanie-4" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
 <p>Dla wektorów kolumnowych <span class="arithmatex">\(u=(1,-2,3)^{\top}\)</span> oraz <span class="arithmatex">\(v=(2,0,-1)^{\top}\)</span> zapisz je jako macierze i oblicz <span class="arithmatex">\(u+v\)</span>, <span class="arithmatex">\(u-v\)</span> oraz iloczyny macierzowe <span class="arithmatex">\(u\,v^{\top}\)</span> i <span class="arithmatex">\(v\,u^{\top}\)</span>. Jaka jest rząd macierzy <span class="arithmatex">\(u\,v^{\top}\)</span>?</p>
-<p><strong>Rozwiązanie:</strong>
-* <span class="arithmatex">\(u+v = \begin{pmatrix}3 \\ -2 \\ 2\end{pmatrix}\)</span>
-* <span class="arithmatex">\(u-v = \begin{pmatrix}-1 \\ -2 \\ 4\end{pmatrix}\)</span>
-* <strong>Iloczyn <span class="arithmatex">\(u v^{\top}\)</span></strong> (macierz <span class="arithmatex">\(3\times3\)</span>):</p>
-<pre><code>$$
+<p><strong>Rozwiązanie:</strong></p>
+<ul>
+<li><span class="arithmatex">\(u+v = \begin{pmatrix}3 \\ -2 \\ 2\end{pmatrix}\)</span></li>
+<li><span class="arithmatex">\(u-v = \begin{pmatrix}-1 \\ -2 \\ 4\end{pmatrix}\)</span></li>
+<li><strong>Iloczyn <span class="arithmatex">\(u v^{\top}\)</span></strong> (macierz <span class="arithmatex">\(3\times3\)</span>):</li>
+</ul>
+<div class="arithmatex">\[
 \begin{pmatrix}1 \\ -2 \\ 3\end{pmatrix} \cdot \begin{pmatrix}2 &amp; 0 &amp; -1\end{pmatrix} =
 \begin{pmatrix}
 2 &amp; 0 &amp; -1 \\
 -4 &amp; 0 &amp; 2 \\
 6 &amp; 0 &amp; -3
 \end{pmatrix}
-$$
-</code></pre>
+\]</div>
 <ul>
 <li><strong>Iloczyn <span class="arithmatex">\(v u^{\top}\)</span></strong>:</li>
 </ul>
@@ -1799,13 +1800,13 @@ $$
 <hr />
 <h3 id="zadanie-5">Zadanie 5<a class="headerlink" href="#zadanie-5" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
-Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(2,-3,5)\)</span> jest przemienna z <span class="arithmatex">\(E=\operatorname{diag}(a,b,c)\)</span>. Oblicz <span class="arithmatex">\(D^3\)</span> i <span class="arithmatex">\(D^{-1}\)</span>.</p>
+Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(2,-3,5)\)</span> jest przemienna z <span class="arithmatex">\(E=\operatorname{diag}(a,b,c)\)</span>. Oblicz <span class="arithmatex">\(D^3\)</span> </p>
 <p><strong>Rozwiązanie:</strong></p>
 <ul>
 <li>
-<p><strong>Przemienność:</strong> Jak w Zadaniu 2, macierze diagonalne są przemienne.
-    <span class="arithmatex">\(<span class="arithmatex">\(D \cdot E = \operatorname{diag}(2a, -3b, 5c)\)</span>
-    <span class="arithmatex">\(E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\)</span>\)</span></p>
+<p><strong>Przemienność:</strong> Jak w Zadaniu 2, macierze diagonalne są przemienne.</p>
+<div class="arithmatex">\[D \cdot E = \operatorname{diag}(2a, -3b, 5c)$
+$E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\]</div>
 <p>Są identyczne.</p>
 </li>
 <li>
@@ -1813,28 +1814,17 @@ Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(
 </li>
 </ul>
 <div class="arithmatex">\[D^3 = \operatorname{diag}(2^3, (-3)^3, 5^3) = \operatorname{diag}(8, -27, 125)\]</div>
-<ul>
-<li>
-<p><strong><span class="arithmatex">\(D^{-1}\)</span></strong>: Odwracamy każdy element na przekątnej.</p>
-<div class="arithmatex">\[D^{-1} = \operatorname{diag}\left(\frac{1}{2}, -\frac{1}{3}, \frac{1}{5}\right)\]</div>
-</li>
-</ul>
 <hr />
 <h2 id="dzia-2-wyznaczniki">Dział 2 — Wyznaczniki<a class="headerlink" href="#dzia-2-wyznaczniki" title="Permanent link">&para;</a></h2>
 <h3 id="zadanie-1_1">Zadanie 1<a class="headerlink" href="#zadanie-1_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Oblicz metodą Sarrusa wyznaczniki macierzy <span class="arithmatex">\(A, B, C\)</span>.</p>
-<div class="arithmatex">\[ A=\begin{pmatrix} 2 &amp; 3 &amp; 1\\ 0 &amp; -1 &amp; 4\\ 5 &amp; 2 &amp; 0 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 2 &amp; 2\\ 4 &amp; 0 &amp; 0\\ 7 &amp; 8 &amp; 9 \end{pmatrix} \qquad C=\begin{pmatrix} 3 &amp; 0 &amp; 2\\ 2 &amp; 0 &amp; -2\\ 0 &amp; 1 &amp; 1 \end{pmatrix} \]</div>
-<p><strong>Rozwiązanie:</strong>
-* <strong>Macierz A:</strong></p>
-<pre><code>$$
-\det A = (2\cdot(-1)\cdot0 + 3\cdot4\cdot5 + 1\cdot0\cdot2) - (1\cdot(-1)\cdot5 + 2\cdot4\cdot2 + 3\cdot0\cdot0)
-$$
-
-$$
-= (0 + 60 + 0) - (-5 + 16 + 0) = 60 - 11 = 49
-$$
-</code></pre>
+<div class="arithmatex">\[ A=\begin{pmatrix} 2 &amp; 3 &amp; 1\\ 0 &amp; -1 &amp; 4\\ 5 &amp; 2 &amp; 0 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 2 &amp; 2\\ 4 &amp; 0 &amp; 0\\ 7 &amp; 8 &amp; 9 \end{pmatrix} \quad C=\begin{pmatrix} 3 &amp; 0 &amp; 2\\ 2 &amp; 0 &amp; -2\\ 0 &amp; 1 &amp; 1 \end{pmatrix} \]</div>
+<p><strong>Rozwiązanie:</strong></p>
+<ul>
+<li><strong>Macierz A:</strong></li>
+</ul>
+<div class="arithmatex">\[\det A = (2\cdot(-1)\cdot0 + 3\cdot4\cdot5 + 1\cdot0\cdot2) - (1\cdot(-1)\cdot5 + 2\cdot4\cdot2 + 3\cdot0\cdot0) = (0 + 60 + 0) - (-5 + 16 + 0) = 60 - 11 = 49\]</div>
 <ul>
 <li>
 <p><strong>Macierz B:</strong></p>
@@ -1854,13 +1844,19 @@ $$
 <p><strong>Treść:</strong>
 Oblicz wyznaczniki metodą Laplace'a.</p>
 <div class="arithmatex">\[ A=\begin{pmatrix} 1 \end{pmatrix} \quad B=\begin{pmatrix} 1 &amp; 0 &amp; 2\\ 3 &amp; 1 &amp; 0\\ 4 &amp; 5 &amp; 6 \end{pmatrix} \quad C=\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4\\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 0 &amp; 2 \end{pmatrix} \]</div>
-<p><strong>Rozwiązanie:</strong>
-* <strong>A (1x1):</strong> <span class="arithmatex">\(\det(1) = 1\)</span>.
-* <strong>B:</strong> Rozwinięcie względem 2. wiersza (lub 1. wiersza):
-    Rozwińmy wzg. 1. wiersza:
-    <span class="arithmatex">\(1 \cdot \det\begin{pmatrix}1 &amp; 0\\ 5 &amp; 6\end{pmatrix} + 2 \cdot \det\begin{pmatrix}3 &amp; 1\\ 4 &amp; 5\end{pmatrix} = 1(6-0) + 2(15-4) = 6 + 22 = 28\)</span>.
-* <strong>C:</strong> Macierz trójkątna górna. Wyznacznik to iloczyn przekątnej.
+<p><strong>Rozwiązanie:</strong></p>
+<ul>
+<li><strong>A (1x1):</strong> <span class="arithmatex">\(\det(1) = 1\)</span>.</li>
+<li>
+<p><strong>B:</strong> Rozwinięcie względem 2. wiersza (lub  1. wiersza):</p>
+<p>Rozwińmy wzg. 1. wiersza:</p>
+<div class="arithmatex">\[1 \cdot \det\begin{pmatrix}1 &amp; 0\\ 5 &amp; 6\end{pmatrix} + 2 \cdot \det\begin{pmatrix}3 &amp; 1\\ 4 &amp; 5\end{pmatrix} = 1(6-0) + 2(15-4) = 6 + 22 = 28\]</div>
+</li>
+<li>
+<p><strong>C:</strong> Macierz trójkątna górna. Wyznacznik to iloczyn przekątnej.
     <span class="arithmatex">\(\det C = 1 \cdot 1 \cdot 1 \cdot 2 = 2\)</span>.</p>
+</li>
+</ul>
 <hr />
 <h3 id="zadanie-3_1">Zadanie 3<a class="headerlink" href="#zadanie-3_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
