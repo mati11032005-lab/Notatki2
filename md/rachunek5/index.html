@@ -1,0 +1,1707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../html/Calki.html">
+      
+      
+        <link rel="next" href="../zadania3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>5.Równania różniczkowe - Notatki z Matematyki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/math.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-wprowadzenie-do-rownan-rozniczkowych" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Notatki z Matematyki" class="md-header__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notatki z Matematyki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.Równania różniczkowe
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notatki z Matematyki" class="md-nav__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notatki z Matematyki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra liniowa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra liniowa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Macierze podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Operacje_na_macierzach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja operacje macierze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Wyznaczniki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Wyznaczniki_macierzy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja wyznaczników
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Macierz odwrotna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Macierz_odwrotna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja macierzy odwrotnej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Układy równań liniowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zadania1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.Zadania algebra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometria analityczna
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometria analityczna
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Wektory podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Iloczyny wektorów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Wektory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja wektory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometria3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Proste i płaszczyzny
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Proste.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja proste i płaszczyzny
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zadania2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Zadania geometria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rachunek różniczkowy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rachunek różniczkowy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Funkcje podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Funkcje.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja funkcji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Granice funkcji i ciągów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Różniczkowanie funkcji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Pochodna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja pochodne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rachunek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Całki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html/Calki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja całki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.Równania różniczkowe
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.Równania różniczkowe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-wprowadzenie-do-rownan-rozniczkowych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Wprowadzenie do Równań Różniczkowych
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Wprowadzenie do Równań Różniczkowych">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuicja-przepis-na-dynamike" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuicja: Przepis na dynamikę
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rzad-rownania-jak-geboko-siegamy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rząd równania: Jak głęboko sięgamy?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rozwiazanie-ogolne-vs-szczegolne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rozwiązanie Ogólne vs. Szczególne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proces-rozwiazywania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proces rozwiązywania
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykady-klasyfikacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykłady klasyfikacji
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-rownania-rozniczkowe-pierwszego-rzedu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Równania Różniczkowe Pierwszego Rzędu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Równania Różniczkowe Pierwszego Rzędu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metoda-rozdzielania-zmiennych-wielka-segregacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metoda Rozdzielania Zmiennych: Wielka Segregacja
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metoda-uzmienniania-staej" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metoda Uzmienniania Stałej
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zastosowanie-rozpad-promieniotworczy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zastosowanie: Rozpad promieniotwórczy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#praktyczne-przykady-z-rozwiazaniami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Praktyczne przykłady z rozwiązaniami
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-rownania-liniowe-drugiego-rzedu-o-staych-wspoczynnikach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Równania Liniowe Drugiego Rzędu o Stałych Współczynnikach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Równania Liniowe Drugiego Rzędu o Stałych Współczynnikach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rownanie-charakterystyczne-matematyczny-tumacz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Równanie Charakterystyczne: Matematyczny Tłumacz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trzy-scenariusze-zaleznosc-od-delty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trzy Scenariusze (Zależność od Delty)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykady-z-rozwiazaniami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykłady z rozwiązaniami
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#podsumowanie-fizyczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podsumowanie fizyczne
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zadania3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.Zadania rachunek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pomoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pomoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-wprowadzenie-do-rownan-rozniczkowych" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Wprowadzenie do Równań Różniczkowych
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Wprowadzenie do Równań Różniczkowych">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuicja-przepis-na-dynamike" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuicja: Przepis na dynamikę
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rzad-rownania-jak-geboko-siegamy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rząd równania: Jak głęboko sięgamy?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rozwiazanie-ogolne-vs-szczegolne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rozwiązanie Ogólne vs. Szczególne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proces-rozwiazywania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proces rozwiązywania
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykady-klasyfikacji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykłady klasyfikacji
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-rownania-rozniczkowe-pierwszego-rzedu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Równania Różniczkowe Pierwszego Rzędu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Równania Różniczkowe Pierwszego Rzędu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metoda-rozdzielania-zmiennych-wielka-segregacja" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metoda Rozdzielania Zmiennych: Wielka Segregacja
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metoda-uzmienniania-staej" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metoda Uzmienniania Stałej
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zastosowanie-rozpad-promieniotworczy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zastosowanie: Rozpad promieniotwórczy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#praktyczne-przykady-z-rozwiazaniami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Praktyczne przykłady z rozwiązaniami
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-rownania-liniowe-drugiego-rzedu-o-staych-wspoczynnikach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Równania Liniowe Drugiego Rzędu o Stałych Współczynnikach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Równania Liniowe Drugiego Rzędu o Stałych Współczynnikach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rownanie-charakterystyczne-matematyczny-tumacz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Równanie Charakterystyczne: Matematyczny Tłumacz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trzy-scenariusze-zaleznosc-od-delty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trzy Scenariusze (Zależność od Delty)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#przykady-z-rozwiazaniami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Przykłady z rozwiązaniami
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#podsumowanie-fizyczne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podsumowanie fizyczne
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>5.Równania różniczkowe</h1>
+
+<h2 id="i-wprowadzenie-do-rownan-rozniczkowych">I. Wprowadzenie do Równań Różniczkowych<a class="headerlink" href="#i-wprowadzenie-do-rownan-rozniczkowych" title="Permanent link">&para;</a></h2>
+<h3 id="intuicja-przepis-na-dynamike">Intuicja: Przepis na dynamikę<a class="headerlink" href="#intuicja-przepis-na-dynamike" title="Permanent link">&para;</a></h3>
+<p>Równanie różniczkowe to matematyczny opis ruchu i zmiany. W klasycznej algebrze szukamy liczby (np. <span class="arithmatex">\(x=5\)</span>), natomiast w równaniach różniczkowych szukamy całej funkcji (np. <span class="arithmatex">\(y = f(x)\)</span>), która opisuje, jak dany układ zachowuje się w czasie lub przestrzeni.
+Wyobraź sobie równanie różniczkowe jako instrukcję obsługi zmiany:</p>
+<p>Zamiast mówić: „Samochód jest w punkcie 100 km”, równanie mówi: „Samochód jedzie tak, że jego prędkość jest zawsze dwa razy większa niż aktualny czas podróży”.</p>
+<p>W fizyce najprostszym przykładem jest zależność między drogą (<span class="arithmatex">\(s\)</span>) a prędkością (<span class="arithmatex">\(v\)</span>). Jeśli prędkość jest stała, zapisujemy to jako:</p>
+<div class="arithmatex">\[\frac{ds}{dt} = v\]</div>
+<p>To równanie mówi nam: „Szybkość zmiany położenia w czasie jest stała i wynosi <span class="arithmatex">\(v\)</span>”. Aby dowiedzieć się, gdzie będziemy po godzinie, musimy to równanie „rozwiązać”, czyli scałkować.</p>
+<h3 id="rzad-rownania-jak-geboko-siegamy">Rząd równania: Jak głęboko sięgamy?<a class="headerlink" href="#rzad-rownania-jak-geboko-siegamy" title="Permanent link">&para;</a></h3>
+<p>Rząd równania to najważniejsza cecha, która mówi nam, jak bardzo skomplikowany jest proces. Określa go najwyższa pochodna, która pojawia się w zapisie.</p>
+<ul>
+<li>
+<p>Pierwszy rząd: Dotyczy prędkości zmian (pojawia się <span class="arithmatex">\(y'\)</span>). Przykład: <span class="arithmatex">\(y' = 3x\)</span>.
+Drugi rząd: Dotyczy przyspieszenia (pojawia się <span class="arithmatex">\(y''\)</span>). Przykład: <span class="arithmatex">\(y'' + 2y' = 0\)</span>.</p>
+</li>
+<li>
+<p>Wyższe rzędy: Mogą opisywać bardzo złożone zjawiska, np. drgania konstrukcji.</p>
+</li>
+</ul>
+<p>Ważna uwaga: Jeśli widzisz <span class="arithmatex">\((y')^4\)</span>, to nadal jest to równanie pierwszego rzędu. Potęga mówi nam o tym, że równanie jest nieliniowe (trudniejsze), ale to „ilość kresek” przy <span class="arithmatex">\(y\)</span> decyduje o rzędzie.</p>
+<h3 id="rozwiazanie-ogolne-vs-szczegolne">Rozwiązanie Ogólne vs. Szczególne<a class="headerlink" href="#rozwiazanie-ogolne-vs-szczegolne" title="Permanent link">&para;</a></h3>
+<p>Kiedy rozwiązujemy równanie różniczkowe, procesem odwrotnym do pochodnej jest całka. A jak wiemy, każda całka nieoznaczona zostawia po sobie stałą <span class="arithmatex">\(+C\)</span>.</p>
+<p><strong>Rozwiązanie Ogólne:</strong> </p>
+<p>To wzór funkcji zawierający stałą <span class="arithmatex">\(C\)</span>. Nie jest to jedna linia na wykresie, ale cała nieskończona rodzina krzywych. Każda z nich ma ten sam „kształt” (tę samą dynamikę), ale są przesunięte względem siebie.</p>
+<p>**Rozwiązanie Szczególne: **</p>
+<p>To ta jedna, jedyna krzywa, która pasuje do konkretnej sytuacji. Aby ją znaleźć, potrzebujemy warunku początkowego, np. punktu, przez który funkcja musi przejść (np. <span class="arithmatex">\(y(0) = 5\)</span>). Dzięki temu obliczamy konkretną wartość <span class="arithmatex">\(C\)</span>.</p>
+<h3 id="proces-rozwiazywania">Proces rozwiązywania<a class="headerlink" href="#proces-rozwiazywania" title="Permanent link">&para;</a></h3>
+<p>**Przykład **</p>
+<p><span class="arithmatex">\(y' = 2x\)</span></p>
+<p>Przeanalizujmy proces znajdowania konkretnej funkcji krok po kroku:</p>
+<p>Zapis: Mamy informację, że pochodna naszej funkcji to <span class="arithmatex">\(2x\)</span>. </p>
+<p>Zapisujemy to jako: <span class="arithmatex">\(\frac{dy}{dx} = 2x\)</span>.</p>
+<p>Całkowanie: Chcemy „cofnąć” różniczkowanie. Nakładamy całkę:</p>
+<div class="arithmatex">\[y = \int 2x \, dx\]</div>
+<p>Wynik ogólny: Stosując wzór na całkę potęgową, otrzymujemy:</p>
+<div class="arithmatex">\[y = x^2 + C\]</div>
+<p>To jest rozwiązanie ogólne – rodzina wszystkich parabol przesuniętych w pionie.</p>
+<p>Zastosowanie warunku: Jeśli wiemy, że dla <span class="arithmatex">\(x=0\)</span> nasza funkcja musi wynosić <span class="arithmatex">\(5\)</span> (czyli <span class="arithmatex">\(y(0)=5\)</span>), podstawiamy te liczby:</p>
+<div class="arithmatex">\[5 = 0^2 + C \implies C = 5\]</div>
+<p>Wynik szczególny: Nasza konkretna funkcja to <span class="arithmatex">\(y = x^2 + 5\)</span>.</p>
+<h3 id="przykady-klasyfikacji">Przykłady klasyfikacji<a class="headerlink" href="#przykady-klasyfikacji" title="Permanent link">&para;</a></h3>
+<p>Równanie A: <span class="arithmatex">\(y' + 3y = e^x\)</span></p>
+<p>Jest to równanie pierwszego rzędu, ponieważ najwyższa pochodna to <span class="arithmatex">\(y'\)</span>. Jest to klasyczny model wzrostu (np. populacji) z dodatkowym czynnikiem zewnętrznym.</p>
+<p>Równanie B: <span class="arithmatex">\(y'' - (y')^4 + 10y = 0\)</span></p>
+<p>Jest to równanie drugiego rzędu. Mimo że <span class="arithmatex">\(y'\)</span> jest podniesione do czwartej potęgi, to najwyższą pochodną w całym równaniu jest <span class="arithmatex">\(y''\)</span>. Takie równania często opisują układy mechaniczne z oporem powietrza.</p>
+<p>Równanie C: <span class="arithmatex">\(\frac{d^3y}{dx^3} = \sin(x) \cdot y\)</span></p>
+<p>To równanie trzeciego rzędu. Zapis <span class="arithmatex">\(\frac{d^3y}{dx^3}\)</span> to po prostu inny sposób na napisanie <span class="arithmatex">\(y'''\)</span>. Im wyższy rząd, tym więcej informacji początkowych potrzebowalibyśmy, aby znaleźć rozwiązanie szczególne (dla 3. rzędu potrzebne byłyby aż 3 warunki).</p>
+<h2 id="ii-rownania-rozniczkowe-pierwszego-rzedu">II. Równania Różniczkowe Pierwszego Rzędu<a class="headerlink" href="#ii-rownania-rozniczkowe-pierwszego-rzedu" title="Permanent link">&para;</a></h2>
+<h3 id="metoda-rozdzielania-zmiennych-wielka-segregacja">Metoda Rozdzielania Zmiennych: Wielka Segregacja<a class="headerlink" href="#metoda-rozdzielania-zmiennych-wielka-segregacja" title="Permanent link">&para;</a></h3>
+<p>To najprostsza i najbardziej intuicyjna metoda. Stosujemy ją, gdy <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\(y\)</span> są połączone mnożeniem lub dzieleniem, co pozwala nam "rozrzucić" je na dwie strony równania.</p>
+<p><strong>Przykład:</strong> </p>
+<p><span class="arithmatex">\(y' = y \cdot x\)</span></p>
+<p>Zapis formalny: Zamieniamy <span class="arithmatex">\(y'\)</span> na ułamek <span class="arithmatex">\(\frac{dy}{dx}\)</span>. </p>
+<p>Mamy: <span class="arithmatex">\(\frac{dy}{dx} = y \cdot x\)</span>.</p>
+<p>Rozdzielenie: Przenosimy wszystko z <span class="arithmatex">\(y\)</span> na lewo, a wszystko z <span class="arithmatex">\(x\)</span> na prawo:</p>
+<div class="arithmatex">\[\frac{1}{y} \, dy = x \, dx\]</div>
+<p>Całkowanie: Nakładamy symbole całki na obie strony:</p>
+<div class="arithmatex">\[\int \frac{1}{y} \, dy = \int x \, dx\]</div>
+<p>Wynik: Po wyliczeniu całek otrzymujemy <span class="arithmatex">\(\ln|y| = \frac{1}{2}x^2 + C\)</span>, co po przekształceniu daje nam postać wykładniczą:</p>
+<div class="arithmatex">\[y = C_1 e^{\frac{1}{2}x^2}\]</div>
+<h3 id="metoda-uzmienniania-staej">Metoda Uzmienniania Stałej<a class="headerlink" href="#metoda-uzmienniania-staej" title="Permanent link">&para;</a></h3>
+<p>Uzywamy gdy zmiennych w równaniu nie można rodzielić</p>
+<p>Kiedy w równaniu pojawia się dodawanie (np. <span class="arithmatex">\(y' + y = x\)</span>), standardowe rozdzielanie zawodzi. Wtedy stosujemy dwuetapowy proces uzmienniania stałej.</p>
+<p><strong>Przykład:</strong> </p>
+<p><span class="arithmatex">\(y' + y = x\)</span></p>
+<p>Etap A: Rozwiązanie równania jednorodnego (z zerem)</p>
+<p>Udajemy, że po prawej stronie jest zero: <span class="arithmatex">\(y' + y = 0\)</span>. Rozdzielamy zmienne i otrzymujemy:
+<span class="arithmatex">\(<span class="arithmatex">\(y = C \cdot e^{-x}\)</span>\)</span></p>
+<p>Etap B: Uzmiennianie stałej <span class="arithmatex">\(C\)</span></p>
+<p>Zakładamy, że nasza stała to tak naprawdę funkcja <span class="arithmatex">\(C(x)\)</span>. Zatem nasze rozwiązanie to: <span class="arithmatex">\(y = C(x) \cdot e^{-x}\)</span>.</p>
+<p>Liczymy pochodną tego wyrażenia (ze wzoru na iloczyn) i podstawiamy do oryginalnego równania <span class="arithmatex">\(y' + y = x\)</span>.</p>
+<p>Efekt: Po uproszczeniach (części z <span class="arithmatex">\(C(x)\)</span> zawsze się skrócą!) zostaje nam proste równanie na <span class="arithmatex">\(C'(x)\)</span>, z którego wyliczamy, że <span class="arithmatex">\(C(x) = xe^x - e^x + K\)</span>.</p>
+<p>Wynik końcowy: Podstawiamy <span class="arithmatex">\(C(x)\)</span> z powrotem do wzoru i otrzymujemy:</p>
+<div class="arithmatex">\[y = x - 1 + K e^{-x}\]</div>
+<h3 id="zastosowanie-rozpad-promieniotworczy">Zastosowanie: Rozpad promieniotwórczy<a class="headerlink" href="#zastosowanie-rozpad-promieniotworczy" title="Permanent link">&para;</a></h3>
+<p>Równania pierwszego rzędu (konkretnie <span class="arithmatex">\(y' = -ky\)</span>) idealnie opisują naturę. Jeśli szybkość ubywania substancji jest proporcjonalna do jej ilości, mamy do czynienia z rozpadem wykładniczym. To dlatego izotopy promieniotwórcze mają swój "czas połowicznego rozpadu" – ich ilość maleje według funkcji <span class="arithmatex">\(e^{-kx}\)</span>, którą wyliczamy właśnie tą metodą.</p>
+<h3 id="praktyczne-przykady-z-rozwiazaniami">Praktyczne przykłady z rozwiązaniami<a class="headerlink" href="#praktyczne-przykady-z-rozwiazaniami" title="Permanent link">&para;</a></h3>
+<p><strong>Zadanie 1:</strong> </p>
+<p>Znajdź rozwiązanie ogólne <span class="arithmatex">\(y' = 3x^2 y\)</span></p>
+<p>Metoda: Rozdzielanie zmiennych.</p>
+<p>Rozwiązanie: </p>
+<div class="arithmatex">\[\frac{1}{y} dy = 3x^2 dx \implies \ln|y| = x^3 + C\]</div>
+<p>Wynik: <span class="arithmatex">\(y = C_1 e^{x^3}\)</span></p>
+<p><strong>Zadanie 2:</strong> </p>
+<p>Znajdź rozwiązanie ogólne <span class="arithmatex">\(y' = \frac{x}{y}\)</span></p>
+<p>Metoda: Rozdzielanie zmiennych.</p>
+<p>Rozwiązanie: </p>
+<div class="arithmatex">\[y \, dy = x \, dx \implies \int y \, dy = \int x \, dx \implies \frac{1}{2}y^2 = \frac{1}{2}x^2 + C\]</div>
+<p>Wynik: <span class="arithmatex">\(y^2 = x^2 + C_1\)</span> (rodzina hiperbol).</p>
+<p><strong>Zadanie 3:</strong> </p>
+<p>Określ, którą metodę należy zastosować dla równania <span class="arithmatex">\(y' - 2xy = x\)</span></p>
+<p>Metoda: Metoda uzmienniania stałej.</p>
+<p>Dlaczego? Ponieważ obecność wyrazu <span class="arithmatex">\(-2xy\)</span> połączonego odejmowaniem z <span class="arithmatex">\(y'\)</span> uniemożliwia proste rozdzielenie <span class="arithmatex">\(x\)</span> od <span class="arithmatex">\(y\)</span> (funkcja po prawej stronie nie jest zerem, a <span class="arithmatex">\(y\)</span> nie występuje w każdym składniku tak, by dało się je łatwo wyłączyć przed nawias).</p>
+<h2 id="iii-rownania-liniowe-drugiego-rzedu-o-staych-wspoczynnikach">III. Równania Liniowe Drugiego Rzędu o Stałych Współczynnikach<a class="headerlink" href="#iii-rownania-liniowe-drugiego-rzedu-o-staych-wspoczynnikach" title="Permanent link">&para;</a></h2>
+<h3 id="rownanie-charakterystyczne-matematyczny-tumacz">Równanie Charakterystyczne: Matematyczny Tłumacz<a class="headerlink" href="#rownanie-charakterystyczne-matematyczny-tumacz" title="Permanent link">&para;</a></h3>
+<p>W równaniach drugiego rzędu (gdzie mamy <span class="arithmatex">\(y''\)</span>) szukamy rozwiązania w postaci funkcji wykładniczej <span class="arithmatex">\(e^{rx}\)</span>. Aby nie liczyć za każdym razem skomplikowanych pochodnych, stosujemy równanie charakterystyczne. Pozwala ono zamienić problem różniczkowy na zwykłe równanie kwadratowe, które znamy ze szkoły:</p>
+<p>Dla równania: </p>
+<div class="arithmatex">\[ay'' + by' + cy = 0\]</div>
+<p>Zapisujemy: </p>
+<div class="arithmatex">\[ar^2 + br + c = 0\]</div>
+<p>To, jakie wyniki (pierwiastki <span class="arithmatex">\(r\)</span>) otrzymamy z tego równania, zależy od wyróżnika (<span class="arithmatex">\(\Delta\)</span>). Delta mówi nam, czy układ będzie powoli wracał do zera, czy może zacznie drgać jak sprężyna.</p>
+<h3 id="trzy-scenariusze-zaleznosc-od-delty">Trzy Scenariusze (Zależność od Delty)<a class="headerlink" href="#trzy-scenariusze-zaleznosc-od-delty" title="Permanent link">&para;</a></h3>
+<p><strong>Scenariusz A:</strong> </p>
+<p>Delta dodatnia (<span class="arithmatex">\(\Delta &gt; 0\)</span>)
+Otrzymujemy dwa różne pierwiastki rzeczywiste <span class="arithmatex">\(r_1\)</span> oraz <span class="arithmatex">\(r_2\)</span>.</p>
+<p>Wzór: <span class="arithmatex">\(<span class="arithmatex">\(y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\)</span>\)</span></p>
+<p>Intuicja: Układ jest „przetłumiony”. Jeśli pchniesz wahadło w gęstym miodzie, ono powoli wróci do środka bez ani jednego wahnięcia w drugą stronę.</p>
+<p><strong>Scenariusz B:</strong> </p>
+<p>Delta ujemna (<span class="arithmatex">\(\Delta &lt; 0\)</span>)
+Otrzymujemy pierwiastki zespolone w postaci <span class="arithmatex">\(r = \alpha \pm i\beta\)</span>.</p>
+<p>Wzór: </p>
+<div class="arithmatex">\[y = e^{\alpha x} (C_1 \cos(\beta x) + C_2 \sin(\beta x))\]</div>
+<p>Intuicja: To są drgania! Liczba <span class="arithmatex">\(\alpha\)</span> (część rzeczywista) mówi o tym, jak szybko drgania wygasają, a <span class="arithmatex">\(\beta\)</span> (część przy <span class="arithmatex">\(i\)</span>) wyznacza ich częstotliwość.</p>
+<p>**Scenariusz C: **</p>
+<p>Delta równa zero (<span class="arithmatex">\(\Delta = 0\)</span>)
+Otrzymujemy jeden podwójny pierwiastek <span class="arithmatex">\(r\)</span>.</p>
+<p>Wzór: </p>
+<div class="arithmatex">\[y = (C_1 + C_2 x) e^{rx}\]</div>
+<p>Intuicja: Tłumienie krytyczne. Układ wraca do równowagi najszybciej jak to możliwe, ale wciąż bez oscylacji. Musimy dodać <span class="arithmatex">\(x\)</span> przy drugiej stałej, aby rozwiązanie było matematycznie kompletne.</p>
+<h3 id="przykady-z-rozwiazaniami">Przykłady z rozwiązaniami<a class="headerlink" href="#przykady-z-rozwiazaniami" title="Permanent link">&para;</a></h3>
+<p><strong>Przykład 1:</strong></p>
+<p>Równanie: <span class="arithmatex">\(y'' + 5y' + 4y = 0\)</span></p>
+<p>Równanie charakterystyczne: <span class="arithmatex">\(r^2 + 5r + 4 = 0\)</span></p>
+<p>Obliczenia: <span class="arithmatex">\(\Delta = 25 - 16 = 9\)</span>, <span class="arithmatex">\(\sqrt{\Delta} = 3\)</span>. </p>
+<p>Pierwiastki: <span class="arithmatex">\(r_1 = -4, r_2 = -1\)</span>.</p>
+<p>Wynik ogólny: </p>
+<div class="arithmatex">\[y = C_1 e^{-4x} + C_2 e^{-x}\]</div>
+<p><strong>Przykład 2:</strong></p>
+<p>Równanie: <span class="arithmatex">\(y'' + 2y' + 5y = 0\)</span></p>
+<p>Równanie charakterystyczne: <span class="arithmatex">\(r^2 + 2r + 5 = 0\)</span></p>
+<p>Obliczenia: <span class="arithmatex">\(\Delta = 4 - 20 = -16\)</span>. </p>
+<p>Pierwiastki: <span class="arithmatex">\(r = \frac{-2 \pm 4i}{2} = -1 \pm 2i\)</span>.</p>
+<p>Parametry: <span class="arithmatex">\(\alpha = -1, \beta = 2\)</span>.</p>
+<p>Wynik ogólny: </p>
+<div class="arithmatex">\[y = e^{-x} (C_1 \cos(2x) + C_2 \sin(2x))\]</div>
+<p><strong>Przykład 3:</strong></p>
+<p>Równanie: <span class="arithmatex">\(y'' - 4y' + 4y = 0\)</span></p>
+<p>Równanie charakterystyczne: <span class="arithmatex">\(r^2 - 4r + 4 = 0\)</span></p>
+<p>Obliczenia: <span class="arithmatex">\(\Delta = 16 - 16 = 0\)</span>. Pierwiastek podwójny: <span class="arithmatex">\(r = 2\)</span>.</p>
+<p>Wynik ogólny: </p>
+<div class="arithmatex">\[y = (C_1 + C_2 x) e^{2x}\]</div>
+<h3 id="podsumowanie-fizyczne">Podsumowanie fizyczne<a class="headerlink" href="#podsumowanie-fizyczne" title="Permanent link">&para;</a></h3>
+<p>Równania drugiego rzędu to fundament mechaniki. Gdybyś projektował zawieszenie w samochodzie, dążyłbyś do tego, aby Twoja „Delta” była jak najbliższa zeru (przypadek 3) – dzięki temu po wpadnięciu w dziurę auto nie bujałoby się przez kilometr (przypadek 2), ani nie opadało sztywno jak cegła (przypadek 1).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax-config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
