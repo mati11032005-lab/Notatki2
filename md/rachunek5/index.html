@@ -1525,10 +1525,10 @@ Drugi rząd: Dotyczy przyspieszenia (pojawia się <span class="arithmatex">\(y''
 <p>Kiedy rozwiązujemy równanie różniczkowe, procesem odwrotnym do pochodnej jest całka. A jak wiemy, każda całka nieoznaczona zostawia po sobie stałą <span class="arithmatex">\(+C\)</span>.</p>
 <p><strong>Rozwiązanie Ogólne:</strong> </p>
 <p>To wzór funkcji zawierający stałą <span class="arithmatex">\(C\)</span>. Nie jest to jedna linia na wykresie, ale cała nieskończona rodzina krzywych. Każda z nich ma ten sam „kształt” (tę samą dynamikę), ale są przesunięte względem siebie.</p>
-<p>**Rozwiązanie Szczególne: **</p>
+<p><strong>Rozwiązanie Szczególne:</strong></p>
 <p>To ta jedna, jedyna krzywa, która pasuje do konkretnej sytuacji. Aby ją znaleźć, potrzebujemy warunku początkowego, np. punktu, przez który funkcja musi przejść (np. <span class="arithmatex">\(y(0) = 5\)</span>). Dzięki temu obliczamy konkretną wartość <span class="arithmatex">\(C\)</span>.</p>
 <h3 id="proces-rozwiazywania">Proces rozwiązywania<a class="headerlink" href="#proces-rozwiazywania" title="Permanent link">&para;</a></h3>
-<p>**Przykład **</p>
+<p><strong>Przykład</strong></p>
 <p><span class="arithmatex">\(y' = 2x\)</span></p>
 <p>Przeanalizujmy proces znajdowania konkretnej funkcji krok po kroku:</p>
 <p>Zapis: Mamy informację, że pochodna naszej funkcji to <span class="arithmatex">\(2x\)</span>. </p>
@@ -1566,15 +1566,65 @@ Drugi rząd: Dotyczy przyspieszenia (pojawia się <span class="arithmatex">\(y''
 <p>Kiedy w równaniu pojawia się dodawanie (np. <span class="arithmatex">\(y' + y = x\)</span>), standardowe rozdzielanie zawodzi. Wtedy stosujemy dwuetapowy proces uzmienniania stałej.</p>
 <p><strong>Przykład:</strong> </p>
 <p><span class="arithmatex">\(y' + y = x\)</span></p>
-<p>Etap A: Rozwiązanie równania jednorodnego (z zerem)</p>
-<p>Udajemy, że po prawej stronie jest zero: <span class="arithmatex">\(y' + y = 0\)</span>. Rozdzielamy zmienne i otrzymujemy:
-<span class="arithmatex">\(<span class="arithmatex">\(y = C \cdot e^{-x}\)</span>\)</span></p>
-<p>Etap B: Uzmiennianie stałej <span class="arithmatex">\(C\)</span></p>
-<p>Zakładamy, że nasza stała to tak naprawdę funkcja <span class="arithmatex">\(C(x)\)</span>. Zatem nasze rozwiązanie to: <span class="arithmatex">\(y = C(x) \cdot e^{-x}\)</span>.</p>
-<p>Liczymy pochodną tego wyrażenia (ze wzoru na iloczyn) i podstawiamy do oryginalnego równania <span class="arithmatex">\(y' + y = x\)</span>.</p>
-<p>Efekt: Po uproszczeniach (części z <span class="arithmatex">\(C(x)\)</span> zawsze się skrócą!) zostaje nam proste równanie na <span class="arithmatex">\(C'(x)\)</span>, z którego wyliczamy, że <span class="arithmatex">\(C(x) = xe^x - e^x + K\)</span>.</p>
-<p>Wynik końcowy: Podstawiamy <span class="arithmatex">\(C(x)\)</span> z powrotem do wzoru i otrzymujemy:</p>
+<p>Jasne, rozpiszmy to tak dokładnie, żebyś mógł prześledzić każdy ruch "matematycznego skalpela". Metoda uzmienniania stałej to w rzeczywistości proces dwuetapowy: najpierw upraszczamy świat, a potem przywracamy mu złożoność.
+Rozwiązujemy równanie:</p>
+<div class="arithmatex">\[y' + y = x\]</div>
+<ul>
+<li>Krok 1: Rozwiązanie równania jednorodnego (RJ)
+Zaczynamy od udawania, że prawa strona to zero. Szukamy rozwiązania dla:</li>
+</ul>
+<div class="arithmatex">\[y' + y = 0\]</div>
+<p>To równanie rozwiązujemy metodą rozdzielania zmiennych:</p>
+<p>Zapisujemy <span class="arithmatex">\(y'\)</span> jako <span class="arithmatex">\(\frac{dy}{dx}\)</span>:</p>
+<div class="arithmatex">\[\frac{dy}{dx} = -y\]</div>
+<p>Przenosimy <span class="arithmatex">\(y\)</span> na lewo, a <span class="arithmatex">\(dx\)</span> na prawo:</p>
+<div class="arithmatex">\[\frac{1}{y} dy = -1 dx\]</div>
+<p>Całkujemy obie strony:</p>
+<div class="arithmatex">\[\int \frac{1}{y} dy = \int -1 dx \implies \ln|y| = -x + C\]</div>
+<p>Wyznaczamy <span class="arithmatex">\(y\)</span>, nakładając funkcję wykładniczą <span class="arithmatex">\(e\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(y_j = C \cdot e^{-x}\)</span>\)</span></p>
+<p>To jest nasze rozwiązanie jednorodne (<span class="arithmatex">\(y_j\)</span>). Mówi nam ono, co dzieje się z układem, gdy nie działa na niego żadna siła zewnętrzna (nasze <span class="arithmatex">\(x\)</span>).</p>
+<ul>
+<li>Krok 2: Uzmiennianie stałej (Metoda Lagrange'a)
+Teraz wracamy do pełnego równania <span class="arithmatex">\(y' + y = x\)</span>. Podejrzewamy, że stała <span class="arithmatex">\(C\)</span> nie jest liczbą, ale funkcją zależną od <span class="arithmatex">\(x\)</span>. Zapisujemy więc:</li>
+</ul>
+<div class="arithmatex">\[y = C(x) \cdot e^{-x}\]</div>
+<p>Aby znaleźć to <span class="arithmatex">\(C(x)\)</span>, musimy podstawić to wyrażenie do oryginalnego równania. Potrzebujemy do tego pochodnej <span class="arithmatex">\(y'\)</span>.</p>
+<p>Obliczamy <span class="arithmatex">\(y'\)</span> (pamiętaj o wzorze na pochodną iloczynu!):</p>
+<div class="arithmatex">\[y' = \text{[pochodna } C(x)\text{]} \cdot e^{-x} + C(x) \cdot \text{[pochodna } e^{-x}\text{]}\]</div>
+<div class="arithmatex">\[y' = C'(x) \cdot e^{-x} + C(x) \cdot (-e^{-x})\]</div>
+<ul>
+<li>Krok 3: Podstawienie do równania głównego
+Teraz bierzemy nasze <span class="arithmatex">\(y\)</span> oraz <span class="arithmatex">\(y'\)</span> i wstawiamy je do <span class="arithmatex">\(y' + y = x\)</span>:</li>
+</ul>
+<div class="arithmatex">\[\underbrace{(C'(x)e^{-x} - C(x)e^{-x})}_{y'} + \underbrace{C(x)e^{-x}}_{y} = x\]</div>
+<p>Zauważ magię: Składniki <span class="arithmatex">\(-C(x)e^{-x}\)</span> oraz <span class="arithmatex">\(+C(x)e^{-x}\)</span> znoszą się do zera. To się musi stać zawsze! Jeśli się nie skróciły, oznacza to błąd w Kroku 1.</p>
+<p>Zostaje nam proste równanie:</p>
+<div class="arithmatex">\[C'(x)e^{-x} = x\]</div>
+<ul>
+<li>Krok 4: Wyznaczenie funkcji <span class="arithmatex">\(C(x)\)</span></li>
+</ul>
+<p>Chcemy samo <span class="arithmatex">\(C(x)\)</span>, więc najpierw izolujemy <span class="arithmatex">\(C'(x)\)</span>, mnożąc obie strony przez <span class="arithmatex">\(e^x\)</span>:</p>
+<div class="arithmatex">\[C'(x) = x \cdot e^x\]</div>
+<p>Teraz musimy to scałkować:</p>
+<div class="arithmatex">\[C(x) = \int x e^x dx\]</div>
+<p>To jest całka przez części. Stosujemy wzór <span class="arithmatex">\(\int u dv = uv - \int v du\)</span>:</p>
+<p><span class="arithmatex">\(u = x \implies du = dx\)</span></p>
+<p><span class="arithmatex">\(dv = e^x dx \implies v = e^x\)</span></p>
+<div class="arithmatex">\[C(x) = x e^x - \int e^x dx = x e^x - e^x + K\]</div>
+<p>(Gdzie <span class="arithmatex">\(K\)</span> jest naszą nową, ostateczną stałą całkowania).</p>
+<ul>
+<li>Krok 5: Złożenie rozwiązania końcowego
+Wracamy do naszego założenia z Kroku 2: <span class="arithmatex">\(y = C(x) \cdot e^{-x}\)</span>. </li>
+</ul>
+<p>Podstawiamy wyliczone <span class="arithmatex">\(C(x)\)</span>:</p>
+<div class="arithmatex">\[y = (x e^x - e^x + K) \cdot e^{-x}\]</div>
+<p>Mnożymy nawias przez <span class="arithmatex">\(e^{-x}\)</span> (pamiętając, że <span class="arithmatex">\(e^x \cdot e^{-x} = 1\)</span>):</p>
 <div class="arithmatex">\[y = x - 1 + K e^{-x}\]</div>
+<p>Podsumowanie wyniku</p>
+<p>Nasze rozwiązanie składa się z dwóch części:
+<span class="arithmatex">\(x - 1\)</span>: To, co wymusza na układzie prawa strona równania (nasze <span class="arithmatex">\(x\)</span>).</p>
+<p><span class="arithmatex">\(K e^{-x}\)</span>: To, co zostało z "natury" układu (rozwiązanie jednorodne).</p>
 <h3 id="zastosowanie-rozpad-promieniotworczy">Zastosowanie: Rozpad promieniotwórczy<a class="headerlink" href="#zastosowanie-rozpad-promieniotworczy" title="Permanent link">&para;</a></h3>
 <p>Równania pierwszego rzędu (konkretnie <span class="arithmatex">\(y' = -ky\)</span>) idealnie opisują naturę. Jeśli szybkość ubywania substancji jest proporcjonalna do jej ilości, mamy do czynienia z rozpadem wykładniczym. To dlatego izotopy promieniotwórcze mają swój "czas połowicznego rozpadu" – ich ilość maleje według funkcji <span class="arithmatex">\(e^{-kx}\)</span>, którą wyliczamy właśnie tą metodą.</p>
 <h3 id="praktyczne-przykady-z-rozwiazaniami">Praktyczne przykłady z rozwiązaniami<a class="headerlink" href="#praktyczne-przykady-z-rozwiazaniami" title="Permanent link">&para;</a></h3>
@@ -1606,7 +1656,8 @@ Drugi rząd: Dotyczy przyspieszenia (pojawia się <span class="arithmatex">\(y''
 <p><strong>Scenariusz A:</strong> </p>
 <p>Delta dodatnia (<span class="arithmatex">\(\Delta &gt; 0\)</span>)
 Otrzymujemy dwa różne pierwiastki rzeczywiste <span class="arithmatex">\(r_1\)</span> oraz <span class="arithmatex">\(r_2\)</span>.</p>
-<p>Wzór: <span class="arithmatex">\(<span class="arithmatex">\(y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\)</span>\)</span></p>
+<p>Wzór: </p>
+<div class="arithmatex">\[y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\]</div>
 <p>Intuicja: Układ jest „przetłumiony”. Jeśli pchniesz wahadło w gęstym miodzie, ono powoli wróci do środka bez ani jednego wahnięcia w drugą stronę.</p>
 <p><strong>Scenariusz B:</strong> </p>
 <p>Delta ujemna (<span class="arithmatex">\(\Delta &lt; 0\)</span>)
@@ -1614,7 +1665,7 @@ Otrzymujemy pierwiastki zespolone w postaci <span class="arithmatex">\(r = \alph
 <p>Wzór: </p>
 <div class="arithmatex">\[y = e^{\alpha x} (C_1 \cos(\beta x) + C_2 \sin(\beta x))\]</div>
 <p>Intuicja: To są drgania! Liczba <span class="arithmatex">\(\alpha\)</span> (część rzeczywista) mówi o tym, jak szybko drgania wygasają, a <span class="arithmatex">\(\beta\)</span> (część przy <span class="arithmatex">\(i\)</span>) wyznacza ich częstotliwość.</p>
-<p>**Scenariusz C: **</p>
+<p><strong>Scenariusz C:</strong></p>
 <p>Delta równa zero (<span class="arithmatex">\(\Delta = 0\)</span>)
 Otrzymujemy jeden podwójny pierwiastek <span class="arithmatex">\(r\)</span>.</p>
 <p>Wzór: </p>
