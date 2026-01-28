@@ -1363,14 +1363,14 @@ $$ \left| \begin{matrix} t = x^2 \ dt = 2x dx \implies \frac{1}{2}dt = x dx \end
 <p>Wynik:</p>
 <div class="arithmatex">\[= -\cos x + \frac{2}{3}\cos^3 x - \frac{1}{5}\cos^5 x + C\]</div>
 <h3 id="iii-cakowanie-przez-czesci">III. Całkowanie przez Części<a class="headerlink" href="#iii-cakowanie-przez-czesci" title="Permanent link">&para;</a></h3>
-<p>Wybieramy <span class="arithmatex">\(u\)</span> (do zróżniczkowania) i <span class="arithmatex">\(dv\)</span> (do scałkowania).
-8) <span class="arithmatex">\(\int x \cos x dx\)</span></p>
+<p>Wybieramy <span class="arithmatex">\(u\)</span> (do zróżniczkowania) i <span class="arithmatex">\(dv\)</span> (do scałkowania).</p>
+<p>8) <span class="arithmatex">\(\int x \cos x dx\)</span></p>
 <p>Wyjaśnienie: Chcemy pozbyć się <span class="arithmatex">\(x\)</span>, więc różniczkujemy go (<span class="arithmatex">\(u=x\)</span>).</p>
 <div class="arithmatex">\[ \left| \begin{matrix} u = x &amp; du = dx \\ dv = \cos x dx &amp; v = \sin x \end{matrix} \right|\]</div>
 <div class="arithmatex">\[\implies x \sin x - \int \sin x dx = x \sin x - (-\cos x) + C\]</div>
 <p>Wynik:</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(= x \sin x + \cos x + C\)</span>\)</span>
-9) <span class="arithmatex">\(\int \sqrt{x} \ln x dx\)</span></p>
+<div class="arithmatex">\[= x \sin x + \cos x + C\]</div>
+<p>9) <span class="arithmatex">\(\int \sqrt{x} \ln x dx\)</span></p>
 <p>Wyjaśnienie: Logarytm (<span class="arithmatex">\(ln\)</span>) zawsze bierzemy jako <span class="arithmatex">\(u\)</span>, bo całka z niego jest trudna, a pochodna prosta (<span class="arithmatex">\(1/x\)</span>).</p>
 <div class="arithmatex">\[ \left| \begin{matrix} u = \ln x &amp; du = \frac{1}{x} dx \\ dv = x^{1/2} dx &amp; v = \frac{2}{3}x^{3/2} \end{matrix} \right|\]</div>
 <div class="arithmatex">\[\implies \frac{2}{3}x^{3/2}\ln x - \int \frac{2}{3}x^{3/2} \cdot \frac{1}{x} dx = \frac{2}{3}x^{3/2}\ln x - \frac{2}{3}\int x^{1/2} dx\]</div>
@@ -1421,8 +1421,8 @@ $$ \left| \begin{matrix} t = x^2 \ dt = 2x dx \implies \frac{1}{2}dt = x dx \end
 <p>Całka z <span class="arithmatex">\(e^{3x}\)</span> znowu wyrzuci nam ułamek <span class="arithmatex">\(\frac{1}{3}\)</span>.</p>
 <div class="arithmatex">\[= \frac{1}{3}(2x+3)e^{3x} - \frac{2}{3} \cdot \frac{1}{3}e^{3x} + C\]</div>
 <p>Wynik:</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(= \frac{1}{3}(2x+3)e^{3x} - \frac{2}{9}e^{3x} + C\)</span>\)</span>
-48) <span class="arithmatex">\(\int \operatorname{arctg} x dx\)</span></p>
+<div class="arithmatex">\[= \frac{1}{3}(2x+3)e^{3x} - \frac{2}{9}e^{3x} + C\]</div>
+<p>48) <span class="arithmatex">\(\int \operatorname{arctg} x dx\)</span></p>
 <p>Wyjaśnienie: To sztandarowy przykład na części, gdzie "nie widać" drugiej funkcji. Dopiusjemy jedynkę: <span class="arithmatex">\(1 \cdot \operatorname{arctg} x\)</span>. Różniczkujemy arcusa, bo jego pochodna to funkcja wymierna.</p>
 <div class="arithmatex">\[ \left| \begin{matrix} u = \operatorname{arctg} x &amp; du = \frac{1}{1+x^2} dx \\ dv = 1 dx &amp; v = x \end{matrix} \right|\]</div>
 <div class="arithmatex">\[\implies x \operatorname{arctg} x - \int x \cdot \frac{1}{1+x^2} dx = x \operatorname{arctg} x - \int \frac{x}{1+x^2} dx\]</div>
@@ -1434,8 +1434,8 @@ $$ \left| \begin{matrix} t = x^2 \ dt = 2x dx \implies \frac{1}{2}dt = x dx \end
 <p>Wyjaśnienie: Stopień licznika &gt; stopień mianownika. Robimy sztuczkę <span class="arithmatex">\((x^4-1)+1\)</span>.</p>
 <div class="arithmatex">\[\int \frac{(x^2-1)(x^2+1) + 1}{x^2+1} dx = \int (x^2-1 + \frac{1}{x^2+1}) dx\]</div>
 <p>Wynik:</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(= \frac{x^3}{3} - x + \operatorname{arctg} x + C\)</span>\)</span>
-13) <span class="arithmatex">\(\int \frac{dx}{x^2-6x+13}\)</span></p>
+<div class="arithmatex">\[= \frac{x^3}{3} - x + \operatorname{arctg} x + C\]</div>
+<p>13) <span class="arithmatex">\(\int \frac{dx}{x^2-6x+13}\)</span></p>
 <p>Wyjaśnienie: Delta ujemna. Zwijamy do postaci kanonicznej <span class="arithmatex">\((x-p)^2 + q\)</span>.</p>
 <div class="arithmatex">\[x^2-6x+13 = (x-3)^2 + 4\]</div>
 <div class="arithmatex">\[\int \frac{dx}{(x-3)^2 + 2^2}\]</div>
@@ -1464,17 +1464,6 @@ $$ \left| \begin{matrix} t = x^2 \ dt = 2x dx \implies \frac{1}{2}dt = x dx \end
 <p><span class="arithmatex">\(A(x+1) + B(x-2) = 5x-4 \implies \text{dla } x=2: 3A=6 \to A=2, \quad \text{dla } x=-1: -3B=-9 \to B=3\)</span>.</p>
 <p>Wynik:</p>
 <div class="arithmatex">\[= \frac{x^2}{2} + x + 2\ln|x-2| + 3\ln|x+1| + C\]</div>
-<p>22) <span class="arithmatex">\(\int \frac{x+1}{x^2-x+1} dx\)</span></p>
-<p>Wyjaśnienie: Delta ujemna, mianownik nierozkładalny. W liczniku mamy <span class="arithmatex">\(x\)</span>, więc musimy to rozbić na dwie całki:</p>
-<p>Pochodna mianownika <span class="arithmatex">\((2x-1)\)</span>.</p>
-<p>Reszta (do arctg).</p>
-<p>Dopasowujemy licznik: <span class="arithmatex">\(x+1 = \frac{1}{2}(2x-1) + \frac{3}{2}\)</span>.</p>
-<div class="arithmatex">\[\int \frac{\frac{1}{2}(2x-1)}{x^2-x+1} dx + \int \frac{3/2}{x^2-x+1} dx\]</div>
-<p>Pierwsza to logarytm. Druga wymaga postaci kanonicznej: <span class="arithmatex">\((x-\frac{1}{2})^2 + \frac{3}{4}\)</span>.</p>
-<p>Wynik:</p>
-<div class="arithmatex">\[= \frac{1}{2}\ln(x^2-x+1) + \sqrt{3}\operatorname{arctg}\left(\frac{2x-1}{\sqrt{3}}\right) + C\]</div>
-<p>(Współczynnik przy arctg wziął się z wzoru: <span class="arithmatex">\(\frac{1}{a} \operatorname{arctg}(...)\)</span>, gdzie <span class="arithmatex">\(a=\sqrt{3}/2\)</span>, więc <span class="arithmatex">\(1/a = 2/\sqrt{3}\)</span>).
-X. Funkcje Niewymierne – Trudniejsze Podstawienia</p>
 <p>23) <span class="arithmatex">\(\int \frac{1+\sqrt{x}}{1-\sqrt{x}} dx\)</span></p>
 <p>Wyjaśnienie: Podstawiamy za pierwiastek.</p>
 <div class="arithmatex">\[ \left| \begin{matrix} t = \sqrt{x} \implies x = t^2 \\ dx = 2t dt \end{matrix} \right|\]</div>
@@ -1515,7 +1504,7 @@ X. Funkcje Niewymierne – Trudniejsze Podstawienia</p>
 <div class="arithmatex">\[\implies \int \frac{dt}{\sqrt{t^2+3^2}} = \ln|t + \sqrt{t^2+9}| + C\]</div>
 <p>Wynik:</p>
 <div class="arithmatex">\[= \ln|x+2 + \sqrt{x^2+4x+13}| + C\]</div>
-<p>36) <span class="arithmatex">\(\int \frac{dx}{2x^2-2x+5}\)</span> (Zad. 57 z listy)</p>
+<p>36) <span class="arithmatex">\(\int \frac{dx}{2x^2-2x+5}\)</span> </p>
 <p>Wyjaśnienie: Mianownik nie ma pierwiastków (delta ujemna). Musimy wyciągnąć 2 przed nawias i zwinąć resztę do postaci kanonicznej (do wzoru na arctg).</p>
 <div class="arithmatex">\[\int \frac{dx}{2(x^2 - x + \frac{5}{2})}\]</div>
 <p>Zwijamy <span class="arithmatex">\(x^2-x\)</span>: <span class="arithmatex">\((x-\frac{1}{2})^2 - \frac{1}{4} + \frac{5}{2} = (x-\frac{1}{2})^2 + \frac{9}{4}\)</span>.</p>
@@ -1524,7 +1513,7 @@ X. Funkcje Niewymierne – Trudniejsze Podstawienia</p>
 <div class="arithmatex">\[= \frac{1}{2} \cdot \frac{1}{3/2} \operatorname{arctg}\left(\frac{x-1/2}{3/2}\right) + C = \frac{1}{2} \cdot \frac{2}{3} \operatorname{arctg}\left(\frac{2x-1}{3}\right) + C\]</div>
 <p>Wynik:</p>
 <div class="arithmatex">\[= \frac{1}{3} \operatorname{arctg}\left(\frac{2x-1}{3}\right) + C\]</div>
-<p>37) <span class="arithmatex">\(\int \frac{x+6}{x^2-3} dx\)</span> (Zad. 67 z listy)</p>
+<p>37) <span class="arithmatex">\(\int \frac{x+6}{x^2-3} dx\)</span> </p>
 <p>Wyjaśnienie: Rozbijamy na dwa ułamki.</p>
 <div class="arithmatex">\[\int \frac{x}{x^2-3} dx + \int \frac{6}{x^2-3} dx\]</div>
 <p>Całka 1: Licznik to prawie pochodna mianownika (<span class="arithmatex">\(\frac{1}{2} \cdot 2x\)</span>). Daje logarytm.</p>
@@ -1532,7 +1521,7 @@ X. Funkcje Niewymierne – Trudniejsze Podstawienia</p>
 <p>Wynik:</p>
 <div class="arithmatex">\[= \frac{1}{2}\ln|x^2-3| + 6 \cdot \frac{1}{2\sqrt{3}}\ln\left|\frac{x-\sqrt{3}}{x+\sqrt{3}}\right| + C\]</div>
 <div class="arithmatex">\[= \frac{1}{2}\ln|x^2-3| + \sqrt{3}\ln\left|\frac{x-\sqrt{3}}{x+\sqrt{3}}\right| + C\]</div>
-<p>39) <span class="arithmatex">\(\int \cos 5x \cos 7x dx\)</span> (Zad. 106 z listy)</p>
+<p>39) <span class="arithmatex">\(\int \cos 5x \cos 7x dx\)</span> </p>
 <p>Wyjaśnienie: Iloczyn dwóch cosinusów. Używamy wzoru: <span class="arithmatex">\(\cos \alpha \cos \beta = \frac{1}{2}[\cos(\alpha-\beta) + \cos(\alpha+\beta)]\)</span>.</p>
 <div class="arithmatex">\[\cos 5x \cos 7x = \frac{1}{2}[\cos(-2x) + \cos(12x)]\]</div>
 <p>Ponieważ cosinus jest parzysty, <span class="arithmatex">\(\cos(-2x) = \cos(2x)\)</span>.</p>
