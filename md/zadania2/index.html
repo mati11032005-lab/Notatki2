@@ -2055,14 +2055,23 @@ Punkt <span class="arithmatex">\(R(0, 1)\)</span>.</p>
 <p>Przecięcie z OY (<span class="arithmatex">\(x=0\)</span>): <span class="arithmatex">\(y = 1 - \frac{\sqrt{3}}{3}\)</span>. Punkt <span class="arithmatex">\((0, 1 - \frac{\sqrt{3}}{3})\)</span>.</p>
 <h2 id="dzia-3-paszczyzny">Dział 3 - Płaszczyzny<a class="headerlink" href="#dzia-3-paszczyzny" title="Permanent link">&para;</a></h2>
 <h3 id="zadanie-1_2">Zadanie 1<a class="headerlink" href="#zadanie-1_2" title="Permanent link">&para;</a></h3>
-<p>Podaj równanie ogólne i normalne płaszczyzny przechodzącej przez punkt <span class="arithmatex">\(A(1,0,2)\)</span> i o normalnej wektorowej <span class="arithmatex">\(\mathbf{n}=[2,-1,1]\)</span>.</p>
+<p>Podaj równanie ogólne płaszczyzny przechodzącej przez punkt <span class="arithmatex">\(A(1,0,2)\)</span> i o normalnej wektorowej <span class="arithmatex">\(\mathbf{n}=[2,-1,1]\)</span>.</p>
 <p><strong>Rozwiązanie:</strong></p>
-<p>Równanie normalne (z iloczynem skalarnym): <span class="arithmatex">\(\mathbf{n} \cdot [x-x_A, y-y_A, z-z_A] = 0 \Rightarrow 2(x-1) - 1(y-0) + 1(z-2) = 0\)</span>.</p>
+<p>Wzór: <span class="arithmatex">\(A(x - x_0) + B(y - y_0) + C(z - z_0) = 0\)</span></p>
+<p>Podatawienie: <span class="arithmatex">\(2(x-1) - 1(y-0) + 1(z-2) = 0\)</span>.</p>
+<p>Równanie ogólne: <span class="arithmatex">\(2x - y + z - 4 = 0\)</span></p>
 <h3 id="zadanie-2_2">Zadanie 2<a class="headerlink" href="#zadanie-2_2" title="Permanent link">&para;</a></h3>
 <p>Znajdź równanie płaszczyzny przechodzącej przez punkty <span class="arithmatex">\(A(1,0,0)\)</span>, <span class="arithmatex">\(B(0,1,0)\)</span> i <span class="arithmatex">\(C(0,0,1)\)</span>.</p>
 <p><strong>Rozwiązanie:</strong></p>
-<p>Jest to równanie odcinkowe płaszczyzny: <span class="arithmatex">\(\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1\)</span>, gdzie <span class="arithmatex">\(a,b,c\)</span> to punkty przecięcia z osiami.
-<span class="arithmatex">\(\frac{x}{1} + \frac{y}{1} + \frac{z}{1} = 1 \Rightarrow x + y + z - 1 = 0\)</span>.</p>
+<p>Dwa wektory leżące w płaszczyźnie: </p>
+<p><span class="arithmatex">\(\vec{AB} = [0-1, 1-0, 0-0] = [-1, 1, 0]\)</span></p>
+<p><span class="arithmatex">\(\vec{AC} = [0-1, 0-0, 1-0] = [-1, 0, 1]\)</span></p>
+<p>Wyznaczenie wektora noramalnego płaszczyzny:</p>
+<div class="arithmatex">\[\vec{n} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ -1 &amp; 1 &amp; 0 \\ -1 &amp; 0 &amp; 1 \end{vmatrix}\]</div>
+<p><span class="arithmatex">\(\vec{n} = [1, 1, 1]\)</span></p>
+<p>Ze wzoru: <span class="arithmatex">\(A(x - x_0) + B(y - y_0) + C(z - z_0) = 0\)</span></p>
+<p><span class="arithmatex">\(1(x - 1) + 1(y - 0) + 1(z - 0) = 0\)</span></p>
+<p><span class="arithmatex">\(x - 1 + y + z = 0\)</span></p>
 <h3 id="zadanie-3_2">Zadanie 3<a class="headerlink" href="#zadanie-3_2" title="Permanent link">&para;</a></h3>
 <p>Określ kąt między płaszczyznami: <span class="arithmatex">\(\pi_1: x+2y-2z+1=0\)</span> i <span class="arithmatex">\(\pi_2: 2x-y+z-3=0\)</span>.</p>
 <p><strong>Rozwiązanie:</strong></p>
@@ -2072,6 +2081,8 @@ Punkt <span class="arithmatex">\(R(0, 1)\)</span>.</p>
 <h3 id="zadanie-4_2">Zadanie 4<a class="headerlink" href="#zadanie-4_2" title="Permanent link">&para;</a></h3>
 <p>Dla płaszczyzny <span class="arithmatex">\(\pi: x-2y+2z-4=0\)</span> oblicz odległość punktu <span class="arithmatex">\(P(3,0,1)\)</span> od tej płaszczyzny.</p>
 <p><strong>Rozwiązanie:</strong></p>
+<p>Wzór:</p>
+<div class="arithmatex">\[d = \frac{|Ax_P + By_P + Cz_P + D|}{\sqrt{A^2 + B^2 + C^2}}\]</div>
 <div class="arithmatex">\[d = \frac{|1(3) - 2(0) + 2(1) - 4|}{\sqrt{1^2 + (-2)^2 + 2^2}} = \frac{|3 + 2 - 4|}{\sqrt{9}} = \frac{1}{3}\]</div>
 <h3 id="zadanie-5_2">Zadanie 5<a class="headerlink" href="#zadanie-5_2" title="Permanent link">&para;</a></h3>
 <p>Znajdź wektor prostopadły do płaszczyzny <span class="arithmatex">\(x + y + z = 1\)</span>.</p>
