@@ -2142,6 +2142,50 @@ przecięcia.</p>
 <p>Podstawiamy <span class="arithmatex">\(P(1,1,2)\)</span> do <span class="arithmatex">\(x+z=3\)</span>: <span class="arithmatex">\(1+2=3\)</span>. Zgadza się.</p>
 <p>Zatem dla <span class="arithmatex">\(\lambda = 1\)</span> prosta jest zawarta w płaszczyźnie.
 Nie ma takiej wartości <span class="arithmatex">\(\lambda\)</span>, dla której prosta byłaby równoległa i rozłączna.</p>
+<p><span class="arithmatex">\(\star\)</span> Rozważ układ prostej i płaszczyzny zależny od parametru <span class="arithmatex">\(\lambda\)</span>:</p>
+<div class="arithmatex">\[\ell(\lambda): x=\lambda+t,\; y=1+2t,\; z=2-t\]</div>
+<p>oraz</p>
+<div class="arithmatex">\[\pi: x - (\lambda-1) y + z - 3 = 0\]</div>
+<p>Określ wartości <span class="arithmatex">\(\lambda\)</span>, dla których prosta jest równoległa do płaszczyzny, zawarta w płaszczyźnie lub przecina ją w jednym punkcie.</p>
+<p>Wyznaczenie wektorów i punktu</p>
+<p>Wektor kierunkowy prostej:<span class="arithmatex">\(\mathbf{v} = [1, 2, -1]\)</span></p>
+<p>Wektor normalny płaszczyzny:<span class="arithmatex">\(\mathbf{n} = [1, -(\lambda-1), 1] = [1, 1-\lambda, 1]\)</span></p>
+<p>Punkt na prostej <span class="arithmatex">\(P_{\ell}\)</span>: Dla <span class="arithmatex">\(t=0\)</span> mamy:<span class="arithmatex">\(P_{\ell} = (\lambda, 1, 2)\)</span>. </p>
+<p>Warunek równoległości (<span class="arithmatex">\(\mathbf{v} \perp \mathbf{n}\)</span>)Prosta jest równoległa do płaszczyzny (lub w niej zawarta), gdy ich wektory są prostopadłe, czyli ich iloczyn skalarny wynosi <span class="arithmatex">\(0\)</span>:</p>
+<div class="arithmatex">\[\mathbf{v} \cdot \mathbf{n} = 1\cdot 1 + 2\cdot(1-\lambda) + (-1)\cdot 1 = 0\]</div>
+<div class="arithmatex">\[1 + 2 - 2\lambda - 1 = 0\]</div>
+<div class="arithmatex">\[2 - 2\lambda = 0 \Rightarrow \mathbf{\lambda = 1}\]</div>
+<p>Sprawdzenie położenia dla <span class="arithmatex">\(\lambda = 1\)</span></p>
+<p>Dla <span class="arithmatex">\(\lambda = 1\)</span> wiemy już, że prosta jest co najmniej równoległa. Sprawdźmy, czy punkt <span class="arithmatex">\(P_{\ell}(1, 1, 2)\)</span> leży na płaszczyźnie <span class="arithmatex">\(\pi: x - (1-1)y + z - 3 = 0 \Rightarrow x + z - 3 = 0\)</span>:</p>
+<p><span class="arithmatex">\(1 + 2 - 3 = 0\)</span></p>
+<p><span class="arithmatex">\(0 = 0\)</span></p>
+<p>Punkt spełnia równanie, więc cała prosta leży w płaszczyźnie.</p>
+<table>
+<thead>
+<tr>
+<th>Przypadek</th>
+<th>Warunek dla λ</th>
+<th>Uzasadnienie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prosta zawarta w płaszczyźnie</td>
+<td><span class="arithmatex">\(\lambda=1\)</span></td>
+<td>Iloczyn skalarny wynosi 0 i punkt prostej należy do płaszczyzny.</td>
+</tr>
+<tr>
+<td>Prosta równoległa (rozłączna)</td>
+<td>Brak takich wartości</td>
+<td>Dla jedynego <span class="arithmatex">\(\lambda\)</span>, przy którym prosta jest równoległa (<span class="arithmatex">\(\lambda=1\)</span>), jest ona jednocześnie w niej zawarta.</td>
+</tr>
+<tr>
+<td>Prosta przecina płaszczyznę</td>
+<td><span class="arithmatex">\(\lambda\in\mathbb{R}\setminus\{1\}\)</span></td>
+<td>Iloczyn skalarny <span class="arithmatex">\(\mathbf{v}\cdot\mathbf{n}\neq 0\)</span>, co gwarantuje istnienie dokładnie jednego punktu wspólnego.</td>
+</tr>
+</tbody>
+</table>
 
 
 
