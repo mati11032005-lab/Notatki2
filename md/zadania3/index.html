@@ -1935,19 +1935,7 @@ Nie można jej dodefiniować.</p>
 <p><span class="arithmatex">\(0 \neq 1\)</span>.
 Funkcja jest nieciągła w każdym punkcie całkowitym.
 Nie można jej dodefiniować.</p>
-<p>7) <span class="arithmatex">\(f(x) = [x] + [-x]\)</span> (badamy w punktach całkowitych <span class="arithmatex">\(k\)</span>)</p>
-<p>Obliczenie wartości i granicy:</p>
-<p>Wartość dla <span class="arithmatex">\(x=k\)</span> (całkowite):</p>
-<div class="arithmatex">\[f(k) = [k] + [-k] = k + (-k) = 0\]</div>
-<p>Granica gdy <span class="arithmatex">\(x \to k\)</span> (ale <span class="arithmatex">\(x \neq k\)</span>):</p>
-<p>Niech <span class="arithmatex">\(x\)</span> dąży do <span class="arithmatex">\(k\)</span>. Wtedy <span class="arithmatex">\(x\)</span> nie jest liczbą całkowitą.
-Dla <span class="arithmatex">\(x \notin \mathbb{Z}\)</span> zachodzi tożsamość <span class="arithmatex">\([x] + [-x] = -1\)</span>.
-Zatem <span class="arithmatex">\(\lim_{x \to k} f(x) = -1\)</span>.</p>
-<p>Wniosek:</p>
-<p>Granica istnieje (<span class="arithmatex">\(-1\)</span>), ale jest różna od wartości funkcji (<span class="arithmatex">\(0\)</span>).
-Funkcja jest nieciągła.
-Można ją dodefiniować, zmieniając wartość w punktach całkowitych na <span class="arithmatex">\(-1\)</span>. Wtedy <span class="arithmatex">\(f(x)=-1\)</span> dla każdego <span class="arithmatex">\(x\)</span>.</p>
-<p>8) <span class="arithmatex">\(f(x) = \frac{\sqrt{1+x}-1}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>7) <span class="arithmatex">\(f(x) = \frac{\sqrt{1+x}-1}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
 <p>Obliczenie granicy:</p>
 <div class="arithmatex">\[\lim_{x \to 0} \frac{\sqrt{1+x}-1}{x} \cdot \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1} = \lim_{x \to 0} \frac{(1+x)-1}{x(\sqrt{1+x}+1)} = \lim_{x \to 0} \frac{x}{x(\sqrt{1+x}+1)}\]</div>
 <div class="arithmatex">\[= \lim_{x \to 0} \frac{1}{\sqrt{1+x}+1} = \frac{1}{\sqrt{1}+1} = \frac{1}{2}\]</div>
@@ -1955,7 +1943,7 @@ Można ją dodefiniować, zmieniając wartość w punktach całkowitych na <span
 <p>Funkcja nie jest określona w <span class="arithmatex">\(x=0\)</span>, więc jest nieciągła. Granica jednak istnieje i wynosi <span class="arithmatex">\(\frac{1}{2}\)</span>.
 Można ją dodefiniować przyjmując:</p>
 <div class="arithmatex">\[f(0) = \frac{1}{2}\]</div>
-<p>9) <span class="arithmatex">\(f(x) = x \sin \frac{\pi}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>8) <span class="arithmatex">\(f(x) = x \sin \frac{\pi}{x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
 <p>Obliczenie granicy:</p>
 <p>Korzystamy z twierdzenia o trzech funkcjach. Wiemy, że <span class="arithmatex">\(-1 \le \sin \alpha \le 1\)</span>, więc:</p>
 <div class="arithmatex">\[-|x| \le x \sin \frac{\pi}{x} \le |x|\]</div>
@@ -1965,7 +1953,7 @@ Można ją dodefiniować przyjmując:</p>
 <p>Funkcja nie jest określona w zerze, więc jest nieciągła.
 Można ją dodefiniować przyjmując:</p>
 <div class="arithmatex">\[f(0) = 0\]</div>
-<p>10) <span class="arithmatex">\(f(x) = \frac{\sin^2 x}{1-\cos x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
+<p>9) <span class="arithmatex">\(f(x) = \frac{\sin^2 x}{1-\cos x}\)</span> (badamy w <span class="arithmatex">\(x=0\)</span>)</p>
 <p>Obliczenie granicy:</p>
 <p>Korzystamy z jedynki trygonometrycznej: <span class="arithmatex">\(\sin^2 x = 1 - \cos^2 x = (1-\cos x)(1+\cos x)\)</span>.</p>
 <div class="arithmatex">\[\lim_{x \to 0} \frac{(1-\cos x)(1+\cos x)}{1-\cos x} = \lim_{x \to 0} (1+\cos x) = 1 + \cos 0 = 1 + 1 = 2\]</div>
@@ -1973,32 +1961,7 @@ Można ją dodefiniować przyjmując:</p>
 <p>Funkcja nieokreślona w zerze.
 Można ją dodefiniować przyjmując:</p>
 <div class="arithmatex">\[f(0) = 2\]</div>
-<p>11) <span class="arithmatex">\(f(x) = x \left[ \frac{1}{x} \right]\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
-<p>Obliczenie granicy:</p>
-<p>Korzystamy z nierówności dla cechy: <span class="arithmatex">\(y - 1 &lt; [y] \le y\)</span>.
-Niech <span class="arithmatex">\(y = \frac{1}{x}\)</span>.</p>
-<div class="arithmatex">\[\frac{1}{x} - 1 &lt; \left[ \frac{1}{x} \right] \le \frac{1}{x}\]</div>
-<p>Mnożymy przez <span class="arithmatex">\(x\)</span> (rozważmy <span class="arithmatex">\(x&gt;0\)</span>):</p>
-<div class="arithmatex">\[x\left(\frac{1}{x}-1\right) &lt; x\left[\frac{1}{x}\right] \le x \cdot \frac{1}{x}\]</div>
-<div class="arithmatex">\[1-x &lt; f(x) \le 1\]</div>
-<p>Przy <span class="arithmatex">\(x \to 0^+\)</span>, lewa strona dąży do <span class="arithmatex">\(1\)</span>, prawa to stała <span class="arithmatex">\(1\)</span>. Z twierdzenia o trzech funkcjach granica to <span class="arithmatex">\(1\)</span>. (Dla <span class="arithmatex">\(x&lt;0\)</span> nierówności się odwracają, ale wynik jest ten sam).</p>
-<p>Wniosek:</p>
-<div class="arithmatex">\[\lim_{x \to 0} f(x) = 1\]</div>
-<p>Można dodefiniować funkcję przyjmując:</p>
-<div class="arithmatex">\[f(0) = 1\]</div>
-<p>12) <span class="arithmatex">\(f(x) = x \frac{b}{x} \left[ \frac{x}{a} \right]\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
-<p>Uproszczenie wzoru: <span class="arithmatex">\(f(x) = b \left[ \frac{x}{a} \right]\)</span>.
-Załóżmy <span class="arithmatex">\(a &gt; 0, b \neq 0\)</span>.</p>
-<p>Obliczenie granic jednostronnych:</p>
-<p>Prawostronna (<span class="arithmatex">\(x \to 0^+\)</span>): Ułamek <span class="arithmatex">\(\frac{x}{a}\)</span> jest małą liczbą dodatnią (<span class="arithmatex">\(0 &lt; \frac{x}{a} &lt; 1\)</span>). Wtedy cecha <span class="arithmatex">\(\left[ \frac{x}{a} \right] = 0\)</span>.</p>
-<div class="arithmatex">\[\lim_{x \to 0^+} b \cdot 0 = 0\]</div>
-<p>Lewostronna (<span class="arithmatex">\(x \to 0^-\)</span>): Ułamek <span class="arithmatex">\(\frac{x}{a}\)</span> jest małą liczbą ujemną (<span class="arithmatex">\(-1 &lt; \frac{x}{a} &lt; 0\)</span>). Wtedy cecha <span class="arithmatex">\(\left[ \frac{x}{a} \right] = -1\)</span>.</p>
-<div class="arithmatex">\[\lim_{x \to 0^-} b \cdot (-1) = -b\]</div>
-<p>Wniosek:</p>
-<p>Jeżeli <span class="arithmatex">\(b \neq 0\)</span>, granice są różne (<span class="arithmatex">\(0 \neq -b\)</span>).
-Funkcja jest nieciągła.
-Nie można jej dodefiniować.</p>
-<p>13) <span class="arithmatex">\(f(x) = \frac{e^{\frac{1}{x}}-1}{e^{\frac{1}{x}}+1}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>10) <span class="arithmatex">\(f(x) = \frac{e^{\frac{1}{x}}-1}{e^{\frac{1}{x}}+1}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
 <p>Obliczenie granic jednostronnych:</p>
 <p>Prawostronna (<span class="arithmatex">\(x \to 0^+\)</span>): <span class="arithmatex">\(\frac{1}{x} \to +\infty \Rightarrow e^{\frac{1}{x}} \to +\infty\)</span>.</p>
 <div class="arithmatex">\[\lim_{x \to 0^+} \frac{e^{\frac{1}{x}}(1 - \frac{1}{e^{1/x}})}{e^{\frac{1}{x}}(1 + \frac{1}{e^{1/x}})} = \frac{1-0}{1+0} = 1\]</div>
@@ -2008,7 +1971,7 @@ Nie można jej dodefiniować.</p>
 <p>Granice są różne (<span class="arithmatex">\(1 \neq -1\)</span>).
 Funkcja jest nieciągła (skok).
 Nie można jej dodefiniować.</p>
-<p>14) <span class="arithmatex">\(f(x) = e^{\frac{1}{1-x^2}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
+<p>11) <span class="arithmatex">\(f(x) = e^{\frac{1}{1-x^2}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
 <p>Obliczenie granic jednostronnych:</p>
 <p>Prawostronna (<span class="arithmatex">\(x \to 1^+\)</span>): Wtedy <span class="arithmatex">\(x &gt; 1 \Rightarrow x^2 &gt; 1 \Rightarrow 1-x^2 \to 0^-\)</span> (zero ujemne).
 Wykładnik <span class="arithmatex">\(\frac{1}{1-x^2} \to -\infty\)</span>.</p>
@@ -2020,7 +1983,7 @@ Wykładnik <span class="arithmatex">\(\frac{1}{1-x^2} \to +\infty\)</span>.</p>
 <p>Jedna z granic jest nieskończona.
 Funkcja jest nieciągła.
 Nie można jej dodefiniować.</p>
-<p>15) <span class="arithmatex">\(f(x) = x e^{\frac{1}{x}}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
+<p>12) <span class="arithmatex">\(f(x) = x e^{\frac{1}{x}}\)</span> w punkcie <span class="arithmatex">\(x=0\)</span></p>
 <p>Obliczenie granic jednostronnych:</p>
 <p>Lewostronna (<span class="arithmatex">\(x \to 0^-\)</span>): <span class="arithmatex">\(\frac{1}{x} \to -\infty \Rightarrow e^{1/x} \to 0\)</span>.</p>
 <div class="arithmatex">\[0 \cdot 0 = 0\]</div>
@@ -2030,7 +1993,7 @@ Nie można jej dodefiniować.</p>
 <p>Granica prawostronna jest niewłaściwa.
 Funkcja jest nieciągła.
 Nie można jej dodefiniować.</p>
-<p>16) <span class="arithmatex">\(f(x) = \frac{x}{2x+e^{\frac{1}{x-1}}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
+<p>13) <span class="arithmatex">\(f(x) = \frac{x}{2x+e^{\frac{1}{x-1}}}\)</span> w punkcie <span class="arithmatex">\(x=1\)</span></p>
 <p>Obliczenie granic jednostronnych:</p>
 <p>Prawostronna (<span class="arithmatex">\(x \to 1^+\)</span>): <span class="arithmatex">\(\frac{1}{x-1} \to +\infty \Rightarrow e^{\frac{1}{x-1}} \to +\infty\)</span>.</p>
 <p>Mianownik dąży do nieskończoności.</p>

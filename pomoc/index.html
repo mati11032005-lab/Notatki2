@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-wielomiany-i-uamki-symbol-nieoznaczony" class="md-skip">
+        <a href="#i-wzory-i-przeksztacenia" class="md-skip">
           Skip to content
         </a>
       
@@ -1053,10 +1053,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-wielomiany-i-uamki-symbol-nieoznaczony" class="md-nav__link">
+  <a href="#i-wzory-i-przeksztacenia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Wielomiany i ułamki (Symbol nieoznaczony)
+        I. Wzory i przekształcenia
       
     </span>
   </a>
@@ -1064,10 +1064,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pierwiastki-sprzezenie" class="md-nav__link">
+  <a href="#ii-cakowanie-przez-podstawienie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pierwiastki (Sprzężenie)
+        II. Całkowanie przez Podstawienie
       
     </span>
   </a>
@@ -1075,10 +1075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-trygonometria" class="md-nav__link">
+  <a href="#iii-cakowanie-przez-czesci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Trygonometria
+        III. Całkowanie przez Części
       
     </span>
   </a>
@@ -1086,10 +1086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-liczba-e" class="md-nav__link">
+  <a href="#iv-troche-bardziej-zozone-caki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Liczba \(e\)
+        IV. Troche bardziej złóżone całki
       
     </span>
   </a>
@@ -1137,10 +1137,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-wielomiany-i-uamki-symbol-nieoznaczony" class="md-nav__link">
+  <a href="#i-wzory-i-przeksztacenia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Wielomiany i ułamki (Symbol nieoznaczony)
+        I. Wzory i przekształcenia
       
     </span>
   </a>
@@ -1148,10 +1148,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pierwiastki-sprzezenie" class="md-nav__link">
+  <a href="#ii-cakowanie-przez-podstawienie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pierwiastki (Sprzężenie)
+        II. Całkowanie przez Podstawienie
       
     </span>
   </a>
@@ -1159,10 +1159,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-trygonometria" class="md-nav__link">
+  <a href="#iii-cakowanie-przez-czesci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Trygonometria
+        III. Całkowanie przez Części
       
     </span>
   </a>
@@ -1170,10 +1170,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-liczba-e" class="md-nav__link">
+  <a href="#iv-troche-bardziej-zozone-caki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Liczba \(e\)
+        IV. Troche bardziej złóżone całki
       
     </span>
   </a>
@@ -1199,149 +1199,346 @@
 
   <h1>pomoc</h1>
 
-<h3 id="1-wielomiany-i-uamki-symbol-nieoznaczony">1. Wielomiany i ułamki (Symbol nieoznaczony)<a class="headerlink" href="#1-wielomiany-i-uamki-symbol-nieoznaczony" title="Permanent link">&para;</a></h3>
-<p>Metoda: Licznik i mianownik dążą do zera, co oznacza, że w obu wielomianach "ukryty" jest nawias <span class="arithmatex">\((x-a)\)</span>. Musimy go wyciągnąć (wzorami skróconego mnożenia lub deltą) i skrócić.</p>
-<p>1) <span class="arithmatex">\(\lim\limits_{x \to 3} \frac{27-x^3}{x-3}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Wzór na różnicę sześcianów: <span class="arithmatex">\(a^3-b^3 = (a-b)(a^2+ab+b^2)\)</span>. Tutaj wyciągamy minus, żeby zamienić kolejność.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 3} \frac{-(x^3-27)}{x-3} = \lim\limits_{x \to 3} \frac{-(x-3)(x^2+3x+9)}{x-3} = \lim\limits_{x \to 3} -(x^2+3x+9)\]</div>
-<p>Podstawiamy <span class="arithmatex">\(x=3\)</span>: <span class="arithmatex">\(-(9+9+9) = -27\)</span>.</p>
-<p>Komentarz: Skracamy problematyczny nawias <span class="arithmatex">\((x-3)\)</span>.</p>
-<p>2) <span class="arithmatex">\(\lim\limits_{x \to 3} \frac{x^2-4x+3}{2x-6}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Licznik z delty lub postaci iloczynowej: <span class="arithmatex">\((x-1)(x-3)\)</span>. Mianownik: <span class="arithmatex">\(2(x-3)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 3} \frac{(x-1)(x-3)}{2(x-3)} = \lim\limits_{x \to 3} \frac{x-1}{2} = \frac{3-1}{2} = 1\]</div>
-<p>3) <span class="arithmatex">\(\lim\limits_{x \to -1} \frac{x^3-1}{x+1}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Podstawiamy <span class="arithmatex">\(x=-1\)</span>.</p>
-<p>Licznik: <span class="arithmatex">\((-1)^3 - 1 = -1-1 = -2\)</span>.
-Mianownik: <span class="arithmatex">\(-1+1 = 0\)</span>.
-Mamy symbol typu <span class="arithmatex">\([\frac{-2}{0}]\)</span>. To daje nieskończoność. Trzeba zbadać znak zera (lewo/prawo stronne), ale zazwyczaj w prostych zadaniach piszemy:</p>
-<p>Wynik: <span class="arithmatex">\(\infty\)</span> (istnieje granica niewłaściwa, choć formalnie lewa i prawa mogą mieć różne znaki, tu mianownik zmienia znak, a licznik jest stały ujemny, więc <span class="arithmatex">\(\pm \infty\)</span> zależnie od strony).</p>
-<p>Komentarz: To nie jest symbol nieoznaczony <span class="arithmatex">\(\frac{0}{0}\)</span>. Od razu podstawiamy. Nie ma takiej granicy</p>
-<p>4) <span class="arithmatex">\(\lim\limits_{x \to -2} \frac{x+2}{x^5+32}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Wzór: <span class="arithmatex">\(a^5+b^5 = (a+b)(a^4-a^3b+a^2b^2-ab^3+b^4)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to -2} \frac{x+2}{(x+2)(x^4-2x^3+4x^2-8x+16)} = \lim\limits_{x \to -2} \frac{1}{16+16+16+16+16} = \frac{1}{80}\]</div>
-<p>Komentarz: Jeśli nie pamiętasz wzoru na 5. potęgę, możesz podzielić mianownik przez <span class="arithmatex">\((x+2)\)</span> schematem Hornera.</p>
-<p>5) <span class="arithmatex">\(\lim\limits_{x \to 4} \frac{x^2-2x-8}{x^2-9x+20}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Rozkładamy oba trójmiany (deltą).</p>
-<p>Licznik: miejsca zerowe to <span class="arithmatex">\(4\)</span> i <span class="arithmatex">\(-2 \to (x-4)(x+2)\)</span>.</p>
-<p>Mianownik: miejsca zerowe to <span class="arithmatex">\(4\)</span> i <span class="arithmatex">\(5 \to (x-4)(x-5)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 4} \frac{(x-4)(x+2)}{(x-4)(x-5)} = \lim\limits_{x \to 4} \frac{x+2}{x-5} = \frac{6}{-1} = -6\]</div>
-<p>6) <span class="arithmatex">\(\lim\limits_{x \to -5} \frac{x^3+125}{2x^2-50}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Licznik (suma sześcianów): <span class="arithmatex">\((x+5)(x^2-5x+25)\)</span>.</p>
-<p>Mianownik: <span class="arithmatex">\(2(x^2-25) = 2(x-5)(x+5)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to -5} \frac{(x+5)(x^2-5x+25)}{2(x-5)(x+5)} = \frac{25+25+25}{2(-10)} = \frac{75}{-20} = -\frac{15}{4}\]</div>
-<p>7) <span class="arithmatex">\(\lim\limits_{x \to -2} \frac{3x^2+5x-2}{4x^2+9x+2}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>To symbol <span class="arithmatex">\(\frac{0}{0}\)</span>. Rozkładamy na czynniki (liczymy deltę dla licznika i mianownika). Wspólnym pierwiastkiem jest <span class="arithmatex">\(-2\)</span>.</p>
-<p>Licznik: <span class="arithmatex">\(3(x+2)(x-\frac{1}{3}) = (x+2)(3x-1)\)</span>.</p>
-<p>Mianownik: <span class="arithmatex">\(4(x+2)(x+\frac{1}{4}) = (x+2)(4x+1)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to -2} \frac{(x+2)(3x-1)}{(x+2)(4x+1)} = \frac{3(-2)-1}{4(-2)+1} = \frac{-7}{-7} = 1\]</div>
-<p>8) <span class="arithmatex">\(\lim\limits_{x \to 1} \frac{x^n-1}{x-1}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Znany wzór: <span class="arithmatex">\(x^n-1 = (x-1)(x^{n-1} + x^{n-2} + \dots + 1)\)</span>.</p>
-<p>Po skróceniu <span class="arithmatex">\((x-1)\)</span> zostaje suma <span class="arithmatex">\(n\)</span> jedynek.</p>
-<p>Wynik: <span class="arithmatex">\(n\)</span>.</p>
-<h3 id="2-pierwiastki-sprzezenie">2. Pierwiastki (Sprzężenie)<a class="headerlink" href="#2-pierwiastki-sprzezenie" title="Permanent link">&para;</a></h3>
-<p>Metoda: Jeśli mamy <span class="arithmatex">\(0\)</span> w mianowniku przez pierwiastki, mnożymy górę i dół przez "sprzężenie" (zamieniamy minus na plus), korzystając ze wzoru: <span class="arithmatex">\((a-b)(a+b)=a^2-b^2\)</span>.</p>
-<p>9) <span class="arithmatex">\(\lim\limits_{x \to 25} \frac{\sqrt{x}-5}{x-25}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Rozpiszmy mianownik jako różnicę kwadratów: <span class="arithmatex">\(x-25 = (\sqrt{x}-5)(\sqrt{x}+5)\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 25} \frac{\sqrt{x}-5}{(\sqrt{x}-5)(\sqrt{x}+5)} = \frac{1}{\sqrt{25}+5} = \frac{1}{10}\]</div>
-<p>10) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\sqrt{x^2+1}-\sqrt{x+1}}{1-\sqrt{x+1}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>To trudniejszy typ <span class="arithmatex">\(\frac{0}{0}\)</span>. Mnożymy przez sprzężenie licznika ORAZ sprzężenie mianownika.</p>
-<div class="arithmatex">\[\frac{(\sqrt{x^2+1}-\sqrt{x+1})(\sqrt{x^2+1}+\sqrt{x+1})}{(1-\sqrt{x+1})(1+\sqrt{x+1})} \cdot \frac{1+\sqrt{x+1}}{\sqrt{x^2+1}+\sqrt{x+1}}\]</div>
-<p>Upraszczamy lewą stronę (wzory skróconego mnożenia):</p>
-<div class="arithmatex">\[\frac{x^2+1-(x+1)}{1-(x+1)} \cdot [\dots] = \frac{x^2-x}{-x} \cdot [\dots] = \frac{x(x-1)}{-x} \cdot [\dots] = -(x-1) \cdot \frac{1+\sqrt{x+1}}{\sqrt{x^2+1}+\sqrt{x+1}}\]</div>
-<p>Teraz <span class="arithmatex">\(x \to 0\)</span>:</p>
-<div class="arithmatex">\[-(-1) \cdot \frac{1+1}{1+1} = 1 \cdot 1 = 1\]</div>
-<p>11) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\sqrt{x^2+1}-1}{\sqrt{x^2+25}-5}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Znów podwójne sprzężenie (dla licznika i mianownika).</p>
-<p>Licznik po sprzężeniu: <span class="arithmatex">\(x^2+1-1 = x^2\)</span>.</p>
-<p>Mianownik po sprzężeniu: <span class="arithmatex">\(x^2+25-25 = x^2\)</span>.</p>
-<p>Zostają nam "reszty" ze sprzężeń (odwrotnie: reszta z mianownika idzie do licznika):</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \frac{x^2}{x^2} \cdot \frac{\sqrt{x^2+25}+5}{\sqrt{x^2+1}+1} = 1 \cdot \frac{5+5}{1+1} = \frac{10}{2} = 5\]</div>
-<h3 id="3-trygonometria">3. Trygonometria<a class="headerlink" href="#3-trygonometria" title="Permanent link">&para;</a></h3>
-<p>Główny wzór: <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\sin x}{x} = 1\)</span> oraz <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\text{tg }x}{x} = 1\)</span>. Uwaga: argument sinusa i mianownik muszą być identyczne (i dążyć do 0).</p>
-<p>12) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\sin 3x}{4x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Potrzebujemy <span class="arithmatex">\(3x\)</span> w mianowniku.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \frac{\sin 3x}{3x} \cdot \frac{3x}{4x} = 1 \cdot \frac{3}{4} = \frac{3}{4}\]</div>
-<p>13) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{4x}{3 \sin 2x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Odwrotność wzoru też działa (<span class="arithmatex">\(\frac{x}{\sin x} \to 1\)</span>). Dopasowujemy <span class="arithmatex">\(2x\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \frac{1}{3} \cdot \frac{2x}{\sin 2x} \cdot \frac{4x}{2x} = \frac{1}{3} \cdot 1 \cdot 2 = \frac{2}{3}\]</div>
-<p>14) <span class="arithmatex">\(\lim\limits_{x \to +\infty} \frac{\sin x}{x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>To nie jest typ <span class="arithmatex">\(\frac{0}{0}\)</span>. <span class="arithmatex">\(x \to \infty\)</span>.</p>
-<p>Mianownik jest ogromny, a licznik skacze między <span class="arithmatex">\(-1\)</span> a <span class="arithmatex">\(1\)</span> (jest ograniczony).</p>
-<p>Ograniczona / Nieskończoność = 0.</p>
-<p>Wynik: 0.</p>
-<p>15) <span class="arithmatex">\(\lim\limits_{x \to \pi} \frac{\sin x}{x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Podstawiamy <span class="arithmatex">\(x=\pi\)</span>.</p>
-<p>Licznik: <span class="arithmatex">\(\sin \pi = 0\)</span>.</p>
-<p>Mianownik: <span class="arithmatex">\(\pi\)</span>.</p>
-<p>Wynik: <span class="arithmatex">\(\frac{0}{\pi} = 0\)</span>. (To nie jest symbol nieoznaczony!).</p>
-<p>16) <span class="arithmatex">\(\lim\limits_{x \to \frac{\pi}{2}} \frac{\cos x}{x-\frac{\pi}{2}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Symbol <span class="arithmatex">\(\frac{0}{0}\)</span>. Wzór <span class="arithmatex">\(\frac{\sin x}{x}\)</span> działa tylko w zerze. Robimy podstawienie: <span class="arithmatex">\(t = x - \frac{\pi}{2}\)</span>. Gdy <span class="arithmatex">\(x \to \frac{\pi}{2}\)</span>, to <span class="arithmatex">\(t \to 0\)</span>.</p>
-<p>Wtedy <span class="arithmatex">\(x = t + \frac{\pi}{2}\)</span>.</p>
-<p>Licznik: <span class="arithmatex">\(\cos(t+\frac{\pi}{2}) = -\sin t\)</span> (wzór redukcyjny).</p>
-<div class="arithmatex">\[\lim\limits_{t \to 0} \frac{-\sin t}{t} = -1\]</div>
-<p>17) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\text{tg } x}{4x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Skoro <span class="arithmatex">\(\frac{\text{tg }x}{x} \to 1\)</span>:</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \frac{1}{4} \cdot \frac{\text{tg } x}{x} = \frac{1}{4}\]</div>
-<p>18) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\sin 2x}{\sin 3x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Dzielimy licznik i mianownik przez <span class="arithmatex">\(x\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \frac{\frac{\sin 2x}{x}}{\frac{\sin 3x}{x}} = \frac{2}{3}\]</div>
-<p>19) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\text{tg } 2x}{\text{tg } x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Podobnie jak wyżej, wynik zależy od współczynników przy <span class="arithmatex">\(x\)</span>.</p>
-<div class="arithmatex">\[\frac{2}{1} = 2\]</div>
-<p>20) <span class="arithmatex">\(\lim\limits_{x \to \frac{\pi}{2}} \frac{1+\cos x}{\sin^2 x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Podstawiamy <span class="arithmatex">\(x = \frac{\pi}{2}\)</span>.</p>
-<p>Licznik: <span class="arithmatex">\(1 + \cos 90^\circ = 1+0 = 1\)</span>.</p>
-<p>Mianownik: <span class="arithmatex">\(\sin^2 90^\circ = 1^2 = 1\)</span>.</p>
-<p>Wynik: <span class="arithmatex">\(\frac{1}{1} = 1\)</span>. (Bez żadnych sztuczek!).</p>
-<p>21) <span class="arithmatex">\(\lim\limits_{x \to \frac{\pi}{4}} \frac{\cos x - \cos \frac{\pi}{4}}{\sin x - \sin \frac{\pi}{4}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Wzory na różnicę cosinusów i różnicę sinusów.</p>
-<p>Licznik: <span class="arithmatex">\(-2\sin \frac{x-\frac{\pi}{4}}{2} \sin \frac{x+\frac{\pi}{4}}{2}\)</span>.</p>
-<p>Mianownik: <span class="arithmatex">\(2\sin \frac{x-\frac{\pi}{4}}{2} \cos \frac{x+\frac{\pi}{4}}{2}\)</span>.</p>
-<p>Skracamy <span class="arithmatex">\(2\sin(\dots)\)</span>. Zostaje:</p>
-<div class="arithmatex">\[-\frac{\sin \frac{x+\frac{\pi}{4}}{2}}{\cos \frac{x+\frac{\pi}{4}}{2}} = -\text{tg}(\frac{x+\frac{\pi}{4}}{2})\]</div>
-<p>Dla <span class="arithmatex">\(x=\frac{\pi}{4}\)</span>: <span class="arithmatex">\(-\text{tg}(\frac{\pi}{4}) = -1\)</span>.</p>
-<p>22) <span class="arithmatex">\(\lim\limits_{x \to 0} \frac{\text{arctg } x}{x}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>To standardowa granica, identyczna jak dla sinusa i tangensa.</p>
-<p>Wynik: 1.</p>
-<h3 id="4-liczba-e">4. Liczba <span class="arithmatex">\(e\)</span><a class="headerlink" href="#4-liczba-e" title="Permanent link">&para;</a></h3>
-<p>Wzór: <span class="arithmatex">\(\lim\limits_{x \to 0} (1+x)^{\frac{1}{x}} = e\)</span>. Ważne, by to co w nawiasie dążyło do 1, a wykładnik do nieskończoności.</p>
-<p>23) <span class="arithmatex">\(\lim\limits_{x \to 0} (1-3x)^{\frac{1}{x}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Musimy dopasować wykładnik do tego, co stoi przy jedynce (czyli <span class="arithmatex">\(-3x\)</span>).</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \left[ (1+(-3x))^{\frac{1}{-3x}} \right]^{-3}\]</div>
-<p>Wnętrze dąży do <span class="arithmatex">\(e\)</span>.</p>
-<p>Wynik: <span class="arithmatex">\(e^{-3} = \frac{1}{e^3}\)</span>.</p>
-<p>24) <span class="arithmatex">\(\lim\limits_{x \to 0} (1+kx)^{\frac{n}{x}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Potrzebujemy <span class="arithmatex">\(kx\)</span> w mianowniku wykładnika.</p>
-<p>Mamy potęgę <span class="arithmatex">\(\frac{n}{x}\)</span>. Zapiszmy ją jako <span class="arithmatex">\(\frac{1}{kx} \cdot k \cdot n\)</span>.</p>
-<div class="arithmatex">\[\lim\limits_{x \to 0} \left[ (1+kx)^{\frac{1}{kx}} \right]^{kn} = e^{kn}\]</div>
-<p>25) <span class="arithmatex">\(\lim\limits_{x \to 0} (1+2x)^{\frac{1}{x}}\)</span></p>
-<p>Rozwiązanie:</p>
-<p>Dopasowujemy wykładnik <span class="arithmatex">\(\frac{1}{2x}\)</span>.</p>
-<div class="arithmatex">\[\left[ (1+2x)^{\frac{1}{2x}} \right]^2 = e^2\]</div>
+<h3 id="i-wzory-i-przeksztacenia">I. Wzory i przekształcenia<a class="headerlink" href="#i-wzory-i-przeksztacenia" title="Permanent link">&para;</a></h3>
+<p>1) <span class="arithmatex">\(\int \frac{x\sqrt{x} - x\sqrt[4]{x}}{\sqrt[3]{x}} dx\)</span></p>
+<p>Wyjaśnienie: Zamieniamy pierwiastki na potęgi (<span class="arithmatex">\(x^{\frac{a}{b}}\)</span>) i skracamy ułamek.</p>
+<div class="arithmatex">\[x\sqrt{x} = x^{3/2}, \quad x\sqrt[4]{x} = x^{5/4}, \quad \sqrt[3]{x} = x^{1/3}\]</div>
+<div class="arithmatex">\[\int (x^{3/2-1/3} - x^{5/4-1/3}) dx = \int (x^{7/6} - x^{11/12}) dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{6}{13}x^{13/6} - \frac{12}{23}x^{23/12} + C\]</div>
+<p>2) <span class="arithmatex">\(\int \sqrt{a+bx} dx\)</span></p>
+<p>Wyjaśnienie: Funkcja liniowa wewnątrz. Pamiętaj, że trzeba podzielić przez współczynnik przy <span class="arithmatex">\(x\)</span> (czyli <span class="arithmatex">\(b\)</span>).</p>
+<div class="arithmatex">\[\int (a+bx)^{1/2} dx = \frac{1}{b} \cdot \frac{(a+bx)^{3/2}}{3/2} + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{2}{3b}(a+bx)\sqrt{a+bx} + C\]</div>
+<p>41) <span class="arithmatex">\(\int \frac{x^2 - 3x + 4}{x} dx\)</span></p>
+<p>Wyjaśnienie: Mamy ułamek. Nie kombinuj z podstawieniem! Po prostu podziel każdy wyraz licznika przez mianownik (<span class="arithmatex">\(x\)</span>). Pamiętaj, że <span class="arithmatex">\(\int \frac{1}{x} dx = \ln|x|\)</span>.</p>
+<div class="arithmatex">\[\int (x - 3 + \frac{4}{x}) dx\]</div>
+<p>Całkujemy każdy składnik osobno.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2}x^2 - 3x + 4\ln|x| + C\]</div>
+<p>42) <span class="arithmatex">\(\int (3\sin x - 2\cos x + 4e^x) dx\)</span></p>
+<p>Wyjaśnienie: To "suma" podstawowych wzorów. Całkujemy wyraz po wyrazie. Pamiętaj o znakach: pochodna sinusa to cosinus, ale całka z sinusa to minus cosinus.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -3\cos x - 2\sin x + 4e^x + C\]</div>
+<p>43) <span class="arithmatex">\(\int \sin(4x - 5) dx\)</span></p>
+<p>Wyjaśnienie: Funkcja wewnętrzna jest liniowa (<span class="arithmatex">\(4x-5\)</span>). Korzystamy ze zwykłego wzoru na całkę z sinusa, ale wynik musimy podzielić przez liczbę stojącą przy x (czyli przez 4).</p>
+<div class="arithmatex">\[\int \sin(ax+b) dx = -\frac{1}{a}\cos(ax+b)\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -\frac{1}{4}\cos(4x-5) + C\]</div>
+<p>44) <span class="arithmatex">\(\int e^{3-2x} dx\)</span></p>
+<p>Wyjaśnienie: Podobnie jak wyżej – funkcja liniowa w wykładniku. Liczbą stojącą przy <span class="arithmatex">\(x\)</span> jest <span class="arithmatex">\(-2\)</span>. Dzielimy przez nią wynik.</p>
+<div class="arithmatex">\[\int e^{ax+b} dx = \frac{1}{a}e^{ax+b}\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -\frac{1}{2}e^{3-2x} + C\]</div>
+<p>45) <span class="arithmatex">\(\int \frac{e^{2x} - 1}{e^x} dx\)</span></p>
+<p>Wyjaśnienie: Zamiast głowić się nad ilorazem, rozbijamy ułamek na dwa osobne.</p>
+<div class="arithmatex">\[\frac{e^{2x}}{e^x} - \frac{1}{e^x} = e^x - e^{-x}\]</div>
+<p>Teraz całkujemy proste funkcje wykładnicze. Uwaga: całka z <span class="arithmatex">\(e^{-x}\)</span> to <span class="arithmatex">\(-e^{-x}\)</span> (dzielimy przez -1).</p>
+<div class="arithmatex">\[\int (e^x - e^{-x}) dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= e^x - (-e^{-x}) + C = e^x + e^{-x} + C\]</div>
+<p>46) <span class="arithmatex">\(\int \frac{\cos 2x}{\cos x - \sin x} dx\)</span></p>
+<p>Wyjaśnienie: Klasyk trygonometryczny. Używamy wzoru na cosinus podwojonego kąta: <span class="arithmatex">\(\cos 2x = \cos^2 x - \sin^2 x\)</span>. To jest wzór skróconego mnożenia <span class="arithmatex">\((a^2-b^2) = (a-b)(a+b)\)</span>.</p>
+<div class="arithmatex">\[\frac{(\cos x - \sin x)(\cos x + \sin x)}{\cos x - \sin x}\]</div>
+<p>Nawiasy się skracają! Zostaje:</p>
+<div class="arithmatex">\[\int (\cos x + \sin x) dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \sin x - \cos x + C\]</div>
+<h3 id="ii-cakowanie-przez-podstawienie">II. Całkowanie przez Podstawienie<a class="headerlink" href="#ii-cakowanie-przez-podstawienie" title="Permanent link">&para;</a></h3>
+<p>Szukamy <span class="arithmatex">\(t\)</span> tak, aby jego pochodna <span class="arithmatex">\(dt\)</span> była widoczna w całce.</p>
+<p>3) <span class="arithmatex">\(\int \frac{x^2 dx}{\sqrt[3]{x^3+1}}\)</span></p>
+<p>Wyjaśnienie: Pochodna wnętrza (<span class="arithmatex">\(x^3\)</span>) to <span class="arithmatex">\(3x^2\)</span>, co pasuje do licznika.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = x^3+1 \\ dt = 3x^2 dx \implies \frac{1}{3}dt = x^2 dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \frac{1}{3} \int \frac{dt}{\sqrt[3]{t}} = \frac{1}{3} \int t^{-1/3} dt = \frac{1}{3} \cdot \frac{3}{2} t^{2/3} + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2}(x^3+1)^{2/3} + C\]</div>
+<p>4) <span class="arithmatex">\(\int e^{1/x} \frac{dx}{x^2}\)</span></p>
+<p>Wyjaśnienie: "Brzydki" wykładnik <span class="arithmatex">\(1/x\)</span>. Jego pochodna to <span class="arithmatex">\(-1/x^2\)</span>, co idealnie pasuje do reszty całki.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \frac{1}{x} \\ dt = -\frac{1}{x^2} dx \implies -dt = \frac{dx}{x^2} \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int e^t (-dt) = -e^t + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -e^{1/x} + C\]</div>
+<p>5) <span class="arithmatex">\(\int \frac{e^x dx}{2e^x+1}\)</span></p>
+<p>Wyjaśnienie: Licznik jest pochodną (z dokładnością do stałej) mianownika.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = 2e^x+1 \\ dt = 2e^x dx \implies \frac{1}{2}dt = e^x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{\frac{1}{2}dt}{t} = \frac{1}{2} \ln|t| + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2} \ln(2e^x+1) + C\]</div>
+<p>6) <span class="arithmatex">\(\int \frac{dx}{(1+x^2)\operatorname{arctg} x}\)</span></p>
+<p>Wyjaśnienie: Pochodna <span class="arithmatex">\(\operatorname{arctg} x\)</span> to dokładnie <span class="arithmatex">\(\frac{1}{1+x^2}\)</span>.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \operatorname{arctg} x \\ dt = \frac{1}{1+x^2} dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{t} = \ln|t| + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \ln|\operatorname{arctg} x| + C\]</div>
+<p>7) <span class="arithmatex">\(\int \frac{x dx}{x^4+1}\)</span></p>
+<p>Wyjaśnienie: Chcemy uzyskać wzór na arcus tangens (<span class="arithmatex">\(\frac{1}{t^2+1}\)</span>). Zapiszmy <span class="arithmatex">\(x^4\)</span> jako <span class="arithmatex">\((x^2)^2\)</span>.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = x^2 \\ dt = 2x dx \implies \frac{1}{2}dt = x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{\frac{1}{2}dt}{t^2+1} = \frac{1}{2} \operatorname{arctg}(t) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2} \operatorname{arctg}(x^2) + C\]</div>
+<p>11) <span class="arithmatex">\(\int \frac{3x+1}{(x+2)^2} dx\)</span></p>
+<p>Wyjaśnienie: Podstawiamy za to, co jest pod potęgą w mianowniku.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = x+2 \implies x = t-2 \\ dt = dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{3(t-2)+1}{t^2} dt = \int \frac{3t-5}{t^2} dt = \int (\frac{3}{t} - 5t^{-2}) dt\]</div>
+<div class="arithmatex">\[= 3\ln|t| - 5(\frac{t^{-1}}{-1}) + C = 3\ln|t| + \frac{5}{t} + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= 3\ln|x+2| + \frac{5}{x+2} + C\]</div>
+<p>14) <span class="arithmatex">\(\int x \sqrt[3]{3x-1} dx\)</span></p>
+<p>Wyjaśnienie: Podstawiamy za cały pierwiastek.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \sqrt[3]{3x-1} \implies t^3 = 3x-1 \\ x = \frac{t^3+1}{3} \\ dx = t^2 dt \text{ (po zróżniczkowaniu)} \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{t^3+1}{3} \cdot t \cdot t^2 dt = \frac{1}{3} \int (t^6 + t^3) dt\]</div>
+<div class="arithmatex">\[= \frac{1}{3} (\frac{t^7}{7} + \frac{t^4}{4}) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{21}(\sqrt[3]{3x-1})^7 + \frac{1}{12}(\sqrt[3]{3x-1})^4 + C\]</div>
+<p>15) <span class="arithmatex">\(\int \sin^3 x dx\)</span></p>
+<p>Wyjaśnienie: Nieparzysta potęga <span class="arithmatex">\(\to\)</span> odrywamy jeden <span class="arithmatex">\(\sin x\)</span> i zamieniamy resztę na cosinusy.</p>
+<div class="arithmatex">\[\sin^3 x = (1-\cos^2 x) \sin x\]</div>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \cos x \\ dt = -\sin x dx \implies -dt = \sin x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int (1-t^2)(-dt) = \int (t^2-1) dt = \frac{t^3}{3} - t + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{3}\cos^3 x - \cos x + C\]</div>
+<p>16) <span class="arithmatex">\(\int \frac{\sin 2x}{1+\sin^2 x} dx\)</span></p>
+<p>Wyjaśnienie: Zauważamy, że <span class="arithmatex">\(\sin 2x = 2\sin x \cos x\)</span>, a to jest pochodna <span class="arithmatex">\(\sin^2 x\)</span>.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = 1+\sin^2 x \\ dt = 2\sin x \cos x dx = \sin 2x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{t} = \ln|t| + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \ln(1+\sin^2 x) + C\]</div>
+<p>26) <span class="arithmatex">\(\int \frac{\cos x}{\sqrt[3]{\sin^2 x}} dx\)</span></p>
+<p>Wyjaśnienie: Zapiszmy mianownik jako <span class="arithmatex">\((\sin x)^{2/3}\)</span>. Licznik to pochodna sinusa.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \sin x \\ dt = \cos x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{t^{2/3}} = \int t^{-2/3} dt = \frac{t^{1/3}}{1/3} = 3\sqrt[3]{t}\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= 3\sqrt[3]{\sin x} + C\]</div>
+<p>28) <span class="arithmatex">\(\int \frac{\ln|\operatorname{arctg} x|}{1+x^2} dx\)</span></p>
+<p>Wyjaśnienie: Wygląda groźnie, ale <span class="arithmatex">\(\frac{1}{1+x^2}\)</span> to pochodna arctg.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \operatorname{arctg} x \\ dt = \frac{1}{1+x^2} dx \end{matrix} \right|\]</div>
+<p>Otrzymujemy <span class="arithmatex">\(\int \ln|t| dt\)</span>. To całka, którą znamy z części (lub pamięci): <span class="arithmatex">\(t\ln t - t\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \operatorname{arctg} x \cdot \ln|\operatorname{arctg} x| - \operatorname{arctg} x + C\]</div>
+<p>30) <span class="arithmatex">\(\int \frac{x dx}{\sqrt[3]{2x^2-1}}\)</span> </p>
+<p>Wyjaśnienie: W liczniku jest <span class="arithmatex">\(x\)</span>, a pod pierwiastkiem <span class="arithmatex">\(x^2\)</span>. To klasyczny sygnał do podstawienia za wnętrze pierwiastka.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = 2x^2-1 \\ dt = 4x dx \implies \frac{1}{4}dt = x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{\frac{1}{4} dt}{t^{1/3}} = \frac{1}{4} \int t^{-1/3} dt\]</div>
+<div class="arithmatex">\[\text{Całkujemy potęgę: } \frac{1}{4} \cdot \frac{t^{2/3}}{2/3} = \frac{1}{4} \cdot \frac{3}{2} t^{2/3}\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{3}{8} (2x^2-1)^{2/3} + C \quad \text{lub} \quad \frac{3}{8} \sqrt[3]{(2x^2-1)^2} + C\]</div>
+<p>31) <span class="arithmatex">\(\int \frac{dx}{x \ln x}\)</span> </p>
+<p>Wyjaśnienie: To zadanie bardzo często pojawia się na egzaminach. Zauważ, że <span class="arithmatex">\(\frac{1}{x} dx\)</span> to pochodna <span class="arithmatex">\(\ln x\)</span>.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \ln x \\ dt = \frac{1}{x} dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{t} = \ln|t| + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \ln|\ln x| + C\]</div>
+<p>32) <span class="arithmatex">\(\int x e^{-x^2} dx\)</span> </p>
+<p>Wyjaśnienie: Mamy <span class="arithmatex">\(x^2\)</span> w wykładniku, a przed <span class="arithmatex">\(e\)</span> stoi <span class="arithmatex">\(x\)</span>. Podstawiamy za wykładnik.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = -x^2 \\ dt = -2x dx \implies -\frac{1}{2}dt = x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int e^t \cdot (-\frac{1}{2}) dt = -\frac{1}{2} e^t + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -\frac{1}{2} e^{-x^2} + C\]</div>
+<p>33) <span class="arithmatex">\(\int \frac{\operatorname{tg} x}{\cos^2 x} dx\)</span></p>
+<p>Wyjaśnienie: Pamiętamy, że pochodna tangensa to <span class="arithmatex">\(\frac{1}{\cos^2 x}\)</span>. To idealne podstawienie.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \operatorname{tg} x \\ dt = \frac{1}{\cos^2 x} dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int t dt = \frac{t^2}{2} + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2} \operatorname{tg}^2 x + C\]</div>
+<p>35) <span class="arithmatex">\(\int x \sqrt{2+3x} dx\)</span> </p>
+<p>Wyjaśnienie: Liniowa funkcja pod pierwiastkiem przeszkadza. Podstawiamy <span class="arithmatex">\(t\)</span> za cały pierwiastek, ale musimy wyznaczyć z tego <span class="arithmatex">\(x\)</span>, bo <span class="arithmatex">\(x\)</span> stoi też przed pierwiastkiem.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \sqrt{2+3x} \implies t^2 = 2+3x \implies x = \frac{t^2-2}{3} \\ dx = \frac{1}{3} \cdot 2t dt = \frac{2}{3}t dt \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \left(\frac{t^2-2}{3}\right) \cdot t \cdot \frac{2}{3}t dt = \frac{2}{9} \int (t^2-2)t^2 dt\]</div>
+<div class="arithmatex">\[= \frac{2}{9} \int (t^4 - 2t^2) dt = \frac{2}{9} (\frac{t^5}{5} - \frac{2t^3}{3}) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{2}{45}(\sqrt{2+3x})^5 - \frac{4}{27}(\sqrt{2+3x})^3 + C\]</div>
+<p>38) <span class="arithmatex">\(\int \frac{dx}{x\sqrt{1-\ln^2|x|}}\)</span> (Zad. 30 z listy)</p>
+<p>Wyjaśnienie: Wygląda skomplikowanie, ale <span class="arithmatex">\(1/x\)</span> to pochodna <span class="arithmatex">\(\ln x\)</span>. A całka z <span class="arithmatex">\(\frac{1}{\sqrt{1-t^2}}\)</span> to arcus sinus.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \ln|x| \\ dt = \frac{1}{x} dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{\sqrt{1-t^2}} = \arcsin(t) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \arcsin(\ln|x|) + C\]</div>
+<p>40) <span class="arithmatex">\(\int \sin^5 x dx\)</span> (Zad. 119 z listy)</p>
+<p>Wyjaśnienie: Nieparzysta potęga. Odrywamy jednego sinusa (<span class="arithmatex">\(\sin x\)</span>), a resztę (<span class="arithmatex">\(\sin^4 x\)</span>) zamieniamy na cosinusy.</p>
+<div class="arithmatex">\[\sin^4 x = (\sin^2 x)^2 = (1-\cos^2 x)^2 = 1 - 2\cos^2 x + \cos^4 x\]</div>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \cos x \\ dt = -\sin x dx \implies -dt = \sin x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int (1 - 2t^2 + t^4) (-dt) = \int (-1 + 2t^2 - t^4) dt\]</div>
+<div class="arithmatex">\[= -t + \frac{2}{3}t^3 - \frac{1}{5}t^5 + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -\cos x + \frac{2}{3}\cos^3 x - \frac{1}{5}\cos^5 x + C\]</div>
+<h3 id="iii-cakowanie-przez-czesci">III. Całkowanie przez Części<a class="headerlink" href="#iii-cakowanie-przez-czesci" title="Permanent link">&para;</a></h3>
+<p>Wybieramy <span class="arithmatex">\(u\)</span> (do zróżniczkowania) i <span class="arithmatex">\(dv\)</span> (do scałkowania).
+8) <span class="arithmatex">\(\int x \cos x dx\)</span></p>
+<p>Wyjaśnienie: Chcemy pozbyć się <span class="arithmatex">\(x\)</span>, więc różniczkujemy go (<span class="arithmatex">\(u=x\)</span>).</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = x &amp; du = dx \\ dv = \cos x dx &amp; v = \sin x \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies x \sin x - \int \sin x dx = x \sin x - (-\cos x) + C\]</div>
+<p>Wynik:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(= x \sin x + \cos x + C\)</span>\)</span>
+9) <span class="arithmatex">\(\int \sqrt{x} \ln x dx\)</span></p>
+<p>Wyjaśnienie: Logarytm (<span class="arithmatex">\(ln\)</span>) zawsze bierzemy jako <span class="arithmatex">\(u\)</span>, bo całka z niego jest trudna, a pochodna prosta (<span class="arithmatex">\(1/x\)</span>).</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = \ln x &amp; du = \frac{1}{x} dx \\ dv = x^{1/2} dx &amp; v = \frac{2}{3}x^{3/2} \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \frac{2}{3}x^{3/2}\ln x - \int \frac{2}{3}x^{3/2} \cdot \frac{1}{x} dx = \frac{2}{3}x^{3/2}\ln x - \frac{2}{3}\int x^{1/2} dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{2}{3}x\sqrt{x}\ln x - \frac{4}{9}x\sqrt{x} + C\]</div>
+<p>10) <span class="arithmatex">\(\int x^2 e^x dx\)</span></p>
+<p>Wyjaśnienie: Tu trzeba zrobić "części" dwa razy, żeby zbić <span class="arithmatex">\(x^2 \to x \to 1\)</span>.</p>
+<p>Krok 1:</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = x^2 &amp; du = 2x dx \\ dv = e^x dx &amp; v = e^x \end{matrix} \right| \implies x^2 e^x - \int 2x e^x dx\]</div>
+<p>Krok 2 (dla całki <span class="arithmatex">\(\int 2x e^x dx\)</span>):</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = 2x &amp; du = 2 dx \\ dv = e^x dx &amp; v = e^x \end{matrix} \right| \implies 2x e^x - \int 2e^x dx = 2xe^x - 2e^x\]</div>
+<p>Wynik (składamy całość):</p>
+<div class="arithmatex">\[= x^2 e^x - (2x e^x - 2e^x) + C = e^x(x^2 - 2x + 2) + C\]</div>
+<p>19) <span class="arithmatex">\(\int e^x \cos x dx\)</span></p>
+<p>Wyjaśnienie: To klasyczna całka pętląca się. Robimy części dwa razy i otrzymujemy tę samą całkę, co na początku, ale z minusem. Wtedy traktujemy całkę jak niewiadomą w równaniu.</p>
+<p>Krok 1:</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = \cos x &amp; du = -\sin x dx \\ dv = e^x dx &amp; v = e^x \end{matrix} \right| \implies e^x \cos x - \int e^x (-\sin x) dx = e^x \cos x + \int e^x \sin x dx\]</div>
+<p>Krok 2 (dla całki z sinusem):</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = \sin x &amp; du = \cos x dx \\ dv = e^x dx &amp; v = e^x \end{matrix} \right| \implies e^x \sin x - \int e^x \cos x dx\]</div>
+<p>Złożenie:</p>
+<div class="arithmatex">\[I = e^x \cos x + (e^x \sin x - I)\]</div>
+<p>Przenosimy <span class="arithmatex">\(I\)</span> na lewą stronę: <span class="arithmatex">\(2I = e^x(\cos x + \sin x)\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{e^x(\sin x + \cos x)}{2} + C\]</div>
+<p>20) <span class="arithmatex">\(\int (\ln x)^2 dx\)</span></p>
+<p>Wyjaśnienie: Traktujemy to jako <span class="arithmatex">\(1 \cdot (\ln x)^2\)</span>. Części trzeba zrobić dwa razy, żeby zbić potęgę logarytmu.</p>
+<p>Krok 1:</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = (\ln x)^2 &amp; du = 2\ln x \cdot \frac{1}{x} dx \\ dv = 1 dx &amp; v = x \end{matrix} \right| \implies x(\ln x)^2 - \int x \cdot \frac{2\ln x}{x} dx = x(\ln x)^2 - 2\int \ln x dx\]</div>
+<p>Krok 2 (całka z <span class="arithmatex">\(\ln x\)</span> jest znana, ale formalnie przez części):</p>
+<div class="arithmatex">\[\int \ln x dx = x\ln x - x\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= x(\ln x)^2 - 2(x\ln x - x) + C = x(\ln x)^2 - 2x\ln x + 2x + C\]</div>
+<p>34) <span class="arithmatex">\(\int x^2 \cos x dx\)</span></p>
+<p>Wyjaśnienie: Mamy <span class="arithmatex">\(x^2\)</span>, więc musimy zrobić "części" dwa razy, żeby zredukować potęgę <span class="arithmatex">\(x\)</span> do zera.</p>
+<p>Krok 1:</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = x^2 &amp; du = 2x dx \\ dv = \cos x dx &amp; v = \sin x \end{matrix} \right| \implies x^2 \sin x - \int 2x \sin x dx\]</div>
+<p>Krok 2 (dla całki <span class="arithmatex">\(\int 2x \sin x dx\)</span>):</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = 2x &amp; du = 2 dx \\ dv = \sin x dx &amp; v = -\cos x \end{matrix} \right| \implies -2x \cos x - \int 2(-\cos x) dx = -2x \cos x + 2\sin x\]</div>
+<p>Składamy całość (pamiętając o minusie przed drugą całką z Kroku 1):</p>
+<div class="arithmatex">\[= x^2 \sin x - (-2x \cos x + 2\sin x) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= x^2 \sin x + 2x \cos x - 2\sin x + C\]</div>
+<p>47) <span class="arithmatex">\(\int (2x+3)e^{3x} dx\)</span></p>
+<p>Wyjaśnienie: Mamy wielomian <span class="arithmatex">\((2x+3)\)</span> razy funkcję wykładniczą. Różniczkujemy wielomian, żeby zbić <span class="arithmatex">\(x\)</span>. Uważaj przy całkowaniu <span class="arithmatex">\(e^{3x}\)</span> – trzeba podzielić przez 3.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = 2x+3 &amp; du = 2 dx \\ dv = e^{3x} dx &amp; v = \frac{1}{3}e^{3x} \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies (2x+3) \cdot \frac{1}{3}e^{3x} - \int \frac{1}{3}e^{3x} \cdot 2 dx\]</div>
+<div class="arithmatex">\[\implies \frac{1}{3}(2x+3)e^{3x} - \frac{2}{3} \int e^{3x} dx\]</div>
+<p>Całka z <span class="arithmatex">\(e^{3x}\)</span> znowu wyrzuci nam ułamek <span class="arithmatex">\(\frac{1}{3}\)</span>.</p>
+<div class="arithmatex">\[= \frac{1}{3}(2x+3)e^{3x} - \frac{2}{3} \cdot \frac{1}{3}e^{3x} + C\]</div>
+<p>Wynik:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(= \frac{1}{3}(2x+3)e^{3x} - \frac{2}{9}e^{3x} + C\)</span>\)</span>
+48) <span class="arithmatex">\(\int \operatorname{arctg} x dx\)</span></p>
+<p>Wyjaśnienie: To sztandarowy przykład na części, gdzie "nie widać" drugiej funkcji. Dopiusjemy jedynkę: <span class="arithmatex">\(1 \cdot \operatorname{arctg} x\)</span>. Różniczkujemy arcusa, bo jego pochodna to funkcja wymierna.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} u = \operatorname{arctg} x &amp; du = \frac{1}{1+x^2} dx \\ dv = 1 dx &amp; v = x \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies x \operatorname{arctg} x - \int x \cdot \frac{1}{1+x^2} dx = x \operatorname{arctg} x - \int \frac{x}{1+x^2} dx\]</div>
+<p>Teraz szybki rzut oka na nową całkę: licznik (<span class="arithmatex">\(x\)</span>) to prawie pochodna mianownika (<span class="arithmatex">\(2x\)</span>). Dopisujemy <span class="arithmatex">\(1/2\)</span> i mamy logarytm.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= x \operatorname{arctg} x - \frac{1}{2}\ln(1+x^2) + C\]</div>
+<h3 id="iv-troche-bardziej-zozone-caki">IV. Troche bardziej złóżone całki<a class="headerlink" href="#iv-troche-bardziej-zozone-caki" title="Permanent link">&para;</a></h3>
+<p>12) <span class="arithmatex">\(\int \frac{x^4}{x^2+1} dx\)</span></p>
+<p>Wyjaśnienie: Stopień licznika &gt; stopień mianownika. Robimy sztuczkę <span class="arithmatex">\((x^4-1)+1\)</span>.</p>
+<div class="arithmatex">\[\int \frac{(x^2-1)(x^2+1) + 1}{x^2+1} dx = \int (x^2-1 + \frac{1}{x^2+1}) dx\]</div>
+<p>Wynik:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(= \frac{x^3}{3} - x + \operatorname{arctg} x + C\)</span>\)</span>
+13) <span class="arithmatex">\(\int \frac{dx}{x^2-6x+13}\)</span></p>
+<p>Wyjaśnienie: Delta ujemna. Zwijamy do postaci kanonicznej <span class="arithmatex">\((x-p)^2 + q\)</span>.</p>
+<div class="arithmatex">\[x^2-6x+13 = (x-3)^2 + 4\]</div>
+<div class="arithmatex">\[\int \frac{dx}{(x-3)^2 + 2^2}\]</div>
+<p>Używamy wzoru na arcus tangens z przesunięciem.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2} \operatorname{arctg}\left(\frac{x-3}{2}\right) + C\]</div>
+<p>17) <span class="arithmatex">\(\int \sin 3x \cos 2x dx\)</span></p>
+<p>Wyjaśnienie: Wzór na iloczyn <span class="arithmatex">\(\sin \alpha \cos \beta = \frac{1}{2}[\sin(\alpha+\beta) + \sin(\alpha-\beta)]\)</span>.</p>
+<div class="arithmatex">\[\int \frac{1}{2} (\sin 5x + \sin x) dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -\frac{1}{10}\cos 5x - \frac{1}{2}\cos x + C\]</div>
+<p>18) <span class="arithmatex">\(\int \frac{dx}{e^x+e^{-x}}\)</span></p>
+<p>Wyjaśnienie: Mnożymy licznik i mianownik przez <span class="arithmatex">\(e^x\)</span>, żeby pozbyć się ujemnej potęgi.</p>
+<div class="arithmatex">\[\int \frac{e^x}{e^{2x}+1} dx\]</div>
+<div class="arithmatex">\[ \left| \begin{matrix} t = e^x \\ dt = e^x dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{t^2+1} = \operatorname{arctg} t + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \operatorname{arctg}(e^x) + C\]</div>
+<p>21) <span class="arithmatex">\(\int \frac{x^3+2x-6}{x^2-x-2} dx\)</span></p>
+<p>Wyjaśnienie: Stopień licznika (3) &gt; stopień mianownika (2). Najpierw dzielenie wielomianów (pisemne lub w pamięci).</p>
+<div class="arithmatex">\[(x^3+2x-6) : (x^2-x-2) = x + 1 \quad \text{reszta } 5x-4\]</div>
+<p>Zapisujemy całkę jako: <span class="arithmatex">\(\int (x + 1 + \frac{5x-4}{x^2-x-2}) dx\)</span>.</p>
+<p>Teraz rozkład mianownika na ułamki proste: <span class="arithmatex">\(x^2-x-2 = (x-2)(x+1)\)</span>.</p>
+<div class="arithmatex">\[\frac{5x-4}{(x-2)(x+1)} = \frac{A}{x-2} + \frac{B}{x+1}\]</div>
+<p>Szybkie wyliczanie:</p>
+<p><span class="arithmatex">\(A(x+1) + B(x-2) = 5x-4 \implies \text{dla } x=2: 3A=6 \to A=2, \quad \text{dla } x=-1: -3B=-9 \to B=3\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{x^2}{2} + x + 2\ln|x-2| + 3\ln|x+1| + C\]</div>
+<p>22) <span class="arithmatex">\(\int \frac{x+1}{x^2-x+1} dx\)</span></p>
+<p>Wyjaśnienie: Delta ujemna, mianownik nierozkładalny. W liczniku mamy <span class="arithmatex">\(x\)</span>, więc musimy to rozbić na dwie całki:</p>
+<p>Pochodna mianownika <span class="arithmatex">\((2x-1)\)</span>.</p>
+<p>Reszta (do arctg).</p>
+<p>Dopasowujemy licznik: <span class="arithmatex">\(x+1 = \frac{1}{2}(2x-1) + \frac{3}{2}\)</span>.</p>
+<div class="arithmatex">\[\int \frac{\frac{1}{2}(2x-1)}{x^2-x+1} dx + \int \frac{3/2}{x^2-x+1} dx\]</div>
+<p>Pierwsza to logarytm. Druga wymaga postaci kanonicznej: <span class="arithmatex">\((x-\frac{1}{2})^2 + \frac{3}{4}\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2}\ln(x^2-x+1) + \sqrt{3}\operatorname{arctg}\left(\frac{2x-1}{\sqrt{3}}\right) + C\]</div>
+<p>(Współczynnik przy arctg wziął się z wzoru: <span class="arithmatex">\(\frac{1}{a} \operatorname{arctg}(...)\)</span>, gdzie <span class="arithmatex">\(a=\sqrt{3}/2\)</span>, więc <span class="arithmatex">\(1/a = 2/\sqrt{3}\)</span>).
+X. Funkcje Niewymierne – Trudniejsze Podstawienia</p>
+<p>23) <span class="arithmatex">\(\int \frac{1+\sqrt{x}}{1-\sqrt{x}} dx\)</span></p>
+<p>Wyjaśnienie: Podstawiamy za pierwiastek.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \sqrt{x} \implies x = t^2 \\ dx = 2t dt \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{1+t}{1-t} \cdot 2t dt = 2 \int \frac{t^2+t}{1-t} dx\]</div>
+<p>To funkcja wymierna (licznik wyższy od mianownika). Dzielimy: <span class="arithmatex">\(\frac{t^2+t}{-t+1} = -t-2 + \frac{2}{1-t}\)</span>.</p>
+<div class="arithmatex">\[\int (-2t - 4 + \frac{4}{1-t}) dt = -t^2 - 4t - 4\ln|1-t|\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= -x - 4\sqrt{x} - 4\ln|1-\sqrt{x}| + C\]</div>
+<p>24) <span class="arithmatex">\(\int \frac{dx}{x\sqrt{x+2}}\)</span></p>
+<p>Wyjaśnienie: Standardowe podstawienie za pierwiastek.</p>
+<div class="arithmatex">\[ \left| \begin{matrix} t = \sqrt{x+2} \implies t^2 = x+2 \implies x = t^2-2 \\ dx = 2t dt \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{2t dt}{(t^2-2) \cdot t} = 2 \int \frac{dt}{t^2-2}\]</div>
+<p>To całka wymierna ze wzoru na "logarytm wysoki" <span class="arithmatex">\(\int \frac{dx}{x^2-a^2} = \frac{1}{2a}\ln|\frac{x-a}{x+a}|\)</span>. Tutaj <span class="arithmatex">\(a=\sqrt{2}\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{2}{2\sqrt{2}} \ln\left|\frac{t-\sqrt{2}}{t+\sqrt{2}}\right| + C = \frac{1}{\sqrt{2}} \ln\left|\frac{\sqrt{x+2}-\sqrt{2}}{\sqrt{x+2}+\sqrt{2}}\right| + C\]</div>
+<p>25) <span class="arithmatex">\(\int \cos^4 x dx\)</span></p>
+<p>Wyjaśnienie: Nie ma nieparzystej potęgi, więc nie możemy nic "oderwać". Musimy użyć wzoru na obniżenie potęgi: <span class="arithmatex">\(\cos^2 \alpha = \frac{1+\cos 2\alpha}{2}\)</span>.</p>
+<div class="arithmatex">\[\cos^4 x = (\cos^2 x)^2 = \left(\frac{1+\cos 2x}{2}\right)^2 = \frac{1}{4}(1 + 2\cos 2x + \cos^2 2x)\]</div>
+<p>Mamy znowu kwadrat (<span class="arithmatex">\(\cos^2 2x\)</span>), więc stosujemy wzór ponownie (tym razem kąt się podwoi do <span class="arithmatex">\(4x\)</span>):</p>
+<div class="arithmatex">\[= \frac{1}{4}\left[1 + 2\cos 2x + \frac{1+\cos 4x}{2}\right]\]</div>
+<p>Rozbijamy na sumę i całkujemy wyraz po wyrazie.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{3}{8}x + \frac{1}{4}\sin 2x + \frac{1}{32}\sin 4x + C\]</div>
+<p>27) <span class="arithmatex">\(\int \frac{e^x - 1}{e^x + 1} dx\)</span></p>
+<p>Wyjaśnienie: Można podstawić <span class="arithmatex">\(t=e^x\)</span>, ale szybciej jest podzielić licznik i mianownik przez <span class="arithmatex">\(e^{x/2}\)</span> (tworząc tangens hiperboliczny) lub po prostu podstawić za mianownik, jeśli zrobimy mały trik w liczniku:</p>
+<p><span class="arithmatex">\(e^x - 1 = (e^x + 1) - 2\)</span>.</p>
+<div class="arithmatex">\[\int \frac{e^x+1}{e^x+1} dx - \int \frac{2}{e^x+1} dx = \int 1 dx - 2\int \frac{dx}{e^x+1}\]</div>
+<p>Drugą całkę robimy przez podstawienie <span class="arithmatex">\(u=e^x+1\)</span> lub mnożąc przez <span class="arithmatex">\(e^{-x}\)</span>.</p>
+<p>Zróbmy podstawienie <span class="arithmatex">\(t=e^x\)</span>:</p>
+<div class="arithmatex">\[2 \int \frac{1}{t+1} \cdot \frac{dt}{t} = 2 \int (\frac{1}{t} - \frac{1}{t+1}) dt\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= x - 2(\ln(e^x) - \ln(e^x+1)) + C = x - 2x + 2\ln(e^x+1) + C\]</div>
+<div class="arithmatex">\[= 2\ln(e^x+1) - x + C\]</div>
+<p>29) <span class="arithmatex">\(\int \frac{dx}{\sqrt{x^2+4x+13}}\)</span></p>
+<p>Wyjaśnienie: Kiedy mamy <span class="arithmatex">\(\sqrt{x^2+...}\)</span> w mianowniku, sprowadzamy do postaci kanonicznej i używamy wzoru na logarytm naturalny (tzw. podstawienie Eulera I rodzaju w wersji uproszczonej).</p>
+<div class="arithmatex">\[x^2+4x+13 = (x+2)^2 + 9\]</div>
+<div class="arithmatex">\[ \left| \begin{matrix} t = x+2 \\ dt = dx \end{matrix} \right|\]</div>
+<div class="arithmatex">\[\implies \int \frac{dt}{\sqrt{t^2+3^2}} = \ln|t + \sqrt{t^2+9}| + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \ln|x+2 + \sqrt{x^2+4x+13}| + C\]</div>
+<p>36) <span class="arithmatex">\(\int \frac{dx}{2x^2-2x+5}\)</span> (Zad. 57 z listy)</p>
+<p>Wyjaśnienie: Mianownik nie ma pierwiastków (delta ujemna). Musimy wyciągnąć 2 przed nawias i zwinąć resztę do postaci kanonicznej (do wzoru na arctg).</p>
+<div class="arithmatex">\[\int \frac{dx}{2(x^2 - x + \frac{5}{2})}\]</div>
+<p>Zwijamy <span class="arithmatex">\(x^2-x\)</span>: <span class="arithmatex">\((x-\frac{1}{2})^2 - \frac{1}{4} + \frac{5}{2} = (x-\frac{1}{2})^2 + \frac{9}{4}\)</span>.</p>
+<div class="arithmatex">\[= \frac{1}{2} \int \frac{dx}{(x-\frac{1}{2})^2 + (\frac{3}{2})^2}\]</div>
+<p>Wzór na arctg: <span class="arithmatex">\(\int \frac{dx}{u^2+a^2} = \frac{1}{a}\operatorname{arctg}\frac{u}{a}\)</span>. Tu <span class="arithmatex">\(a=\frac{3}{2}\)</span>.</p>
+<div class="arithmatex">\[= \frac{1}{2} \cdot \frac{1}{3/2} \operatorname{arctg}\left(\frac{x-1/2}{3/2}\right) + C = \frac{1}{2} \cdot \frac{2}{3} \operatorname{arctg}\left(\frac{2x-1}{3}\right) + C\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{3} \operatorname{arctg}\left(\frac{2x-1}{3}\right) + C\]</div>
+<p>37) <span class="arithmatex">\(\int \frac{x+6}{x^2-3} dx\)</span> (Zad. 67 z listy)</p>
+<p>Wyjaśnienie: Rozbijamy na dwa ułamki.</p>
+<div class="arithmatex">\[\int \frac{x}{x^2-3} dx + \int \frac{6}{x^2-3} dx\]</div>
+<p>Całka 1: Licznik to prawie pochodna mianownika (<span class="arithmatex">\(\frac{1}{2} \cdot 2x\)</span>). Daje logarytm.</p>
+<p>Całka 2: Wzór <span class="arithmatex">\(\int \frac{dx}{x^2-a^2} = \frac{1}{2a}\ln|\frac{x-a}{x+a}|\)</span>. Tu <span class="arithmatex">\(a=\sqrt{3}\)</span>.</p>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{2}\ln|x^2-3| + 6 \cdot \frac{1}{2\sqrt{3}}\ln\left|\frac{x-\sqrt{3}}{x+\sqrt{3}}\right| + C\]</div>
+<div class="arithmatex">\[= \frac{1}{2}\ln|x^2-3| + \sqrt{3}\ln\left|\frac{x-\sqrt{3}}{x+\sqrt{3}}\right| + C\]</div>
+<p>39) <span class="arithmatex">\(\int \cos 5x \cos 7x dx\)</span> (Zad. 106 z listy)</p>
+<p>Wyjaśnienie: Iloczyn dwóch cosinusów. Używamy wzoru: <span class="arithmatex">\(\cos \alpha \cos \beta = \frac{1}{2}[\cos(\alpha-\beta) + \cos(\alpha+\beta)]\)</span>.</p>
+<div class="arithmatex">\[\cos 5x \cos 7x = \frac{1}{2}[\cos(-2x) + \cos(12x)]\]</div>
+<p>Ponieważ cosinus jest parzysty, <span class="arithmatex">\(\cos(-2x) = \cos(2x)\)</span>.</p>
+<div class="arithmatex">\[\int \frac{1}{2}(\cos 2x + \cos 12x) dx\]</div>
+<p>Wynik:</p>
+<div class="arithmatex">\[= \frac{1}{4}\sin 2x + \frac{1}{24}\sin 12x + C\]</div>
 
 
 
