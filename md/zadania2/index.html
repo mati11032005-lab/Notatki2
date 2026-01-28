@@ -2122,41 +2122,40 @@ przecięcia.</p>
 <h3 id="zadanie-2_3">Zadanie 2<a class="headerlink" href="#zadanie-2_3" title="Permanent link">&para;</a></h3>
 <p>Oblicz odległość punktu <span class="arithmatex">\(G(2,-1,0)\)</span> od prostej przechodzącej przez punkty <span class="arithmatex">\(H(0,0,0)\)</span> i <span class="arithmatex">\(I(1,1,1)\)</span>.</p>
 <p><strong>Rozwiązanie:</strong></p>
-<p>Prosta ma wektor kierunkowy <span class="arithmatex">\(\vec{HI} = [1,1,1]\)</span>. Wektor <span class="arithmatex">\(\vec{v} = \vec{HG} = [2, -1, 0]\)</span>.</p>
-<p>Odległość to pole równoległoboku rozpiętego na tych wektorach podzielone przez długość podstawy (<span class="arithmatex">\(\vec{HI}\)</span>).</p>
-<div class="arithmatex">\[\vec{HI} \times \vec{HG} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 1 &amp; 1 \\ 2 &amp; -1 &amp; 0 \end{vmatrix} = [1, 2, -3]\]</div>
-<p><span class="arithmatex">\(\|\vec{HI} \times \vec{HG}\| = \sqrt{1+4+9} = \sqrt{14}\)</span>.</p>
-<p><span class="arithmatex">\(\|\vec{HI}\| = \sqrt{3}\)</span>.</p>
+<p>Wzór na odległość punktu <span class="arithmatex">\(G\)</span> od prostej <span class="arithmatex">\(HI\)</span></p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(d = \frac{|\vec{HG} \times \vec{HI}|}{|\vec{HI}|}\)</span>\)</span>
+Gdzie:</p>
+<p><span class="arithmatex">\(\vec{HG}\)</span> to wektor od punktu na prostej do punktu <span class="arithmatex">\(G\)</span>.</p>
+<p><span class="arithmatex">\(\vec{HI}\)</span> to wektor kierunkowy prostej.</p>
+<p><span class="arithmatex">\(|\vec{HG} \times \vec{HI}|\)</span> to długość ich iloczynu wektorowego (pole równoległoboku).
+Wyznaczenie wektorów:</p>
+<p><span class="arithmatex">\(\vec{HI} = [1-0, 1-0, 1-0] = [1, 1, 1]\)</span>
+<span class="arithmatex">\(\vec{HG} = [2-0, -1-0, 0-0] = [2, -1, 0]\)</span> </p>
+<p>Obliczenie iloczynu wektorowego <span class="arithmatex">\(\vec{HG} \times \vec{HI}\)</span>:</p>
+<div class="arithmatex">\[\vec{HG} \times \vec{HI} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 2 &amp; -1 &amp; 0 \\ 1 &amp; 1 &amp; 1 \end{vmatrix}\]</div>
+<p>Wektor iloczynu: <span class="arithmatex">\([-1, -2, 3]\)</span></p>
+<p>Obliczenie długości (norm):</p>
+<p>Długość iloczynu: <span class="arithmatex">\(|\vec{HG} \times \vec{HI}| = \sqrt{(-1)^2 + (-2)^2 + 3^2} = \sqrt{1 + 4 + 9} = \mathbf{\sqrt{14}}\)</span></p>
+<p>Długość wektora kierunkowego: <span class="arithmatex">\(|\vec{HI}| = \sqrt{1^2 + 1^2 + 1^2} = \mathbf{\sqrt{3}}\)</span></p>
+<p>Wynik końcowy:</p>
+<div class="arithmatex">\[d = \frac{\sqrt{14}}{\sqrt{3}} = \sqrt{\frac{14}{3}} = \mathbf{\frac{\sqrt{42}}{3}}\]</div>
 <h3 id="zadanie-3_3">Zadanie 3<a class="headerlink" href="#zadanie-3_3" title="Permanent link">&para;</a></h3>
-<p>Rozważ układ prostej i płaszczyzny zależny od parametru <span class="arithmatex">\(\lambda\)</span>. Określ wartości <span class="arithmatex">\(\lambda\)</span>, dla których prosta jest równoległa, zawarta lub przecina płaszczyznę.</p>
-<p><strong>Rozwiązanie:</strong></p>
-<p>Wektor kierunkowy prostej: <span class="arithmatex">\(\mathbf{u} = [1, 2, -1]\)</span>.</p>
-<p>Wektor normalny płaszczyzny: <span class="arithmatex">\(\mathbf{n} = [1, -(\lambda-1), 1]\)</span>.</p>
-<p>Badamy iloczyn skalarny <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{n}\)</span>:</p>
-<p><span class="arithmatex">\(1(1) + 2(-(\lambda-1)) + (-1)(1) = 1 - 2\lambda + 2 - 1 = 2 - 2\lambda\)</span>.</p>
-<p>Przecina: Gdy <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{n} \neq 0\)</span>, czyli <span class="arithmatex">\(2 - 2\lambda \neq 0 \Rightarrow \lambda \neq 1\)</span>.</p>
-<p>Równoległa lub zawarta: Gdy <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{n} = 0 \Rightarrow \lambda = 1\)</span>.</p>
-<p>Dla <span class="arithmatex">\(\lambda = 1\)</span>:</p>
-<p>Płaszczyzna: <span class="arithmatex">\(x - 0y + z - 3 = 0 \Rightarrow x+z=3\)</span>.</p>
-<p>Sprawdźmy, czy dowolny punkt prostej (np. dla <span class="arithmatex">\(t=0\)</span>: <span class="arithmatex">\(P(\lambda, 1, 2) \to (1,1,2)\)</span>) leży na płaszczyźnie.</p>
-<p>Podstawiamy <span class="arithmatex">\(P(1,1,2)\)</span> do <span class="arithmatex">\(x+z=3\)</span>: <span class="arithmatex">\(1+2=3\)</span>. Zgadza się.</p>
-<p>Zatem dla <span class="arithmatex">\(\lambda = 1\)</span> prosta jest zawarta w płaszczyźnie.
-Nie ma takiej wartości <span class="arithmatex">\(\lambda\)</span>, dla której prosta byłaby równoległa i rozłączna.</p>
-<p><span class="arithmatex">\(\star\)</span> Rozważ układ prostej i płaszczyzny zależny od parametru <span class="arithmatex">\(\lambda\)</span>:</p>
+<p>Rozważ układ prostej i płaszczyzny zależny od parametru <span class="arithmatex">\(\lambda\)</span>:</p>
 <div class="arithmatex">\[\ell(\lambda): x=\lambda+t,\; y=1+2t,\; z=2-t\]</div>
 <p>oraz</p>
 <div class="arithmatex">\[\pi: x - (\lambda-1) y + z - 3 = 0\]</div>
 <p>Określ wartości <span class="arithmatex">\(\lambda\)</span>, dla których prosta jest równoległa do płaszczyzny, zawarta w płaszczyźnie lub przecina ją w jednym punkcie.</p>
-<p>Wyznaczenie wektorów i punktu</p>
+<p><strong>Rozwiązanie:</strong></p>
 <p>Wektor kierunkowy prostej:<span class="arithmatex">\(\mathbf{v} = [1, 2, -1]\)</span></p>
 <p>Wektor normalny płaszczyzny:<span class="arithmatex">\(\mathbf{n} = [1, -(\lambda-1), 1] = [1, 1-\lambda, 1]\)</span></p>
 <p>Punkt na prostej <span class="arithmatex">\(P_{\ell}\)</span>: Dla <span class="arithmatex">\(t=0\)</span> mamy:<span class="arithmatex">\(P_{\ell} = (\lambda, 1, 2)\)</span>. </p>
-<p>Warunek równoległości (<span class="arithmatex">\(\mathbf{v} \perp \mathbf{n}\)</span>)Prosta jest równoległa do płaszczyzny (lub w niej zawarta), gdy ich wektory są prostopadłe, czyli ich iloczyn skalarny wynosi <span class="arithmatex">\(0\)</span>:</p>
+<p>Warunek równoległości (<span class="arithmatex">\(\mathbf{v} \perp \mathbf{n}\)</span>) to iloczyn skalarny wynosi <span class="arithmatex">\(0\)</span>:</p>
 <div class="arithmatex">\[\mathbf{v} \cdot \mathbf{n} = 1\cdot 1 + 2\cdot(1-\lambda) + (-1)\cdot 1 = 0\]</div>
 <div class="arithmatex">\[1 + 2 - 2\lambda - 1 = 0\]</div>
 <div class="arithmatex">\[2 - 2\lambda = 0 \Rightarrow \mathbf{\lambda = 1}\]</div>
 <p>Sprawdzenie położenia dla <span class="arithmatex">\(\lambda = 1\)</span></p>
-<p>Dla <span class="arithmatex">\(\lambda = 1\)</span> wiemy już, że prosta jest co najmniej równoległa. Sprawdźmy, czy punkt <span class="arithmatex">\(P_{\ell}(1, 1, 2)\)</span> leży na płaszczyźnie <span class="arithmatex">\(\pi: x - (1-1)y + z - 3 = 0 \Rightarrow x + z - 3 = 0\)</span>:</p>
+<p>Dla <span class="arithmatex">\(\lambda = 1\)</span> wiemy już, że prosta jest co najmniej równoległa. Sprawdźmy, czy punkt <span class="arithmatex">\(P_{\ell}(1, 1, 2)\)</span> leży na płaszczyźnie </p>
+<p><span class="arithmatex">\(\pi: x - (1-1)y + z - 3 = 0 \Rightarrow x + z - 3 = 0\)</span>:</p>
 <p><span class="arithmatex">\(1 + 2 - 3 = 0\)</span></p>
 <p><span class="arithmatex">\(0 = 0\)</span></p>
 <p>Punkt spełnia równanie, więc cała prosta leży w płaszczyźnie.</p>
