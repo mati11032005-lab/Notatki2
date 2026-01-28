@@ -1882,8 +1882,8 @@ Pokaż, że macierz diagonalna <span class="arithmatex">\(D=\operatorname{diag}(
 <ul>
 <li>
 <p><strong>Przemienność:</strong> Jak w Zadaniu 2, macierze diagonalne są przemienne.</p>
-<div class="arithmatex">\[D \cdot E = \operatorname{diag}(2a, -3b, 5c)$
-$E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\]</div>
+<div class="arithmatex">\[D \cdot E = \operatorname{diag}(2a, -3b, 5c)\]</div>
+<div class="arithmatex">\[E \cdot D = \operatorname{diag}(a\cdot2, b\cdot(-3), c\cdot5)\]</div>
 <p>Są identyczne.</p>
 </li>
 <li>
@@ -1930,65 +1930,70 @@ Oblicz wyznaczniki metodą Laplace'a.</p>
 <div class="arithmatex">\[1 \cdot \det\begin{pmatrix}1 &amp; 0\\ 5 &amp; 6\end{pmatrix} + 2 \cdot \det\begin{pmatrix}3 &amp; 1\\ 4 &amp; 5\end{pmatrix} = 1(6-0) + 2(15-4) = 6 + 22 = 28\]</div>
 </li>
 <li>
-<p><strong>C:</strong> Macierz trójkątna górna. Wyznacznik to iloczyn przekątnej.
-    <span class="arithmatex">\(\det C = 1 \cdot 1 \cdot 1 \cdot 2 = 2\)</span>.</p>
+<p><strong>C:</strong> Macierz trójkątna górna. Wyznacznik to iloczyn przekątnej.</p>
+<p><span class="arithmatex">\(\det C = 1 \cdot 1 \cdot 1 \cdot 2 = 2\)</span>.</p>
 </li>
 </ul>
 <hr />
 <h3 id="zadanie-3_1">Zadanie 3<a class="headerlink" href="#zadanie-3_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Pokaż, że równe wiersze oznaczają wyznacznik zero.</p>
-<p><strong>Rozwiązanie:</strong>
-Jeśli zamienimy miejscami dwa wiersze w macierzy, wyznacznik zmienia znak na przeciwny (<span class="arithmatex">\(\det = -\det\)</span>).
-Jeśli dwa wiersze są identyczne, to po ich zamianie macierz się nie zmienia, więc <span class="arithmatex">\(\det A = -\det A\)</span>.
-Jedyną liczbą równą swojej odwrotności addytywnej jest <span class="arithmatex">\(0\)</span>.
-<strong>Przykład:</strong> </p>
+<p><strong>Rozwiązanie:</strong></p>
 <div class="arithmatex">\[\det\begin{pmatrix}1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; 1\\ 0 &amp; 2 &amp; 5\end{pmatrix} = 0\]</div>
+<p><span class="arithmatex">\((1 \cdot 1 \cdot 5) + (1 \cdot 1 \cdot 0) + (1 \cdot 1 \cdot 2) = 5 + 0 + 2 = \mathbf{7}\)</span></p>
+<p><span class="arithmatex">\((0 \cdot 1 \cdot 1) + (2 \cdot 1 \cdot 1) + (5 \cdot 1 \cdot 1) = 0 + 2 + 5 = \mathbf{7}\)</span></p>
+<p>Wynik: <span class="arithmatex">\(7 - 7 = \mathbf{0}\)</span></p>
+<p>Jeśli zamienimy miejscami dwa wiersze w macierzy, wyznacznik zmienia znak na przeciwny (<span class="arithmatex">\(\det = -\det\)</span>).
+Jeśli dwa wiersze są identyczne, to po ich zamianie macierz się nie zmienia, więc <span class="arithmatex">\(\det A = -\det A\)</span>.
+Jedyną liczbą równą swojej odwrotności addytywnej jest <span class="arithmatex">\(0\)</span>. </p>
 <hr />
 <h3 id="zadanie-4_1">Zadanie 4<a class="headerlink" href="#zadanie-4_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Wyznacznik macierzy trójkątnej z elementami <span class="arithmatex">\((3, -2, 5, 1)\)</span> na przekątnej.</p>
-<p><strong>Rozwiązanie:</strong>
-<span class="arithmatex">\(\det T = 3 \cdot (-2) \cdot 5 \cdot 1 = -30\)</span>.</p>
+<p><strong>Rozwiązanie:</strong></p>
+<p><span class="arithmatex">\(\det T = 3 \cdot (-2) \cdot 5 \cdot 1 = -30\)</span>.</p>
 <hr />
 <h3 id="zadanie-5_1">Zadanie 5<a class="headerlink" href="#zadanie-5_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
 <p>Dla macierzy zależnej od parametru <span class="arithmatex">\(t\)</span>:</p>
 <div class="arithmatex">\[ M(t)=\begin{pmatrix} t &amp; 1\\ 2 &amp; t \end{pmatrix} \]</div>
 <p>oblicz <span class="arithmatex">\(\det(M(t))\)</span> i znajdź wartości <span class="arithmatex">\(t\)</span>, dla których macierz jest singularna.</p>
-<p><strong>Rozwiązanie:</strong>
-<span class="arithmatex">\(\det M(t) = t^2 - 2\)</span>.
-Macierz singularna (osobliwa) ma wyznacznik równy 0.
-<span class="arithmatex">\(t^2 - 2 = 0 \implies t = \sqrt{2} \lor t = -\sqrt{2}\)</span>.</p>
+<p><strong>Rozwiązanie:</strong></p>
+<p><span class="arithmatex">\(\det M(t) = t^2 - 2\)</span>.</p>
+<p>Macierz singularna (osobliwa) ma wyznacznik równy 0.</p>
+<p><span class="arithmatex">\(t^2 - 2 = 0 \implies t = \sqrt{2} \lor t = -\sqrt{2}\)</span>.</p>
 <hr />
 <h3 id="zadanie-6">Zadanie 6<a class="headerlink" href="#zadanie-6" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-Rozwiąż </p>
+<p><strong>Treść:</strong></p>
+<p>Rozwiąż </p>
 <div class="arithmatex">\[\det\begin{pmatrix}x &amp; 3\\ 2 &amp; x\end{pmatrix} = 0\]</div>
-<p><strong>Rozwiązanie:</strong>
-<span class="arithmatex">\(x^2 - 6 = 0 \implies x = \sqrt{6} \lor x = -\sqrt{6}\)</span>.</p>
+<p><strong>Rozwiązanie:</strong></p>
+<p><span class="arithmatex">\(x^2 - 6 = 0 \implies x = \sqrt{6} \lor x = -\sqrt{6}\)</span>.</p>
 <hr />
 <h2 id="dzia-3-odwracanie-macierzy">Dział 3 — Odwracanie macierzy<a class="headerlink" href="#dzia-3-odwracanie-macierzy" title="Permanent link">&para;</a></h2>
 <h3 id="zadanie-1_2">Zadanie 1<a class="headerlink" href="#zadanie-1_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
 <p>Znajdź macierz odwrotną używając wzoru dla macierzy <span class="arithmatex">\(2\times2\)</span> </p>
 <div class="arithmatex">\[ A=\begin{pmatrix}2 &amp; 1\\ 5 &amp; 3\end{pmatrix} \qquad B=\begin{pmatrix}0 &amp; 1\\ 1 &amp; 0\end{pmatrix} \qquad C=\begin{pmatrix}4 &amp; 7\\ 2 &amp; 6\end{pmatrix} \]</div>
-<p><strong>Rozwiązanie:</strong>
-Wzór: </p>
+<p><strong>Rozwiązanie:</strong></p>
+<p>Wzór: </p>
 <div class="arithmatex">\[A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\]</div>
 <ul>
 <li><strong>A:</strong> </li>
 </ul>
-<div class="arithmatex">\[\det = 6-5=1.   A^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\det = 6-5=1\]</div>
+<div class="arithmatex">\[A^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\]</div>
 <ul>
 <li><strong>B:</strong> </li>
 </ul>
-<div class="arithmatex">\[\det = 0-1=-1.   B^{-1} = \frac{1}{-1}\begin{pmatrix} 0 &amp; -1 \\ -1 &amp; 0 \end{pmatrix} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\det = 0-1=-1\]</div>
+<div class="arithmatex">\[B^{-1} = \frac{1}{-1}\begin{pmatrix} 0 &amp; -1 \\ -1 &amp; 0 \end{pmatrix} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
 <p>(Macierz odwrotna do niej to ona sama).</p>
 <ul>
 <li><strong>C:</strong> </li>
 </ul>
-<div class="arithmatex">\[\det = 24-14=10.  C^{-1} = \frac{1}{10}\begin{pmatrix} 6 &amp; -7 \\ -2 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0.6 &amp; -0.7 \\ -0.2 &amp; 0.4 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\det = 24-14=10\]</div>
+<div class="arithmatex">\[C^{-1} = \frac{1}{10}\begin{pmatrix} 6 &amp; -7 \\ -2 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0.6 &amp; -0.7 \\ -0.2 &amp; 0.4 \end{pmatrix}\]</div>
 <hr />
 <h3 id="zadanie-2_2">Zadanie 2<a class="headerlink" href="#zadanie-2_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong></p>
@@ -1999,9 +2004,7 @@ Wzór: </p>
 <li>użycia wzoru z macierzami dopełnień algebraicznych</li>
 </ul>
 <p><strong>Rozwiązanie (Wyniki):</strong></p>
-<ol>
-<li>Macierz <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 2 \\ 2 &amp; 5 \end{pmatrix}\)</span></li>
-</ol>
+<p>1) Macierz <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 2 \\ 2 &amp; 5 \end{pmatrix}\)</span></p>
 <p>Metoda I: Eliminacja Gaussa-Jordana</p>
 <p>Zapisujemy macierz rozszerzoną i dążymy do uzyskania macierzy jednostkowej po lewej stronie:</p>
 <div class="arithmatex">\[\begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; 0 \\ 2 &amp; 5 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_2 - 2w_1} \begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; -2 &amp; 1 \end{pmatrix} \xrightarrow{w_1 - 2w_2} \begin{pmatrix} 1 &amp; 0 &amp; 5 &amp; -2 \\ 0 &amp; 1 &amp; -2 &amp; 1 \end{pmatrix}\]</div>
@@ -2012,14 +2015,12 @@ Wzór: </p>
 <p><span class="arithmatex">\(\det A = 1\cdot5 - 2\cdot2 = 1\)</span>.</p>
 <p>Dopełnienia:</p>
 <p><span class="arithmatex">\(C_{11} = 5\)</span>
-<span class="arithmatex">\(C_{12} = -2\)</span> (zmiana znaku)
-<span class="arithmatex">\(C_{21} = -2\)</span> (zmiana znaku)
+<span class="arithmatex">\(C_{12} = -2\)</span> (zmiana znaku)</p>
+<p><span class="arithmatex">\(C_{21} = -2\)</span> (zmiana znaku)
 <span class="arithmatex">\(C_{22} = 1\)</span></p>
 <p>Wzór: <span class="arithmatex">\(A^{-1} = \frac{1}{\det A} C^T\)</span>.</p>
 <div class="arithmatex">\[A^{-1} = \frac{1}{1} \begin{pmatrix} 5 &amp; -2 \\ -2 &amp; 1 \end{pmatrix}^T = \begin{pmatrix} 5 &amp; -2 \\ -2 &amp; 1 \end{pmatrix}\]</div>
-<ol>
-<li>Macierz </li>
-</ol>
+<p>2) Macierz </p>
 <div class="arithmatex">\[B = \begin{pmatrix} 12 &amp; 5 \\ 7 &amp; 3 \end{pmatrix}\]</div>
 <p>Metoda I: Eliminacja Gaussa-Jordana</p>
 <div class="arithmatex">\[\begin{pmatrix} 12 &amp; 5 &amp; 1 &amp; 0 \\ 7 &amp; 3 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_1 - w_2} \begin{pmatrix} 5 &amp; 2 &amp; 1 &amp; -1 \\ 7 &amp; 3 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_2 - w_1} \begin{pmatrix} 5 &amp; 2 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; -1 &amp; 2 \end{pmatrix}\]</div>
@@ -2033,26 +2034,22 @@ Wzór: </p>
 <div class="arithmatex">\[\begin{pmatrix} 3 &amp; -7 \\ -5 &amp; 12 \end{pmatrix}\]</div>
 <p>Transpozycja:</p>
 <div class="arithmatex">\[B^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -7 &amp; 12 \end{pmatrix}\]</div>
-<ol>
-<li>Macierz </li>
-</ol>
+<p>3) Macierz </p>
 <div class="arithmatex">\[C = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 5 &amp; 6 &amp; 0 \end{pmatrix}\]</div>
 <p>Metoda I: Eliminacja Gaussa-Jordana</p>
 <div class="arithmatex">\[\begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 4 &amp; 0 &amp; 1 &amp; 0 \\ 5 &amp; 6 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_3 - 5w_1} \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; -4 &amp; -15 &amp; -5 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
 <div class="arithmatex">\[\xrightarrow{w_3 + 4w_2} \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; -5 &amp; 4 &amp; 1 \end{pmatrix} \xrightarrow{\text{zerowanie góry}} \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; -24 &amp; 18 &amp; 5 \\ 0 &amp; 1 &amp; 0 &amp; 20 &amp; -15 &amp; -4 \\ 0 &amp; 0 &amp; 1 &amp; -5 &amp; 4 &amp; 1 \end{pmatrix}\]</div>
 <p>Wynik:</p>
 <div class="arithmatex">\[C^{-1} = \begin{pmatrix} -24 &amp; 18 &amp; 5 \\ 20 &amp; -15 &amp; -4 \\ -5 &amp; 4 &amp; 1 \end{pmatrix}\]</div>
-<p>Metoda II: Macierz dopełnień algebraicznych
-Wyznacznik: <span class="arithmatex">\(\det C = 1(0-24) - 2(0-20) + 3(0-5) = -24 + 40 - 15 = 1\)</span>.</p>
+<p>Metoda II: Macierz dopełnień algebraicznych</p>
+<p>Wyznacznik: <span class="arithmatex">\(\det C = 1(0-24) - 2(0-20) + 3(0-5) = -24 + 40 - 15 = 1\)</span>.</p>
 <p>Dopełnienia (<span class="arithmatex">\(D_{ij}\)</span>):</p>
 <p><span class="arithmatex">\(D_{11} = -24, \quad D_{12} = 20, \quad D_{13} = -5\)</span></p>
 <p><span class="arithmatex">\(D_{21} = 18, \quad D_{22} = -15, \quad D_{23} = 4\)</span></p>
 <p><span class="arithmatex">\(D_{31} = 5, \quad D_{32} = -4, \quad D_{33} = 1\)</span></p>
 <p>Transpozycja:</p>
 <div class="arithmatex">\[C^{-1} = \begin{pmatrix} -24 &amp; 18 &amp; 5 \\ 20 &amp; -15 &amp; -4 \\ -5 &amp; 4 &amp; 1 \end{pmatrix}\]</div>
-<ol>
-<li>Macierz </li>
-</ol>
+<p>4) Macierz </p>
 <div class="arithmatex">\[D = \begin{pmatrix} 2 &amp; 0 &amp; 1 \\ 1 &amp; 3 &amp; 0 \\ 0 &amp; 4 &amp; 5 \end{pmatrix}\]</div>
 <p>Metoda I: Eliminacja Gaussa-Jordana</p>
 <div class="arithmatex">\[\begin{pmatrix} 2 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 4 &amp; 5 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \xrightarrow{w_1 \leftrightarrow w_2} \begin{pmatrix} 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 4 &amp; 5 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
@@ -2071,41 +2068,67 @@ Wyznacznik: <span class="arithmatex">\(\det C = 1(0-24) - 2(0-20) + 3(0-5) = -24
 <h3 id="zadanie-3_2">Zadanie 3<a class="headerlink" href="#zadanie-3_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Czy macierz <span class="arithmatex">\(H=\begin{pmatrix}1 &amp; 2 &amp; 3\\ 2 &amp; 4 &amp; 6\\ 0 &amp; 1 &amp; 1\end{pmatrix}\)</span> jest odwracalna?</p>
-<p><strong>Rozwiązanie:</strong>
-Zauważmy, że drugi wiersz to dokładnie pierwszy wiersz pomnożony przez 2 (<span class="arithmatex">\(w_2 = 2w_1\)</span>).
-Wiersze są liniowo zależne. Wyznacznik wynosi 0.
-<strong>Odpowiedź:</strong> Macierz nie jest odwracalna (jest osobliwa).</p>
+<p><strong>Rozwiązanie:</strong></p>
+<p>Zauważmy, że drugi wiersz to dokładnie pierwszy wiersz pomnożony przez 2 (<span class="arithmatex">\(w_2 = 2w_1\)</span>).
+Wiersze są liniowo zależne. Wyznacznik wynosi 0. Macierz nie jest odwracalna (jest osobliwa).</p>
 <hr />
 <h3 id="zadanie-4_2">Zadanie 4<a class="headerlink" href="#zadanie-4_2" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Dla <span class="arithmatex">\(A^2=I\)</span> pokaż, że <span class="arithmatex">\(A^{-1}=A\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-Definicja macierzy odwrotnej <span class="arithmatex">\(B\)</span> dla macierzy <span class="arithmatex">\(A\)</span> to taka macierz, że <span class="arithmatex">\(A \cdot B = I\)</span>.
-Skoro <span class="arithmatex">\(A \cdot A = I\)</span>, to znaczy, że <span class="arithmatex">\(A\)</span> pełni rolę swojej własnej macierzy odwrotnej.
-Przykład macierzy 2x2: <span class="arithmatex">\(\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span> lub <span class="arithmatex">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\)</span>.</p>
+<p><strong>Rozwiązanie:</strong></p>
+<p>Definicja macierzy odwrotnej <span class="arithmatex">\(B\)</span> dla macierzy <span class="arithmatex">\(A\)</span> to taka macierz, że <span class="arithmatex">\(A \cdot B = I\)</span>.
+Skoro <span class="arithmatex">\(A \cdot A = I\)</span>, to znaczy, że <span class="arithmatex">\(A\)</span> pełni rolę swojej własnej macierzy odwrotnej.</p>
+<p>Przykład takich macierzy: <span class="arithmatex">\(\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span> lub <span class="arithmatex">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\)</span>.</p>
 <hr />
 <h3 id="zadanie-5_2">Zadanie 5<a class="headerlink" href="#zadanie-5_2" title="Permanent link">&para;</a></h3>
-<p><strong>Treść:</strong>
-Odwrotność macierzy diagonalnej <span class="arithmatex">\(D=\operatorname{diag}(2,5,-3,1)\)</span>.</p>
-<p><strong>Rozwiązanie:</strong>
-<span class="arithmatex">\(D^{-1} = \operatorname{diag}(\frac{1}{2}, \frac{1}{5}, -\frac{1}{3}, 1)\)</span>.
-Warunek istnienia: żaden element na przekątnej nie może być zerem.</p>
+<p><strong>Treść:</strong></p>
+<p>Odwrotność macierzy diagonalnej </p>
+<div class="arithmatex">\[D = \begin{pmatrix} 
+2 &amp; 0 &amp; 0 &amp; 0 \\ 
+0 &amp; 5 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; -3 &amp; 0 \\ 
+0 &amp; 0 &amp; 0 &amp; 1 
+\end{pmatrix}\]</div>
+<p><strong>Rozwiązanie:</strong></p>
+<p>Odwrotność macierzy diagonalnej tworzy się poprzez zastąpienie każdego elementu na przekątnej jego odwrotnością (<span class="arithmatex">\(x \to \frac{1}{x}\)</span>), pod warunkiem, że żaden z tych elementów nie jest zerem.</p>
+<div class="arithmatex">\[D^{-1} = \begin{pmatrix} 
+\frac{1}{2} &amp; 0 &amp; 0 &amp; 0 \\ 
+0 &amp; \frac{1}{5} &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; -\frac{1}{3} &amp; 0 \\ 
+0 &amp; 0 &amp; 0 &amp; 1 
+\end{pmatrix}\]</div>
 <hr />
 <h3 id="zadanie-6_1">Zadanie 6<a class="headerlink" href="#zadanie-6_1" title="Permanent link">&para;</a></h3>
 <p><strong>Treść:</strong>
 Rozwiąż równania macierzowe</p>
-<p>a) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{bmatrix}\)</span>\)</span></p>
-<p>b) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span>\)</span></p>
-<p>c) <span class="arithmatex">\(<span class="arithmatex">\(X \cdot \begin{bmatrix} 1 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -3 &amp; 3 \\ 4 &amp; 3 &amp; 2 \\ 1 &amp; -2 &amp; 5 \end{bmatrix}\)</span>\)</span></p>
-<p>d) <span class="arithmatex">\(<span class="arithmatex">\(\begin{bmatrix} 3 &amp; 2 &amp; 3 \\ 1 &amp; 1 &amp; 2 \\ 3 &amp; 2 &amp; 4 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{bmatrix}\)</span>\)</span></p>
+<p>a) </p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{bmatrix}\]</div>
 <p><strong>Rozwiązanie:</strong></p>
-<p>a) <span class="arithmatex">\(X = A^{-1}B\)</span>. <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix}\)</span>.
-<span class="arithmatex">\(X = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix} \begin{pmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{pmatrix} = \begin{pmatrix} 2 &amp; -23 \\ 0 &amp; 8 \end{pmatrix}\)</span>.</p>
-<p>b) <span class="arithmatex">\(A^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\)</span>.
-<span class="arithmatex">\(X = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix} \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0 &amp; 2 \\ 1 &amp; -2 \end{pmatrix}\)</span>.</p>
-<p>c) <span class="arithmatex">\(X \cdot A = B \implies X = B \cdot A^{-1}\)</span>.</p>
-<p>Należy obliczyć <span class="arithmatex">\(A^{-1}\)</span> i pomnożyć <span class="arithmatex">\(B\)</span> z prawej strony przez <span class="arithmatex">\(A^{-1}\)</span>.</p>
-<p>d) Analogicznie <span class="arithmatex">\(X = A^{-1}B\)</span>.</p>
+<div class="arithmatex">\[A = \begin{pmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{pmatrix}, \quad B = \begin{pmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = A^{-1}B\]</div>
+<div class="arithmatex">\[A^{-1} = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = \begin{pmatrix} 3 &amp; -5 \\ -1 &amp; 2 \end{pmatrix} \begin{pmatrix} 4 &amp; -6 \\ 2 &amp; 1 \end{pmatrix} = \begin{pmatrix} 2 &amp; -23 \\ 0 &amp; 8 \end{pmatrix}\]</div>
+<p>b) </p>
+<div class="arithmatex">\[\begin{bmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\]</div>
+<p><strong>Rozwiązanie:</strong></p>
+<div class="arithmatex">\[A = \begin{pmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{pmatrix}, \quad B = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = A^{-1}B\]</div>
+<div class="arithmatex">\[A^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix} \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0 &amp; 2 \\ 1 &amp; -2 \end{pmatrix}\]</div>
+<p>c) </p>
+<div class="arithmatex">\[X \cdot \begin{bmatrix} 1 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -3 &amp; 3 \\ 4 &amp; 3 &amp; 2 \\ 1 &amp; -2 &amp; 5 \end{bmatrix}\]</div>
+<p><strong>Rozwiązanie:</strong></p>
+<div class="arithmatex">\[A = \begin{pmatrix} 1 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{pmatrix}, \quad B = \begin{pmatrix} 1 &amp; -3 &amp; 3 \\ 4 &amp; 3 &amp; 2 \\ 1 &amp; -2 &amp; 5 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = B \cdot A^{-1}\]</div>
+<div class="arithmatex">\[\det(A) = 2, \quad A^{-1} = \frac{1}{2} \begin{pmatrix} 1 &amp; 0 &amp; 1 \\ -2 &amp; 2 &amp; -2 \\ -3 &amp; 2 &amp; -1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = \begin{pmatrix} 1 &amp; -3 &amp; 3 \\ 4 &amp; 3 &amp; 2 \\ 1 &amp; -2 &amp; 5 \end{pmatrix} \cdot \frac{1}{2} \begin{pmatrix} 1 &amp; 0 &amp; 1 \\ -2 &amp; 2 &amp; -2 \\ -3 &amp; 2 &amp; -1 \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 &amp; 2 \\ -4 &amp; 5 &amp; -2 \\ -5 &amp; 3 &amp; 0 \end{pmatrix}\]</div>
+<p>d) </p>
+<div class="arithmatex">\[\begin{bmatrix} 3 &amp; 2 &amp; 3 \\ 1 &amp; 1 &amp; 2 \\ 3 &amp; 2 &amp; 4 \end{bmatrix} \cdot X = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{bmatrix}\]</div>
+<p><strong>Rozwiązanie:</strong></p>
+<div class="arithmatex">\[A = \begin{pmatrix} 3 &amp; 2 &amp; 3 \\ 1 &amp; 1 &amp; 2 \\ 3 &amp; 2 &amp; 4 \end{pmatrix}, \quad B = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = A^{-1}B\]</div>
+<div class="arithmatex">\[\det(A) = 1, \quad A^{-1} = \begin{pmatrix} 0 &amp; -2 &amp; 1 \\ 2 &amp; 3 &amp; -3 \\ -1 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
+<div class="arithmatex">\[X = \begin{pmatrix} 0 &amp; -2 &amp; 1 \\ 2 &amp; 3 &amp; -3 \\ -1 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; -1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \end{pmatrix} = \begin{pmatrix} 0 &amp; 4 &amp; 0 \\ -1 &amp; -5 &amp; 0 \\ 1 &amp; 0 &amp; 1 \end{pmatrix}\]</div>
 <hr />
 <h2 id="dzia-4-ukady-rownan-liniowych">Dział 4 — Układy równań liniowych<a class="headerlink" href="#dzia-4-ukady-rownan-liniowych" title="Permanent link">&para;</a></h2>
 <h3 id="zadanie-1_3">Zadanie 1<a class="headerlink" href="#zadanie-1_3" title="Permanent link">&para;</a></h3>
