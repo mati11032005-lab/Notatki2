@@ -2235,157 +2235,392 @@ Nie można jej dodefiniować.</p>
 <p>Wracamy do <span class="arithmatex">\(y\)</span>:</p>
 <div class="arithmatex">\[y' = x^{x^x} \cdot \left[ x^x(\ln x + 1)\ln x + x^{x-1} \right]\]</div>
 <h3 id="dzia-5-badanie-przebiegu-funkcji">Dział 5 - Badanie przebiegu funkcji<a class="headerlink" href="#dzia-5-badanie-przebiegu-funkcji" title="Permanent link">&para;</a></h3>
-<p>1) <span class="arithmatex">\(y = x - 2 \ln x\)</span></p>
-<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
-<p>Pochodna I: <span class="arithmatex">\(y' = 1 - \frac{2}{x} = \frac{x-2}{x}\)</span>.</p>
-<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x=2\)</span>.</p>
-<p>Znak: Dla <span class="arithmatex">\(x \in (0, 2)\)</span> <span class="arithmatex">\(y'&lt;0\)</span> (maleje). Dla <span class="arithmatex">\(x &gt; 2\)</span> <span class="arithmatex">\(y'&gt;0\)</span> (rośnie).</p>
-<p>Ekstremum: <span class="arithmatex">\(x=2\)</span> (MINIMUM). <span class="arithmatex">\(f(2) = 2 - 2\ln 2\)</span>.</p>
-<p>Pochodna II: <span class="arithmatex">\(y'' = \left(1 - 2x^{-1}\right)' = 2x^{-2} = \frac{2}{x^2}\)</span>.</p>
-<p>Znak: Dla każdego <span class="arithmatex">\(x&gt;0\)</span> mamy <span class="arithmatex">\(y'' &gt; 0\)</span>.</p>
-<p>Kształt: Funkcja jest wypukła (<span class="arithmatex">\(\cup\)</span>) w całej dziedzinie.</p>
-<p>P.P.: Brak.</p>
-<p>2) <span class="arithmatex">\(y = x^2 \ln x\)</span></p>
-<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
-<p>Pochodna I: <span class="arithmatex">\(y' = 2x \ln x + x^2 \cdot \frac{1}{x} = 2x \ln x + x = x(2 \ln x + 1)\)</span>.</p>
-<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(2 \ln x = -1 \Rightarrow \ln x = -\frac{1}{2} \Rightarrow x = e^{-1/2} = \frac{1}{\sqrt{e}}\)</span>.</p>
-<p>Monotoniczność:</p>
-<p>Maleje: <span class="arithmatex">\((0; \frac{1}{\sqrt{e}})\)</span></p>
-<p>Rośnie: <span class="arithmatex">\((\frac{1}{\sqrt{e}}; +\infty)\)</span></p>
-<p>Ekstremum: <span class="arithmatex">\(x = \frac{1}{\sqrt{e}}\)</span> (MINIMUM).</p>
-<p>Pochodna II: <span class="arithmatex">\(y'' = (2x \ln x + x)' = 2 \ln x + 2x \cdot \frac{1}{x} + 1 = 2 \ln x + 3\)</span>.</p>
-<p>M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2 \ln x = -3 \Rightarrow x = e^{-3/2}\)</span>.
-Kształt:</p>
-<p>Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; e^{-3/2})\)</span></p>
-<p>Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((e^{-3/2}; +\infty)\)</span></p>
-<p>P.P.: <span class="arithmatex">\(x = e^{-3/2}\)</span>.</p>
-<ol>
-<li><span class="arithmatex">\(y = \frac{1+\ln x}{x}\)</span></li>
-</ol>
-<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
-<p>Pochodna I: <span class="arithmatex">\(y' = \frac{(\frac{1}{x}) \cdot x - (1+\ln x) \cdot 1}{x^2} = \frac{1 - 1 - \ln x}{x^2} = \frac{-\ln x}{x^2}\)</span>.</p>
-<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(-\ln x = 0 \Rightarrow x = 1\)</span>.</p>
-<p>Monotoniczność:</p>
-<p>Rośnie: <span class="arithmatex">\((0; 1)\)</span> (bo <span class="arithmatex">\(-\ln x &gt; 0\)</span> dla <span class="arithmatex">\(x&lt;1\)</span>)</p>
-<p>Maleje: <span class="arithmatex">\((1; +\infty)\)</span></p>
-<p>Ekstremum: <span class="arithmatex">\(x = 1\)</span> (MAXIMUM). <span class="arithmatex">\(f(1) = 1\)</span>.</p>
-<p>Pochodna II: <span class="arithmatex">\(y'' = \frac{(-\frac{1}{x})x^2 - (-\ln x)(2x)}{x^4} = \frac{-x + 2x \ln x}{x^4} = \frac{2 \ln x - 1}{x^3}\)</span>.</p>
-<p>M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2 \ln x = 1 \Rightarrow x = e^{1/2} = \sqrt{e}\)</span>.</p>
-<p>Kształt:</p>
-<p>Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; \sqrt{e})\)</span></p>
-<p>Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((\sqrt{e}; +\infty)\)</span></p>
-<p>P.P.: <span class="arithmatex">\(x = \sqrt{e}\)</span>.</p>
-<ol>
-<li><span class="arithmatex">\(y = \frac{\ln x}{\sqrt{x}}\)</span>
-Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span>
-Pochodna I: <span class="arithmatex">\(y' = \frac{\frac{1}{x}\sqrt{x} - \ln x \cdot \frac{1}{2\sqrt{x}}}{x} = \frac{\frac{1}{\sqrt{x}} - \frac{\ln x}{2\sqrt{x}}}{x} = \frac{2 - \ln x}{2x\sqrt{x}}\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(2 - \ln x = 0 \Rightarrow x = e^2\)</span>.
-Monotoniczność:
-Rośnie: <span class="arithmatex">\((0; e^2)\)</span>
-Maleje: <span class="arithmatex">\((e^2; +\infty)\)</span>
-Ekstremum: <span class="arithmatex">\(x = e^2\)</span> (MAXIMUM).
-Pochodna II: (wymaga cierpliwości) <span class="arithmatex">\(y'' = \frac{3 \ln x - 8}{4x^2\sqrt{x}}\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(3 \ln x = 8 \Rightarrow x = e^{8/3}\)</span>.
-Kształt:
-Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; e^{8/3})\)</span>
-Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((e^{8/3}; +\infty)\)</span>
-P.P.: <span class="arithmatex">\(x = e^{8/3}\)</span>.</li>
-<li><span class="arithmatex">\(y = (\ln x)^3 - 3 \ln x\)</span>
-Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span>
-Pochodna I: <span class="arithmatex">\(y' = 3(\ln x)^2 \cdot \frac{1}{x} - \frac{3}{x} = \frac{3}{x} (\ln^2 x - 1)\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(\ln^2 x = 1 \Rightarrow \ln x = 1 \lor \ln x = -1 \Rightarrow x=e \lor x=e^{-1}\)</span>.
-Monotoniczność:
-Rośnie: <span class="arithmatex">\((0; e^{-1}) \cup (e; +\infty)\)</span>
-Maleje: <span class="arithmatex">\((e^{-1}; e)\)</span>
-Ekstrema: <span class="arithmatex">\(x = e^{-1}\)</span> (MAX), <span class="arithmatex">\(x = e\)</span> (MIN).
-Pochodna II: <span class="arithmatex">\(y'' = \frac{3(2\ln x \cdot \frac{1}{x}) \cdot x - 3(\ln^2 x - 1)}{x^2} = \frac{6\ln x - 3\ln^2 x + 3}{x^2}\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(-3\ln^2 x + 6\ln x + 3 = 0\)</span>. Podstawiamy <span class="arithmatex">\(t=\ln x\)</span>, delta... Pierwiastki to <span class="arithmatex">\(1-\sqrt{2}\)</span> i <span class="arithmatex">\(1+\sqrt{2}\)</span>.
-P.P.: <span class="arithmatex">\(x = e^{1-\sqrt{2}}\)</span> oraz <span class="arithmatex">\(x = e^{1+\sqrt{2}}\)</span>.</li>
-<li><span class="arithmatex">\(y = \frac{1}{\ln x}\)</span>
-Dziedzina: <span class="arithmatex">\(x &gt; 0, x \ne 1\)</span>
-Pochodna I: <span class="arithmatex">\(y = (\ln x)^{-1} \Rightarrow y' = -1(\ln x)^{-2} \cdot \frac{1}{x} = \frac{-1}{x(\ln x)^2}\)</span>.
-Znak: Licznik stały ujemny, mianownik dodatni (w dziedzinie).
-Monotoniczność: Funkcja maleje w <span class="arithmatex">\((0; 1)\)</span> oraz w <span class="arithmatex">\((1; +\infty)\)</span>.
-Ekstrema: Brak.
-Pochodna II: <span class="arithmatex">\(y'' = \frac{\ln x + 2}{x^2(\ln x)^3}\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(\ln x = -2 \Rightarrow x = e^{-2}\)</span>.
-Kształt: Analiza znaku licznika i mianownika (<span class="arithmatex">\(\ln x\)</span> zmienia znak w 1).
-Wklęsła: <span class="arithmatex">\((0; e^{-2}) \cup (1; +\infty)\)</span> [tu trzeba uważać na znaki] -&gt; sprawdźmy: dla <span class="arithmatex">\(x&gt;1\)</span> licznik +, mianownik +, więc Wypukła. Błąd.
-Poprawnie:
-<span class="arithmatex">\((0; e^{-2})\)</span>: licznik (-), mianownik (-) <span class="arithmatex">\(\to\)</span> Wypukła (<span class="arithmatex">\(\cup\)</span>).
-<span class="arithmatex">\((e^{-2}; 1)\)</span>: licznik (+), mianownik (-) <span class="arithmatex">\(\to\)</span> Wklęsła (<span class="arithmatex">\(\cap\)</span>).
-<span class="arithmatex">\((1; +\infty)\)</span>: licznik (+), mianownik (+) <span class="arithmatex">\(\to\)</span> Wypukła (<span class="arithmatex">\(\cup\)</span>).
-P.P.: <span class="arithmatex">\(x = e^{-2}\)</span>.</li>
-<li><span class="arithmatex">\(y = e^{-x^2}\)</span> (Krzywa Gaussa)
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
-Pochodna I: <span class="arithmatex">\(y' = e^{-x^2} \cdot (-2x) = -2x e^{-x^2}\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x = 0\)</span>.
-Monotoniczność:
-Rośnie: <span class="arithmatex">\((-\infty; 0)\)</span>
-Maleje: <span class="arithmatex">\((0; +\infty)\)</span>
-Ekstremum: <span class="arithmatex">\(x = 0\)</span> (MAXIMUM).
-Pochodna II: <span class="arithmatex">\(y'' = -2e^{-x^2} + (-2x)(-2x)e^{-x^2} = 2e^{-x^2}(2x^2 - 1)\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2x^2 = 1 \Rightarrow x = \pm \frac{1}{\sqrt{2}}\)</span>.
-Kształt:
-Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((-\infty; -\frac{1}{\sqrt{2}}) \cup (\frac{1}{\sqrt{2}}; +\infty)\)</span>
-Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((-\frac{1}{\sqrt{2}}; \frac{1}{\sqrt{2}})\)</span>
-P.P.: <span class="arithmatex">\(x = -\frac{1}{\sqrt{2}}\)</span> oraz <span class="arithmatex">\(x = \frac{1}{\sqrt{2}}\)</span>.</li>
-<li><span class="arithmatex">\(y = x e^{-x^2/2}\)</span>
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
-Pochodna I: <span class="arithmatex">\(y' = 1 \cdot e^{-x^2/2} + x \cdot e^{-x^2/2} \cdot (-x) = e^{-x^2/2}(1-x^2)\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x = 1, x = -1\)</span>.
-Monotoniczność:
-Maleje: <span class="arithmatex">\((-\infty; -1) \cup (1; +\infty)\)</span>
-Rośnie: <span class="arithmatex">\((-1; 1)\)</span>
-Ekstrema: <span class="arithmatex">\(x = -1\)</span> (MIN), <span class="arithmatex">\(x = 1\)</span> (MAX).
-Pochodna II: <span class="arithmatex">\(y'' = e^{-x^2/2}(-x)(1-x^2) + e^{-x^2/2}(-2x) = x e^{-x^2/2}(x^2 - 3)\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(x=0, x=\sqrt{3}, x=-\sqrt{3}\)</span>.
-P.P.: Trzy punkty: <span class="arithmatex">\(-\sqrt{3}, 0, \sqrt{3}\)</span>.</li>
-<li><span class="arithmatex">\(y = x^3 e^{-4x}\)</span>
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
-Pochodna I: <span class="arithmatex">\(y' = 3x^2 e^{-4x} + x^3 e^{-4x}(-4) = x^2 e^{-4x}(3 - 4x)\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x=0\)</span> (pierwiastek dwukrotny!), <span class="arithmatex">\(x=3/4\)</span>.
-Monotoniczność:
-Rośnie: <span class="arithmatex">\((-\infty; 3/4)\)</span> (uwaga: w 0 jest "poziomo", ale funkcja rośnie "przez" zero).
-Maleje: <span class="arithmatex">\((3/4; +\infty)\)</span>
-Ekstremum: <span class="arithmatex">\(x = 3/4\)</span> (MAX). W <span class="arithmatex">\(x=0\)</span> nie ma ekstremum (brak zmiany znaku).
-Pochodna II: <span class="arithmatex">\(y'' = e^{-4x}(16x^3 - 24x^2 + 6x)\)</span>.
-Miejsca zerowe: <span class="arithmatex">\(x(16x^2-24x+6)=0\)</span>. Delta...
-P.P.: <span class="arithmatex">\(x=0\)</span> oraz dwa pierwiastki z równania kwadratowego.</li>
-<li><span class="arithmatex">\(y = e^{-x^2+8x-14}\)</span>
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
-Pochodna I: <span class="arithmatex">\(y' = e^{-x^2+8x-14} \cdot (-2x+8)\)</span>.
-M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(-2x+8=0 \Rightarrow x=4\)</span>.
-Monotoniczność:
-Rośnie: <span class="arithmatex">\((-\infty; 4)\)</span>
-Maleje: <span class="arithmatex">\((4; +\infty)\)</span>
-Ekstremum: <span class="arithmatex">\(x = 4\)</span> (MAX).
-Pochodna II: <span class="arithmatex">\(y'' = e^{(\dots)}(-2x+8)^2 + e^{(\dots)}(-2) = e^{(\dots)} [(-2x+8)^2 - 2]\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\((2x-8)^2 = 2 \Rightarrow 2x-8 = \pm\sqrt{2}\)</span>.
-P.P.: <span class="arithmatex">\(x = 4 - \frac{\sqrt{2}}{2}\)</span> oraz <span class="arithmatex">\(x = 4 + \frac{\sqrt{2}}{2}\)</span>.</li>
-<li><span class="arithmatex">\(y = \ln(1+e^{-x})\)</span>
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span> (bo <span class="arithmatex">\(1+e^{-x} &gt; 0\)</span> zawsze)
-Pochodna I: <span class="arithmatex">\(y' = \frac{1}{1+e^{-x}} \cdot (e^{-x}) \cdot (-1) = \frac{-e^{-x}}{1+e^{-x}}\)</span>.
-Znak: Licznik zawsze ujemny, mianownik dodatni.
-Monotoniczność: Funkcja maleje w całej dziedzinie.
-Ekstrema: Brak.
-Pochodna II: <span class="arithmatex">\(y'' = \frac{e^{-x}}{(1+e^{-x})^2}\)</span>.
-Znak: Zawsze dodatni.
-Kształt: Funkcja zawsze wypukła (<span class="arithmatex">\(\cup\)</span>).
-P.P.: Brak.</li>
-<li><span class="arithmatex">\(y = e^{\text{arctg } x}\)</span>
-Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
-Pochodna I: <span class="arithmatex">\(y' = e^{\text{arctg } x} \cdot \frac{1}{1+x^2}\)</span>.
-Znak: <span class="arithmatex">\(e^u &gt; 0\)</span> i <span class="arithmatex">\(1+x^2 &gt; 0\)</span>. Zawsze dodatnia.
-Monotoniczność: Rośnie w całej dziedzinie <span class="arithmatex">\(\mathbb{R}\)</span>.
-Ekstrema: Brak.
-Pochodna II: <span class="arithmatex">\(y'' = e^{\text{arctg } x} \frac{1-2x}{(1+x^2)^2}\)</span>.
-M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(1-2x = 0 \Rightarrow x = 1/2\)</span>.
-Kształt:
-Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((-\infty; 1/2)\)</span>
-Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((1/2; +\infty)\)</span>
-P.P.: <span class="arithmatex">\(x = 1/2\)</span>.</li>
-</ol>
+<p>1) <span class="arithmatex">\(f(x) = x - 2 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 1 - \frac{2}{x} = \frac{x}{x} - \frac{2}{x} = \mathbf{\frac{x-2}{x}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Ułamek równa się zero tylko wtedy, gdy jego licznik równa się zero.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(x - 2 = 0\)</span>
+<span class="arithmatex">\(\mathbf{x = 2}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, 2)\)</span> (Funkcja maleje).</p>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (2, +\infty)\)</span> (Funkcja rośnie).</p>
+<p>Zmiana znaku z - na + w <span class="arithmatex">\(x=2\)</span> to MINIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = (1 - 2x^{-1})' = -2(-1)x^{-2} = \mathbf{\frac{2}{x^2}}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musiałby być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 = 0\)</span> <span class="arithmatex">\(\to\)</span> Sprzeczność.</p>
+<p>Dlatego brak punktów przegięcia.</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Licznik (2) jest dodatni, mianownik (<span class="arithmatex">\(x^2\)</span>) jest dodatni. </p>
+<p>Wynik zawsze <span class="arithmatex">\(&gt;0\)</span>.</p>
+<p>Funkcja jest wypukła (<span class="arithmatex">\(\cup\)</span>) w całej dziedzinie.</p>
+<p>2) <span class="arithmatex">\(f(x) = x^2 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 2x \ln x + x^2 \cdot \frac{1}{x} = 2x \ln x + x = \mathbf{x(2 \ln x + 1)}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Iloczyn jest zerem, gdy jeden z czynników jest zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(x = 0\)</span> (Odrzucamy, bo nie należy do dziedziny <span class="arithmatex">\(x&gt;0\)</span>).</p>
+<p><span class="arithmatex">\(2 \ln x + 1 = 0 \implies 2 \ln x = -1 \implies \ln x = -\frac{1}{2}\)</span>.</p>
+<p>Aby pozbyć się logarytmu, przykładamy <span class="arithmatex">\(e\)</span>: <span class="arithmatex">\(x = e^{-1/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{e}}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, \frac{1}{\sqrt{e}})\)</span> (Funkcja maleje).</p>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (\frac{1}{\sqrt{e}}, +\infty)\)</span> (Funkcja rośnie).</p>
+<p>Zmiana znaku z - na + w <span class="arithmatex">\(x = \frac{1}{\sqrt{e}}\)</span> to MINIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = (2x \ln x + x)' = (2 \ln x + 2x \cdot \frac{1}{x}) + 1 = 2 \ln x + 2 + 1 = \mathbf{2 \ln x + 3}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Rozwiązujemy równanie logarytmiczne.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 \ln x = -3 \quad | :2\)</span></p>
+<p><span class="arithmatex">\(\ln x = -\frac{3}{2}\)</span>.</p>
+<p><span class="arithmatex">\(x = e^{-3/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{e^3}}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; e^{-3/2}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; e^{-3/2}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>3) <span class="arithmatex">\(f(x) = \frac{1+\ln x}{x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{(\frac{1}{x}) \cdot x - (1+\ln x) \cdot 1}{x^2} = \frac{1 - 1 - \ln x}{x^2} = \mathbf{\frac{-\ln x}{x^2}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(-\ln x = 0 \implies \ln x = 0\)</span>.</p>
+<p>Logarytm wynosi zero tylko dla argumentu 1 (bo <span class="arithmatex">\(e^0 = 1\)</span>).</p>
+<p><span class="arithmatex">\(\mathbf{x = 1}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (0, 1)\)</span> (bo <span class="arithmatex">\(-\ln(ułamek)\)</span> jest dodatni). Funkcja rośnie.</p>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (1, +\infty)\)</span>. Funkcja maleje.</p>
+<p>Zmiana znaku z + na - w <span class="arithmatex">\(x=1\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \frac{(-\frac{1}{x})x^2 - (-\ln x)(2x)}{x^4} = \frac{-x + 2x \ln x}{x^4} = \frac{x(2 \ln x - 1)}{x^4} = \mathbf{\frac{2 \ln x - 1}{x^3}}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 \ln x - 1 = 0 \implies 2 \ln x = 1 \implies \ln x = \frac{1}{2}\)</span>.</p>
+<p><span class="arithmatex">\(x = e^{1/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \sqrt{e}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; \sqrt{e}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; \sqrt{e}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>4) <span class="arithmatex">\(f(x) = \frac{\ln x}{\sqrt{x}}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{\frac{1}{x}\sqrt{x} - \ln x \cdot \frac{1}{2\sqrt{x}}}{x} = \frac{\frac{2 - \ln x}{2\sqrt{x}}}{x} = \mathbf{\frac{2 - \ln x}{2x\sqrt{x}}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 - \ln x = 0 \implies 2 = \ln x\)</span>.</p>
+<p>Zamieniamy na postać wykładniczą:<span class="arithmatex">\(\mathbf{x = e^2}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (0, e^2)\)</span> (Funkcja rośnie).</p>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (e^2, +\infty)\)</span> (Funkcja maleje).</p>
+<p>Zmiana znaku z + na - w <span class="arithmatex">\(x=e^2\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \dots\)</span> (obliczenia z reguły ilorazu) <span class="arithmatex">\(= \mathbf{\frac{3 \ln x - 8}{4x^2\sqrt{x}}}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(3 \ln x - 8 = 0 \implies 3 \ln x = 8 \implies \ln x = \frac{8}{3}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = e^{8/3}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; e^{8/3}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; e^{8/3}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>5) <span class="arithmatex">\(f(x) = (\ln x)^3 - 3 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 3(\ln x)^2 \cdot \frac{1}{x} - \frac{3}{x} = \frac{3}{x} (\ln^2 x - 1)\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Ułamek jest zerem, gdy nawias w liczniku jest zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(\ln^2 x - 1 = 0 \implies \ln^2 x = 1\)</span>.</p>
+<p>Mamy dwie opcje: <span class="arithmatex">\(\ln x = 1\)</span> LUB <span class="arithmatex">\(\ln x = -1\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = e}\)</span> oraz <span class="arithmatex">\(\mathbf{x = e^{-1} = \frac{1}{e}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Analizujemy znak wyrażenia <span class="arithmatex">\(\ln^2 x - 1\)</span> (jak paraboli <span class="arithmatex">\(t^2 - 1\)</span>):</p>
+<p>Funkcja rośnie w <span class="arithmatex">\((0, e^{-1}) \cup (e, +\infty)\)</span>.</p>
+<p>Funkcja maleje w <span class="arithmatex">\((e^{-1}, e)\)</span>.</p>
+<p><span class="arithmatex">\(x = e^{-1}\)</span> to MAKSIMUM, <span class="arithmatex">\(x = e\)</span> to MINIMUM.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \mathbf{\frac{6\ln x - 3\ln^2 x + 3}{x^2}}\)</span></p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik równa się zero.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(-3\ln^2 x + 6\ln x + 3 = 0 \quad | :(-3)\)</span></p>
+<p><span class="arithmatex">\(\ln^2 x - 2\ln x - 1 = 0\)</span>. Podstawiamy <span class="arithmatex">\(t = \ln x\)</span>.</p>
+<p><span class="arithmatex">\(t^2 - 2t - 1 = 0\)</span>. Obliczamy <span class="arithmatex">\(\Delta = 4 - 4(1)(-1) = 8\)</span>.</p>
+<p><span class="arithmatex">\(t_1 = \frac{2 - \sqrt{8}}{2} = 1 - \sqrt{2}, \quad t_2 = 1 + \sqrt{2}\)</span>.</p>
+<p>Wracamy do <span class="arithmatex">\(x\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{x = e^{1-\sqrt{2}}}\)</span> oraz <span class="arithmatex">\(\mathbf{x = e^{1+\sqrt{2}}}\)</span> (Punkty Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Wklęsła na zewnątrz punktów przegięcia, wypukła pomiędzy nimi (zgodnie ze znakiem paraboli w liczniku pomnożonej przez <span class="arithmatex">\(-3\)</span>).</p>
+<p>6) <span class="arithmatex">\(f(x) = \frac{1}{\ln x}\)</span></p>
+<ul>
+<li>Dziedzina: <span class="arithmatex">\(x \in (0, 1) \cup (1, +\infty)\)</span>.</li>
+</ul>
+<p>Wyjaśnienie: <span class="arithmatex">\(x&gt;0\)</span> (z logarytmu) ORAZ <span class="arithmatex">\(\ln x \neq 0 \implies x \neq 1\)</span> (z mianownika).</p>
+<ul>
+<li>Pierwsza pochodna i punkty stacjonarne:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = -1(\ln x)^{-2} \cdot \frac{1}{x} = \mathbf{\frac{-1}{x (\ln x)^2}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(-1 = 0\)</span>.To jest sprzeczność.
+B
+rak punktów stacjonarnych (brak ekstremów).</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Licznik (-1) jest ujemny. Mianowniki <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\((\ln x)^2\)</span> są dodatnie w dziedzinie.</p>
+<p>Całość jest zawsze ujemna. Funkcja stale maleje (w obu przedziałach dziedziny).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \mathbf{\frac{\ln x + 2}{x^2 (\ln x)^3}}\)</span></p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(\ln x + 2 = 0 \implies \ln x = -2\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = e^{-2} = \frac{1}{e^2}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Analizujemy znak licznika i mianownika:</p>
+<p>Dla <span class="arithmatex">\(x \in (0, e^{-2})\)</span>: Wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>Dla <span class="arithmatex">\(x \in (e^{-2}, 1)\)</span>: Wklęsła (<span class="arithmatex">\(\cap\)</span>).</p>
+<p>Dla <span class="arithmatex">\(x \in (1, +\infty)\)</span>: Wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>7) <span class="arithmatex">\(f(x) = e^{-x^2}\)</span> (Krzywa Gaussa)</p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = -2x e^{-x^2}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies -2x \cdot \underbrace{e^{-x^2}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Ponieważ <span class="arithmatex">\(e^{-x^2}\)</span> nigdy nie jest zerem, możemy podzielić równanie przez to wyrażenie (lub po prostu je pominąć). Zostaje tylko:</p>
+<p><span class="arithmatex">\(-2x = 0 \quad | :(-2)\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x = 0}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (-\infty, 0)\)</span> (bo np. dla <span class="arithmatex">\(x=-1\)</span>: <span class="arithmatex">\(-2(-1) &gt; 0\)</span>).</p>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, +\infty)\)</span> (bo np. dla <span class="arithmatex">\(x=1\)</span>: <span class="arithmatex">\(-2(1) &lt; 0\)</span>).</p>
+<p>Zmiana znaku z + na - w <span class="arithmatex">\(x=0\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = 2e^{-x^2}(2x^2 - 1)\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies (2x^2 - 1) \cdot \underbrace{2e^{-x^2}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Zostaje nam tylko nawias.</p>
+<p><span class="arithmatex">\(2x^2 - 1 = 0 \implies 2x^2 = 1 \quad |:2\)</span></p>
+<p><span class="arithmatex">\(x^2 = \frac{1}{2} \implies x = \sqrt{\frac{1}{2}}\)</span> lub <span class="arithmatex">\(x = -\sqrt{\frac{1}{2}}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{2}}}\)</span> oraz <span class="arithmatex">\(\mathbf{x = -\frac{1}{\sqrt{2}}}\)</span> (Punkty Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Analiza znaku <span class="arithmatex">\(2x^2-1\)</span> (parabola ramionami w górę): Wypukła na zewnątrz pierwiastków, wklęsła pomiędzy nimi.</p>
+<p>8) <span class="arithmatex">\(f(x) = x e^{-x^2/2}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{-x^2/2}(1-x^2)\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies (1-x^2) \cdot \underbrace{e^{-x^2/2}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Przyrównujemy nawias do zera.</p>
+<p><span class="arithmatex">\(1 - x^2 = 0 \implies 1 = x^2\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = 1}\)</span> oraz <span class="arithmatex">\(\mathbf{x = -1}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(x = -1\)</span> (MIN), <span class="arithmatex">\(x = 1\)</span> (MAX) – wynikają z wykresu paraboli <span class="arithmatex">\(1-x^2\)</span> (ramiona w dół).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = x e^{-x^2/2}(x^2 - 3)\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies x(x^2 - 3) \cdot \underbrace{e^{-x^2/2}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Mamy iloczyn dwóch czynników, który ma dać zero. Albo <span class="arithmatex">\(x=0\)</span>, albo nawias <span class="arithmatex">\((x^2-3)=0\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(x^2 - 3 = 0 \implies x^2 = 3 \implies \mathbf{x = \sqrt{3}}\)</span> lub <span class="arithmatex">\(\mathbf{x = -\sqrt{3}}\)</span>.</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Trzy punkty przegięcia dzielą oś na 4 przedziały.</p>
+<p>9) <span class="arithmatex">\(f(x) = x^3 e^{-4x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = x^2 e^{-4x}(3 - 4x)\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies x^2 (3 - 4x) \cdot \underbrace{e^{-4x}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Zostaje nam iloczyn <span class="arithmatex">\(x^2\)</span> i nawiasu.</p>
+<p><span class="arithmatex">\(x^2 = 0 \implies \mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(3 - 4x = 0 \implies 3 = 4x \implies \mathbf{x = \frac{3}{4}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>W punkcie <span class="arithmatex">\(x=0\)</span> mamy <span class="arithmatex">\(x^2\)</span>, co oznacza, że znak pochodnej się nie zmienia (jest dodatni przed i po zerze). Dlatego w <span class="arithmatex">\(x=0\)</span> nie ma ekstremum.</p>
+<p>Zmiana znaku następuje tylko w <span class="arithmatex">\(x = \frac{3}{4}\)</span> (z plusa na minus <span class="arithmatex">\(\to\)</span> MAX).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = 2x e^{-4x}(8x^2 - 12x + 3)\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies 2x(8x^2 - 12x + 3) = 0\)</span>.</p>
+<p>Wyjaśnienie: Mamy dwa przypadki:</p>
+<p><span class="arithmatex">\(2x = 0 \implies \mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(8x^2 - 12x + 3 = 0\)</span>. Obliczamy <span class="arithmatex">\(\Delta\)</span>:</p>
+<p><span class="arithmatex">\(\Delta = (-12)^2 - 4 \cdot 8 \cdot 3 = 144 - 96 = 48\)</span>.</p>
+<p><span class="arithmatex">\(\sqrt{\Delta} = \sqrt{16 \cdot 3} = 4\sqrt{3}\)</span>.</p>
+<p><span class="arithmatex">\(x_1 = \frac{12 - 4\sqrt{3}}{16} = \frac{3-\sqrt{3}}{4}, \quad x_2 = \frac{3+\sqrt{3}}{4}\)</span>.</p>
+<p>Mamy więc trzy punkty przegięcia: <span class="arithmatex">\(0\)</span> oraz dwa wyliczone z delty.</p>
+<p>10) <span class="arithmatex">\(f(x) = e^{-x^2+8x-14}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{-x^2+8x-14} \cdot (-2x+8)\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies (-2x + 8) \cdot \underbrace{e^{\dots}}_{\neq 0} = 0\)</span>.</p>
+<p>Wyjaśnienie: Ignorujemy <span class="arithmatex">\(e\)</span>. Zostaje nawias.</p>
+<p><span class="arithmatex">\(-2x + 8 = 0 \implies 8 = 2x \quad | :2\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x = 4}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; 4\)</span> (np. <span class="arithmatex">\(x=0\)</span>) mamy <span class="arithmatex">\(-2(0)+8 = 8 &gt; 0\)</span> (Rośnie).</p>
+<p>Dla <span class="arithmatex">\(x &gt; 4\)</span> (np. <span class="arithmatex">\(x=5\)</span>) mamy <span class="arithmatex">\(-2(5)+8 = -2 &lt; 0\)</span> (Maleje).</p>
+<p><span class="arithmatex">\(x=4\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = e^{(\dots)} [(-2x+8)^2 - 2]\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies ( -2x+8 )^2 - 2 = 0\)</span>.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\((2x - 8)^2 = 2\)</span>. Pierwiastkujemy obie strony:</p>
+<p><span class="arithmatex">\(|2x - 8| = \sqrt{2}\)</span>.</p>
+<p>Opcja A: <span class="arithmatex">\(2x - 8 = \sqrt{2} \implies 2x = 8 + \sqrt{2} \implies \mathbf{x = 4 + \frac{\sqrt{2}}{2}}\)</span>.</p>
+<p>Opcja B: <span class="arithmatex">\(2x - 8 = -\sqrt{2} \implies 2x = 8 - \sqrt{2} \implies \mathbf{x = 4 - \frac{\sqrt{2}}{2}}\)</span>.</p>
+<p>11) <span class="arithmatex">\(f(x) = \ln(1+e^{-x})\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{-e^{-x}}{1+e^{-x}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> ułamek równa się zero tylko wtedy, gdy jego licznik równa się zero.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(-e^{-x} = 0 \implies e^{-x} = 0\)</span>.</p>
+<p>To równanie jest sprzeczne (funkcja wykładnicza nigdy nie osiąga zera).
+Dlatego brak rozwiązań i brak ekstremów.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Licznik (<span class="arithmatex">\(-e^{-x}\)</span>) jest zawsze ujemny (bo <span class="arithmatex">\(e^{-x}\)</span> dodatnie, a stoi minus).
+Mianownik (<span class="arithmatex">\(1+e^{-x}\)</span>) jest zawsze dodatni.</p>
+<p>Wynik (minus przez plus) daje minus. Funkcja stale maleje.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \frac{e^{-x}}{(1+e^{-x})^2}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies e^{-x} = 0\)</span>.</p>
+<p>Znowu sprzeczność. Licznik nigdy nie będzie zerem.
+Licznik dodatni, mianownik (kwadrat) dodatni <span class="arithmatex">\(\to\)</span> Wynik zawsze dodatni. Funkcja wypukła.</p>
+<p>12) <span class="arithmatex">\(f(x) = e^{\text{arctg } x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{\text{arctg } x} \cdot \frac{1}{1+x^2}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.</p>
+<p>Wyjaśnienie: Licznikiem jest <span class="arithmatex">\(1 \cdot e^{\text{arctg } x}\)</span>.</p>
+<p><span class="arithmatex">\(e^{\text{arctg } x} = 0\)</span> <span class="arithmatex">\(\to\)</span> Sprzeczność. Funkcja nigdy się nie zeruje.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Wszystkie elementy (<span class="arithmatex">\(e^{\dots}\)</span>, <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(1+x^2\)</span>) są dodatnie. Pochodna zawsze <span class="arithmatex">\(&gt;0\)</span>. Funkcja stale rośnie.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = e^{\text{arctg } x} \frac{1-2x}{(1+x^2)^2}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Ułamek jest zerem, gdy licznik jest zerem.</p>
+<p>Wyjaśnienie: Ignorujemy <span class="arithmatex">\(e^{\dots}\)</span> (jest dodatnie). Patrzymy tylko na licznik ułamka:</p>
+<p><span class="arithmatex">\(1 - 2x = 0\)</span>.</p>
+<p><span class="arithmatex">\(1 = 2x \quad | :2\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{2}}\)</span> (Punkt Przegięcia).</p>
 
 
 

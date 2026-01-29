@@ -1,0 +1,1501 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Pomoc2 - Notatki z Matematyki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/math.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Notatki z Matematyki" class="md-header__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notatki z Matematyki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pomoc2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notatki z Matematyki" class="md-nav__button md-logo" aria-label="Notatki z Matematyki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notatki z Matematyki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebra liniowa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algebra liniowa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Macierze podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Operacje_na_macierzach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja operacje macierze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/algebra2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Wyznaczniki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Wyznaczniki_macierzy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja wyznaczników
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/algebra3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Macierz odwrotna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Macierz_odwrotna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja macierzy odwrotnej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/algebra4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Układy równań liniowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/zadania1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.Zadania algebra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometria analityczna
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geometria analityczna
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/geometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Wektory podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/geometria2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Iloczyny wektorów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Wektory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja wektory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/geometria3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Proste i płaszczyzny
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Proste.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja proste i płaszczyzny
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/zadania2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Zadania geometria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rachunek różniczkowy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rachunek różniczkowy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/rachunek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.Funkcje podstawy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Funkcje.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja funkcji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/rachunek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.Granice funkcji i ciągów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/rachunek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.Różniczkowanie funkcji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Pochodna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja pochodne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/rachunek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.Całki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/Calki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplikacja całki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/rachunek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.Równania różniczkowe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md/zadania3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.Zadania rachunek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pomoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pomoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Pomoc2</h1>
+
+<p>1) <span class="arithmatex">\(f(x) = x - 2 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 1 - \frac{2}{x} = \frac{x}{x} - \frac{2}{x} = \mathbf{\frac{x-2}{x}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Ułamek równa się zero tylko wtedy, gdy jego licznik równa się zero.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(x - 2 = 0\)</span>
+<span class="arithmatex">\(\mathbf{x = 2}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, 2)\)</span> (Funkcja maleje).</p>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (2, +\infty)\)</span> (Funkcja rośnie).</p>
+<p>Zmiana znaku z - na + w <span class="arithmatex">\(x=2\)</span> to MINIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = (1 - 2x^{-1})' = -2(-1)x^{-2} = \mathbf{\frac{2}{x^2}}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musiałby być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 = 0\)</span> <span class="arithmatex">\(\to\)</span> Sprzeczność.</p>
+<p>Dlatego brak punktów przegięcia.</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Licznik (2) jest dodatni, mianownik (<span class="arithmatex">\(x^2\)</span>) jest dodatni. </p>
+<p>Wynik zawsze <span class="arithmatex">\(&gt;0\)</span>.</p>
+<p>Funkcja jest wypukła (<span class="arithmatex">\(\cup\)</span>) w całej dziedzinie.</p>
+<p>2) <span class="arithmatex">\(f(x) = x^2 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 2x \ln x + x^2 \cdot \frac{1}{x} = 2x \ln x + x = \mathbf{x(2 \ln x + 1)}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Iloczyn jest zerem, gdy jeden z czynników jest zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(x = 0\)</span> (Odrzucamy, bo nie należy do dziedziny <span class="arithmatex">\(x&gt;0\)</span>).</p>
+<p><span class="arithmatex">\(2 \ln x + 1 = 0 \implies 2 \ln x = -1 \implies \ln x = -\frac{1}{2}\)</span>.</p>
+<p>Aby pozbyć się logarytmu, przykładamy <span class="arithmatex">\(e\)</span>: <span class="arithmatex">\(x = e^{-1/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{e}}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, \frac{1}{\sqrt{e}})\)</span> (Funkcja maleje).</p>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (\frac{1}{\sqrt{e}}, +\infty)\)</span> (Funkcja rośnie).</p>
+<p>Zmiana znaku z - na + w <span class="arithmatex">\(x = \frac{1}{\sqrt{e}}\)</span> to MINIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = (2x \ln x + x)' = (2 \ln x + 2x \cdot \frac{1}{x}) + 1 = 2 \ln x + 2 + 1 = \mathbf{2 \ln x + 3}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Rozwiązujemy równanie logarytmiczne.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 \ln x = -3 \quad | :2\)</span></p>
+<p><span class="arithmatex">\(\ln x = -\frac{3}{2}\)</span>.</p>
+<p><span class="arithmatex">\(x = e^{-3/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{e^3}}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; e^{-3/2}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; e^{-3/2}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>3) <span class="arithmatex">\(f(x) = \frac{1+\ln x}{x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{(\frac{1}{x}) \cdot x - (1+\ln x) \cdot 1}{x^2} = \frac{1 - 1 - \ln x}{x^2} = \mathbf{\frac{-\ln x}{x^2}}\)</span>.</p>
+<p><span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(-\ln x = 0 \implies \ln x = 0\)</span>.</p>
+<p>Logarytm wynosi zero tylko dla argumentu 1 (bo <span class="arithmatex">\(e^0 = 1\)</span>).</p>
+<p><span class="arithmatex">\(\mathbf{x = 1}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (0, 1)\)</span> (bo <span class="arithmatex">\(-\ln(ułamek)\)</span> jest dodatni). Funkcja rośnie.</p>
+<p><span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (1, +\infty)\)</span>. Funkcja maleje.</p>
+<p>Zmiana znaku z + na - w <span class="arithmatex">\(x=1\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \frac{(-\frac{1}{x})x^2 - (-\ln x)(2x)}{x^4} = \frac{-x + 2x \ln x}{x^4} = \frac{x(2 \ln x - 1)}{x^4} = \mathbf{\frac{2 \ln x - 1}{x^3}}\)</span>.</p>
+<p><span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.</p>
+<p>Wyjaśnienie:</p>
+<p><span class="arithmatex">\(2 \ln x - 1 = 0 \implies 2 \ln x = 1 \implies \ln x = \frac{1}{2}\)</span>.</p>
+<p><span class="arithmatex">\(x = e^{1/2}\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = \sqrt{e}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; \sqrt{e}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; \sqrt{e}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>4) <span class="arithmatex">\(f(x) = \frac{\ln x}{\sqrt{x}}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{\frac{1}{x}\sqrt{x} - \ln x \cdot \frac{1}{2\sqrt{x}}}{x} = \frac{\frac{2 - \ln x}{2\sqrt{x}}}{x} = \mathbf{\frac{2 - \ln x}{2x\sqrt{x}}}\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.
+Wyjaśnienie:
+<span class="arithmatex">\(2 - \ln x = 0 \implies 2 = \ln x\)</span>.
+Zamieniamy na postać wykładniczą:
+<span class="arithmatex">\(\mathbf{x = e^2}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (0, e^2)\)</span> (Funkcja rośnie).
+<span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (e^2, +\infty)\)</span> (Funkcja maleje).
+Zmiana znaku z + na - w <span class="arithmatex">\(x=e^2\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \dots\)</span> (obliczenia z reguły ilorazu) <span class="arithmatex">\(= \mathbf{\frac{3 \ln x - 8}{4x^2\sqrt{x}}}\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.
+Wyjaśnienie:
+<span class="arithmatex">\(3 \ln x - 8 = 0 \implies 3 \ln x = 8 \implies \ln x = \frac{8}{3}\)</span>.
+<span class="arithmatex">\(\mathbf{x = e^{8/3}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; e^{8/3}\)</span> wklęsła (<span class="arithmatex">\(\cap\)</span>), dla <span class="arithmatex">\(x &gt; e^{8/3}\)</span> wypukła (<span class="arithmatex">\(\cup\)</span>).
+5) <span class="arithmatex">\(f(x) = (\ln x)^3 - 3 \ln x\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in (0, +\infty)\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = 3(\ln x)^2 \cdot \frac{1}{x} - \frac{3}{x} = \frac{3}{x} (\ln^2 x - 1)\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies\)</span> Ułamek jest zerem, gdy nawias w liczniku jest zerem.
+Wyjaśnienie:
+<span class="arithmatex">\(\ln^2 x - 1 = 0 \implies \ln^2 x = 1\)</span>.
+Mamy dwie opcje: <span class="arithmatex">\(\ln x = 1\)</span> LUB <span class="arithmatex">\(\ln x = -1\)</span>.
+<span class="arithmatex">\(\mathbf{x = e}\)</span> oraz <span class="arithmatex">\(\mathbf{x = e^{-1} = \frac{1}{e}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Analizujemy znak wyrażenia <span class="arithmatex">\(\ln^2 x - 1\)</span> (jak paraboli <span class="arithmatex">\(t^2 - 1\)</span>):
+Funkcja rośnie w <span class="arithmatex">\((0, e^{-1}) \cup (e, +\infty)\)</span>.
+Funkcja maleje w <span class="arithmatex">\((e^{-1}, e)\)</span>.
+<span class="arithmatex">\(x = e^{-1}\)</span> to MAKSIMUM, <span class="arithmatex">\(x = e\)</span> to MINIMUM.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \mathbf{\frac{6\ln x - 3\ln^2 x + 3}{x^2}}\)</span>
+<span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik równa się zero.
+Wyjaśnienie:
+<span class="arithmatex">\(-3\ln^2 x + 6\ln x + 3 = 0 \quad | :(-3)\)</span>
+<span class="arithmatex">\(\ln^2 x - 2\ln x - 1 = 0\)</span>. Podstawiamy <span class="arithmatex">\(t = \ln x\)</span>.
+<span class="arithmatex">\(t^2 - 2t - 1 = 0\)</span>. Obliczamy <span class="arithmatex">\(\Delta = 4 - 4(1)(-1) = 8\)</span>.
+<span class="arithmatex">\(t_1 = \frac{2 - \sqrt{8}}{2} = 1 - \sqrt{2}, \quad t_2 = 1 + \sqrt{2}\)</span>.
+Wracamy do <span class="arithmatex">\(x\)</span>:
+<span class="arithmatex">\(\mathbf{x = e^{1-\sqrt{2}}}\)</span> oraz <span class="arithmatex">\(\mathbf{x = e^{1+\sqrt{2}}}\)</span> (Punkty Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Wklęsła na zewnątrz punktów przegięcia, wypukła pomiędzy nimi (zgodnie ze znakiem paraboli w liczniku pomnożonej przez <span class="arithmatex">\(-3\)</span>).
+6) <span class="arithmatex">\(f(x) = \frac{1}{\ln x}\)</span></p>
+<ul>
+<li>Dziedzina: <span class="arithmatex">\(x \in (0, 1) \cup (1, +\infty)\)</span>.</li>
+</ul>
+<p>Wyjaśnienie: <span class="arithmatex">\(x&gt;0\)</span> (z logarytmu) ORAZ <span class="arithmatex">\(\ln x \neq 0 \implies x \neq 1\)</span> (z mianownika).</p>
+<ul>
+<li>Pierwsza pochodna i punkty stacjonarne:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = -1(\ln x)^{-2} \cdot \frac{1}{x} = \mathbf{\frac{-1}{x (\ln x)^2}}\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik musi być zerem.
+Wyjaśnienie:
+<span class="arithmatex">\(-1 = 0\)</span>.
+To jest sprzeczność.
+Brak punktów stacjonarnych (brak ekstremów).</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Licznik (-1) jest ujemny. Mianowniki <span class="arithmatex">\(x\)</span> i <span class="arithmatex">\((\ln x)^2\)</span> są dodatnie w dziedzinie.
+Całość jest zawsze ujemna. Funkcja stale maleje (w obu przedziałach dziedziny).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \mathbf{\frac{\ln x + 2}{x^2 (\ln x)^3}}\)</span>
+<span class="arithmatex">\(f''(x) = 0 \implies\)</span> Licznik musi być zerem.
+Wyjaśnienie:
+<span class="arithmatex">\(\ln x + 2 = 0 \implies \ln x = -2\)</span>.
+<span class="arithmatex">\(\mathbf{x = e^{-2} = \frac{1}{e^2}}\)</span> (Punkt Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Analizujemy znak licznika i mianownika:
+Dla <span class="arithmatex">\(x \in (0, e^{-2})\)</span>: Wypukła (<span class="arithmatex">\(\cup\)</span>).
+Dla <span class="arithmatex">\(x \in (e^{-2}, 1)\)</span>: Wklęsła (<span class="arithmatex">\(\cap\)</span>).
+Dla <span class="arithmatex">\(x \in (1, +\infty)\)</span>: Wypukła (<span class="arithmatex">\(\cup\)</span>).</p>
+<p>7) <span class="arithmatex">\(f(x) = e^{-x^2}\)</span> (Krzywa Gaussa)</p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = -2x e^{-x^2}\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies -2x \cdot \underbrace{e^{-x^2}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Ponieważ <span class="arithmatex">\(e^{-x^2}\)</span> nigdy nie jest zerem, możemy podzielić równanie przez to wyrażenie (lub po prostu je pominąć). Zostaje tylko:
+<span class="arithmatex">\(-2x = 0 \quad | :(-2)\)</span>
+<span class="arithmatex">\(\mathbf{x = 0}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) &gt; 0\)</span> dla <span class="arithmatex">\(x \in (-\infty, 0)\)</span> (bo np. dla <span class="arithmatex">\(x=-1\)</span>: <span class="arithmatex">\(-2(-1) &gt; 0\)</span>).
+<span class="arithmatex">\(f'(x) &lt; 0\)</span> dla <span class="arithmatex">\(x \in (0, +\infty)\)</span> (bo np. dla <span class="arithmatex">\(x=1\)</span>: <span class="arithmatex">\(-2(1) &lt; 0\)</span>).
+Zmiana znaku z + na - w <span class="arithmatex">\(x=0\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = 2e^{-x^2}(2x^2 - 1)\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies (2x^2 - 1) \cdot \underbrace{2e^{-x^2}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Zostaje nam tylko nawias.
+<span class="arithmatex">\(2x^2 - 1 = 0 \implies 2x^2 = 1 \quad |:2\)</span>
+<span class="arithmatex">\(x^2 = \frac{1}{2} \implies x = \sqrt{\frac{1}{2}}\)</span> lub <span class="arithmatex">\(x = -\sqrt{\frac{1}{2}}\)</span>.
+<span class="arithmatex">\(\mathbf{x = \frac{1}{\sqrt{2}}}\)</span> oraz <span class="arithmatex">\(\mathbf{x = -\frac{1}{\sqrt{2}}}\)</span> (Punkty Przegięcia).</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Analiza znaku <span class="arithmatex">\(2x^2-1\)</span> (parabola ramionami w górę): Wypukła na zewnątrz pierwiastków, wklęsła pomiędzy nimi.
+8) <span class="arithmatex">\(f(x) = x e^{-x^2/2}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{-x^2/2}(1-x^2)\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies (1-x^2) \cdot \underbrace{e^{-x^2/2}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Przyrównujemy nawias do zera.
+<span class="arithmatex">\(1 - x^2 = 0 \implies 1 = x^2\)</span>.
+<span class="arithmatex">\(\mathbf{x = 1}\)</span> oraz <span class="arithmatex">\(\mathbf{x = -1}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p><span class="arithmatex">\(x = -1\)</span> (MIN), <span class="arithmatex">\(x = 1\)</span> (MAX) – wynikają z wykresu paraboli <span class="arithmatex">\(1-x^2\)</span> (ramiona w dół).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = x e^{-x^2/2}(x^2 - 3)\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies x(x^2 - 3) \cdot \underbrace{e^{-x^2/2}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Mamy iloczyn dwóch czynników, który ma dać zero. Albo <span class="arithmatex">\(x=0\)</span>, albo nawias <span class="arithmatex">\((x^2-3)=0\)</span>.</p>
+<p><span class="arithmatex">\(\mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(x^2 - 3 = 0 \implies x^2 = 3 \implies \mathbf{x = \sqrt{3}}\)</span> lub <span class="arithmatex">\(\mathbf{x = -\sqrt{3}}\)</span>.</p>
+<ul>
+<li>Krzywizna:</li>
+</ul>
+<p>Trzy punkty przegięcia dzielą oś na 4 przedziały.
+9) <span class="arithmatex">\(f(x) = x^3 e^{-4x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = x^2 e^{-4x}(3 - 4x)\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies x^2 (3 - 4x) \cdot \underbrace{e^{-4x}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Zostaje nam iloczyn <span class="arithmatex">\(x^2\)</span> i nawiasu.</p>
+<p><span class="arithmatex">\(x^2 = 0 \implies \mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(3 - 4x = 0 \implies 3 = 4x \implies \mathbf{x = \frac{3}{4}}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>W punkcie <span class="arithmatex">\(x=0\)</span> mamy <span class="arithmatex">\(x^2\)</span>, co oznacza, że znak pochodnej się nie zmienia (jest dodatni przed i po zerze). Dlatego w <span class="arithmatex">\(x=0\)</span> nie ma ekstremum.
+Zmiana znaku następuje tylko w <span class="arithmatex">\(x = \frac{3}{4}\)</span> (z plusa na minus <span class="arithmatex">\(\to\)</span> MAX).</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = 2x e^{-4x}(8x^2 - 12x + 3)\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies 2x(8x^2 - 12x + 3) = 0\)</span>.
+Wyjaśnienie: Mamy dwa przypadki:</p>
+<p><span class="arithmatex">\(2x = 0 \implies \mathbf{x = 0}\)</span>.</p>
+<p><span class="arithmatex">\(8x^2 - 12x + 3 = 0\)</span>. Obliczamy <span class="arithmatex">\(\Delta\)</span>:
+<span class="arithmatex">\(\Delta = (-12)^2 - 4 \cdot 8 \cdot 3 = 144 - 96 = 48\)</span>.
+<span class="arithmatex">\(\sqrt{\Delta} = \sqrt{16 \cdot 3} = 4\sqrt{3}\)</span>.
+<span class="arithmatex">\(x_1 = \frac{12 - 4\sqrt{3}}{16} = \frac{3-\sqrt{3}}{4}, \quad x_2 = \frac{3+\sqrt{3}}{4}\)</span>.
+Mamy więc trzy punkty przegięcia: <span class="arithmatex">\(0\)</span> oraz dwa wyliczone z delty.
+10) <span class="arithmatex">\(f(x) = e^{-x^2+8x-14}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{-x^2+8x-14} \cdot (-2x+8)\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies (-2x + 8) \cdot \underbrace{e^{\dots}}_{\neq 0} = 0\)</span>.
+Wyjaśnienie: Ignorujemy <span class="arithmatex">\(e\)</span>. Zostaje nawias.
+<span class="arithmatex">\(-2x + 8 = 0 \implies 8 = 2x \quad | :2\)</span>
+<span class="arithmatex">\(\mathbf{x = 4}\)</span>.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Dla <span class="arithmatex">\(x &lt; 4\)</span> (np. <span class="arithmatex">\(x=0\)</span>) mamy <span class="arithmatex">\(-2(0)+8 = 8 &gt; 0\)</span> (Rośnie).
+Dla <span class="arithmatex">\(x &gt; 4\)</span> (np. <span class="arithmatex">\(x=5\)</span>) mamy <span class="arithmatex">\(-2(5)+8 = -2 &lt; 0\)</span> (Maleje).
+<span class="arithmatex">\(x=4\)</span> to MAKSIMUM LOKALNE.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = e^{(\dots)} [(-2x+8)^2 - 2]\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies ( -2x+8 )^2 - 2 = 0\)</span>.
+Wyjaśnienie:
+<span class="arithmatex">\((2x - 8)^2 = 2\)</span>. Pierwiastkujemy obie strony:
+<span class="arithmatex">\(|2x - 8| = \sqrt{2}\)</span>.
+Opcja A: <span class="arithmatex">\(2x - 8 = \sqrt{2} \implies 2x = 8 + \sqrt{2} \implies \mathbf{x = 4 + \frac{\sqrt{2}}{2}}\)</span>.
+Opcja B: <span class="arithmatex">\(2x - 8 = -\sqrt{2} \implies 2x = 8 - \sqrt{2} \implies \mathbf{x = 4 - \frac{\sqrt{2}}{2}}\)</span>.
+11) <span class="arithmatex">\(f(x) = \ln(1+e^{-x})\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = \frac{-e^{-x}}{1+e^{-x}}\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies\)</span> ułamek równa się zero tylko wtedy, gdy jego licznik równa się zero.
+Wyjaśnienie:
+<span class="arithmatex">\(-e^{-x} = 0 \implies e^{-x} = 0\)</span>.
+To równanie jest sprzeczne (funkcja wykładnicza nigdy nie osiąga zera).
+Dlatego brak rozwiązań i brak ekstremów.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Licznik (<span class="arithmatex">\(-e^{-x}\)</span>) jest zawsze ujemny (bo <span class="arithmatex">\(e^{-x}\)</span> dodatnie, a stoi minus).
+Mianownik (<span class="arithmatex">\(1+e^{-x}\)</span>) jest zawsze dodatni.
+Wynik (minus przez plus) daje minus. Funkcja stale maleje.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = \frac{e^{-x}}{(1+e^{-x})^2}\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies e^{-x} = 0\)</span>.
+Znowu sprzeczność. Licznik nigdy nie będzie zerem.
+Licznik dodatni, mianownik (kwadrat) dodatni <span class="arithmatex">\(\to\)</span> Wynik zawsze dodatni. Funkcja wypukła.
+12) <span class="arithmatex">\(f(x) = e^{\text{arctg } x}\)</span></p>
+<ul>
+<li>
+<p>Dziedzina: <span class="arithmatex">\(x \in \mathbb{R}\)</span>.</p>
+</li>
+<li>
+<p>Pierwsza pochodna i punkty stacjonarne:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(f'(x) = e^{\text{arctg } x} \cdot \frac{1}{1+x^2}\)</span>.
+<span class="arithmatex">\(f'(x) = 0 \implies\)</span> Licznik ułamka musi być zerem.
+Wyjaśnienie: Licznikiem jest <span class="arithmatex">\(1 \cdot e^{\text{arctg } x}\)</span>.
+<span class="arithmatex">\(e^{\text{arctg } x} = 0\)</span> <span class="arithmatex">\(\to\)</span> Sprzeczność. Funkcja nigdy się nie zeruje.</p>
+<ul>
+<li>Monotoniczność i Ekstrema:</li>
+</ul>
+<p>Wszystkie elementy (<span class="arithmatex">\(e^{\dots}\)</span>, <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(1+x^2\)</span>) są dodatnie. Pochodna zawsze <span class="arithmatex">\(&gt;0\)</span>. Funkcja stale rośnie.</p>
+<ul>
+<li>Druga pochodna i Punkt Przegięcia:</li>
+</ul>
+<p><span class="arithmatex">\(f''(x) = e^{\text{arctg } x} \frac{1-2x}{(1+x^2)^2}\)</span>.
+<span class="arithmatex">\(f''(x) = 0 \implies\)</span> Ułamek jest zerem, gdy licznik jest zerem.
+Wyjaśnienie: Ignorujemy <span class="arithmatex">\(e^{\dots}\)</span> (jest dodatnie). Patrzymy tylko na licznik ułamka:
+<span class="arithmatex">\(1 - 2x = 0\)</span>.
+<span class="arithmatex">\(1 = 2x \quad | :2\)</span>
+<span class="arithmatex">\(\mathbf{x = \frac{1}{2}}\)</span> (Punkt Przegięcia).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
