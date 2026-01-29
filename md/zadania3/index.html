@@ -1248,6 +1248,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dzia-5-badanie-przebiegu-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dział 5 - Badanie przebiegu funkcji
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1537,6 +1548,17 @@
     <span class="md-ellipsis">
       
         5. Zaawansowane pochodne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dzia-5-badanie-przebiegu-funkcji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dział 5 - Badanie przebiegu funkcji
       
     </span>
   </a>
@@ -2212,6 +2234,158 @@ Nie można jej dodefiniować.</p>
 <div class="arithmatex">\[u' = (x^x)' \ln x + x^x (\ln x)' = x^x(\ln x + 1)\ln x + x^x \frac{1}{x}\]</div>
 <p>Wracamy do <span class="arithmatex">\(y\)</span>:</p>
 <div class="arithmatex">\[y' = x^{x^x} \cdot \left[ x^x(\ln x + 1)\ln x + x^{x-1} \right]\]</div>
+<h3 id="dzia-5-badanie-przebiegu-funkcji">Dział 5 - Badanie przebiegu funkcji<a class="headerlink" href="#dzia-5-badanie-przebiegu-funkcji" title="Permanent link">&para;</a></h3>
+<p>1) <span class="arithmatex">\(y = x - 2 \ln x\)</span></p>
+<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
+<p>Pochodna I: <span class="arithmatex">\(y' = 1 - \frac{2}{x} = \frac{x-2}{x}\)</span>.</p>
+<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x=2\)</span>.</p>
+<p>Znak: Dla <span class="arithmatex">\(x \in (0, 2)\)</span> <span class="arithmatex">\(y'&lt;0\)</span> (maleje). Dla <span class="arithmatex">\(x &gt; 2\)</span> <span class="arithmatex">\(y'&gt;0\)</span> (rośnie).</p>
+<p>Ekstremum: <span class="arithmatex">\(x=2\)</span> (MINIMUM). <span class="arithmatex">\(f(2) = 2 - 2\ln 2\)</span>.</p>
+<p>Pochodna II: <span class="arithmatex">\(y'' = \left(1 - 2x^{-1}\right)' = 2x^{-2} = \frac{2}{x^2}\)</span>.</p>
+<p>Znak: Dla każdego <span class="arithmatex">\(x&gt;0\)</span> mamy <span class="arithmatex">\(y'' &gt; 0\)</span>.</p>
+<p>Kształt: Funkcja jest wypukła (<span class="arithmatex">\(\cup\)</span>) w całej dziedzinie.</p>
+<p>P.P.: Brak.</p>
+<p>2) <span class="arithmatex">\(y = x^2 \ln x\)</span></p>
+<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
+<p>Pochodna I: <span class="arithmatex">\(y' = 2x \ln x + x^2 \cdot \frac{1}{x} = 2x \ln x + x = x(2 \ln x + 1)\)</span>.</p>
+<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(2 \ln x = -1 \Rightarrow \ln x = -\frac{1}{2} \Rightarrow x = e^{-1/2} = \frac{1}{\sqrt{e}}\)</span>.</p>
+<p>Monotoniczność:</p>
+<p>Maleje: <span class="arithmatex">\((0; \frac{1}{\sqrt{e}})\)</span></p>
+<p>Rośnie: <span class="arithmatex">\((\frac{1}{\sqrt{e}}; +\infty)\)</span></p>
+<p>Ekstremum: <span class="arithmatex">\(x = \frac{1}{\sqrt{e}}\)</span> (MINIMUM).</p>
+<p>Pochodna II: <span class="arithmatex">\(y'' = (2x \ln x + x)' = 2 \ln x + 2x \cdot \frac{1}{x} + 1 = 2 \ln x + 3\)</span>.</p>
+<p>M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2 \ln x = -3 \Rightarrow x = e^{-3/2}\)</span>.
+Kształt:</p>
+<p>Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; e^{-3/2})\)</span></p>
+<p>Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((e^{-3/2}; +\infty)\)</span></p>
+<p>P.P.: <span class="arithmatex">\(x = e^{-3/2}\)</span>.</p>
+<ol>
+<li><span class="arithmatex">\(y = \frac{1+\ln x}{x}\)</span></li>
+</ol>
+<p>Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span></p>
+<p>Pochodna I: <span class="arithmatex">\(y' = \frac{(\frac{1}{x}) \cdot x - (1+\ln x) \cdot 1}{x^2} = \frac{1 - 1 - \ln x}{x^2} = \frac{-\ln x}{x^2}\)</span>.</p>
+<p>M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(-\ln x = 0 \Rightarrow x = 1\)</span>.</p>
+<p>Monotoniczność:</p>
+<p>Rośnie: <span class="arithmatex">\((0; 1)\)</span> (bo <span class="arithmatex">\(-\ln x &gt; 0\)</span> dla <span class="arithmatex">\(x&lt;1\)</span>)</p>
+<p>Maleje: <span class="arithmatex">\((1; +\infty)\)</span></p>
+<p>Ekstremum: <span class="arithmatex">\(x = 1\)</span> (MAXIMUM). <span class="arithmatex">\(f(1) = 1\)</span>.</p>
+<p>Pochodna II: <span class="arithmatex">\(y'' = \frac{(-\frac{1}{x})x^2 - (-\ln x)(2x)}{x^4} = \frac{-x + 2x \ln x}{x^4} = \frac{2 \ln x - 1}{x^3}\)</span>.</p>
+<p>M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2 \ln x = 1 \Rightarrow x = e^{1/2} = \sqrt{e}\)</span>.</p>
+<p>Kształt:</p>
+<p>Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; \sqrt{e})\)</span></p>
+<p>Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((\sqrt{e}; +\infty)\)</span></p>
+<p>P.P.: <span class="arithmatex">\(x = \sqrt{e}\)</span>.</p>
+<ol>
+<li><span class="arithmatex">\(y = \frac{\ln x}{\sqrt{x}}\)</span>
+Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span>
+Pochodna I: <span class="arithmatex">\(y' = \frac{\frac{1}{x}\sqrt{x} - \ln x \cdot \frac{1}{2\sqrt{x}}}{x} = \frac{\frac{1}{\sqrt{x}} - \frac{\ln x}{2\sqrt{x}}}{x} = \frac{2 - \ln x}{2x\sqrt{x}}\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(2 - \ln x = 0 \Rightarrow x = e^2\)</span>.
+Monotoniczność:
+Rośnie: <span class="arithmatex">\((0; e^2)\)</span>
+Maleje: <span class="arithmatex">\((e^2; +\infty)\)</span>
+Ekstremum: <span class="arithmatex">\(x = e^2\)</span> (MAXIMUM).
+Pochodna II: (wymaga cierpliwości) <span class="arithmatex">\(y'' = \frac{3 \ln x - 8}{4x^2\sqrt{x}}\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(3 \ln x = 8 \Rightarrow x = e^{8/3}\)</span>.
+Kształt:
+Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((0; e^{8/3})\)</span>
+Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((e^{8/3}; +\infty)\)</span>
+P.P.: <span class="arithmatex">\(x = e^{8/3}\)</span>.</li>
+<li><span class="arithmatex">\(y = (\ln x)^3 - 3 \ln x\)</span>
+Dziedzina: <span class="arithmatex">\(x &gt; 0\)</span>
+Pochodna I: <span class="arithmatex">\(y' = 3(\ln x)^2 \cdot \frac{1}{x} - \frac{3}{x} = \frac{3}{x} (\ln^2 x - 1)\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(\ln^2 x = 1 \Rightarrow \ln x = 1 \lor \ln x = -1 \Rightarrow x=e \lor x=e^{-1}\)</span>.
+Monotoniczność:
+Rośnie: <span class="arithmatex">\((0; e^{-1}) \cup (e; +\infty)\)</span>
+Maleje: <span class="arithmatex">\((e^{-1}; e)\)</span>
+Ekstrema: <span class="arithmatex">\(x = e^{-1}\)</span> (MAX), <span class="arithmatex">\(x = e\)</span> (MIN).
+Pochodna II: <span class="arithmatex">\(y'' = \frac{3(2\ln x \cdot \frac{1}{x}) \cdot x - 3(\ln^2 x - 1)}{x^2} = \frac{6\ln x - 3\ln^2 x + 3}{x^2}\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(-3\ln^2 x + 6\ln x + 3 = 0\)</span>. Podstawiamy <span class="arithmatex">\(t=\ln x\)</span>, delta... Pierwiastki to <span class="arithmatex">\(1-\sqrt{2}\)</span> i <span class="arithmatex">\(1+\sqrt{2}\)</span>.
+P.P.: <span class="arithmatex">\(x = e^{1-\sqrt{2}}\)</span> oraz <span class="arithmatex">\(x = e^{1+\sqrt{2}}\)</span>.</li>
+<li><span class="arithmatex">\(y = \frac{1}{\ln x}\)</span>
+Dziedzina: <span class="arithmatex">\(x &gt; 0, x \ne 1\)</span>
+Pochodna I: <span class="arithmatex">\(y = (\ln x)^{-1} \Rightarrow y' = -1(\ln x)^{-2} \cdot \frac{1}{x} = \frac{-1}{x(\ln x)^2}\)</span>.
+Znak: Licznik stały ujemny, mianownik dodatni (w dziedzinie).
+Monotoniczność: Funkcja maleje w <span class="arithmatex">\((0; 1)\)</span> oraz w <span class="arithmatex">\((1; +\infty)\)</span>.
+Ekstrema: Brak.
+Pochodna II: <span class="arithmatex">\(y'' = \frac{\ln x + 2}{x^2(\ln x)^3}\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(\ln x = -2 \Rightarrow x = e^{-2}\)</span>.
+Kształt: Analiza znaku licznika i mianownika (<span class="arithmatex">\(\ln x\)</span> zmienia znak w 1).
+Wklęsła: <span class="arithmatex">\((0; e^{-2}) \cup (1; +\infty)\)</span> [tu trzeba uważać na znaki] -&gt; sprawdźmy: dla <span class="arithmatex">\(x&gt;1\)</span> licznik +, mianownik +, więc Wypukła. Błąd.
+Poprawnie:
+<span class="arithmatex">\((0; e^{-2})\)</span>: licznik (-), mianownik (-) <span class="arithmatex">\(\to\)</span> Wypukła (<span class="arithmatex">\(\cup\)</span>).
+<span class="arithmatex">\((e^{-2}; 1)\)</span>: licznik (+), mianownik (-) <span class="arithmatex">\(\to\)</span> Wklęsła (<span class="arithmatex">\(\cap\)</span>).
+<span class="arithmatex">\((1; +\infty)\)</span>: licznik (+), mianownik (+) <span class="arithmatex">\(\to\)</span> Wypukła (<span class="arithmatex">\(\cup\)</span>).
+P.P.: <span class="arithmatex">\(x = e^{-2}\)</span>.</li>
+<li><span class="arithmatex">\(y = e^{-x^2}\)</span> (Krzywa Gaussa)
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
+Pochodna I: <span class="arithmatex">\(y' = e^{-x^2} \cdot (-2x) = -2x e^{-x^2}\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x = 0\)</span>.
+Monotoniczność:
+Rośnie: <span class="arithmatex">\((-\infty; 0)\)</span>
+Maleje: <span class="arithmatex">\((0; +\infty)\)</span>
+Ekstremum: <span class="arithmatex">\(x = 0\)</span> (MAXIMUM).
+Pochodna II: <span class="arithmatex">\(y'' = -2e^{-x^2} + (-2x)(-2x)e^{-x^2} = 2e^{-x^2}(2x^2 - 1)\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(2x^2 = 1 \Rightarrow x = \pm \frac{1}{\sqrt{2}}\)</span>.
+Kształt:
+Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((-\infty; -\frac{1}{\sqrt{2}}) \cup (\frac{1}{\sqrt{2}}; +\infty)\)</span>
+Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((-\frac{1}{\sqrt{2}}; \frac{1}{\sqrt{2}})\)</span>
+P.P.: <span class="arithmatex">\(x = -\frac{1}{\sqrt{2}}\)</span> oraz <span class="arithmatex">\(x = \frac{1}{\sqrt{2}}\)</span>.</li>
+<li><span class="arithmatex">\(y = x e^{-x^2/2}\)</span>
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
+Pochodna I: <span class="arithmatex">\(y' = 1 \cdot e^{-x^2/2} + x \cdot e^{-x^2/2} \cdot (-x) = e^{-x^2/2}(1-x^2)\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x = 1, x = -1\)</span>.
+Monotoniczność:
+Maleje: <span class="arithmatex">\((-\infty; -1) \cup (1; +\infty)\)</span>
+Rośnie: <span class="arithmatex">\((-1; 1)\)</span>
+Ekstrema: <span class="arithmatex">\(x = -1\)</span> (MIN), <span class="arithmatex">\(x = 1\)</span> (MAX).
+Pochodna II: <span class="arithmatex">\(y'' = e^{-x^2/2}(-x)(1-x^2) + e^{-x^2/2}(-2x) = x e^{-x^2/2}(x^2 - 3)\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(x=0, x=\sqrt{3}, x=-\sqrt{3}\)</span>.
+P.P.: Trzy punkty: <span class="arithmatex">\(-\sqrt{3}, 0, \sqrt{3}\)</span>.</li>
+<li><span class="arithmatex">\(y = x^3 e^{-4x}\)</span>
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
+Pochodna I: <span class="arithmatex">\(y' = 3x^2 e^{-4x} + x^3 e^{-4x}(-4) = x^2 e^{-4x}(3 - 4x)\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(x=0\)</span> (pierwiastek dwukrotny!), <span class="arithmatex">\(x=3/4\)</span>.
+Monotoniczność:
+Rośnie: <span class="arithmatex">\((-\infty; 3/4)\)</span> (uwaga: w 0 jest "poziomo", ale funkcja rośnie "przez" zero).
+Maleje: <span class="arithmatex">\((3/4; +\infty)\)</span>
+Ekstremum: <span class="arithmatex">\(x = 3/4\)</span> (MAX). W <span class="arithmatex">\(x=0\)</span> nie ma ekstremum (brak zmiany znaku).
+Pochodna II: <span class="arithmatex">\(y'' = e^{-4x}(16x^3 - 24x^2 + 6x)\)</span>.
+Miejsca zerowe: <span class="arithmatex">\(x(16x^2-24x+6)=0\)</span>. Delta...
+P.P.: <span class="arithmatex">\(x=0\)</span> oraz dwa pierwiastki z równania kwadratowego.</li>
+<li><span class="arithmatex">\(y = e^{-x^2+8x-14}\)</span>
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
+Pochodna I: <span class="arithmatex">\(y' = e^{-x^2+8x-14} \cdot (-2x+8)\)</span>.
+M. zerowe <span class="arithmatex">\(y'\)</span>: <span class="arithmatex">\(-2x+8=0 \Rightarrow x=4\)</span>.
+Monotoniczność:
+Rośnie: <span class="arithmatex">\((-\infty; 4)\)</span>
+Maleje: <span class="arithmatex">\((4; +\infty)\)</span>
+Ekstremum: <span class="arithmatex">\(x = 4\)</span> (MAX).
+Pochodna II: <span class="arithmatex">\(y'' = e^{(\dots)}(-2x+8)^2 + e^{(\dots)}(-2) = e^{(\dots)} [(-2x+8)^2 - 2]\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\((2x-8)^2 = 2 \Rightarrow 2x-8 = \pm\sqrt{2}\)</span>.
+P.P.: <span class="arithmatex">\(x = 4 - \frac{\sqrt{2}}{2}\)</span> oraz <span class="arithmatex">\(x = 4 + \frac{\sqrt{2}}{2}\)</span>.</li>
+<li><span class="arithmatex">\(y = \ln(1+e^{-x})\)</span>
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span> (bo <span class="arithmatex">\(1+e^{-x} &gt; 0\)</span> zawsze)
+Pochodna I: <span class="arithmatex">\(y' = \frac{1}{1+e^{-x}} \cdot (e^{-x}) \cdot (-1) = \frac{-e^{-x}}{1+e^{-x}}\)</span>.
+Znak: Licznik zawsze ujemny, mianownik dodatni.
+Monotoniczność: Funkcja maleje w całej dziedzinie.
+Ekstrema: Brak.
+Pochodna II: <span class="arithmatex">\(y'' = \frac{e^{-x}}{(1+e^{-x})^2}\)</span>.
+Znak: Zawsze dodatni.
+Kształt: Funkcja zawsze wypukła (<span class="arithmatex">\(\cup\)</span>).
+P.P.: Brak.</li>
+<li><span class="arithmatex">\(y = e^{\text{arctg } x}\)</span>
+Dziedzina: <span class="arithmatex">\(\mathbb{R}\)</span>
+Pochodna I: <span class="arithmatex">\(y' = e^{\text{arctg } x} \cdot \frac{1}{1+x^2}\)</span>.
+Znak: <span class="arithmatex">\(e^u &gt; 0\)</span> i <span class="arithmatex">\(1+x^2 &gt; 0\)</span>. Zawsze dodatnia.
+Monotoniczność: Rośnie w całej dziedzinie <span class="arithmatex">\(\mathbb{R}\)</span>.
+Ekstrema: Brak.
+Pochodna II: <span class="arithmatex">\(y'' = e^{\text{arctg } x} \frac{1-2x}{(1+x^2)^2}\)</span>.
+M. zerowe <span class="arithmatex">\(y''\)</span>: <span class="arithmatex">\(1-2x = 0 \Rightarrow x = 1/2\)</span>.
+Kształt:
+Wypukła (<span class="arithmatex">\(\cup\)</span>): <span class="arithmatex">\((-\infty; 1/2)\)</span>
+Wklęsła (<span class="arithmatex">\(\cap\)</span>): <span class="arithmatex">\((1/2; +\infty)\)</span>
+P.P.: <span class="arithmatex">\(x = 1/2\)</span>.</li>
+</ol>
 
 
 
